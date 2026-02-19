@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DR TECH - Expert IT repair and technical support services in Colombo. Fast computer, laptop, smartphone repairs with 24-hour turnaround guarantee. Professional IT solutions for businesses.">
+    <meta name="keywords" content="IT repair, computer repair, laptop repair, smartphone repair, data recovery, network support, Colombo, Sri Lanka, technical support">
+    <meta property="og:title" content="DR TECH - IT Repair & Technical Support Services">
+    <meta property="og:description" content="Fast, reliable computer and device repairs with a 24-hour turnaround guarantee. Expert IT solutions in Colombo.">
+    <meta property="og:type" content="website">
+    <title>DR TECH - IT Repair & Technical Support Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .portfolio-item {
+            transition: all 0.3s ease;
+        }
+        .portfolio-item:hover {
+            transform: scale(1.03);
+        }
+        .floating-button {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .repair-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: #ef4444;
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .map-container {
+            overflow: hidden;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .stats-item {
+            transition: all 0.3s ease;
+        }
+        .stats-item:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <div class="h-10 w-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-xl">DT</div>
+                        <span class="ml-2 text-xl font-bold text-blue-600">DR TECH</span>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="#home" class="text-blue-600 hover:text-blue-800 px-3 py-2 font-medium">Home</a>
+                    <a href="#repairs" class="text-gray-700 hover:text-blue-600 px-3 py-2 font-medium">Repair Services</a>
+                    <a href="#services" class="text-gray-700 hover:text-blue-600 px-3 py-2 font-medium">IT Services</a>
+                    <a href="#about" class="text-gray-700 hover:text-blue-600 px-3 py-2 font-medium">About</a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-blue-600 px-3 py-2 font-medium">Testimonials</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 px-3 py-2 font-medium">Contact</a>
+                    <a href="#contact" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">Emergency Repair</a>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" aria-controls="mobile-menu" aria-expanded="false" id="mobile-menu-button">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-blue-600 bg-blue-50">Home</a>
+                <a href="#repairs" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">Repair Services</a>
+                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">IT Services</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">About</a>
+                <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">Testimonials</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">Contact</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium bg-blue-600 text-white hover:bg-blue-700">Emergency Repair</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient text-white py-20 md:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">Expert IT Repair & Technical Support</h1>
+                    <p class="text-xl mb-8 opacity-90">Fast, reliable computer and device repairs with a 24-hour turnaround guarantee. We fix what others can't - from hardware failures to complex software issues.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#repairs" class="bg-white text-blue-600 px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition duration-300 text-center">Repair Services</a>
+                        <a href="#contact" class="border-2 border-white text-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-blue-600 transition duration-300 text-center">Emergency Call</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center relative">
+                    <img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Computer Repair" class="rounded-lg shadow-2xl max-w-full h-auto">
+                    <div class="absolute -bottom-5 -left-5 bg-white p-4 rounded-lg shadow-lg text-center">
+                        <div class="text-3xl font-bold text-blue-600">24h</div>
+                        <div class="text-gray-600">Repair Guarantee</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="stats-item bg-blue-50 rounded-lg p-6 text-center">
+                    <div class="text-4xl font-bold text-blue-600 mb-2">5,000+</div>
+                    <div class="text-gray-600">Devices Repaired</div>
+                </div>
+                <div class="stats-item bg-green-50 rounded-lg p-6 text-center">
+                    <div class="text-4xl font-bold text-green-600 mb-2">98%</div>
+                    <div class="text-gray-600">Success Rate</div>
+                </div>
+                <div class="stats-item bg-purple-50 rounded-lg p-6 text-center">
+                    <div class="text-4xl font-bold text-purple-600 mb-2">24h</div>
+                    <div class="text-gray-600">Average Turnaround</div>
+                </div>
+                <div class="stats-item bg-red-50 rounded-lg p-6 text-center">
+                    <div class="text-4xl font-bold text-red-600 mb-2">500+</div>
+                    <div class="text-gray-600">Happy Businesses</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Repair Services Section -->
+    <section id="repairs" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our IT Repair Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Comprehensive repair solutions for all your technology needs. Fast, affordable, and backed by our satisfaction guarantee.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Repair Service 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden service-card transition duration-300 border border-gray-200 relative">
+                    <div class="repair-badge">Hot</div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-red-100 p-3 rounded-full">
+                                <i class="fas fa-laptop-medical text-red-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold ml-4">Computer & Laptop Repairs</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Diagnosis and repair of all computer and laptop issues including hardware failures, screen replacements, battery issues, and more.</p>
+                        <ul class="text-gray-600 mb-4 space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Virus & malware removal</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Hardware diagnostics</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Data recovery services</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Component replacement</li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <a href="#contact" class="text-blue-600 font-medium hover:text-blue-800 inline-flex items-center">Book Now <i class="fas fa-arrow-right ml-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Repair Service 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden service-card transition duration-300 border border-gray-200 relative">
+                    <div class="repair-badge">New</div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-3 rounded-full">
+                                <i class="fas fa-mobile-alt text-blue-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold ml-4">Smartphone & Tablet Repairs</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Fast repairs for all mobile devices including cracked screens, battery replacements, charging port issues, and water damage.</p>
+                        <ul class="text-gray-600 mb-4 space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Screen replacements</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Battery replacements</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Water damage repair</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Software troubleshooting</li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <a href="#contact" class="text-blue-600 font-medium hover:text-blue-800 inline-flex items-center">Book Now <i class="fas fa-arrow-right ml-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Repair Service 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden service-card transition duration-300 border border-gray-200">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-100 p-3 rounded-full">
+                                <i class="fas fa-network-wired text-purple-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold ml-4">Network & Connectivity Solutions</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Troubleshoot and repair network issues, WiFi problems, router configurations, and internet connectivity problems.</p>
+                        <ul class="text-gray-600 mb-4 space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> WiFi optimization</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Network setup</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Router repairs</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> VPN configuration</li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <a href="#contact" class="text-blue-600 font-medium hover:text-blue-800 inline-flex items-center">Book Now <i class="fas fa-arrow-right ml-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Repair Service 4 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden service-card transition duration-300 border border-gray-200">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-green-100 p-3 rounded-full">
+                                <i class="fas fa-database text-green-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold ml-4">Data Recovery Services</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Professional data recovery from failed hard drives, corrupted SSDs, damaged USB drives, and other storage media.</p>
+                        <ul class="text-gray-600 mb-4 space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Hard drive recovery</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> RAID recovery</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> SSD data extraction</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Corrupted file repair</li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <a href="#contact" class="text-blue-600 font-medium hover:text-blue-800 inline-flex items-center">Book Now <i class="fas fa-arrow-right ml-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Repair Service 5 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden service-card transition duration-300 border border-gray-200">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-yellow-100 p-3 rounded-full">
+                                <i class="fas fa-print text-yellow-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold ml-4">Printer & Peripheral Repairs</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Repair and maintenance for printers, scanners, external drives, and other computer peripherals.</p>
+                        <ul class="text-gray-600 mb-4 space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Printer repairs</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Driver installation</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Network printing setup</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Peripheral diagnostics</li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <a href="#contact" class="text-blue-600 font-medium hover:text-blue-800 inline-flex items-center">Book Now <i class="fas fa-arrow-right ml-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Repair Service 6 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden service-card transition duration-300 border border-gray-200 relative">
+                    <div class="repair-badge">24h</div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-indigo-100 p-3 rounded-full">
+                                <i class="fas fa-headset text-indigo-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold ml-4">On-Site Business Support</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Emergency on-site IT support for businesses experiencing critical system failures or network outages.</p>
+                        <ul class="text-gray-600 mb-4 space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Emergency response</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Server troubleshooting</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Workstation setup</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> System diagnostics</li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <a href="#contact" class="text-blue-600 font-medium hover:text-blue-800 inline-flex items-center">Call Now <i class="fas fa-phone-alt ml-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IT Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Professional IT Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Beyond repairs, we offer comprehensive IT solutions for businesses and individuals</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- IT Service 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden service-card transition duration-300 border border-gray-200">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-3 rounded-full">
+                                <i class="fas fa-shield-alt text-blue-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold ml-4">Cybersecurity Solutions</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Protect your business from digital threats with our comprehensive cybersecurity services.</p>
+                        <ul class="text-gray-600 mb-4 space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check text-blue-500 text-xs mr-2"></i> Network security audits</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-500 text-xs mr-2"></i> Firewall configuration</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-500 text-xs mr-2"></i> Malware protection</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-500 text-xs mr-2"></i> Employee training</li>
+                        </ul>
+                        <a href="#contact" class="text-blue-600 font-medium hover:text-blue-800 inline-flex items-center">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+
+                <!-- IT Service 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden service-card transition duration-300 border border-gray-200">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-green-100 p-3 rounded-full">
+                                <i class="fas fa-cloud text-green-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold ml-4">Cloud Services</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Migrate to the cloud with our expert guidance and management services.</p>
+                        <ul class="text-gray-600 mb-4 space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 text-xs mr-2"></i> Cloud migration</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 text-xs mr-2"></i> Office 365 setup</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 text-xs mr-2"></i> Google Workspace</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 text-xs mr-2"></i> Backup solutions</li>
+                        </ul>
+                        <a href="#contact" class="text-blue-600 font-medium hover:text-blue-800 inline-flex items-center">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+
+                <!-- IT Service 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden service-card transition duration-300 border border-gray-200">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-100 p-3 rounded-full">
+                                <i class="fas fa-server text-purple-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold ml-4">Managed IT Services</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Outsource your IT needs with our comprehensive managed services.</p>
+                        <ul class="text-gray-600 mb-4 space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check text-purple-500 text-xs mr-2"></i> 24/7 monitoring</li>
+                            <li class="flex items-center"><i class="fas fa-check text-purple-500 text-xs mr-2"></i> Help desk support</li>
+                            <li class="flex items-center"><i class="fas fa-check text-purple-500 text-xs mr-2"></i> Proactive maintenance</li>
+                            <li class="flex items-center"><i class="fas fa-check text-purple-500 text-xs mr-2"></i> Vendor management</li>
+                        </ul>
+                        <a href="#contact" class="text-blue-600 font-medium hover:text-blue-800 inline-flex items-center">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+
+                <!-- IT Service 4 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden service-card transition duration-300 border border-gray-200">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-red-100 p-3 rounded-full">
+                                <i class="fas fa-code text-red-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold ml-4">Web Development</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Custom web solutions tailored to your business needs.</p>
+                        <ul class="text-gray-600 mb-4 space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check text-red-500 text-xs mr-2"></i> Website design</li>
+                            <li class="flex items-center"><i class="fas fa-check text-red-500 text-xs mr-2"></i> E-commerce solutions</li>
+                            <li class="flex items-center"><i class="fas fa-check text-red-500 text-xs mr-2"></i> SEO optimization</li>
+                            <li class="flex items-center"><i class="fas fa-check text-red-500 text-xs mr-2"></i> Maintenance plans</li>
+                        </ul>
+                        <a href="#contact" class="text-blue-600 font-medium hover:text-blue-800 inline-flex items-center">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+
+                <!-- IT Service 5 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden service-card transition duration-300 border border-gray-200">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-yellow-100 p-3 rounded-full">
+                                <i class="fas fa-database text-yellow-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold ml-4">Data Backup Solutions</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Protect your critical data with our robust backup solutions.</p>
+                        <ul class="text-gray-600 mb-4 space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check text-yellow-500 text-xs mr-2"></i> Automated backups</li>
+                            <li class="flex items-center"><i class="fas fa-check text-yellow-500 text-xs mr-2"></i> Cloud storage</li>
+                            <li class="flex items-center"><i class="fas fa-check text-yellow-500 text-xs mr-2"></i> Disaster recovery</li>
+                            <li class="flex items-center"><i class="fas fa-check text-yellow-500 text-xs mr-2"></i> Compliance solutions</li>
+                        </ul>
+                        <a href="#contact" class="text-blue-600 font-medium hover:text-blue-800 inline-flex items-center">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+
+                <!-- IT Service 6 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden service-card transition duration-300 border border-gray-200">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-indigo-100 p-3 rounded-full">
+                                <i class="fas fa-wifi text-indigo-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold ml-4">Network Infrastructure</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Design, implement, and optimize your network infrastructure.</p>
+                        <ul class="text-gray-600 mb-4 space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check text-indigo-500 text-xs mr-2"></i> Network design</li>
+                            <li class="flex items-center"><i class="fas fa-check text-indigo-500 text-xs mr-2"></i> Cabling solutions</li>
+                            <li class="flex items-center"><i class="fas fa-check text-indigo-500 text-xs mr-2"></i> Wireless networks</li>
+                            <li class="flex items-center"><i class="fas fa-check text-indigo-500 text-xs mr-2"></i> Security implementation</li>
+                        </ul>
+                        <a href="#contact" class="text-blue-600 font-medium hover:text-blue-800 inline-flex items-center">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:space-x-12">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="About DR TECH" class="rounded-lg shadow-xl w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">About DR TECH</h2>
+                    <p class="text-gray-600 mb-6">Founded in 2010, DR TECH has grown from a small computer repair shop to a leading provider of comprehensive IT solutions. Our mission is to deliver exceptional technical support with honesty, integrity, and a commitment to customer satisfaction.</p>
+                    
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Our Values</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="bg-blue-100 p-1 rounded-full">
+                                        <i class="fas fa-check text-blue-600 text-sm"></i>
+                                    </div>
+                                </div>
+                                <p class="ml-3 text-gray-600"><span class="font-medium">Quality:</span> We use only the highest quality parts and follow industry best practices for all repairs.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="bg-blue-100 p-1 rounded-full">
+                                        <i class="fas fa-check text-blue-600 text-sm"></i>
+                                    </div>
+                                </div>
+                                <p class="ml-3 text-gray-600"><span class="font-medium">Transparency:</span> No hidden fees or surprises - we provide clear pricing before any work begins.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="bg-blue-100 p-1 rounded-full">
+                                        <i class="fas fa-check text-blue-600 text-sm"></i>
+                                    </div>
+                                </div>
+                                <p class="ml-3 text-gray-600"><span class="font-medium">Expertise:</span> Our technicians are certified professionals with years of experience.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="bg-blue-100 p-1 rounded-full">
+                                        <i class="fas fa-check text-blue-600 text-sm"></i>
+                                    </div>
+                                </div>
+                                <p class="ml-3 text-gray-600"><span class="font-medium">Customer Focus:</span> Your satisfaction is our top priority - we stand behind our work with comprehensive warranties.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Our Team</h3>
+                        <p class="text-gray-600 mb-4">DR TECH employs a team of 25 certified technicians with expertise across all major platforms and devices. We invest heavily in continuous training to stay ahead of the latest technological developments.</p>
+                        <a href="#contact" class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800">
+                            Meet Our Team
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Don't just take our word for it - hear from businesses and individuals we've helped</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white rounded-lg shadow-md p-8 testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                            <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah Johnson">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-medium text-gray-900">Sarah Johnson</h4>
+                            <p class="text-gray-600">Small Business Owner</p>
+                        </div>
+                    </div>
+                    <div class="text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4">"DR TECH saved our business when our server crashed. They recovered all our critical data and had us back up and running in less than 24 hours. Their team is professional, knowledgeable, and truly cares about their clients."</p>
+                    <div class="text-sm text-gray-500">Posted 2 weeks ago</div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white rounded-lg shadow-md p-8 testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                            <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-medium text-gray-900">Michael Chen</h4>
+                            <p class="text-gray-600">IT Director, TechCorp</p>
+                        </div>
+                    </div>
+                    <div class="text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4">"We've been using DR TECH for our corporate IT support needs for 3 years now. Their response time is exceptional and their technicians are some of the best in the industry. They've helped us implement security measures that have protected us from multiple cyber threats."</p>
+                    <div class="text-sm text-gray-500">Posted 1 month ago</div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white rounded-lg shadow-md p-8 testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                            <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emily Rodriguez">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-medium text-gray-900">Emily Rodriguez</h4>
+                            <p class="text-gray-600">Graphic Designer</p>
+                        </div>
+                    </div>
+                    <div class="text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4">"I thought I had lost all my design work when my MacBook crashed. DR TECH not only fixed the hardware issue but recovered every single file. Their pricing was fair and they explained everything in terms I could understand. I recommend them to all my creative colleagues."</p>
+                    <div class="text-sm text-gray-500">Posted 3 months ago</div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
+                    Read More Reviews
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-8">
+                <div class="mb-12 lg:mb-0">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Get In Touch</h2>
+                    <p class="text-gray-600 mb-8">Have a question about our services or need immediate technical support? Contact us using the form or information below.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="bg-blue-100 p-3 rounded-full">
+                                    <i class="fas fa-map-marker-alt text-blue-600"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Our Location</h3>
+                                <p class="text-gray-600">121/B Ethul Kotte, <br>Colombo</p>
+                            </div>
+                        </div>
+
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="bg-blue-100 p-3 rounded-full">
+                                    <i class="fas fa-phone-alt text-blue-600"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Phone Support</h3>
+                                <p class="text-gray-600">Main: +94 703377392<br>Emergency: +94703377392</p>
+                                <p class="text-sm text-gray-500 mt-2">24/7 emergency support available</p>
+                            </div>
+                        </div>
+
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="bg-blue-100 p-3 rounded-full">
+                                    <i class="fas fa-envelope text-blue-600"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Email Us</h3>
+                                <p class="text-gray-600">General: info@drtech.com<br>Support: support@drtech.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="bg-blue-100 p-3 rounded-full">
+                                    <i class="fas fa-clock text-blue-600"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Business Hours</h3>
+                                <p class="text-gray-600">Monday - Friday: 8:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 4:00 PM<br>Sunday: Emergency Only</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="bg-white shadow-xl rounded-lg overflow-hidden">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h3>
+                            <!-- Replace your@email.com with your actual email address -->
+                            <form action="https://formsubmit.co/techzdr@gmail.com" method="POST">
+                                <input type="hidden" name="_subject" value="New Message from DR TECH Website!">
+                                <!-- Optional: Add a thank you page URL -->
+                                <input type="hidden" name="_next" value="https://techdrai.com/thanks.html">
+                                <div class="mb-6">
+                                    <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
+                                    <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="John Doe">
+                                </div>
+                                <div class="mb-6">
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                                    <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="john@example.com">
+                                </div>
+                                <div class="mb-6">
+                                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="(123) 456-7890">
+                                </div>
+                                <div class="mb-6">
+                                    <label for="service" class="block text-sm font-medium text-gray-700 mb-2">Service Needed</label>
+                                    <select id="service" name="service" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500">
+                                        <option value="">Select a service</option>
+                                        <option value="computer-repair">Computer Repair</option>
+                                        <option value="phone-repair">Phone/Tablet Repair</option>
+                                        <option value="data-recovery">Data Recovery</option>
+                                        <option value="network-support">Network Support</option>
+                                        <option value="it-consulting">IT Consulting</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="mb-6">
+                                    <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                                    <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Describe your issue or inquiry"></textarea>
+                                </div>
+                                <div class="mb-6">
+                                    <div class="flex items-center">
+                                        <input id="emergency" name="emergency" type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                        <label for="emergency" class="ml-2 block text-sm text-gray-700">This is an emergency (24/7 support)</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button type="submit" class="w-full bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300">
+                                        Send Message
+                                        <i class="fas fa-paper-plane ml-2"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16">
+                <h3 class="text-xl font-bold text-gray-900 mb-6">Our Service Area</h3>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.798654789!2d79.9106!3d6.9271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2593cf65a1e9d%3A0x220b3dfc0c7ece04!2sEthul%20Kotte%2C%20Sri%20Jayawardenepura%20Kotte%2C%20Sri%20Lanka!5e0!3m2!1sen!2s!4v1234567890!5m2!1sen!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-blue-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Get Your Tech Fixed?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Whether it's an emergency repair or you need ongoing IT support, our team is here to help.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#contact" class="bg-white text-blue-600 px-8 py-4 rounded-md font-medium hover:bg-gray-100 transition duration-300 text-lg">
+                    <i class="fas fa-phone-alt mr-2"></i> Call Now
+                </a>
+                <a href="#contact" class="border-2 border-white text-white px-8 py-4 rounded-md font-medium hover:bg-white hover:text-blue-600 transition duration-300 text-lg">
+                    <i class="fas fa-envelope mr-2"></i> Email Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="h-10 w-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-xl">DT</div>
+                        <span class="ml-2 text-xl font-bold">DR TECH</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">Providing expert IT repair and technical support services since 2010. Your trusted partner for all technology solutions.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="#repairs" class="text-gray-400 hover:text-white transition duration-300">Repair Services</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300">IT Services</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition duration-300">Testimonials</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Computer Repair</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Phone Repair</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Data Recovery</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Network Support</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Managed IT</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Cybersecurity</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for tech tips, special offers, and company news.</p>
+                    <form class="mb-4">
+                        <div class="flex">
+                            <input type="email" placeholder="Your email" class="px-4 py-3 w-full rounded-l-lg focus:outline-none text-gray-900">
+                            <button type="submit" class="bg-blue-600 hover:bg-blue-700 px-4 py-3 rounded-r-lg">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                    <p class="text-sm text-gray-500">We respect your privacy. Unsubscribe at any time.</p>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© <span id="currentYear"></span> DR TECH. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button -->
+    <div class="fixed bottom-8 right-8 z-50">
+        <a href="#contact" class="floating-button bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-700 transition duration-300">
+            <i class="fas fa-headset text-2xl"></i>
+        </a>
+    </div>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        });
+        
+        // Dynamic copyright year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
