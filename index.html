@@ -3,10 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DR TECH - Expert IT repair and technical support services in Colombo. Fast computer, laptop, smartphone repairs with 24-hour turnaround guarantee. Professional IT solutions for businesses.">
+    <meta name="keywords" content="IT repair, computer repair, laptop repair, smartphone repair, data recovery, network support, Colombo, Sri Lanka, technical support">
+    <meta property="og:title" content="DR TECH - IT Repair & Technical Support Services">
+    <meta property="og:description" content="Fast, reliable computer and device repairs with a 24-hour turnaround guarantee. Expert IT solutions in Colombo.">
+    <meta property="og:type" content="website">
     <title>DR TECH - IT Repair & Technical Support Services</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
         .hero-gradient {
             background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
         }
@@ -645,7 +653,11 @@
                     <div class="bg-white shadow-xl rounded-lg overflow-hidden">
                         <div class="p-8">
                             <h3 class="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h3>
-                            <form>
+                            <!-- Replace your@email.com with your actual email address -->
+                            <form action="https://formsubmit.co/techzdr@gmail.com" method="POST">
+                                <input type="hidden" name="_subject" value="New Message from DR TECH Website!">
+                                <!-- Optional: Add a thank you page URL -->
+                                <input type="hidden" name="_next" value="https://techdrai.com/thanks.html">
                                 <div class="mb-6">
                                     <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
                                     <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="John Doe">
@@ -695,7 +707,7 @@
             <div class="mt-16">
                 <h3 class="text-xl font-bold text-gray-900 mb-6">Our Service Area</h3>
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.325537432103!2d-122.419415924072!3d37.77492997186068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2s!4v1689876543210!5m2!1sen!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.798654789!2d79.9106!3d6.9271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2593cf65a1e9d%3A0x220b3dfc0c7ece04!2sEthul%20Kotte%2C%20Sri%20Jayawardenepura%20Kotte%2C%20Sri%20Lanka!5e0!3m2!1sen!2s!4v1234567890!5m2!1sen!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
@@ -783,7 +795,7 @@
             </div>
 
             <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 mb-4 md:mb-0">© 2023 DR TECH. All rights reserved.</p>
+                <p class="text-gray-400 mb-4 md:mb-0">© <span id="currentYear"></span> DR TECH. All rights reserved.</p>
                 <div class="flex space-x-6">
                     <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
                     <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
@@ -810,6 +822,9 @@
                 menu.classList.add('hidden');
             }
         });
+        
+        // Dynamic copyright year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
