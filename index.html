@@ -540,7 +540,12 @@
     </footer>
 
     <!-- Floating WhatsApp Button -->
-    <div class="fixed bottom-8 right-8 z-50">
+    <div class="fixed bottom-8 right-8 z-50 flex flex-col gap-3">
+        <!-- Click to Call (Mobile Only) -->
+        <a href="tel:+94760846996" class="md:hidden bg-gradient-to-r from-blue-500 to-cyan-500 text-white w-14 h-14 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg shadow-blue-500/50">
+            <i class="fas fa-phone text-2xl"></i>
+        </a>
+        <!-- WhatsApp -->
         <a href="https://wa.me/94760846996?text=Hi%20DR%20TECH,%20I%20need%20help%20with%20my%20device" target="_blank" class="floating-button bg-gradient-to-r from-green-500 to-emerald-600 text-white w-16 h-16 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg shadow-green-500/50">
             <i class="fab fa-whatsapp text-3xl"></i>
         </a>
@@ -561,9 +566,75 @@
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
         
         // Mobile menu
-        document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
-            alert('Mobile menu - add your mobile menu implementation here');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.createElement('div');
+        mobileMenu.className = 'fixed inset-0 bg-gray-900 bg-opacity-95 z-50 hidden';
+        mobileMenu.innerHTML = `
+            <div class="flex flex-col items-center justify-center h-full space-y-6 p-8">
+                <button id="close-menu" class="absolute top-6 right-6 text-white text-3xl">&times;</button>
+                <a href="#home" class="text-white text-2xl font-semibold hover:text-secondary transition-colors">Home</a>
+                <a href="#repairs" class="text-white text-2xl font-semibold hover:text-secondary transition-colors">Services</a>
+                <a href="#services" class="text-white text-2xl font-semibold hover:text-secondary transition-colors">SME Solutions</a>
+                <a href="#about" class="text-white text-2xl font-semibold hover:text-secondary transition-colors">About</a>
+                <a href="#contact" class="text-white text-2xl font-semibold hover:text-secondary transition-colors">Contact</a>
+                <a href="https://wa.me/94760846996" target="_blank" class="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-full font-bold text-lg"><i class="fab fa-whatsapp mr-2"></i>WhatsApp</a>
+            </div>
+        `;
+        document.body.appendChild(mobileMenu);
+        
+        mobileMenuBtn?.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
         });
+        
+        document.getElementById('close-menu')?.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+        
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+
+    <!-- Schema Markup for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "DR TECH",
+        "description": "Enterprise-grade IT support for Sri Lankan homes and businesses. Founded by Ex-John Keells IT Infrastructure Specialist.",
+        "image": "https://deepalweb.github.io/techsite/logo.png",
+        "priceRange": "LKR 3000-25000",
+        "telephone": "+94760846996",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "121/B Ethul Kotte",
+            "addressLocality": "Colombo",
+            "addressCountry": "LK"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "6.9271",
+            "longitude": "79.9106"
+        },
+        "url": "https://deepalweb.github.io/techsite/",
+        "sameAs": [
+            "https://www.facebook.com/drtechlk",
+            "https://www.linkedin.com/in/deepal-rupasinghe"
+        ],
+        "openingHours": "Mo-Su 00:00-23:59",
+        "areaServed": {
+            "@type": "City",
+            "name": "Colombo"
+        },
+        "founder": {
+            "@type": "Person",
+            "name": "Deepal Rupasinghe",
+            "jobTitle": "IT Infrastructure Specialist",
+            "alumniOf": "John Keells Holdings"
+        }
+    }
     </script>
 </body>
 </html>
