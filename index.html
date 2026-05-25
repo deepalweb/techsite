@@ -3,637 +3,521 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="DR TECH - Enterprise IT support in Colombo, Sri Lanka. Home visits LKR 3,000. Azure Cloud, Managed IT for SMEs. Ex-John Keells specialist. Call +94 760846996">
-    <meta name="keywords" content="computer repair Colombo, laptop repair Sri Lanka, IT support Ethul Kotte, Azure cloud Sri Lanka, managed IT services Colombo, home visit computer repair, John Keells IT">
-    <meta property="og:title" content="DR TECH - Enterprise IT Support Colombo | Home Visits from LKR 3,000">
-    <meta property="og:description" content="Ex-John Keells IT specialist. Home repairs, Azure Cloud, Managed IT for SMEs. WhatsApp +94 760846996">
+    <meta name="description" content="DR TECH provides home visit laptop repair, Windows formatting, SSD upgrades, shop POS troubleshooting, and network support across Colombo and nearby suburbs.">
+    <meta name="keywords" content="laptop repair Colombo, home visit computer repair Sri Lanka, Windows formatting Colombo, SSD upgrade Sri Lanka, POS repair Colombo, Wi-Fi repair Kotte">
+    <meta property="og:title" content="DR TECH | Laptop & PC Repairs at Your Doorstep">
+    <meta property="og:description" content="Laptop dead, PC too slow, shop printer stuck? DR TECH comes to your home or shop and fixes it in front of you.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_LK">
-    <meta name="geo.region" content="LK-11">
-    <meta name="geo.placename" content="Colombo">
-    <meta name="geo.position" content="6.9271;79.9106">
-    <title>DR TECH - Enterprise IT Support Colombo | Home Visits LKR 3,000 | Azure Cloud</title>
+    <meta name="theme-color" content="#050816">
+    <link rel="canonical" href="https://deepalweb.github.io/techsite/">
+    <title>DR TECH | Laptop & PC Repairs at Your Doorstep</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#2563eb',
-                        secondary: '#06b6d4',
-                        accent: '#8b5cf6'
+                        base: "#050816",
+                        panel: "#0d1224",
+                        panelsoft: "#121933",
+                        line: "#24304f",
+                        glow: "#39e7f1",
+                        glowsoft: "#8ffcff",
+                        textsoft: "#9eb1d6",
+                        accent: "#14f1ff",
+                        accent2: "#1f7bff"
                     },
                     fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                        sans: ["Inter", "sans-serif"],
+                        display: ["Space Grotesk", "sans-serif"]
+                    },
+                    boxShadow: {
+                        cyan: "0 0 30px rgba(20, 241, 255, 0.18)",
+                        card: "0 22px 60px rgba(0, 0, 0, 0.38)"
                     }
                 }
             }
-        }
+        };
     </script>
     <style>
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .hero-gradient {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(20, 241, 255, 0.08), transparent 28%),
+                radial-gradient(circle at top right, rgba(31, 123, 255, 0.10), transparent 24%),
+                linear-gradient(180deg, #050816 0%, #0a1022 35%, #0d1429 100%);
+            color: #ffffff;
+        }
+
+        .hero-bg {
             position: relative;
             overflow: hidden;
+            background:
+                linear-gradient(135deg, rgba(5, 8, 22, 0.96), rgba(10, 16, 34, 0.88)),
+                radial-gradient(circle at 18% 22%, rgba(57, 231, 241, 0.14), transparent 26%),
+                radial-gradient(circle at 80% 18%, rgba(31, 123, 255, 0.15), transparent 24%);
         }
-        .blob {
+
+        .hero-bg::before {
+            content: "";
             position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.3;
-            animation: float 20s infinite ease-in-out;
+            inset: 0;
+            background:
+                linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+            background-size: 34px 34px;
+            opacity: 0.45;
+            pointer-events: none;
         }
-        .blob-1 {
-            width: 500px;
-            height: 500px;
-            background: #2563eb;
-            top: -100px;
-            right: -100px;
-        }
-        .blob-2 {
-            width: 400px;
-            height: 400px;
-            background: #06b6d4;
-            bottom: -100px;
-            left: -100px;
-            animation-delay: -10s;
-        }
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(50px, -50px) scale(1.1); }
-            66% { transform: translate(-50px, 50px) scale(0.9); }
-        }
-        .service-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-        }
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.25);
-            border-color: rgba(37, 99, 235, 0.3);
-        }
+
         .glass-nav {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(5, 8, 22, 0.72);
+            backdrop-filter: blur(18px);
+            border: 1px solid rgba(143, 252, 255, 0.10);
         }
-        .floating-button {
-            animation: float-btn 3s ease-in-out infinite;
-            box-shadow: 0 10px 40px rgba(37, 99, 235, 0.4);
+
+        .neon-card {
+            background: linear-gradient(180deg, rgba(13, 18, 36, 0.96), rgba(18, 25, 51, 0.96));
+            border: 1px solid rgba(57, 231, 241, 0.16);
+            box-shadow: 0 22px 60px rgba(0, 0, 0, 0.38);
         }
-        @keyframes float-btn {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
+
+        .service-card,
+        .price-card,
+        .trust-card,
+        .step-card {
+            transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
         }
+
+        .service-card:hover,
+        .price-card:hover,
+        .trust-card:hover,
+        .step-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(20, 241, 255, 0.26);
+            box-shadow: 0 0 34px rgba(20, 241, 255, 0.12);
+        }
+
         .fade-in {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
+            transform: translateY(26px);
+            transition: opacity 0.65s ease, transform 0.65s ease;
         }
+
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
     </style>
 </head>
-<body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-full max-w-5xl px-4">
-        <div class="glass-nav rounded-full shadow-2xl px-6">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <div class="h-10 w-10 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-white font-bold text-xl">DT</div>
-                    <span class="ml-2 text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">DR TECH</span>
+<body>
+    <nav class="fixed left-1/2 top-4 z-50 w-full max-w-6xl -translate-x-1/2 px-4">
+        <div class="glass-nav rounded-full shadow-cyan">
+            <div class="flex h-16 items-center justify-between px-4 md:px-6">
+                <a href="#home" class="flex items-center gap-3" aria-label="DR TECH home">
+                    <img src="logo.png" alt="DR TECH Services logo" class="h-11 w-11 rounded-full object-cover shadow-cyan">
+                    <div>
+                        <div class="font-display text-lg font-bold text-white">DR TECH</div>
+                        <div class="text-[11px] font-semibold uppercase tracking-[0.22em] text-textsoft">Home Visit Repairs</div>
+                    </div>
+                </a>
+                <div class="hidden items-center gap-6 md:flex">
+                    <a href="#services" class="text-sm font-semibold text-textsoft transition hover:text-white">Services</a>
+                    <a href="#pricing" class="text-sm font-semibold text-textsoft transition hover:text-white">Pricing</a>
+                    <a href="#contact" class="text-sm font-semibold text-textsoft transition hover:text-white">Contact Us</a>
+                    <a href="tel:+94760846996" class="rounded-full border border-glow/30 bg-glow/10 px-5 py-2.5 text-sm font-extrabold text-white transition hover:bg-glow hover:text-[#050816]">
+                        <i class="fa-solid fa-phone mr-2"></i>Call Now
+                    </a>
                 </div>
-                <div class="hidden md:flex items-center space-x-6">
-                    <a href="#home" class="text-gray-700 hover:text-primary px-3 py-2 font-medium text-sm transition-colors">Home</a>
-                    <a href="#repairs" class="text-gray-700 hover:text-primary px-3 py-2 font-medium text-sm transition-colors">Repairs</a>
-                    <a href="#services" class="text-gray-700 hover:text-primary px-3 py-2 font-medium text-sm transition-colors">Services</a>
-                    <a href="#about" class="text-gray-700 hover:text-primary px-3 py-2 font-medium text-sm transition-colors">About</a>
-                    <a href="#contact" class="bg-gradient-to-r from-primary to-secondary text-white px-6 py-2.5 rounded-full hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 text-sm font-semibold">Get Support</a>
-                </div>
-                <button id="mobile-menu-btn" class="md:hidden text-gray-700">
-                    <i class="fas fa-bars text-xl"></i>
+                <button id="menu-toggle" type="button" class="rounded-full p-2 text-white md:hidden" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <i class="fa-solid fa-bars text-xl"></i>
                 </button>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-gradient text-white pt-32 pb-20 md:pt-40 md:pb-32 relative">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="md:flex md:items-center md:justify-between">
-                <div class="md:w-1/2 mb-10 md:mb-0 fade-in">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-semibold mb-6">
-                        <span class="relative flex h-2 w-2">
-                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
-                        </span>
-                        Serving Colombo & Suburbs
+    <div id="mobile-menu" class="fixed inset-0 z-[60] hidden bg-base px-6 py-8 text-white" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+        <div class="mb-10 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <img src="logo.png" alt="DR TECH Services logo" class="h-11 w-11 rounded-full object-cover">
+                <div class="font-display text-2xl font-bold">DR TECH</div>
+            </div>
+            <button id="menu-close" type="button" class="rounded-full p-2" aria-label="Close navigation menu">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+        </div>
+        <div class="flex flex-col gap-5 text-2xl font-bold">
+            <a href="#services" class="mobile-link">Services</a>
+            <a href="#pricing" class="mobile-link">Pricing</a>
+            <a href="#contact" class="mobile-link">Contact Us</a>
+            <a href="tel:+94760846996" class="mobile-link">Call Now</a>
+        </div>
+    </div>
+
+    <main>
+        <section id="home" class="hero-bg pt-32">
+            <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-16 pt-6 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
+                <div class="relative z-10 fade-in">
+                    <div class="inline-flex items-center gap-2 rounded-full border border-glow/20 bg-glow/10 px-4 py-2 text-sm font-semibold text-glowsoft">
+                        <span class="h-2.5 w-2.5 rounded-full bg-glow"></span>
+                        Colombo, Ethul Kotte, Nugegoda, Rajagiriya & nearby areas
                     </div>
-                    <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">Enterprise-Grade IT Support<br><span class="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">for Sri Lankan Homes & Businesses</span></h1>
-                    <p class="text-xl mb-4 text-gray-300 leading-relaxed">From home repairs to Azure cloud solutions. Fast diagnosis, honest pricing, and enterprise expertise.</p>
-                    <p class="text-sm text-secondary font-semibold mb-8">Founded by Ex-John Keells IT Infrastructure Specialist</p>
-                    <div class="flex flex-wrap gap-3 mb-8">
-                        <span class="px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm">💻 PC & Mac</span>
-                        <span class="px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm">📱 Mobile Repair</span>
-                        <span class="px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm">💾 Data Recovery</span>
-                    </div>
-                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                        <a href="https://wa.me/94760846996?text=Hi%20DR%20TECH,%20I%20need%20a%20home%20visit" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full font-bold hover:shadow-2xl hover:shadow-primary/50 transition-all duration-300 text-center hover:scale-105">📍 Book Home Visit</a>
-                        <a href="#services" class="bg-white/10 backdrop-blur-sm border-2 border-white/20 text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300 text-center">☁️ SME Cloud Solutions</a>
+                    <h1 class="mt-6 max-w-4xl font-display text-5xl font-bold leading-[0.95] sm:text-6xl lg:text-[4.35rem]">
+                        Laptop Dead?
+                        <span class="block text-glow">PC Too Slow?</span>
+                        <span class="block text-white">We Fix It At Your Doorstep.</span>
+                    </h1>
+                    <p class="mt-6 max-w-2xl text-base leading-8 text-textsoft sm:text-lg">
+                        Don't waste time in traffic. We provide expert hardware repairs, SSD upgrades, and Windows formatting for homes and shops in Colombo right in front of your eyes.
+                    </p>
+                    <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+                        <a href="https://wa.me/94760846996?text=Hi%20DR%20TECH,%20I%20need%20a%20repair%20quote" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 rounded-full bg-glow px-7 py-4 text-base font-extrabold text-[#050816] transition hover:bg-glowsoft">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            WhatsApp for a Quote
+                        </a>
+                        <a href="#pricing" class="inline-flex items-center justify-center gap-3 rounded-full border border-white/16 bg-white/5 px-7 py-4 text-base font-bold text-white transition hover:border-glow/30 hover:bg-glow/10">
+                            <i class="fa-solid fa-clipboard-list"></i>
+                            View Repair Prices
+                        </a>
                     </div>
                 </div>
-                <div class="md:w-1/2 flex justify-center relative fade-in">
-                    <div class="relative w-full max-w-lg">
-                        <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl rotate-6 blur-xl"></div>
-                        <img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?w=800&q=80" alt="Computer Repair" class="rounded-3xl shadow-2xl relative z-10">
-                        <div class="absolute -bottom-6 -left-6 bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl shadow-2xl z-20">
-                            <div class="text-4xl font-bold text-white">24h</div>
-                            <div class="text-gray-300">Repair Guarantee</div>
+
+                <div class="relative z-10 fade-in">
+                    <div class="neon-card rounded-[2rem] p-5">
+                        <div class="flex items-center justify-between gap-4">
+                            <div>
+                                <div class="text-xs font-bold uppercase tracking-[0.22em] text-textsoft">Quick Support</div>
+                                <h2 class="mt-3 font-display text-3xl font-bold text-white">Fast fixes for laptops, shops, and home networks.</h2>
+                            </div>
+                            <img src="logo.png" alt="DR TECH logo" class="hidden h-20 w-20 rounded-full object-cover shadow-cyan sm:block">
+                        </div>
+                        <div class="mt-6 space-y-4">
+                            <div class="rounded-[1.4rem] border border-glow/10 bg-white/5 p-4">
+                                <div class="flex items-start gap-4">
+                                    <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-glow/12 text-glow">
+                                        <i class="fa-solid fa-microchip text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-extrabold text-white">Hardware Repairs & SSD Upgrades</h3>
+                                        <p class="mt-1 text-sm leading-6 text-textsoft">Dead batteries, RAM issues, overheating, slow hard drives, and hardware replacement support.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rounded-[1.4rem] border border-glow/10 bg-white/5 p-4">
+                                <div class="flex items-start gap-4">
+                                    <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-glow/12 text-glow">
+                                        <i class="fa-solid fa-shop text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-extrabold text-white">Shop POS, Printers & Network Fixes</h3>
+                                        <p class="mt-1 text-sm leading-6 text-textsoft">Quick support for stuck billing systems, thermal printers, router drops, and CCTV network issues.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-6 rounded-[1.5rem] border border-glow/12 bg-glow/10 p-5">
+                            <div class="text-sm font-semibold text-textsoft">Call or WhatsApp</div>
+                            <div class="mt-2 font-display text-[2rem] font-bold text-white">+94 76 084 6996</div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Stats Section -->
-    <section class="py-12 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl p-6 text-center hover:scale-105 transition-transform">
-                    <div class="text-4xl font-bold text-primary mb-2">6+ Years</div>
-                    <div class="text-gray-600">Enterprise Experience</div>
-                    <div class="text-xs text-gray-500 mt-1">John Keells Holdings</div>
+        <section class="border-y border-white/8 bg-panel py-4">
+            <div class="mx-auto grid max-w-6xl gap-4 px-4 text-center text-sm font-bold text-glowsoft sm:grid-cols-2 lg:grid-cols-4 sm:px-6 lg:px-8">
+                <div class="fade-in">🛠️ 12+ Years Experience</div>
+                <div class="fade-in">👀 Fixed in Front of You</div>
+                <div class="fade-in">🔒 100% Data Safety</div>
+                <div class="fade-in">🚗 Fast Call-Outs</div>
+            </div>
+        </section>
+
+        <section id="services" class="py-24">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+                <div class="mb-14 max-w-3xl fade-in">
+                    <div class="text-sm font-bold uppercase tracking-[0.24em] text-glow">Services</div>
+                    <h2 class="mt-5 font-display text-4xl font-bold text-white sm:text-5xl">Expert Hardware & Software Repairs</h2>
+                    <p class="mt-4 max-w-2xl text-lg leading-8 text-textsoft">From dead laptops to stuck shop printers, we handle the most common repair issues people need solved quickly at home or on the business floor.</p>
                 </div>
-                <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-3xl p-6 text-center hover:scale-105 transition-transform">
-                    <div class="text-4xl font-bold text-green-600 mb-2">24/7</div>
-                    <div class="text-gray-600">Emergency Support</div>
-                    <div class="text-xs text-gray-500 mt-1">WhatsApp Available</div>
-                </div>
-                <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-3xl p-6 text-center hover:scale-105 transition-transform">
-                    <div class="text-4xl font-bold text-purple-600 mb-2">LKR 3K</div>
-                    <div class="text-gray-600">Starting Price</div>
-                    <div class="text-xs text-gray-500 mt-1">Home Visit Support</div>
-                </div>
-                <div class="bg-gradient-to-br from-red-50 to-red-100 rounded-3xl p-6 text-center hover:scale-105 transition-transform">
-                    <div class="text-4xl font-bold text-red-600 mb-2">Azure</div>
-                    <div class="text-gray-600">Cloud Certified</div>
-                    <div class="text-xs text-gray-500 mt-1">M365 & Security</div>
+                <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+                    <article class="neon-card service-card rounded-[2rem] p-7 fade-in">
+                        <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-glow/12 text-glow">
+                            <i class="fa-solid fa-gauge-high text-2xl"></i>
+                        </div>
+                        <h3 class="mt-6 font-display text-2xl font-bold text-white">SSD & Speed Upgrades</h3>
+                        <p class="mt-3 leading-7 text-textsoft">Make your old, slow laptop 10x faster with a new SSD. Windows boots in 15 seconds.</p>
+                    </article>
+                    <article class="neon-card service-card rounded-[2rem] p-7 fade-in">
+                        <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-glow/12 text-glow">
+                            <i class="fa-solid fa-laptop-medical text-2xl"></i>
+                        </div>
+                        <h3 class="mt-6 font-display text-2xl font-bold text-white">Laptop & PC Repair</h3>
+                        <p class="mt-3 leading-7 text-textsoft">Dead battery? Keyboard not typing? Blue screens? We diagnose and replace hardware safely.</p>
+                    </article>
+                    <article class="neon-card service-card rounded-[2rem] p-7 fade-in">
+                        <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-glow/12 text-glow">
+                            <i class="fa-solid fa-compact-disc text-2xl"></i>
+                        </div>
+                        <h3 class="mt-6 font-display text-2xl font-bold text-white">Windows Formatting</h3>
+                        <p class="mt-3 leading-7 text-textsoft">Fresh Windows 10/11 installations, full driver updates, and secure data recovery.</p>
+                    </article>
+                    <article class="neon-card service-card rounded-[2rem] p-7 fade-in">
+                        <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-glow/12 text-glow">
+                            <i class="fa-solid fa-fan text-2xl"></i>
+                        </div>
+                        <h3 class="mt-6 font-display text-2xl font-bold text-white">Overheating Fixes</h3>
+                        <p class="mt-3 leading-7 text-textsoft">We open your laptop, deep-clean blocked cooling fans, and apply new thermal paste.</p>
+                    </article>
+                    <article class="neon-card service-card rounded-[2rem] p-7 fade-in">
+                        <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-glow/12 text-glow">
+                            <i class="fa-solid fa-cash-register text-2xl"></i>
+                        </div>
+                        <h3 class="mt-6 font-display text-2xl font-bold text-white">Shop POS & Printers</h3>
+                        <p class="mt-3 leading-7 text-textsoft">Emergency fixes for stuck billing machines, thermal printers, and POS systems so you don't lose sales.</p>
+                    </article>
+                    <article class="neon-card service-card rounded-[2rem] p-7 fade-in">
+                        <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-glow/12 text-glow">
+                            <i class="fa-solid fa-wifi text-2xl"></i>
+                        </div>
+                        <h3 class="mt-6 font-display text-2xl font-bold text-white">Wi-Fi & Network Drops</h3>
+                        <p class="mt-3 leading-7 text-textsoft">Fixing router dead zones, CCTV network connections, and offline card machines for small shops.</p>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Repair Services Section -->
-    <section id="repairs" class="py-20 bg-gradient-to-b from-white to-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Home & Small Office Services</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Transparent pricing for home users and small businesses</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="service-card rounded-3xl p-6 group fade-in">
-                    <div class="bg-gradient-to-br from-red-500 to-pink-500 p-3 rounded-2xl w-fit mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-home text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Home Visit IT Support</h3>
-                    <p class="text-3xl font-bold text-primary mb-2">LKR 3,000 - 5,000</p>
-                    <p class="text-gray-600 mb-4">On-site diagnosis and repair at your home</p>
-                    <a href="https://wa.me/94760846996?text=I%20need%20a%20home%20visit" target="_blank" rel="noopener noreferrer" class="text-secondary font-semibold hover:text-primary inline-flex items-center">Book Now <i class="fas fa-arrow-right ml-2"></i></a>
+        <section class="bg-panel py-24">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+                <div class="mb-14 max-w-3xl fade-in">
+                    <div class="text-sm font-bold uppercase tracking-[0.24em] text-glow">How It Works</div>
+                    <h2 class="mt-5 font-display text-4xl font-bold text-white sm:text-5xl">Repairing Made Easy</h2>
                 </div>
-
-                <div class="service-card rounded-3xl p-6 group fade-in">
-                    <div class="bg-gradient-to-br from-blue-500 to-cyan-500 p-3 rounded-2xl w-fit mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-building text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Office Visit (Small Biz)</h3>
-                    <p class="text-3xl font-bold text-primary mb-2">LKR 5,000 - 7,500</p>
-                    <p class="text-gray-600 mb-4">Professional support for small offices</p>
-                    <a href="https://wa.me/94760846996?text=I%20need%20office%20IT%20support" target="_blank" rel="noopener noreferrer" class="text-secondary font-semibold hover:text-primary inline-flex items-center">Book Now <i class="fas fa-arrow-right ml-2"></i></a>
-                </div>
-
-                <div class="service-card rounded-3xl p-6 group fade-in">
-                    <div class="bg-gradient-to-br from-purple-500 to-indigo-500 p-3 rounded-2xl w-fit mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-desktop text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Remote Support</h3>
-                    <p class="text-3xl font-bold text-primary mb-2">LKR 2,000 - 3,000</p>
-                    <p class="text-gray-600 mb-4">1-2 hours remote assistance</p>
-                    <a href="https://wa.me/94760846996?text=I%20need%20remote%20support" target="_blank" rel="noopener noreferrer" class="text-secondary font-semibold hover:text-primary inline-flex items-center">Book Now <i class="fas fa-arrow-right ml-2"></i></a>
-                </div>
-
-                <div class="service-card rounded-3xl p-6 group fade-in">
-                    <div class="bg-gradient-to-br from-green-500 to-emerald-500 p-3 rounded-2xl w-fit mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fab fa-windows text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Windows OS Install</h3>
-                    <p class="text-3xl font-bold text-primary mb-2">LKR 5,000 - 7,000</p>
-                    <p class="text-gray-600 mb-4">Home visit installation (License: Customer responsibility)</p>
-                    <a href="https://wa.me/94760846996?text=I%20need%20Windows%20installation" target="_blank" rel="noopener noreferrer" class="text-secondary font-semibold hover:text-primary inline-flex items-center">Book Now <i class="fas fa-arrow-right ml-2"></i></a>
-                </div>
-
-                <div class="service-card rounded-3xl p-6 group fade-in">
-                    <div class="bg-gradient-to-br from-yellow-500 to-orange-500 p-3 rounded-2xl w-fit mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-broom text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Cleaning Packages</h3>
-                    <p class="text-gray-600 mb-2">Basic: <span class="font-bold text-primary">LKR 3,500</span></p>
-                    <p class="text-gray-600 mb-2">Standard: <span class="font-bold text-primary">LKR 6,500</span></p>
-                    <p class="text-gray-600 mb-4">Advanced: <span class="font-bold text-primary">LKR 10,500</span></p>
-                    <a href="https://wa.me/94760846996?text=I%20need%20device%20cleaning" target="_blank" rel="noopener noreferrer" class="text-secondary font-semibold hover:text-primary inline-flex items-center">Book Now <i class="fas fa-arrow-right ml-2"></i></a>
-                </div>
-
-                <div class="service-card rounded-3xl p-6 group fade-in">
-                    <div class="bg-gradient-to-br from-pink-500 to-rose-500 p-3 rounded-2xl w-fit mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-calendar-check text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Monthly IT AMC</h3>
-                    <p class="text-3xl font-bold text-primary mb-2">LKR 10,000 - 15,000</p>
-                    <p class="text-gray-600 mb-4">Annual Maintenance Contract for small businesses</p>
-                    <a href="https://wa.me/94760846996?text=I%20want%20monthly%20AMC" target="_blank" rel="noopener noreferrer" class="text-secondary font-semibold hover:text-primary inline-flex items-center">Get Quote <i class="fas fa-arrow-right ml-2"></i></a>
+                <div class="grid gap-6 lg:grid-cols-3">
+                    <article class="neon-card step-card rounded-[2rem] p-8 fade-in">
+                        <div class="flex h-16 w-16 items-center justify-center rounded-full border border-glow/30 bg-glow/10 font-display text-2xl font-bold text-glow">1</div>
+                        <h3 class="mt-6 font-display text-2xl font-bold text-white">WhatsApp Us</h3>
+                        <p class="mt-3 leading-7 text-textsoft">Send us a photo of your laptop model or the error screen, plus your location.</p>
+                    </article>
+                    <article class="neon-card step-card rounded-[2rem] p-8 fade-in">
+                        <div class="flex h-16 w-16 items-center justify-center rounded-full border border-glow/30 bg-glow/10 font-display text-2xl font-bold text-glow">2</div>
+                        <h3 class="mt-6 font-display text-2xl font-bold text-white">Get an Instant Quote</h3>
+                        <p class="mt-3 leading-7 text-textsoft">We'll tell you exactly what needs to be done and the estimated cost for parts like SSDs upfront.</p>
+                    </article>
+                    <article class="neon-card step-card rounded-[2rem] p-8 fade-in">
+                        <div class="flex h-16 w-16 items-center justify-center rounded-full border border-glow/30 bg-glow/10 font-display text-2xl font-bold text-glow">3</div>
+                        <h3 class="mt-6 font-display text-2xl font-bold text-white">We Arrive & Repair</h3>
+                        <p class="mt-3 leading-7 text-textsoft">We come to your home or shop, fix the issue in front of you, and ensure everything is perfect.</p>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- IT Services Section -->
-    <section id="services" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">SME Managed Services</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Enterprise-grade IT solutions for growing businesses</p>
+        <section id="pricing" class="py-24">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+                <div class="mb-14 max-w-3xl fade-in">
+                    <div class="text-sm font-bold uppercase tracking-[0.24em] text-glow">Pricing</div>
+                    <h2 class="mt-5 font-display text-4xl font-bold text-white sm:text-5xl">Honest Pricing. No Hidden Fees.</h2>
+                </div>
+                <div class="grid gap-6 lg:grid-cols-3">
+                    <article class="neon-card price-card rounded-[2rem] p-8 fade-in">
+                        <div class="text-xs font-bold uppercase tracking-[0.2em] text-glowsoft">PC Health Checkup</div>
+                        <h3 class="mt-5 font-display text-4xl font-bold text-white">LKR 3,500 - 5,000</h3>
+                        <p class="mt-4 leading-7 text-textsoft">Home visit, virus removal, junk file cleanup, and basic Wi-Fi fixes.</p>
+                    </article>
+                    <article class="neon-card price-card rounded-[2rem] p-8 fade-in">
+                        <div class="text-xs font-bold uppercase tracking-[0.2em] text-glowsoft">Windows Formatting</div>
+                        <h3 class="mt-5 font-display text-4xl font-bold text-white">LKR 2,500 + Visit Fee</h3>
+                        <p class="mt-4 leading-7 text-textsoft">Fresh OS, data backup, MS Office, and essential software installation.</p>
+                    </article>
+                    <article class="neon-card price-card rounded-[2rem] p-8 fade-in">
+                        <div class="text-xs font-bold uppercase tracking-[0.2em] text-glowsoft">Shop/Office Emergency</div>
+                        <h3 class="mt-5 font-display text-4xl font-bold text-white">LKR 5,000 - 7,500</h3>
+                        <p class="mt-4 leading-7 text-textsoft">Fast call-out for POS fixes, network drops, and shared printers.</p>
+                    </article>
+                </div>
+                <p class="mt-6 text-sm font-semibold text-textsoft fade-in">Hardware parts like SSDs, RAM, and batteries are quoted separately.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="service-card rounded-3xl p-6 group fade-in">
-                    <div class="bg-gradient-to-br from-blue-500 to-cyan-500 p-3 rounded-2xl w-fit mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-shield-alt text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Managed IT Plan</h3>
-                    <p class="text-3xl font-bold text-primary mb-2">From LKR 25,000/mo</p>
-                    <p class="text-gray-600 mb-4">24/7 monitoring, help desk, proactive maintenance</p>
-                    <a href="https://wa.me/94760846996?text=I%20want%20Managed%20IT%20services" target="_blank" rel="noopener noreferrer" class="text-secondary font-semibold hover:text-primary inline-flex items-center">Get Quote <i class="fas fa-arrow-right ml-2"></i></a>
-                </div>
-                <div class="service-card rounded-3xl p-6 group fade-in">
-                    <div class="bg-gradient-to-br from-green-500 to-emerald-500 p-3 rounded-2xl w-fit mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-cloud text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Azure Cloud Solutions</h3>
-                    <p class="text-3xl font-bold text-primary mb-2">Custom Pricing</p>
-                    <p class="text-gray-600 mb-4">Cloud workspace, backup, disaster recovery</p>
-                    <a href="https://wa.me/94760846996?text=I%20want%20Azure%20Cloud%20solutions" target="_blank" rel="noopener noreferrer" class="text-secondary font-semibold hover:text-primary inline-flex items-center">Contact Us <i class="fas fa-arrow-right ml-2"></i></a>
-                </div>
-                <div class="service-card rounded-3xl p-6 group fade-in">
-                    <div class="bg-gradient-to-br from-purple-500 to-pink-500 p-3 rounded-2xl w-fit mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-server text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Cybersecurity</h3>
-                    <p class="text-gray-600 mb-4">Network security audits, firewall configuration, malware protection</p>
-                    <a href="https://wa.me/94760846996?text=I%20need%20cybersecurity%20services" target="_blank" rel="noopener noreferrer" class="text-secondary font-semibold hover:text-primary inline-flex items-center">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Cost of Doing Nothing Section -->
-    <section class="py-20 bg-gradient-to-br from-red-50 to-orange-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 fade-in">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">The Cost of Doing Nothing</h2>
-                <p class="text-xl text-gray-600">Why reactive IT support is costing your business</p>
+        <section class="bg-panel py-24">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+                <div class="mb-14 max-w-3xl fade-in">
+                    <div class="text-sm font-bold uppercase tracking-[0.24em] text-glow">Why Choose Us</div>
+                    <h2 class="mt-5 font-display text-4xl font-bold text-white sm:text-5xl">Why Colombo Trusts DR TECH</h2>
+                </div>
+                <div class="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+                    <div class="space-y-6">
+                        <article class="neon-card trust-card rounded-[2rem] p-8 fade-in">
+                            <h3 class="font-display text-2xl font-bold text-white">100% Data Privacy</h3>
+                            <p class="mt-3 leading-7 text-textsoft">Never leave your private photos or business data at a random repair shop again. We fix it at your desk.</p>
+                        </article>
+                        <article class="neon-card trust-card rounded-[2rem] p-8 fade-in">
+                            <h3 class="font-display text-2xl font-bold text-white">Microsoft Certified</h3>
+                            <p class="mt-3 leading-7 text-textsoft">12+ years of enterprise IT experience handling devices, systems, and business-critical support issues.</p>
+                        </article>
+                    </div>
+                    <div class="grid gap-6">
+                        <article class="neon-card trust-card rounded-[2rem] p-8 fade-in">
+                            <div class="text-lg text-glow">★★★★★</div>
+                            <p class="mt-4 text-lg leading-8 text-white">"My laptop was so slow I couldn't work. DR TECH came to my house, put in an SSD, and now it's super fast! Highly recommended."</p>
+                            <div class="mt-4 text-sm font-bold uppercase tracking-[0.18em] text-textsoft">Kasun from Nugegoda</div>
+                        </article>
+                        <article class="neon-card trust-card rounded-[2rem] p-8 fade-in">
+                            <div class="text-lg text-glow">★★★★★</div>
+                            <p class="mt-4 text-lg leading-8 text-white">"Our restaurant billing machine got stuck on a Friday night. They came and fixed the network in 30 minutes. Lifesavers!"</p>
+                            <div class="mt-4 text-sm font-bold uppercase tracking-[0.18em] text-textsoft">Shop Owner, Kotte</div>
+                        </article>
+                    </div>
+                </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-white rounded-3xl p-6 text-center shadow-lg fade-in">
-                    <div class="text-5xl font-bold text-red-600 mb-2">$5,600</div>
-                    <p class="text-gray-600">Cost per minute of downtime</p>
-                </div>
-                <div class="bg-white rounded-3xl p-6 text-center shadow-lg fade-in">
-                    <div class="text-5xl font-bold text-orange-600 mb-2">43%</div>
-                    <p class="text-gray-600">Cyberattacks target small businesses</p>
-                </div>
-                <div class="bg-white rounded-3xl p-6 text-center shadow-lg fade-in">
-                    <div class="text-5xl font-bold text-yellow-600 mb-2">2.5hrs</div>
-                    <p class="text-gray-600">Lost per employee per week</p>
-                </div>
-                <div class="bg-white rounded-3xl p-6 text-center shadow-lg fade-in">
-                    <div class="text-5xl font-bold text-green-600 mb-2">99.9%</div>
-                    <p class="text-gray-600">Uptime with preventive maintenance</p>
-                </div>
-            </div>
-            <div class="text-center mt-12">
-                <a href="https://wa.me/94760846996?text=I%20want%20to%20prevent%20downtime" target="_blank" rel="noopener noreferrer" class="inline-block bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full font-bold hover:shadow-2xl hover:shadow-primary/50 transition-all duration-300 hover:scale-105">Protect Your Business Now</a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-gradient-to-b from-gray-50 to-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="md:flex md:items-center md:gap-12">
-                <div class="md:w-1/2 mb-10 md:mb-0 fade-in">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80" alt="About DR TECH" class="rounded-3xl shadow-2xl">
+        <section id="contact" class="py-24">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+                <div class="mb-14 max-w-3xl fade-in">
+                    <div class="text-sm font-bold uppercase tracking-[0.24em] text-glow">Contact</div>
+                    <h2 class="mt-5 font-display text-4xl font-bold text-white sm:text-5xl">Need a Repair Fast? Let's Talk.</h2>
                 </div>
-                <div class="md:w-1/2 fade-in">
-                    <h2 class="text-4xl font-bold text-gray-900 mb-6">Not Just a Repair Shop – Enterprise Expertise</h2>
-                    <p class="text-gray-600 mb-4 leading-relaxed">Founded by <span class="font-bold text-primary">Deepal Rupasinghe</span>, former IT Infrastructure Lead at <span class="font-bold">Ceylon Cold Stores PLC (John Keells Holdings)</span>.</p>
-                    <p class="text-gray-600 mb-6 leading-relaxed">With 6+ years managing enterprise LAN/WLAN, Servers, Virtualization, and Security, DR TECH brings corporate-level expertise to homes and SMEs across Sri Lanka.</p>
-                    <div class="space-y-4">
-                        <div class="flex items-start gap-3">
-                            <div class="bg-gradient-to-br from-primary to-secondary p-2 rounded-xl">
-                                <i class="fas fa-check text-white"></i>
+                <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+                    <div class="neon-card rounded-[2rem] p-8 fade-in">
+                        <div class="space-y-4 text-base font-semibold text-textsoft">
+                            <div><span class="text-white">Hotline:</span> +94 76 084 6996</div>
+                            <div><span class="text-white">WhatsApp:</span> +94 76 084 6996</div>
+                            <div><span class="text-white">Coverage Areas:</span> Colombo, Ethul Kotte, Nugegoda, Rajagiriya, Maharagama, Battaramulla.</div>
+                        </div>
+                        <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+                            <a href="https://wa.me/94760846996?text=Hi%20DR%20TECH,%20I%20need%20a%20repair" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 rounded-full bg-glow px-6 py-4 text-sm font-extrabold text-[#050816] transition hover:bg-glowsoft">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                                WhatsApp Us
+                            </a>
+                            <a href="tel:+94760846996" class="inline-flex items-center justify-center gap-3 rounded-full border border-glow/30 bg-glow/10 px-6 py-4 text-sm font-extrabold text-white transition hover:bg-glow hover:text-[#050816]">
+                                <i class="fa-solid fa-phone text-xl"></i>
+                                Call Now
+                            </a>
+                        </div>
+                    </div>
+                    <div class="neon-card rounded-[2rem] p-8 fade-in">
+                        <h3 class="font-display text-3xl font-bold text-white">Quick Contact Form</h3>
+                        <form action="https://formsubmit.co/drtechservicelk@gmail.com" method="POST" class="mt-6 space-y-4">
+                            <input type="hidden" name="_subject" value="New DR TECH website enquiry">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_template" value="table">
+                            <div>
+                                <label class="mb-2 block text-sm font-bold text-white" for="name">Name</label>
+                                <input id="name" name="name" type="text" required class="w-full rounded-2xl border border-line bg-panelsoft px-4 py-3 text-white outline-none transition focus:border-glow focus:ring-2 focus:ring-cyan-300/20" placeholder="Your name">
                             </div>
                             <div>
-                                <h4 class="font-semibold text-gray-900">Enterprise Experience</h4>
-                                <p class="text-gray-600 text-sm">6+ years at John Keells Holdings managing critical infrastructure</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="bg-gradient-to-br from-primary to-secondary p-2 rounded-xl">
-                                <i class="fas fa-check text-white"></i>
+                                <label class="mb-2 block text-sm font-bold text-white" for="phone">Phone</label>
+                                <input id="phone" name="phone" type="tel" required class="w-full rounded-2xl border border-line bg-panelsoft px-4 py-3 text-white outline-none transition focus:border-glow focus:ring-2 focus:ring-cyan-300/20" placeholder="07X XXX XXXX">
                             </div>
                             <div>
-                                <h4 class="font-semibold text-gray-900">Certified Expertise</h4>
-                                <p class="text-gray-600 text-sm">M365, Azure, Odoo ERP, Firewall Management, Data Security</p>
+                                <label class="mb-2 block text-sm font-bold text-white" for="issue">Laptop Issue</label>
+                                <textarea id="issue" name="message" rows="4" required class="w-full rounded-2xl border border-line bg-panelsoft px-4 py-3 text-white outline-none transition focus:border-glow focus:ring-2 focus:ring-cyan-300/20" placeholder="Describe the problem"></textarea>
                             </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="bg-gradient-to-br from-primary to-secondary p-2 rounded-xl">
-                                <i class="fas fa-check text-white"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900">Local Pricing, Enterprise Quality</h4>
-                                <p class="text-gray-600 text-sm">John Keells-level expertise at Sri Lankan SME prices</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-8 p-6 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl border border-blue-100">
-                        <p class="text-gray-700 italic">"You're getting John Keells-level expertise at a local SME price. That's the DR TECH difference."</p>
-                        <p class="text-sm text-gray-600 mt-2">- Deepal Rupasinghe, Founder</p>
+                            <button type="submit" class="w-full rounded-full bg-glow px-6 py-4 text-sm font-extrabold text-[#050816] transition hover:bg-glowsoft">Send Request</button>
+                        </form>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
-                <p class="text-xl text-gray-600">Hear from businesses and individuals we've helped</p>
+    <footer class="border-t border-white/8 bg-base py-8">
+        <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 text-sm text-textsoft sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+            <div>© <span id="year"></span> DR TECH. Home visit repair services for Colombo and nearby suburbs.</div>
+            <div class="flex gap-4">
+                <a href="#services" class="transition hover:text-white">Services</a>
+                <a href="#pricing" class="transition hover:text-white">Pricing</a>
+                <a href="#contact" class="transition hover:text-white">Contact</a>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-shadow fade-in">
-                    <div class="flex items-center gap-4 mb-4">
-                        <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah" class="w-12 h-12 rounded-full">
-                        <div>
-                            <h4 class="font-semibold text-gray-900">Sarah Johnson</h4>
-                            <p class="text-sm text-gray-600">Business Owner</p>
-                        </div>
-                    </div>
-                    <div class="text-yellow-400 mb-4">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-600">"DR TECH saved our business when our server crashed. They recovered all our data in less than 24 hours!"</p>
-                </div>
-                <div class="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-shadow fade-in">
-                    <div class="flex items-center gap-4 mb-4">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael" class="w-12 h-12 rounded-full">
-                        <div>
-                            <h4 class="font-semibold text-gray-900">Michael Chen</h4>
-                            <p class="text-sm text-gray-600">IT Director</p>
-                        </div>
-                    </div>
-                    <div class="text-yellow-400 mb-4">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-600">"Exceptional response time and the best technicians in the industry. They've protected us from multiple cyber threats."</p>
-                </div>
-                <div class="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-shadow fade-in">
-                    <div class="flex items-center gap-4 mb-4">
-                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emily" class="w-12 h-12 rounded-full">
-                        <div>
-                            <h4 class="font-semibold text-gray-900">Emily Rodriguez</h4>
-                            <p class="text-sm text-gray-600">Designer</p>
-                        </div>
-                    </div>
-                    <div class="text-yellow-400 mb-4">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-600">"Recovered every single file from my crashed MacBook. Fair pricing and excellent communication!"</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white dark:bg-gray-900" style="background-color: var(--bg-primary);">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold mb-4" style="color: var(--text-primary);">Get In Touch</h2>
-                <p class="text-xl" style="color: var(--text-secondary);">Need immediate technical support? Message us on WhatsApp.</p>
-            </div>
-            <div class="max-w-2xl mx-auto">
-                <!-- WhatsApp Primary Contact -->
-                <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl shadow-2xl p-8 border border-green-100 mb-8">
-                    <div class="text-center mb-6">
-                        <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full mb-4">
-                            <i class="fab fa-whatsapp text-white text-4xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Chat with us on WhatsApp</h3>
-                        <p class="text-gray-600">Get instant support and quick responses</p>
-                    </div>
-                    <a href="https://wa.me/94760846996?text=Hi%20DR%20TECH,%20I%20need%20help%20with%20my%20device" target="_blank" class="block w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-5 rounded-full font-bold text-lg hover:shadow-2xl hover:shadow-green-500/50 transition-all duration-300 hover:scale-105 text-center">
-                        <i class="fab fa-whatsapp mr-2 text-2xl"></i> Start WhatsApp Chat
-                    </a>
-                    <p class="text-center text-gray-600 text-sm mt-4">Available 24/7 for emergency support</p>
-                </div>
-
-                <!-- Alternative Email Form -->
-                <div class="bg-gradient-to-br from-gray-50 to-white rounded-3xl shadow-xl p-8 border border-gray-100">
-                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Or send us an email</h3>
-                    <form action="https://formsubmit.co/drtechservicelk@gmail.com" method="POST">
-                        <input type="hidden" name="_subject" value="New Message from DR TECH Website!">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_template" value="table">
-                        <div class="mb-4">
-                            <input type="text" name="name" class="w-full px-6 py-3 rounded-2xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Your Name" required>
-                        </div>
-                        <div class="mb-4">
-                            <input type="email" name="email" class="w-full px-6 py-3 rounded-2xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Email Address" required>
-                        </div>
-                        <div class="mb-4">
-                            <textarea name="message" rows="3" class="w-full px-6 py-3 rounded-2xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Your message" required></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 rounded-full font-bold hover:shadow-xl hover:shadow-primary/50 transition-all duration-300 hover:scale-105">
-                            Send Email <i class="fas fa-paper-plane ml-2"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 fade-in">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-                <p class="text-xl text-gray-600">Quick answers about our services</p>
-            </div>
-            <div class="space-y-4">
-                <details class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow">
-                    <summary class="font-semibold text-gray-900 cursor-pointer">How much does a home visit cost in Colombo?</summary>
-                    <p class="text-gray-600 mt-3">Home visit IT support starts at LKR 3,000-5,000 depending on the issue. We provide transparent pricing before starting any work.</p>
-                </details>
-                <details class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow">
-                    <summary class="font-semibold text-gray-900 cursor-pointer">Do you provide Azure cloud services in Sri Lanka?</summary>
-                    <p class="text-gray-600 mt-3">Yes! We offer Azure cloud workspace solutions, backup, disaster recovery, and remote work environments with custom pricing based on your needs.</p>
-                </details>
-                <details class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow">
-                    <summary class="font-semibold text-gray-900 cursor-pointer">What areas do you cover?</summary>
-                    <p class="text-gray-600 mt-3">We primarily serve Colombo and suburbs including Ethul Kotte, Nugegoda, Maharagama, and surrounding areas. Contact us for other locations.</p>
-                </details>
-                <details class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow">
-                    <summary class="font-semibold text-gray-900 cursor-pointer">What makes DR TECH different from other repair shops?</summary>
-                    <p class="text-gray-600 mt-3">Founded by an ex-John Keells IT Infrastructure specialist with 6+ years enterprise experience. You get corporate-level expertise at local prices.</p>
-                </details>
-                <details class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow">
-                    <summary class="font-semibold text-gray-900 cursor-pointer">Do you offer monthly IT support contracts?</summary>
-                    <p class="text-gray-600 mt-3">Yes! Monthly IT AMC starts at LKR 10,000-15,000 for small businesses, and Managed IT plans from LKR 25,000/month for SMEs.</p>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="mb-6">
-                <div class="inline-flex items-center gap-2">
-                    <div class="h-10 w-10 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-white font-bold text-xl">DT</div>
-                    <span class="text-2xl font-bold">DR TECH</span>
-                </div>
-            </div>
-            <p class="text-gray-400 mb-6">Enterprise-grade IT support for Sri Lankan homes and businesses. Founded by Ex-John Keells IT Infrastructure Specialist.</p>
-            <div class="flex justify-center space-x-6 mb-6">
-                <a href="https://web.facebook.com/drtechai" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook-f text-xl"></i></a>
-                <a href="https://www.linkedin.com/in/deepal-rupasinghe/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin-in text-xl"></i></a>
-                <a href="https://www.youtube.com/@drtechlk" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-youtube text-xl"></i></a>
-            </div>
-            <p class="text-gray-500 text-sm">© <span id="currentYear"></span> DR TECH. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
-    <div class="fixed bottom-8 right-8 z-50 flex flex-col gap-3">
-        <!-- Click to Call (Mobile Only) -->
-        <a href="tel:+94760846996" class="md:hidden bg-gradient-to-r from-blue-500 to-cyan-500 text-white w-14 h-14 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg shadow-blue-500/50">
-            <i class="fas fa-phone text-2xl"></i>
-        </a>
-        <!-- WhatsApp -->
-        <a href="https://wa.me/94760846996?text=Hi%20DR%20TECH,%20I%20need%20help%20with%20my%20device" target="_blank" class="floating-button bg-gradient-to-r from-green-500 to-emerald-600 text-white w-16 h-16 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg shadow-green-500/50">
-            <i class="fab fa-whatsapp text-3xl"></i>
-        </a>
+    <div class="fixed bottom-0 left-0 right-0 z-50 border-t border-glow/10 bg-base/95 p-3 backdrop-blur md:hidden">
+        <div class="mx-auto grid max-w-md grid-cols-2 gap-3">
+            <a href="https://wa.me/94760846996?text=Hi%20DR%20TECH,%20I%20need%20a%20repair" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-full bg-green-500 px-4 py-3 text-sm font-extrabold text-white">
+                <i class="fa-brands fa-whatsapp"></i>
+                WhatsApp Us
+            </a>
+            <a href="tel:+94760846996" class="inline-flex items-center justify-center gap-2 rounded-full bg-glow px-4 py-3 text-sm font-extrabold text-[#050816]">
+                <i class="fa-solid fa-phone"></i>
+                Call Now
+            </a>
+        </div>
     </div>
 
     <script>
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-        
-        // Fade-in animation on scroll
+        document.getElementById("year").textContent = new Date().getFullYear();
+
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
+            entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+                    entry.target.classList.add("visible");
                 }
             });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-        
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-        
-        // Mobile menu
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.createElement('div');
-        mobileMenu.className = 'fixed inset-0 bg-gray-900 bg-opacity-95 z-50 hidden';
-        mobileMenu.innerHTML = `
-            <div class="flex flex-col items-center justify-center h-full space-y-6 p-8">
-                <button id="close-menu" class="absolute top-6 right-6 text-white text-3xl">&times;</button>
-                <a href="#home" class="text-white text-2xl font-semibold hover:text-secondary transition-colors">Home</a>
-                <a href="#repairs" class="text-white text-2xl font-semibold hover:text-secondary transition-colors">Services</a>
-                <a href="#services" class="text-white text-2xl font-semibold hover:text-secondary transition-colors">SME Solutions</a>
-                <a href="#about" class="text-white text-2xl font-semibold hover:text-secondary transition-colors">About</a>
-                <a href="#contact" class="text-white text-2xl font-semibold hover:text-secondary transition-colors">Contact</a>
-                <a href="https://wa.me/94760846996" target="_blank" class="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-full font-bold text-lg"><i class="fab fa-whatsapp mr-2"></i>WhatsApp</a>
-            </div>
-        `;
-        document.body.appendChild(mobileMenu);
-        
-        mobileMenuBtn?.addEventListener('click', () => {
-            mobileMenu.classList.remove('hidden');
+        }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+
+        document.querySelectorAll(".fade-in").forEach((element) => observer.observe(element));
+
+        const menuToggle = document.getElementById("menu-toggle");
+        const menuClose = document.getElementById("menu-close");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const mobileLinks = document.querySelectorAll(".mobile-link");
+
+        function openMenu() {
+            mobileMenu.classList.remove("hidden");
+            menuToggle.setAttribute("aria-expanded", "true");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeMenu() {
+            mobileMenu.classList.add("hidden");
+            menuToggle.setAttribute("aria-expanded", "false");
+            document.body.style.overflow = "";
+        }
+
+        menuToggle.addEventListener("click", openMenu);
+        menuClose.addEventListener("click", closeMenu);
+        mobileLinks.forEach((link) => link.addEventListener("click", closeMenu));
+        mobileMenu.addEventListener("click", (event) => {
+            if (event.target === mobileMenu) {
+                closeMenu();
+            }
         });
-        
-        document.getElementById('close-menu')?.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-        });
-        
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape" && !mobileMenu.classList.contains("hidden")) {
+                closeMenu();
+            }
         });
     </script>
 
-    <!-- Schema Markup for SEO -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "DR TECH",
-        "description": "Enterprise-grade IT support for Sri Lankan homes and businesses. Founded by Ex-John Keells IT Infrastructure Specialist.",
-        "image": "https://deepalweb.github.io/techsite/logo.png",
-        "priceRange": "LKR 3000-25000",
-        "telephone": "+94760846996",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "121/B Ethul Kotte",
-            "addressLocality": "Colombo",
-            "addressCountry": "LK"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "6.9271",
-            "longitude": "79.9106"
-        },
+        "description": "Home visit laptop and PC repair, Windows formatting, SSD upgrades, POS troubleshooting, and network support in Colombo and nearby suburbs.",
         "url": "https://deepalweb.github.io/techsite/",
-        "sameAs": [
-            "https://web.facebook.com/drtechai",
-            "https://www.linkedin.com/in/deepal-rupasinghe/",
-            "https://www.youtube.com/@drtechlk"
+        "telephone": "+94760846996",
+        "areaServed": [
+            "Colombo",
+            "Ethul Kotte",
+            "Nugegoda",
+            "Rajagiriya",
+            "Maharagama",
+            "Battaramulla"
         ],
-        "openingHours": "Mo-Su 00:00-23:59",
-        "areaServed": {
-            "@type": "City",
-            "name": "Colombo"
-        },
-        "founder": {
-            "@type": "Person",
-            "name": "Deepal Rupasinghe",
-            "jobTitle": "IT Infrastructure Specialist",
-            "alumniOf": "John Keells Holdings"
-        }
+        "priceRange": "LKR 2500+"
     }
     </script>
 </body>
