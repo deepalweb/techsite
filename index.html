@@ -96,6 +96,35 @@
 
         .nav-link:hover::after { transform: scaleX(1); }
 
+        .language-switcher {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            padding: 3px;
+            border: 1px solid rgba(148, 163, 184, .35);
+            border-radius: 999px;
+            background: rgba(248, 250, 252, .9);
+        }
+
+        .language-button {
+            min-width: 34px;
+            min-height: 32px;
+            padding: 0 8px;
+            border-radius: 999px;
+            color: #475569;
+            font-size: 14px;
+            font-weight: 800;
+            transition: color .2s ease, background .2s ease, box-shadow .2s ease;
+        }
+
+        .language-button:hover { color: var(--ink); }
+
+        .language-button.active {
+            color: white;
+            background: var(--ink);
+            box-shadow: 0 8px 20px rgba(15, 23, 42, .2);
+        }
+
         .hero {
             position: relative;
             min-height: 100vh;
@@ -260,6 +289,8 @@
             align-items: center;
             justify-content: center;
             gap: .65rem;
+            text-align: center;
+            white-space: normal;
             min-height: 52px;
             border-radius: 999px;
             padding: .85rem 1.35rem;
@@ -337,6 +368,42 @@
             .hero { min-height: auto; }
             .scan-line { display: none; }
             .marquee { animation-duration: 32s; }
+
+            html[lang="si"] .hero-title,
+            html[lang="ta"] .hero-title {
+                font-size: clamp(2rem, 8.5vw, 2.8rem);
+                line-height: 1.15;
+                overflow-wrap: anywhere;
+                word-break: break-all;
+            }
+
+            html[lang="si"] .eyebrow,
+            html[lang="ta"] .eyebrow {
+                width: 100%;
+                max-width: 100%;
+                line-height: 1.5;
+                overflow-wrap: anywhere;
+                word-break: break-all;
+            }
+
+            html[lang="si"] .hero-copy,
+            html[lang="ta"] .hero-copy,
+            html[lang="si"] .button-primary,
+            html[lang="si"] .button-secondary,
+            html[lang="ta"] .button-primary,
+            html[lang="ta"] .button-secondary {
+                overflow-wrap: anywhere;
+                word-break: break-all;
+            }
+
+            html[lang="si"] .hero-actions > .button-primary,
+            html[lang="si"] .hero-actions > .button-secondary,
+            html[lang="ta"] .hero-actions > .button-primary,
+            html[lang="ta"] .hero-actions > .button-secondary {
+                width: 100%;
+                min-width: 0;
+                max-width: 100%;
+            }
         }
     </style>
 </head>
@@ -350,7 +417,7 @@
                     <img src="logo.png" alt="DR TECH SERVICES" width="960" height="960" class="h-14 w-14 object-contain drop-shadow-md">
                     <span class="hidden text-lg font-extrabold tracking-normal text-ink sm:inline">DR TECH SERVICES</span>
                 </a>
-                <div class="hidden items-center gap-1 md:flex">
+                <div class="hidden items-center gap-1 lg:flex">
                     <a class="nav-link rounded-full px-3 py-2 text-sm font-bold text-slate-700" href="#repairs">Who We Help</a>
                     <a class="nav-link rounded-full px-3 py-2 text-sm font-bold text-slate-700" href="#packages">Packages</a>
                     <a class="nav-link rounded-full px-3 py-2 text-sm font-bold text-slate-700" href="#services">Business Care</a>
@@ -359,11 +426,16 @@
                     <a class="nav-link rounded-full px-3 py-2 text-sm font-bold text-slate-700" href="#faq">FAQ</a>
                     <a class="ml-2 rounded-full bg-ink px-5 py-3 text-sm font-extrabold text-white transition hover:bg-slate-700" href="#contact">Get Support</a>
                 </div>
-                <button id="menuButton" class="grid h-11 w-11 place-items-center rounded-full border border-slate-200 text-ink md:hidden" aria-label="Open menu" aria-expanded="false">
+                <div class="language-switcher ml-auto mr-2 lg:ml-2 lg:mr-0" role="group" aria-label="Choose language">
+                    <button type="button" class="language-button active" data-language="en" aria-pressed="true">EN</button>
+                    <button type="button" class="language-button" data-language="si" aria-pressed="false">සි</button>
+                    <button type="button" class="language-button" data-language="ta" aria-pressed="false">த</button>
+                </div>
+                <button id="menuButton" class="grid h-11 w-11 place-items-center rounded-full border border-slate-200 text-ink lg:hidden" aria-label="Open menu" aria-expanded="false">
                     <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
-            <div id="mobileMenu" class="mobile-panel absolute left-4 right-4 top-20 rounded-2xl border border-slate-200 bg-white p-4 shadow-2xl md:hidden">
+            <div id="mobileMenu" class="mobile-panel absolute left-4 right-4 top-20 rounded-2xl border border-slate-200 bg-white p-4 shadow-2xl lg:hidden">
                 <a class="block rounded-xl px-4 py-3 font-bold text-slate-700" href="#repairs">Who We Help</a>
                 <a class="block rounded-xl px-4 py-3 font-bold text-slate-700" href="#packages">Packages</a>
                 <a class="block rounded-xl px-4 py-3 font-bold text-slate-700" href="#services">Business Care</a>
@@ -380,7 +452,7 @@
 
     <header id="home" class="hero">
         <div class="relative z-10 mx-auto grid max-w-7xl gap-10 px-4 pb-24 pt-32 sm:px-6 md:min-h-screen md:grid-cols-[1.05fr_.95fr] md:items-center md:pb-20 md:pt-28 lg:px-8">
-            <div>
+            <div class="min-w-0">
                 <div class="eyebrow mb-6 inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-bold text-cyan-50 backdrop-blur">
                     <span class="pulse-dot"></span>
                     Nugegoda home visits and small business support
@@ -391,8 +463,8 @@
                 <p class="hero-copy mt-6 max-w-2xl text-lg leading-8 text-slate-200 sm:text-xl">
                     Laptop, desktop, WiFi, printer and software issues fixed with clear advice and practical pricing. Home visit, pickup and delivery available around Nugegoda.
                 </p>
-                <p class="hero-copy mt-3 max-w-2xl text-base font-bold leading-7 text-cyan-100 sm:text-lg" lang="si">
-                    නිවසට සහ කුඩා ව්‍යාපාර සඳහා IT Support සේවාව — Nugegoda සහ අවට ප්‍රදේශ.
+                <p class="hero-copy mt-3 max-w-2xl text-base font-bold leading-7 text-cyan-100 sm:text-lg">
+                    Home and small business IT support service — Nugegoda and surrounding areas.
                 </p>
                 <div class="hero-actions mt-8 flex flex-col gap-3 sm:flex-row">
                     <a href="https://wa.me/94760846996?text=Hi%20DR%20TECH,%20I%20need%20help%20with%20my%20computer%20or%20device" target="_blank" rel="noopener noreferrer" class="button-primary">
@@ -596,7 +668,7 @@
                             <li><i class="fa-solid fa-check mr-2 text-secondary"></i>Malware, driver and Windows check</li>
                             <li><i class="fa-solid fa-check mr-2 text-secondary"></i>SSD/RAM upgrade advice</li>
                         </ul>
-                        <p class="mt-5 rounded-lg bg-amber-50 p-3 font-bold text-ink" lang="si">Laptop එක slow ද? Format කරන්න කලින් check කරගන්න.</p>
+                        <p class="mt-5 rounded-lg bg-amber-50 p-3 font-bold text-ink">Laptop එක slow ද? Format කරන්න කලින් check කරගන්න.</p>
                     </article>
                     <article class="card reveal p-6">
                         <div class="icon-tile"><i class="fa-brands fa-windows"></i></div>
@@ -943,6 +1015,7 @@
         </a>
     </div>
 
+    <script src="translations.js"></script>
     <script>
         const year = document.getElementById('currentYear');
         if (year) year.textContent = new Date().getFullYear();
