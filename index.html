@@ -3,406 +3,823 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="DR TECH provides computer repair, Wi-Fi setup, small business IT support, Google Business Profile setup, WhatsApp Business setup, POS systems, and digital business support in Colombo suburbs.">
-    <meta name="keywords" content="computer repair Nugegoda, laptop repair Colombo, Windows installation Sri Lanka, Wi-Fi troubleshooting Colombo, printer setup Sri Lanka, small business IT support Colombo, Google Business Profile Sri Lanka, WhatsApp Business setup Colombo, POS billing system Sri Lanka">
-    <meta property="og:title" content="DR TECH | Home & Small Business IT Support">
-    <meta property="og:description" content="Slow PC, Wi-Fi issue, printer problem, or office tech support needed? DR TECH comes to your home or workplace and fixes it fast.">
+    <meta name="description" content="DR TECH SERVICES provides home and small business IT support around Nugegoda. Laptop, Windows, WiFi, printer, POS and office support with home visits and pickup or delivery.">
+    <meta name="keywords" content="laptop repair Nugegoda, computer repair Nugegoda, home visit IT support, WiFi setup Nugegoda, printer repair Colombo, small business IT support, Windows installation Sri Lanka, POS support">
+    <meta property="og:title" content="DR TECH SERVICES | Home & Small Business IT Support">
+    <meta property="og:description" content="Laptop, desktop, WiFi, printer and software support around Nugegoda. Home visits and pickup or delivery available.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_LK">
-    <meta name="theme-color" content="#050816">
-    <link rel="canonical" href="https://deepalweb.github.io/techsite/">
-    <title>DR TECH | Home & Small Business IT Support</title>
+    <meta name="theme-color" content="#08111f">
+    <title>DR TECH SERVICES | Home & Small Business IT Support Nugegoda</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        base: "#050816",
-                        panel: "#0d1224",
-                        panelsoft: "#121933",
-                        line: "#24304f",
-                        glow: "#39e7f1",
-                        glowsoft: "#8ffcff",
-                        textsoft: "#9eb1d6",
-                        accent: "#14f1ff",
-                        accent2: "#1f7bff"
+                        ink: '#08111f',
+                        steel: '#64748b',
+                        primary: '#0ea5e9',
+                        secondary: '#14b8a6',
+                        accent: '#f97316'
                     },
                     fontFamily: {
-                        sans: ["Inter", "sans-serif"],
-                        display: ["Space Grotesk", "sans-serif"]
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
                     },
                     boxShadow: {
-                        cyan: "0 0 30px rgba(20, 241, 255, 0.18)",
-                        card: "0 22px 60px rgba(0, 0, 0, 0.38)"
+                        glow: '0 24px 80px rgba(14, 165, 233, .24)'
                     }
                 }
             }
-        };
+        }
     </script>
     <style>
-        html {
-            scroll-behavior: smooth;
+        :root {
+            --ink: #08111f;
+            --line: rgba(148, 163, 184, .22);
+            --panel: rgba(255, 255, 255, .82);
         }
 
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
-            font-family: "Inter", sans-serif;
+            margin: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #102033;
             background:
-                radial-gradient(circle at top left, rgba(20, 241, 255, 0.08), transparent 28%),
-                radial-gradient(circle at top right, rgba(31, 123, 255, 0.10), transparent 24%),
-                linear-gradient(180deg, #050816 0%, #0a1022 35%, #0d1429 100%);
-            color: #ffffff;
+                linear-gradient(90deg, rgba(14, 165, 233, .05) 1px, transparent 1px),
+                linear-gradient(rgba(20, 184, 166, .045) 1px, transparent 1px),
+                #f7fafc;
+            background-size: 42px 42px;
+            overflow-x: hidden;
         }
 
-        .hero-bg {
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 80;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, #0ea5e9, #14b8a6, #f97316);
+            box-shadow: 0 0 18px rgba(14, 165, 233, .65);
+        }
+
+        .site-nav {
+            background: rgba(255, 255, 255, .78);
+            border: 1px solid rgba(148, 163, 184, .28);
+            backdrop-filter: blur(18px);
+            box-shadow: 0 20px 60px rgba(15, 23, 42, .12);
+        }
+
+        .nav-link {
             position: relative;
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            left: .75rem;
+            right: .75rem;
+            bottom: .35rem;
+            height: 2px;
+            background: linear-gradient(90deg, #0ea5e9, #14b8a6);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .28s ease;
+        }
+
+        .nav-link:hover::after { transform: scaleX(1); }
+
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            color: white;
             overflow: hidden;
             background:
-                linear-gradient(135deg, rgba(5, 8, 22, 0.96), rgba(10, 16, 34, 0.88)),
-                radial-gradient(circle at 18% 22%, rgba(57, 231, 241, 0.14), transparent 26%),
-                radial-gradient(circle at 80% 18%, rgba(31, 123, 255, 0.15), transparent 24%);
+                linear-gradient(110deg, rgba(8, 17, 31, .95) 0%, rgba(8, 17, 31, .82) 48%, rgba(8, 17, 31, .62) 100%),
+                url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1800&q=85') center/cover;
         }
 
-        .hero-bg::before {
+        .hero::before {
             content: "";
             position: absolute;
             inset: 0;
             background:
-                linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-            background-size: 34px 34px;
-            opacity: 0.45;
-            pointer-events: none;
+                linear-gradient(90deg, rgba(14, 165, 233, .18) 1px, transparent 1px),
+                linear-gradient(rgba(20, 184, 166, .13) 1px, transparent 1px);
+            background-size: 72px 72px;
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, .88), rgba(0, 0, 0, .1));
+            animation: gridShift 18s linear infinite;
         }
 
-        .glass-nav {
-            background: rgba(5, 8, 22, 0.72);
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: auto 0 0;
+            height: 34%;
+            background: linear-gradient(0deg, #f7fafc 0%, rgba(247, 250, 252, 0) 100%);
+        }
+
+        @keyframes gridShift {
+            from { background-position: 0 0, 0 0; }
+            to { background-position: 72px 72px, 72px 72px; }
+        }
+
+        .eyebrow {
+            animation: liftIn .8s ease both .1s;
+        }
+
+        .hero-title {
+            animation: liftIn .9s cubic-bezier(.22, 1, .36, 1) both .2s;
+        }
+
+        .hero-copy {
+            animation: liftIn .9s cubic-bezier(.22, 1, .36, 1) both .34s;
+        }
+
+        .hero-actions {
+            animation: liftIn .9s cubic-bezier(.22, 1, .36, 1) both .46s;
+        }
+
+        @keyframes liftIn {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .diagnostic-panel {
+            background: rgba(8, 17, 31, .66);
+            border: 1px solid rgba(255, 255, 255, .16);
             backdrop-filter: blur(18px);
-            border: 1px solid rgba(143, 252, 255, 0.10);
+            box-shadow: 0 30px 90px rgba(0, 0, 0, .35);
+            transform-style: preserve-3d;
+            animation: panelEnter 1s cubic-bezier(.22, 1, .36, 1) both .55s, panelFloat 7s ease-in-out infinite 1.7s;
         }
 
-        .neon-card {
-            background: linear-gradient(180deg, rgba(13, 18, 36, 0.96), rgba(18, 25, 51, 0.96));
-            border: 1px solid rgba(57, 231, 241, 0.16);
-            box-shadow: 0 22px 60px rgba(0, 0, 0, 0.38);
+        @keyframes panelEnter {
+            from { opacity: 0; transform: translateY(24px) rotateX(10deg) rotateY(-10deg); }
+            to { opacity: 1; transform: translateY(0) rotateX(0) rotateY(0); }
         }
 
-        .service-card,
-        .price-card,
-        .trust-card,
-        .step-card {
-            transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+        @keyframes panelFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
         }
 
-        .service-card:hover,
-        .price-card:hover,
-        .trust-card:hover,
-        .step-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(20, 241, 255, 0.26);
-            box-shadow: 0 0 34px rgba(20, 241, 255, 0.12);
+        .scan-line {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #14b8a6, transparent);
+            animation: scan 3.2s linear infinite;
         }
 
-        .fade-in {
+        @keyframes scan {
+            from { transform: translateY(0); opacity: .15; }
+            45% { opacity: 1; }
+            to { transform: translateY(340px); opacity: .15; }
+        }
+
+        .pulse-dot {
+            position: relative;
+            width: 10px;
+            height: 10px;
+            border-radius: 999px;
+            background: #14b8a6;
+        }
+
+        .pulse-dot::after {
+            content: "";
+            position: absolute;
+            inset: -6px;
+            border-radius: inherit;
+            border: 1px solid rgba(20, 184, 166, .8);
+            animation: ping 1.6s ease-out infinite;
+        }
+
+        @keyframes ping {
+            to { transform: scale(1.8); opacity: 0; }
+        }
+
+        .marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 24s linear infinite;
+        }
+
+        @keyframes marquee {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        .reveal {
             opacity: 0;
             transform: translateY(26px);
-            transition: opacity 0.65s ease, transform 0.65s ease;
+            transition: opacity .75s ease, transform .75s ease;
         }
 
-        .fade-in.visible {
+        .reveal.visible {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        .card {
+            background: var(--panel);
+            border: 1px solid rgba(148, 163, 184, .24);
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(15, 23, 42, .08);
+            transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(14, 165, 233, .45);
+            box-shadow: 0 28px 80px rgba(14, 165, 233, .16);
+        }
+
+        .icon-tile {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            display: grid;
+            place-items: center;
+            color: white;
+            background: linear-gradient(135deg, #0ea5e9, #14b8a6);
+            box-shadow: 0 16px 36px rgba(14, 165, 233, .28);
+        }
+
+        .button-primary, .button-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: .65rem;
+            min-height: 52px;
+            border-radius: 999px;
+            padding: .85rem 1.35rem;
+            font-weight: 800;
+            transition: transform .24s ease, box-shadow .24s ease, background .24s ease;
+        }
+
+        .button-primary {
+            color: white;
+            background: linear-gradient(135deg, #0ea5e9, #14b8a6);
+            box-shadow: 0 18px 44px rgba(14, 165, 233, .32);
+        }
+
+        .button-secondary {
+            color: white;
+            border: 1px solid rgba(255, 255, 255, .24);
+            background: rgba(255, 255, 255, .1);
+            backdrop-filter: blur(12px);
+        }
+
+        .button-primary:hover, .button-secondary:hover {
+            transform: translateY(-3px);
+        }
+
+        .metric {
+            animation: metricGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes metricGlow {
+            0%, 100% { box-shadow: 0 20px 60px rgba(15, 23, 42, .08); }
+            50% { box-shadow: 0 20px 70px rgba(20, 184, 166, .18); }
+        }
+
+        .ticker-shell {
+            border-block: 1px solid rgba(148, 163, 184, .18);
+            background: rgba(8, 17, 31, .96);
+            color: white;
+            overflow: hidden;
+        }
+
+        .floating-actions a {
+            animation: actionFloat 3.4s ease-in-out infinite;
+        }
+
+        .floating-actions a:nth-child(2) { animation-delay: .35s; }
+
+        @keyframes actionFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .mobile-panel {
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(-12px);
+            transition: opacity .22s ease, transform .22s ease;
+        }
+
+        .mobile-panel.open {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: .001ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: .001ms !important;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero { min-height: auto; }
+            .scan-line { display: none; }
+            .marquee { animation-duration: 32s; }
         }
     </style>
 </head>
 <body>
-    <nav class="fixed left-1/2 top-4 z-50 w-full max-w-6xl -translate-x-1/2 px-4">
-        <div class="glass-nav rounded-full shadow-cyan">
-            <div class="flex h-16 items-center justify-between px-4 md:px-6">
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <nav class="fixed left-0 right-0 top-4 z-50 px-4">
+        <div class="site-nav mx-auto max-w-6xl rounded-full px-4 sm:px-6">
+            <div class="flex h-16 items-center justify-between">
                 <a href="#home" class="flex items-center gap-3" aria-label="DR TECH home">
-                    <img src="logo.png" alt="DR TECH Services logo" class="h-11 w-11 rounded-full object-cover shadow-cyan">
-                    <div>
-                        <div class="font-display text-lg font-bold text-white">DR TECH</div>
-                        <div class="text-[11px] font-semibold uppercase tracking-[0.22em] text-textsoft">Home Visit Repairs</div>
-                    </div>
+                    <span class="grid h-11 w-11 place-items-center rounded-full bg-ink text-sm font-extrabold text-white shadow-glow">DT</span>
+                    <span class="text-lg font-extrabold tracking-normal text-ink">DR TECH</span>
                 </a>
-                <div class="hidden items-center gap-6 md:flex">
-                    <a href="#services" class="text-sm font-semibold text-textsoft transition hover:text-white">Services</a>
-                    <a href="#growth" class="text-sm font-semibold text-textsoft transition hover:text-white">Business Growth</a>
-                    <a href="#pricing" class="text-sm font-semibold text-textsoft transition hover:text-white">Pricing</a>
-                    <a href="#contact" class="text-sm font-semibold text-textsoft transition hover:text-white">Contact Us</a>
-                    <a href="tel:+94760846996" class="rounded-full border border-glow/30 bg-glow/10 px-5 py-2.5 text-sm font-extrabold text-white transition hover:bg-glow hover:text-[#050816]">
-                        <i class="fa-solid fa-phone mr-2"></i>Call Now
-                    </a>
+                <div class="hidden items-center gap-1 md:flex">
+                    <a class="nav-link rounded-full px-3 py-2 text-sm font-bold text-slate-700" href="#repairs">Who We Help</a>
+                    <a class="nav-link rounded-full px-3 py-2 text-sm font-bold text-slate-700" href="#packages">Packages</a>
+                    <a class="nav-link rounded-full px-3 py-2 text-sm font-bold text-slate-700" href="#services">Business Care</a>
+                    <a class="nav-link rounded-full px-3 py-2 text-sm font-bold text-slate-700" href="#growth">Business Growth</a>
+                    <a class="nav-link rounded-full px-3 py-2 text-sm font-bold text-slate-700" href="#about">About</a>
+                    <a class="nav-link rounded-full px-3 py-2 text-sm font-bold text-slate-700" href="#faq">FAQ</a>
+                    <a class="ml-2 rounded-full bg-ink px-5 py-3 text-sm font-extrabold text-white transition hover:bg-slate-700" href="#contact">Get Support</a>
                 </div>
-                <button id="menu-toggle" type="button" class="rounded-full p-2 text-white md:hidden" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
-                    <i class="fa-solid fa-bars text-xl"></i>
+                <button id="menuButton" class="grid h-11 w-11 place-items-center rounded-full border border-slate-200 text-ink md:hidden" aria-label="Open menu" aria-expanded="false">
+                    <i class="fa-solid fa-bars"></i>
                 </button>
+            </div>
+            <div id="mobileMenu" class="mobile-panel absolute left-4 right-4 top-20 rounded-2xl border border-slate-200 bg-white p-4 shadow-2xl md:hidden">
+                <a class="block rounded-xl px-4 py-3 font-bold text-slate-700" href="#repairs">Who We Help</a>
+                <a class="block rounded-xl px-4 py-3 font-bold text-slate-700" href="#packages">Packages</a>
+                <a class="block rounded-xl px-4 py-3 font-bold text-slate-700" href="#services">Business Care</a>
+                <a class="block rounded-xl px-4 py-3 font-bold text-slate-700" href="#growth">Business Growth</a>
+                <a class="block rounded-xl px-4 py-3 font-bold text-slate-700" href="#about">About</a>
+                <a class="block rounded-xl px-4 py-3 font-bold text-slate-700" href="#faq">FAQ</a>
+                <a class="mt-2 flex items-center justify-center gap-2 rounded-full bg-ink px-5 py-3 font-extrabold text-white" href="#contact">
+                    <i class="fa-solid fa-headset"></i>
+                    Get Support
+                </a>
             </div>
         </div>
     </nav>
 
-    <div id="mobile-menu" class="fixed inset-0 z-[60] hidden bg-base px-6 py-8 text-white" role="dialog" aria-modal="true" aria-label="Mobile navigation">
-        <div class="mb-10 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <img src="logo.png" alt="DR TECH Services logo" class="h-11 w-11 rounded-full object-cover">
-                <div class="font-display text-2xl font-bold">DR TECH</div>
+    <header id="home" class="hero">
+        <div class="relative z-10 mx-auto grid max-w-7xl gap-10 px-4 pb-24 pt-32 sm:px-6 md:min-h-screen md:grid-cols-[1.05fr_.95fr] md:items-center md:pb-20 md:pt-28 lg:px-8">
+            <div>
+                <div class="eyebrow mb-6 inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-bold text-cyan-50 backdrop-blur">
+                    <span class="pulse-dot"></span>
+                    Nugegoda home visits and small business support
+                </div>
+                <h1 class="hero-title max-w-4xl text-5xl font-extrabold leading-[1.02] tracking-normal sm:text-6xl lg:text-7xl">
+                    Home & Small Business IT Support.
+                </h1>
+                <p class="hero-copy mt-6 max-w-2xl text-lg leading-8 text-slate-200 sm:text-xl">
+                    Laptop, desktop, WiFi, printer and software issues fixed with clear advice and practical pricing. Home visit, pickup and delivery available around Nugegoda.
+                </p>
+                <p class="hero-copy mt-3 max-w-2xl text-base font-bold leading-7 text-cyan-100 sm:text-lg" lang="si">
+                    නිවසට සහ කුඩා ව්‍යාපාර සඳහා IT Support සේවාව — Nugegoda සහ අවට ප්‍රදේශ.
+                </p>
+                <div class="hero-actions mt-8 flex flex-col gap-3 sm:flex-row">
+                    <a href="https://wa.me/94760846996?text=Hi%20DR%20TECH,%20I%20need%20help%20with%20my%20computer%20or%20device" target="_blank" rel="noopener noreferrer" class="button-primary">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        WhatsApp Your Issue
+                    </a>
+                    <a href="#packages" class="button-secondary">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                        View Support Packages
+                    </a>
+                </div>
+                <div class="hero-actions mt-8 grid max-w-2xl grid-cols-3 gap-3 text-sm text-slate-200">
+                    <div class="rounded-lg border border-white/15 bg-white/10 p-3 backdrop-blur">
+                        <strong class="block text-lg text-white">LKR 1.5K</strong>
+                        Diagnosis from
+                    </div>
+                    <div class="rounded-lg border border-white/15 bg-white/10 p-3 backdrop-blur">
+                        <strong class="block text-lg text-white">Home Visit</strong>
+                        Local support
+                    </div>
+                    <div class="rounded-lg border border-white/15 bg-white/10 p-3 backdrop-blur">
+                        <strong class="block text-lg text-white">Pickup</strong>
+                        & delivery
+                    </div>
+                </div>
             </div>
-            <button id="menu-close" type="button" class="rounded-full p-2" aria-label="Close navigation menu">
-                <i class="fa-solid fa-xmark text-2xl"></i>
-            </button>
+
+            <div class="relative">
+                <div class="diagnostic-panel relative mx-auto max-w-lg overflow-hidden rounded-lg p-5">
+                    <div class="scan-line"></div>
+                    <div class="mb-5 flex items-center justify-between border-b border-white/10 pb-4">
+                        <div>
+                            <p class="text-xs font-bold uppercase tracking-[.22em] text-cyan-200">Live Diagnostics</p>
+                            <h2 class="mt-1 text-2xl font-extrabold text-white">Support Console</h2>
+                        </div>
+                        <div class="flex gap-2">
+                            <span class="h-3 w-3 rounded-full bg-red-400"></span>
+                            <span class="h-3 w-3 rounded-full bg-amber-300"></span>
+                            <span class="h-3 w-3 rounded-full bg-emerald-400"></span>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="rounded-lg bg-white/10 p-4">
+                            <div class="mb-2 flex items-center justify-between text-sm">
+                                <span class="font-bold text-white">Device health scan</span>
+                                <span class="text-teal-200">98%</span>
+                            </div>
+                            <div class="h-2 overflow-hidden rounded-full bg-white/10">
+                                <div class="h-full w-[98%] rounded-full bg-gradient-to-r from-cyan-400 to-teal-300"></div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="rounded-lg border border-white/10 bg-white/10 p-4">
+                                <i class="fa-solid fa-laptop-medical mb-3 text-2xl text-cyan-200"></i>
+                                <p class="font-bold text-white">Home Repair</p>
+                                <p class="text-sm text-slate-300">On-site diagnosis</p>
+                            </div>
+                            <div class="rounded-lg border border-white/10 bg-white/10 p-4">
+                                <i class="fa-solid fa-store mb-3 text-2xl text-teal-200"></i>
+                                <p class="font-bold text-white">Business Support</p>
+                                <p class="text-sm text-slate-300">PC, printer, POS, WiFi</p>
+                            </div>
+                        </div>
+                        <div class="rounded-lg border border-white/10 bg-[#07111f] p-4 font-mono text-sm text-slate-200">
+                            <p><span class="text-teal-300">drtech@support</span>: scan --priority urgent</p>
+                            <p class="mt-2 text-cyan-200">Status: technician available</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="flex flex-col gap-5 text-2xl font-bold">
-            <a href="#services" class="mobile-link">Services</a>
-            <a href="#growth" class="mobile-link">Business Growth</a>
-            <a href="#pricing" class="mobile-link">Pricing</a>
-            <a href="#contact" class="mobile-link">Contact Us</a>
-            <a href="tel:+94760846996" class="mobile-link">Call Now</a>
-        </div>
-    </div>
+    </header>
 
     <main>
-        <section id="home" class="hero-bg pt-32">
-            <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-16 pt-6 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
-                <div class="relative z-10 fade-in">
-                    <div class="inline-flex items-center gap-2 rounded-full border border-glow/20 bg-glow/10 px-4 py-2 text-sm font-semibold text-glowsoft">
-                        <span class="h-2.5 w-2.5 rounded-full bg-glow"></span>
-                        Nugegoda, Kohuwala, Maharagama, Dehiwala & nearby areas
-                    </div>
-                    <h1 class="mt-6 max-w-4xl font-display text-5xl font-bold leading-[0.95] sm:text-6xl lg:text-[4.35rem]">
-                        Slow PC?
-                        <span class="block text-glow">Wi-Fi Problems?</span>
-                        <span class="block text-white">Tech Support At Your Doorstep.</span>
-                    </h1>
-                    <p class="mt-6 max-w-2xl text-base leading-8 text-textsoft sm:text-lg">
-                        DR TECH supports home users and small businesses with laptop and desktop repairs, Windows installation, virus cleanup, printer setup, networking, and monthly IT support across selected Colombo suburbs.
-                    </p>
-                    <div class="mt-10 flex flex-col gap-4 sm:flex-row">
-                        <a href="https://wa.me/94760846996?text=Hi%20DR%20TECH,%20I%20need%20a%20repair%20quote" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 rounded-full bg-glow px-7 py-4 text-base font-extrabold text-[#050816] transition hover:bg-glowsoft">
-                            <i class="fa-brands fa-whatsapp text-2xl"></i>
-                            WhatsApp for a Quote
-                        </a>
-                        <a href="#pricing" class="inline-flex items-center justify-center gap-3 rounded-full border border-white/16 bg-white/5 px-7 py-4 text-base font-bold text-white transition hover:border-glow/30 hover:bg-glow/10">
-                            <i class="fa-solid fa-clipboard-list"></i>
-                            View Repair Prices
-                        </a>
-                    </div>
-                </div>
+        <section class="ticker-shell py-4">
+            <div class="marquee gap-6 text-sm font-bold uppercase tracking-[.18em] text-slate-200">
+                <span>Windows install</span><span class="text-teal-300">/</span>
+                <span>Slow laptop fix</span><span class="text-teal-300">/</span>
+                <span>WiFi support</span><span class="text-teal-300">/</span>
+                <span>Printer setup</span><span class="text-teal-300">/</span>
+                <span>Virus removal</span><span class="text-teal-300">/</span>
+                <span>SSD & RAM upgrades</span><span class="text-teal-300">/</span>
+                <span>Windows install</span><span class="text-teal-300">/</span>
+                <span>Slow laptop fix</span><span class="text-teal-300">/</span>
+                <span>WiFi support</span><span class="text-teal-300">/</span>
+                <span>Printer setup</span><span class="text-teal-300">/</span>
+                <span>Virus removal</span><span class="text-teal-300">/</span>
+                <span>SSD & RAM upgrades</span><span class="text-teal-300">/</span>
+            </div>
+        </section>
 
-                <div class="relative z-10 fade-in">
-                    <div class="neon-card rounded-[2rem] p-5">
-                        <div class="flex items-center justify-between gap-4">
+        <section class="px-4 py-16 sm:px-6 lg:px-8">
+            <div class="mx-auto grid max-w-7xl grid-cols-2 gap-4 md:grid-cols-4">
+                <div class="metric card reveal p-5 text-center">
+                    <p class="text-3xl font-extrabold text-ink">Home</p>
+                    <p class="mt-1 text-sm font-semibold text-steel">Visit available</p>
+                </div>
+                <div class="metric card reveal p-5 text-center">
+                    <p class="text-3xl font-extrabold text-ink">Pickup</p>
+                    <p class="mt-1 text-sm font-semibold text-steel">And delivery</p>
+                </div>
+                <div class="metric card reveal p-5 text-center">
+                    <p class="text-3xl font-extrabold text-ink">LKR 1.5K</p>
+                    <p class="mt-1 text-sm font-semibold text-steel">Diagnosis from</p>
+                </div>
+                <div class="metric card reveal p-5 text-center">
+                    <p class="text-3xl font-extrabold text-ink">Monthly</p>
+                    <p class="mt-1 text-sm font-semibold text-steel">Business IT care</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="repairs" class="px-4 py-20 sm:px-6 lg:px-8">
+            <div class="mx-auto max-w-7xl">
+                <div class="reveal mb-12 max-w-4xl">
+                    <p class="mb-3 text-sm font-extrabold uppercase tracking-[.18em] text-primary">Two clear support paths</p>
+                    <h2 class="text-4xl font-extrabold leading-tight text-ink md:text-5xl">Local IT help for your home or your business.</h2>
+                    <p class="mt-4 text-lg leading-8 text-steel">Send the problem on WhatsApp first. DR TECH will recommend a home visit, business visit, pickup or remote session based on the issue.</p>
+                </div>
+                <div class="grid gap-6 lg:grid-cols-2">
+                    <article class="card reveal p-6 sm:p-8">
+                        <div class="flex items-center gap-4">
+                            <span class="icon-tile shrink-0"><i class="fa-solid fa-house-laptop"></i></span>
                             <div>
-                                <div class="text-xs font-bold uppercase tracking-[0.22em] text-textsoft">Quick Support</div>
-                                <h2 class="mt-3 font-display text-3xl font-bold text-white">Practical IT help for homes, offices, and growing small businesses.</h2>
-                            </div>
-                            <img src="logo.png" alt="DR TECH logo" class="hidden h-20 w-20 rounded-full object-cover shadow-cyan sm:block">
-                        </div>
-                        <div class="mt-6 space-y-4">
-                            <div class="rounded-[1.4rem] border border-glow/10 bg-white/5 p-4">
-                                <div class="flex items-start gap-4">
-                                    <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-glow/12 text-glow">
-                                        <i class="fa-solid fa-microchip text-xl"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-lg font-extrabold text-white">Laptop/Desktop Repair & Performance Upgrades</h3>
-                                        <p class="mt-1 text-sm leading-6 text-textsoft">Slow PC repair, startup issues, Windows installation, SSD or RAM upgrades, driver fixes, and laptop cleaning.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="rounded-[1.4rem] border border-glow/10 bg-white/5 p-4">
-                                <div class="flex items-start gap-4">
-                                    <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-glow/12 text-glow">
-                                        <i class="fa-solid fa-shop text-xl"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-lg font-extrabold text-white">Internet, Printer & Business IT Support</h3>
-                                        <p class="mt-1 text-sm leading-6 text-textsoft">Wi-Fi troubleshooting, router setup, printer connections, email setup, Outlook support, and remote help for offices.</p>
-                                    </div>
-                                </div>
+                                <p class="text-xs font-extrabold uppercase tracking-[.18em] text-primary">Home customers</p>
+                                <h3 class="mt-1 text-2xl font-extrabold text-ink">Fast, simple fixes at home</h3>
                             </div>
                         </div>
-                        <div class="mt-6 rounded-[1.5rem] border border-glow/12 bg-glow/10 p-5">
-                            <div class="text-sm font-semibold text-textsoft">Call or WhatsApp</div>
-                            <div class="mt-2 font-display text-[2rem] font-bold text-white">+94 76 084 6996</div>
+                        <div class="mt-7 grid gap-3 sm:grid-cols-2">
+                            <div class="rounded-lg bg-slate-50 p-3 font-bold text-ink">Slow laptop or desktop</div>
+                            <div class="rounded-lg bg-slate-50 p-3 font-bold text-ink">Windows installation</div>
+                            <div class="rounded-lg bg-slate-50 p-3 font-bold text-ink">Virus and malware removal</div>
+                            <div class="rounded-lg bg-slate-50 p-3 font-bold text-ink">Software installation</div>
+                            <div class="rounded-lg bg-slate-50 p-3 font-bold text-ink">WiFi and router issues</div>
+                            <div class="rounded-lg bg-slate-50 p-3 font-bold text-ink">Printer and scanner issues</div>
+                            <div class="rounded-lg bg-slate-50 p-3 font-bold text-ink">Overheating and cleaning</div>
+                            <div class="rounded-lg bg-slate-50 p-3 font-bold text-ink">SSD or RAM upgrade</div>
+                            <div class="rounded-lg bg-slate-50 p-3 font-bold text-ink">Data backup guidance</div>
+                            <div class="rounded-lg bg-slate-50 p-3 font-bold text-ink">Email and Office setup</div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                        <div class="mt-7 rounded-lg border border-sky-100 bg-sky-50 p-5">
+                            <p class="font-extrabold text-ink">Home visit / pickup & delivery available around Nugegoda.</p>
+                        </div>
+                    </article>
 
-        <section class="border-y border-white/8 bg-panel py-4">
-            <div class="mx-auto grid max-w-6xl gap-4 px-4 text-center text-sm font-bold text-glowsoft sm:grid-cols-2 lg:grid-cols-4 sm:px-6 lg:px-8">
-                <div class="fade-in">🛠️ 12+ Years Experience</div>
-                <div class="fade-in">👀 Fixed in Front of You</div>
-                <div class="fade-in">🔒 100% Data Safety</div>
-                <div class="fade-in">🚗 Fast Call-Outs</div>
-            </div>
-        </section>
-
-        <section id="services" class="py-24">
-            <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-                <div class="mb-14 max-w-3xl fade-in">
-                    <div class="text-sm font-bold uppercase tracking-[0.24em] text-glow">Services</div>
-                    <h2 class="mt-5 font-display text-4xl font-bold text-white sm:text-5xl">Support Built For Homes And Small Businesses</h2>
-                    <p class="mt-4 max-w-2xl text-lg leading-8 text-textsoft">We’ve reshaped the service mix around the jobs people ask for most often today, from everyday laptop problems to repeat office IT support.</p>
-                </div>
-                <div class="mb-8 fade-in">
-                    <h3 class="font-display text-2xl font-bold text-white">Home Users</h3>
-                    <p class="mt-2 max-w-3xl text-textsoft">Fast support for laptops, desktops, internet setup, and essential software or data help.</p>
-                </div>
-                <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-                    <article class="neon-card service-card rounded-[2rem] p-7 fade-in">
-                        <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-glow/12 text-glow">
-                            <i class="fa-solid fa-gauge-high text-2xl"></i>
-                        </div>
-                        <h3 class="mt-6 font-display text-2xl font-bold text-white">Laptop/Desktop Performance</h3>
-                        <p class="mt-3 leading-7 text-textsoft">Slow PC repair, startup issue fixes, SSD upgrades, RAM upgrades, and driver troubleshooting to get your device running smoothly again.</p>
-                    </article>
-                    <article class="neon-card service-card rounded-[2rem] p-7 fade-in">
-                        <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-glow/12 text-glow">
-                            <i class="fa-solid fa-laptop-medical text-2xl"></i>
-                        </div>
-                        <h3 class="mt-6 font-display text-2xl font-bold text-white">Windows, Virus & Software Fixes</h3>
-                        <p class="mt-3 leading-7 text-textsoft">Windows installation, virus removal, software installation, Microsoft Office setup, and email setup for home users who need everything working properly.</p>
-                    </article>
-                    <article class="neon-card service-card rounded-[2rem] p-7 fade-in">
-                        <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-glow/12 text-glow">
-                            <i class="fa-solid fa-wifi text-2xl"></i>
-                        </div>
-                        <h3 class="mt-6 font-display text-2xl font-bold text-white">Internet & Printer Setup</h3>
-                        <p class="mt-3 leading-7 text-textsoft">Wi-Fi troubleshooting, router setup, signal optimization, and printer connection setup for reliable day-to-day use.</p>
-                    </article>
-                    <article class="neon-card service-card rounded-[2rem] p-7 fade-in">
-                        <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-glow/12 text-glow">
-                            <i class="fa-solid fa-database text-2xl"></i>
-                        </div>
-                        <h3 class="mt-6 font-display text-2xl font-bold text-white">Data Transfer & Backup Setup</h3>
-                        <p class="mt-3 leading-7 text-textsoft">Support for backup setup, data transfer to a new machine, and practical help moving your important files safely.</p>
-                    </article>
-                    <article class="neon-card service-card rounded-[2rem] p-7 fade-in">
-                        <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-glow/12 text-glow">
-                            <i class="fa-solid fa-fan text-2xl"></i>
-                        </div>
-                        <h3 class="mt-6 font-display text-2xl font-bold text-white">Laptop Cleaning & Maintenance</h3>
-                        <p class="mt-3 leading-7 text-textsoft">Internal cleaning, overheating checks, and routine maintenance to extend the life of your laptop or desktop.</p>
-                    </article>
-                </div>
-
-                <div class="mb-8 mt-16 fade-in">
-                    <h3 class="font-display text-2xl font-bold text-white">Small Business Services</h3>
-                    <p class="mt-2 max-w-3xl text-textsoft">High-value support options designed for repeat customers, office teams, and business owners who need dependable IT help.</p>
-                </div>
-                <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-                    <article class="neon-card service-card rounded-[2rem] p-7 fade-in">
-                        <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-glow/12 text-glow">
-                            <i class="fa-solid fa-building-circle-check text-2xl"></i>
-                        </div>
-                        <h3 class="mt-6 font-display text-2xl font-bold text-white">Office PC & User Support</h3>
-                        <p class="mt-3 leading-7 text-textsoft">Office PC troubleshooting, user account setup, and day-to-day support for staff who need fast issue resolution.</p>
-                    </article>
-                    <article class="neon-card service-card rounded-[2rem] p-7 fade-in">
-                        <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-glow/12 text-glow">
-                            <i class="fa-solid fa-print text-2xl"></i>
-                        </div>
-                        <h3 class="mt-6 font-display text-2xl font-bold text-white">Printers, Shared Devices & Email</h3>
-                        <p class="mt-3 leading-7 text-textsoft">Printer support, shared printer setup, and Email or Outlook configuration for smoother office operations.</p>
-                    </article>
-                    <article class="neon-card service-card rounded-[2rem] p-7 fade-in">
-                        <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-glow/12 text-glow">
-                            <i class="fa-solid fa-headset text-2xl"></i>
-                        </div>
-                        <h3 class="mt-6 font-display text-2xl font-bold text-white">Network, Remote Support & Maintenance</h3>
-                        <p class="mt-3 leading-7 text-textsoft">Network troubleshooting, remote support, and monthly maintenance packages that help businesses avoid repeat downtime.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="growth" class="bg-panel py-24">
-            <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-                <div class="max-w-4xl fade-in">
-                    <div class="text-sm font-bold uppercase tracking-[0.24em] text-glow">Business Growth</div>
-                    <h2 class="mt-5 font-display text-4xl font-bold text-white sm:text-5xl">2026 Online Growth Opportunities for Sri Lankan Businesses</h2>
-                    <p class="mt-5 max-w-3xl text-lg leading-8 text-textsoft">The way customers buy has changed. Today, people search for businesses on Google Maps, WhatsApp, Facebook, Instagram, and delivery platforms before making a purchase.</p>
-                    <p class="mt-4 max-w-3xl text-lg leading-8 text-textsoft">If your business is not online, you may be missing valuable customers every day.</p>
-                </div>
-
-                <div class="mt-12 grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
-                    <article class="neon-card rounded-[2rem] p-8 fade-in">
-                        <div class="flex items-center gap-3">
-                            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-glow/12 text-glow">
-                                <i class="fa-solid fa-chart-line text-2xl"></i>
-                            </div>
+                    <article class="card reveal p-6 sm:p-8">
+                        <div class="flex items-center gap-4">
+                            <span class="icon-tile shrink-0"><i class="fa-solid fa-store"></i></span>
                             <div>
-                                <div class="text-xs font-bold uppercase tracking-[0.2em] text-glowsoft">Market Outlook</div>
-                                <h3 class="mt-2 font-display text-2xl font-bold text-white">Market Opportunities by Business Category</h3>
+                                <p class="text-xs font-extrabold uppercase tracking-[.18em] text-primary">Small businesses</p>
+                                <h3 class="mt-1 text-2xl font-extrabold text-ink">Practical support without full-time IT staff</h3>
                             </div>
                         </div>
-                        <div class="mt-8 overflow-hidden rounded-[1.5rem] border border-line">
-                            <div class="grid grid-cols-[1.25fr_0.75fr] bg-white/5 px-5 py-4 text-sm font-bold uppercase tracking-[0.12em] text-glowsoft">
-                                <div>Business Category</div>
-                                <div>Online Growth Potential</div>
+                        <p class="mt-6 leading-7 text-steel">For shops, salons, grocery stores, cafes, small offices and tuition classes.</p>
+                        <div class="mt-5 grid gap-3 sm:grid-cols-2">
+                            <div class="rounded-lg bg-slate-50 p-3 font-bold text-ink">PC repair and maintenance</div>
+                            <div class="rounded-lg bg-slate-50 p-3 font-bold text-ink">Printer repair and setup</div>
+                            <div class="rounded-lg bg-slate-50 p-3 font-bold text-ink">Billing printer support</div>
+                            <div class="rounded-lg bg-slate-50 p-3 font-bold text-ink">POS troubleshooting</div>
+                            <div class="rounded-lg bg-slate-50 p-3 font-bold text-ink">WiFi and router support</div>
+                            <div class="rounded-lg bg-slate-50 p-3 font-bold text-ink">CCTV/NVR basic networking</div>
+                            <div class="rounded-lg bg-slate-50 p-3 font-bold text-ink">Email and Outlook setup</div>
+                            <div class="rounded-lg bg-slate-50 p-3 font-bold text-ink">Monthly IT support</div>
+                        </div>
+                        <div class="mt-7 rounded-lg border border-teal-100 bg-teal-50 p-5">
+                            <p class="font-extrabold text-ink">Reliable IT support for your business without hiring full-time IT staff.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="packages" class="px-4 py-20 sm:px-6 lg:px-8">
+            <div class="mx-auto max-w-7xl">
+                <div class="reveal mb-12 max-w-4xl">
+                    <p class="mb-3 text-sm font-extrabold uppercase tracking-[.18em] text-primary">Repair and support packages</p>
+                    <h2 class="text-4xl font-extrabold leading-tight text-ink md:text-5xl">Know the likely price before you book.</h2>
+                    <p class="mt-4 text-lg leading-8 text-steel">Final pricing depends on the issue, travel, time and any replacement parts. You receive an estimate before repair work begins.</p>
+                </div>
+                <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+                    <article class="card reveal p-6">
+                        <div class="icon-tile"><i class="fa-solid fa-stethoscope"></i></div>
+                        <p class="mt-5 text-xs font-extrabold uppercase tracking-[.18em] text-primary">Package 1</p>
+                        <h3 class="mt-2 text-xl font-extrabold text-ink">Basic Visit / Diagnosis</h3>
+                        <p class="mt-2 text-2xl font-extrabold text-primary">LKR 1,500 - 2,500</p>
+                        <ul class="mt-5 space-y-2 text-steel">
+                            <li><i class="fa-solid fa-check mr-2 text-secondary"></i>Device check and issue diagnosis</li>
+                            <li><i class="fa-solid fa-check mr-2 text-secondary"></i>Estimate before repair</li>
+                            <li><i class="fa-solid fa-check mr-2 text-secondary"></i>Basic advice and next steps</li>
+                        </ul>
+                        <a class="mt-6 inline-flex items-center gap-2 font-extrabold text-ink" href="https://wa.me/94760846996?text=Hi%20DR%20TECH,%20I%20want%20to%20book%20a%20Basic%20Visit%20or%20Diagnosis" target="_blank" rel="noopener noreferrer">Book diagnosis <i class="fa-solid fa-arrow-right"></i></a>
+                    </article>
+                    <article class="card reveal p-6">
+                        <div class="icon-tile"><i class="fa-solid fa-gauge-high"></i></div>
+                        <p class="mt-5 text-xs font-extrabold uppercase tracking-[.18em] text-primary">Package 2</p>
+                        <h3 class="mt-2 text-xl font-extrabold text-ink">Laptop Speed Boost</h3>
+                        <p class="mt-2 text-2xl font-extrabold text-primary">LKR 3,500 - 7,500</p>
+                        <p class="mt-1 text-sm font-semibold text-steel">Parts not included</p>
+                        <ul class="mt-5 space-y-2 text-steel">
+                            <li><i class="fa-solid fa-check mr-2 text-secondary"></i>Startup and junk cleanup</li>
+                            <li><i class="fa-solid fa-check mr-2 text-secondary"></i>Malware, driver and Windows check</li>
+                            <li><i class="fa-solid fa-check mr-2 text-secondary"></i>SSD/RAM upgrade advice</li>
+                        </ul>
+                        <p class="mt-5 rounded-lg bg-amber-50 p-3 font-bold text-ink" lang="si">Laptop එක slow ද? Format කරන්න කලින් check කරගන්න.</p>
+                    </article>
+                    <article class="card reveal p-6">
+                        <div class="icon-tile"><i class="fa-brands fa-windows"></i></div>
+                        <p class="mt-5 text-xs font-extrabold uppercase tracking-[.18em] text-primary">Package 3</p>
+                        <h3 class="mt-2 text-xl font-extrabold text-ink">Windows + Software Setup</h3>
+                        <p class="mt-2 text-2xl font-extrabold text-primary">LKR 3,500 - 6,500</p>
+                        <ul class="mt-5 space-y-2 text-steel">
+                            <li><i class="fa-solid fa-check mr-2 text-secondary"></i>Windows, drivers and basic software</li>
+                            <li><i class="fa-solid fa-check mr-2 text-secondary"></i>Browser and printer driver setup</li>
+                            <li><i class="fa-solid fa-check mr-2 text-secondary"></i>Backup guidance</li>
+                        </ul>
+                        <p class="mt-5 text-sm font-semibold text-steel">Valid software licences are the customer's responsibility. Cracked software is not supplied.</p>
+                    </article>
+                    <article class="card reveal p-6">
+                        <div class="icon-tile"><i class="fa-solid fa-wifi"></i></div>
+                        <p class="mt-5 text-xs font-extrabold uppercase tracking-[.18em] text-primary">Package 4</p>
+                        <h3 class="mt-2 text-xl font-extrabold text-ink">WiFi / Printer Home Support</h3>
+                        <p class="mt-2 text-2xl font-extrabold text-primary">LKR 2,500 - 5,000</p>
+                        <ul class="mt-5 space-y-2 text-steel">
+                            <li><i class="fa-solid fa-check mr-2 text-secondary"></i>Router and WiFi signal check</li>
+                            <li><i class="fa-solid fa-check mr-2 text-secondary"></i>Printer and scanner setup</li>
+                            <li><i class="fa-solid fa-check mr-2 text-secondary"></i>Connect household or office devices</li>
+                        </ul>
+                    </article>
+                    <article class="card reveal p-6">
+                        <div class="icon-tile"><i class="fa-solid fa-shop"></i></div>
+                        <p class="mt-5 text-xs font-extrabold uppercase tracking-[.18em] text-primary">Package 5</p>
+                        <h3 class="mt-2 text-xl font-extrabold text-ink">Small Business IT Support Visit</h3>
+                        <p class="mt-2 text-2xl font-extrabold text-primary">LKR 3,500 - 7,500</p>
+                        <ul class="mt-5 space-y-2 text-steel">
+                            <li><i class="fa-solid fa-check mr-2 text-secondary"></i>PC, printer and network check</li>
+                            <li><i class="fa-solid fa-check mr-2 text-secondary"></i>POS or billing device check</li>
+                            <li><i class="fa-solid fa-check mr-2 text-secondary"></i>Backup advice and basic troubleshooting</li>
+                        </ul>
+                    </article>
+                    <article class="card reveal border-2 border-primary p-6">
+                        <div class="icon-tile"><i class="fa-solid fa-calendar-check"></i></div>
+                        <p class="mt-5 text-xs font-extrabold uppercase tracking-[.18em] text-primary">Package 6</p>
+                        <h3 class="mt-2 text-xl font-extrabold text-ink">Monthly Business IT Care</h3>
+                        <p class="mt-2 text-2xl font-extrabold text-primary">From LKR 7,500/month</p>
+                        <ul class="mt-5 space-y-2 text-steel">
+                            <li><i class="fa-solid fa-check mr-2 text-secondary"></i>On-site and remote support options</li>
+                            <li><i class="fa-solid fa-check mr-2 text-secondary"></i>PC, printer, POS and WiFi care</li>
+                            <li><i class="fa-solid fa-check mr-2 text-secondary"></i>Priority support on selected plans</li>
+                        </ul>
+                        <a class="mt-6 inline-flex items-center gap-2 font-extrabold text-ink" href="#services">Compare monthly plans <i class="fa-solid fa-arrow-down"></i></a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="bg-ink px-4 py-20 text-white sm:px-6 lg:px-8">
+            <div class="mx-auto max-w-7xl">
+                <div class="reveal mb-12 grid gap-6 md:grid-cols-[.9fr_1.1fr] md:items-end">
+                    <div>
+                        <p class="mb-3 text-sm font-extrabold uppercase tracking-[.18em] text-teal-300">Monthly Business IT Care</p>
+                        <h2 class="text-4xl font-extrabold leading-tight md:text-5xl">Stable IT support at a predictable monthly cost.</h2>
+                    </div>
+                    <p class="text-lg leading-8 text-slate-300">Choose support based on your number of devices, visit frequency and response needs. Final scope is confirmed after a simple business IT check.</p>
+                </div>
+                <div class="grid gap-5 md:grid-cols-3">
+                    <article class="reveal rounded-lg border border-white/10 bg-white/10 p-6">
+                        <p class="text-sm font-extrabold uppercase tracking-[.18em] text-teal-300">Starter</p>
+                        <p class="mt-4 text-3xl font-extrabold">LKR 7,500<span class="text-base text-slate-300">/month</span></p>
+                        <p class="mt-4 text-slate-300">Essential maintenance for a very small business with a simple setup.</p>
+                    </article>
+                    <article class="reveal rounded-lg border border-teal-300/50 bg-white/15 p-6 shadow-glow">
+                        <p class="text-sm font-extrabold uppercase tracking-[.18em] text-teal-300">Growth</p>
+                        <p class="mt-4 text-3xl font-extrabold">LKR 15,000<span class="text-base text-slate-300">/month</span></p>
+                        <p class="mt-4 text-slate-300">More regular support for growing shops, offices, cafes and tuition classes.</p>
+                    </article>
+                    <article class="reveal rounded-lg border border-white/10 bg-white/10 p-6">
+                        <p class="text-sm font-extrabold uppercase tracking-[.18em] text-teal-300">Pro</p>
+                        <p class="mt-4 text-3xl font-extrabold">LKR 25,000+<span class="text-base text-slate-300">/month</span></p>
+                        <p class="mt-4 text-slate-300">Priority support and broader coverage for more devices and business-critical systems.</p>
+                    </article>
+                </div>
+                <div class="reveal mt-8 grid gap-3 rounded-lg border border-white/10 bg-white/10 p-6 sm:grid-cols-2 lg:grid-cols-3">
+                    <p><i class="fa-solid fa-check mr-2 text-teal-300"></i>Scheduled on-site visits</p>
+                    <p><i class="fa-solid fa-check mr-2 text-teal-300"></i>Remote support</p>
+                    <p><i class="fa-solid fa-check mr-2 text-teal-300"></i>Printer and POS support</p>
+                    <p><i class="fa-solid fa-check mr-2 text-teal-300"></i>WiFi/router troubleshooting</p>
+                    <p><i class="fa-solid fa-check mr-2 text-teal-300"></i>PC maintenance</p>
+                    <p><i class="fa-solid fa-check mr-2 text-teal-300"></i>Basic backup checks</p>
+                </div>
+                <div class="reveal mt-8 flex flex-col gap-5 rounded-lg border border-white/10 bg-white/10 p-6 md:flex-row md:items-center md:justify-between">
+                    <div>
+                        <h3 class="text-2xl font-extrabold">Tell us about your business setup.</h3>
+                        <p class="mt-2 text-slate-300">Share your device count and current problems to get the right monthly plan.</p>
+                    </div>
+                    <a href="https://wa.me/94760846996?text=Hi%20DR%20TECH,%20I%20want%20a%20Monthly%20Business%20IT%20Care%20plan" target="_blank" rel="noopener noreferrer" class="button-primary shrink-0">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        Ask About Monthly Care
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="growth" class="px-4 py-20 sm:px-6 lg:px-8">
+            <div class="mx-auto max-w-7xl">
+                <div class="reveal mb-12 max-w-4xl">
+                    <p class="mb-3 text-sm font-extrabold uppercase tracking-[.18em] text-primary">Business growth</p>
+                    <h2 class="text-4xl font-extrabold leading-tight text-ink md:text-5xl">2026 online growth opportunities for Sri Lankan businesses.</h2>
+                    <p class="mt-5 text-lg leading-8 text-steel">Customers now search on Google Maps, WhatsApp, Facebook, Instagram and delivery platforms before making a purchase.</p>
+                    <p class="mt-3 text-lg leading-8 text-steel">If your business is not online, you may be missing valuable customers every day.</p>
+                </div>
+
+                <div class="mb-12 grid items-start gap-6 lg:grid-cols-[1.2fr_.8fr]">
+                    <figure class="card reveal overflow-hidden">
+                        <a href="https://wa.me/94760846996?text=Hi%20DR%20TECH,%20I%20want%20the%20Business%20Digital%20Starter%20Package" target="_blank" rel="noopener noreferrer" aria-label="Ask about the DR TECH Business Digital Starter Package">
+                            <img
+                                src="assets/business-growth-before-after.png"
+                                alt="DR TECH business digital starter package showing a Google Business Profile before and after setup"
+                                width="1369"
+                                height="1149"
+                                loading="lazy"
+                                decoding="async"
+                                class="block h-auto w-full"
+                            >
+                        </a>
+                        <figcaption class="flex flex-col gap-4 border-t border-slate-200 bg-white p-5 sm:flex-row sm:items-center sm:justify-between">
+                            <div>
+                                <p class="font-extrabold text-ink">Business Digital Starter Package</p>
+                                <p class="mt-1 text-sm leading-6 text-steel">A practical setup for Google, Facebook and WhatsApp visibility.</p>
                             </div>
-                            <div class="divide-y divide-line text-sm sm:text-base">
-                                <div class="grid grid-cols-[1.25fr_0.75fr] px-5 py-4 text-textsoft">
-                                    <div class="font-semibold text-white">Food / Restaurants</div>
-                                    <div>Very High</div>
+                            <a href="https://wa.me/94760846996?text=Hi%20DR%20TECH,%20I%20want%20the%20Business%20Digital%20Starter%20Package" target="_blank" rel="noopener noreferrer" class="inline-flex shrink-0 items-center gap-2 font-extrabold text-emerald-600 hover:text-emerald-700">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                Ask on WhatsApp
+                            </a>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="card reveal overflow-hidden">
+                        <a href="https://wa.me/94760846996?text=Hi%20DR%20TECH,%20I%20want%20a%20free%20online%20presence%20checkup" target="_blank" rel="noopener noreferrer" aria-label="Request a free online presence checkup from DR TECH">
+                            <img
+                                src="assets/business-growth-square.png"
+                                alt="DR TECH online presence promotion for local businesses"
+                                width="1024"
+                                height="1024"
+                                loading="lazy"
+                                decoding="async"
+                                class="block h-auto w-full"
+                            >
+                        </a>
+                        <figcaption class="border-t border-slate-200 bg-white p-5">
+                            <p class="font-extrabold text-ink">Free Online Presence Checkup</p>
+                            <p class="mt-1 text-sm leading-6 text-steel">Find the quickest ways to improve visibility, trust, inquiries and sales.</p>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="grid gap-6 lg:grid-cols-[.95fr_1.05fr]">
+                    <article class="card reveal overflow-hidden p-0">
+                        <div class="p-6 sm:p-8">
+                            <div class="flex items-center gap-4">
+                                <span class="icon-tile"><i class="fa-solid fa-chart-line"></i></span>
+                                <div>
+                                    <p class="text-xs font-extrabold uppercase tracking-[.18em] text-primary">Market outlook</p>
+                                    <h3 class="mt-2 text-2xl font-extrabold text-ink">Market opportunities by business category</h3>
                                 </div>
-                                <div class="grid grid-cols-[1.25fr_0.75fr] px-5 py-4 text-textsoft">
-                                    <div class="font-semibold text-white">Grocery Stores</div>
-                                    <div>High</div>
+                            </div>
+                        </div>
+                        <div class="overflow-x-auto border-t border-slate-200">
+                            <div class="min-w-[520px]">
+                                <div class="grid grid-cols-[1.25fr_.75fr] bg-ink px-5 py-4 text-sm font-extrabold uppercase tracking-[.12em] text-white">
+                                    <div>Business Category</div>
+                                    <div>Online Growth Potential</div>
                                 </div>
-                                <div class="grid grid-cols-[1.25fr_0.75fr] px-5 py-4 text-textsoft">
-                                    <div class="font-semibold text-white">Salons / Beauty Services</div>
-                                    <div>Medium to High</div>
-                                </div>
-                                <div class="grid grid-cols-[1.25fr_0.75fr] px-5 py-4 text-textsoft">
-                                    <div class="font-semibold text-white">Retail Shops</div>
-                                    <div>High</div>
-                                </div>
-                                <div class="grid grid-cols-[1.25fr_0.75fr] px-5 py-4 text-textsoft">
-                                    <div class="font-semibold text-white">Cafes / Coffee Shops</div>
-                                    <div>High</div>
-                                </div>
-                                <div class="grid grid-cols-[1.25fr_0.75fr] px-5 py-4 text-textsoft">
-                                    <div class="font-semibold text-white">Small Offices / Service Businesses</div>
-                                    <div>Medium</div>
+                                <div class="divide-y divide-slate-200 text-sm sm:text-base">
+                                    <div class="grid grid-cols-[1.25fr_.75fr] px-5 py-4 text-steel">
+                                        <div class="font-extrabold text-ink">Food / Restaurants</div>
+                                        <div>Very High</div>
+                                    </div>
+                                    <div class="grid grid-cols-[1.25fr_.75fr] px-5 py-4 text-steel">
+                                        <div class="font-extrabold text-ink">Grocery Stores</div>
+                                        <div>High</div>
+                                    </div>
+                                    <div class="grid grid-cols-[1.25fr_.75fr] px-5 py-4 text-steel">
+                                        <div class="font-extrabold text-ink">Salons / Beauty Services</div>
+                                        <div>Medium to High</div>
+                                    </div>
+                                    <div class="grid grid-cols-[1.25fr_.75fr] px-5 py-4 text-steel">
+                                        <div class="font-extrabold text-ink">Retail Shops</div>
+                                        <div>High</div>
+                                    </div>
+                                    <div class="grid grid-cols-[1.25fr_.75fr] px-5 py-4 text-steel">
+                                        <div class="font-extrabold text-ink">Cafes / Coffee Shops</div>
+                                        <div>High</div>
+                                    </div>
+                                    <div class="grid grid-cols-[1.25fr_.75fr] px-5 py-4 text-steel">
+                                        <div class="font-extrabold text-ink">Small Offices / Service Businesses</div>
+                                        <div>Medium</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </article>
 
-                    <article class="neon-card rounded-[2rem] p-8 fade-in">
-                        <div class="text-xs font-bold uppercase tracking-[0.2em] text-glowsoft">DR TECH Services</div>
-                        <h3 class="mt-4 font-display text-3xl font-bold text-white">How DR TECH SERVICES Can Help Your Business</h3>
-                        <p class="mt-4 leading-7 text-textsoft">We help small businesses move from traditional operations to modern digital systems.</p>
-                        <div class="mt-8 grid gap-4 sm:grid-cols-2">
-                            <div class="rounded-[1.4rem] border border-glow/10 bg-white/5 p-4 text-sm font-semibold text-white"><i class="fa-solid fa-check mr-2 text-glow"></i>Google Business Profile Setup</div>
-                            <div class="rounded-[1.4rem] border border-glow/10 bg-white/5 p-4 text-sm font-semibold text-white"><i class="fa-solid fa-check mr-2 text-glow"></i>WhatsApp Business Setup</div>
-                            <div class="rounded-[1.4rem] border border-glow/10 bg-white/5 p-4 text-sm font-semibold text-white"><i class="fa-solid fa-check mr-2 text-glow"></i>Facebook & Instagram Business Setup</div>
-                            <div class="rounded-[1.4rem] border border-glow/10 bg-white/5 p-4 text-sm font-semibold text-white"><i class="fa-solid fa-check mr-2 text-glow"></i>Online Selling Setup</div>
-                            <div class="rounded-[1.4rem] border border-glow/10 bg-white/5 p-4 text-sm font-semibold text-white"><i class="fa-solid fa-check mr-2 text-glow"></i>Uber Eats / PickMe Merchant Registration Support</div>
-                            <div class="rounded-[1.4rem] border border-glow/10 bg-white/5 p-4 text-sm font-semibold text-white"><i class="fa-solid fa-check mr-2 text-glow"></i>POS Billing System Setup</div>
-                            <div class="rounded-[1.4rem] border border-glow/10 bg-white/5 p-4 text-sm font-semibold text-white"><i class="fa-solid fa-check mr-2 text-glow"></i>Digital Billing Solutions</div>
-                            <div class="rounded-[1.4rem] border border-glow/10 bg-white/5 p-4 text-sm font-semibold text-white"><i class="fa-solid fa-check mr-2 text-glow"></i>Billing Printer Setup</div>
-                            <div class="rounded-[1.4rem] border border-glow/10 bg-white/5 p-4 text-sm font-semibold text-white"><i class="fa-solid fa-check mr-2 text-glow"></i>WiFi / Network Setup</div>
-                            <div class="rounded-[1.4rem] border border-glow/10 bg-white/5 p-4 text-sm font-semibold text-white"><i class="fa-solid fa-check mr-2 text-glow"></i>Computer & IT Support</div>
+                    <article class="card reveal p-6 sm:p-8">
+                        <p class="text-xs font-extrabold uppercase tracking-[.18em] text-primary">DR TECH services</p>
+                        <h3 class="mt-4 text-3xl font-extrabold text-ink">How DR TECH SERVICES can help your business</h3>
+                        <p class="mt-4 leading-7 text-steel">We help small businesses move from traditional operations to modern digital systems.</p>
+                        <div class="mt-8 grid gap-3 sm:grid-cols-2">
+                            <div class="rounded-lg border border-slate-200 bg-white p-4 text-sm font-bold text-ink"><i class="fa-solid fa-check mr-2 text-secondary"></i>Google Business Profile Setup</div>
+                            <div class="rounded-lg border border-slate-200 bg-white p-4 text-sm font-bold text-ink"><i class="fa-solid fa-check mr-2 text-secondary"></i>WhatsApp Business Setup</div>
+                            <div class="rounded-lg border border-slate-200 bg-white p-4 text-sm font-bold text-ink"><i class="fa-solid fa-check mr-2 text-secondary"></i>Facebook & Instagram Business Setup</div>
+                            <div class="rounded-lg border border-slate-200 bg-white p-4 text-sm font-bold text-ink"><i class="fa-solid fa-check mr-2 text-secondary"></i>Online Selling Setup</div>
+                            <div class="rounded-lg border border-slate-200 bg-white p-4 text-sm font-bold text-ink"><i class="fa-solid fa-check mr-2 text-secondary"></i>Uber Eats / PickMe Merchant Registration Support</div>
+                            <div class="rounded-lg border border-slate-200 bg-white p-4 text-sm font-bold text-ink"><i class="fa-solid fa-check mr-2 text-secondary"></i>POS Billing System Setup</div>
+                            <div class="rounded-lg border border-slate-200 bg-white p-4 text-sm font-bold text-ink"><i class="fa-solid fa-check mr-2 text-secondary"></i>Digital Billing Solutions</div>
+                            <div class="rounded-lg border border-slate-200 bg-white p-4 text-sm font-bold text-ink"><i class="fa-solid fa-check mr-2 text-secondary"></i>Billing Printer Setup</div>
+                            <div class="rounded-lg border border-slate-200 bg-white p-4 text-sm font-bold text-ink"><i class="fa-solid fa-check mr-2 text-secondary"></i>WiFi / Network Setup</div>
+                            <div class="rounded-lg border border-slate-200 bg-white p-4 text-sm font-bold text-ink"><i class="fa-solid fa-check mr-2 text-secondary"></i>Computer & IT Support</div>
                         </div>
-                        <div class="mt-8 rounded-[1.6rem] border border-glow/12 bg-glow/10 p-6">
-                            <h4 class="font-display text-2xl font-bold text-white">Take Your Business to the Next Level</h4>
-                            <p class="mt-3 leading-7 text-textsoft">Whether you run a shop, restaurant, salon, grocery store, cafe, or small office, DR TECH SERVICES can help you modernize your operations, attract more customers, and increase sales.</p>
-                            <p class="mt-3 font-semibold text-white">Start your digital transformation today.</p>
-                            <div class="mt-6 flex flex-col gap-4 sm:flex-row">
-                                <a href="https://wa.me/94760846996?text=Hi%20DR%20TECH,%20I%20want%20help%20putting%20my%20business%20online" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 rounded-full bg-glow px-6 py-4 text-sm font-extrabold text-[#050816] transition hover:bg-glowsoft">
+                        <div class="mt-8 rounded-lg border border-sky-100 bg-sky-50 p-6">
+                            <h4 class="text-2xl font-extrabold text-ink">Take your business to the next level</h4>
+                            <p class="mt-3 leading-7 text-steel">Whether you run a shop, restaurant, salon, grocery store, cafe or small office, DR TECH SERVICES can help you modernize operations, attract more customers and increase sales.</p>
+                            <p class="mt-3 font-extrabold text-ink">Start your digital transformation today.</p>
+                            <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+                                <a href="https://wa.me/94760846996?text=Hi%20DR%20TECH,%20I%20want%20help%20putting%20my%20business%20online" target="_blank" rel="noopener noreferrer" class="button-primary">
                                     <i class="fa-brands fa-whatsapp text-xl"></i>
                                     WhatsApp About Business Setup
                                 </a>
-                                <a href="#contact" class="inline-flex items-center justify-center gap-3 rounded-full border border-glow/30 bg-white/5 px-6 py-4 text-sm font-extrabold text-white transition hover:bg-glow/10">
+                                <a href="#contact" class="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full border border-slate-300 px-5 py-3 font-extrabold text-ink transition hover:border-primary hover:text-primary">
                                     <i class="fa-solid fa-briefcase"></i>
                                     Request Business Support
                                 </a>
@@ -413,242 +830,191 @@
             </div>
         </section>
 
-        <section class="bg-panel py-24">
-            <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-                <div class="mb-14 max-w-3xl fade-in">
-                    <div class="text-sm font-bold uppercase tracking-[0.24em] text-glow">How It Works</div>
-                    <h2 class="mt-5 font-display text-4xl font-bold text-white sm:text-5xl">Simple Support From First Message To Final Fix</h2>
+        <section id="about" class="px-4 py-20 sm:px-6 lg:px-8">
+            <div class="mx-auto grid max-w-7xl gap-10 md:grid-cols-2 md:items-center">
+                <div class="reveal overflow-hidden rounded-lg shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=85" alt="IT consultation and infrastructure planning" class="h-full min-h-[360px] w-full object-cover transition duration-700 hover:scale-105">
                 </div>
-                <div class="grid gap-6 lg:grid-cols-3">
-                    <article class="neon-card step-card rounded-[2rem] p-8 fade-in">
-                        <div class="flex h-16 w-16 items-center justify-center rounded-full border border-glow/30 bg-glow/10 font-display text-2xl font-bold text-glow">1</div>
-                        <h3 class="mt-6 font-display text-2xl font-bold text-white">WhatsApp Us</h3>
-                        <p class="mt-3 leading-7 text-textsoft">Send your issue, device type, and location on WhatsApp so we can understand the problem quickly.</p>
-                    </article>
-                    <article class="neon-card step-card rounded-[2rem] p-8 fade-in">
-                        <div class="flex h-16 w-16 items-center justify-center rounded-full border border-glow/30 bg-glow/10 font-display text-2xl font-bold text-glow">2</div>
-                        <h3 class="mt-6 font-display text-2xl font-bold text-white">Get Clear Starter Pricing</h3>
-                        <p class="mt-3 leading-7 text-textsoft">We’ll explain the likely fix, the visit charge, and whether extra parts or software work are needed.</p>
-                    </article>
-                    <article class="neon-card step-card rounded-[2rem] p-8 fade-in">
-                        <div class="flex h-16 w-16 items-center justify-center rounded-full border border-glow/30 bg-glow/10 font-display text-2xl font-bold text-glow">3</div>
-                        <h3 class="mt-6 font-display text-2xl font-bold text-white">On-Site or Remote Resolution</h3>
-                        <p class="mt-3 leading-7 text-textsoft">We visit your home or office where needed, or provide remote support for software and account issues.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="pricing" class="py-24">
-            <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-                <div class="mb-14 max-w-3xl fade-in">
-                    <div class="text-sm font-bold uppercase tracking-[0.24em] text-glow">Pricing</div>
-                    <h2 class="mt-5 font-display text-4xl font-bold text-white sm:text-5xl">Starter Pricing You Can Understand</h2>
-                </div>
-                <div class="grid gap-6 lg:grid-cols-3">
-                    <article class="neon-card price-card rounded-[2rem] p-8 fade-in">
-                        <div class="text-xs font-bold uppercase tracking-[0.2em] text-glowsoft">Visit & Diagnosis</div>
-                        <h3 class="mt-5 font-display text-4xl font-bold text-white">LKR 1,500 - 2,500</h3>
-                        <p class="mt-4 leading-7 text-textsoft">Diagnosis starts at LKR 1,500 and home visits start at LKR 2,500 depending on the job and location.</p>
-                    </article>
-                    <article class="neon-card price-card rounded-[2rem] p-8 fade-in">
-                        <div class="text-xs font-bold uppercase tracking-[0.2em] text-glowsoft">Popular Home Services</div>
-                        <h3 class="mt-5 font-display text-4xl font-bold text-white">LKR 2,000 - 3,500</h3>
-                        <p class="mt-4 leading-7 text-textsoft">Windows installation LKR 3,500, virus cleanup LKR 3,000, printer setup LKR 2,000, and Wi-Fi troubleshooting LKR 2,500.</p>
-                    </article>
-                    <article class="neon-card price-card rounded-[2rem] p-8 fade-in">
-                        <div class="text-xs font-bold uppercase tracking-[0.2em] text-glowsoft">Upgrade & Business Support</div>
-                        <h3 class="mt-5 font-display text-4xl font-bold text-white">From LKR 2,500</h3>
-                        <p class="mt-4 leading-7 text-textsoft">SSD upgrade labor starts at LKR 2,500. Small business support and monthly maintenance packages are quoted based on scope.</p>
-                    </article>
-                </div>
-                <p class="mt-6 text-sm font-semibold text-textsoft fade-in">Hardware parts like SSDs and RAM are quoted separately. These are starter prices and exact costs depend on the issue.</p>
-            </div>
-        </section>
-
-        <section class="bg-panel py-24">
-            <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-                <div class="mb-14 max-w-3xl fade-in">
-                    <div class="text-sm font-bold uppercase tracking-[0.24em] text-glow">Why Choose Us</div>
-                    <h2 class="mt-5 font-display text-4xl font-bold text-white sm:text-5xl">Why Clients Choose DR TECH</h2>
-                </div>
-                <div class="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-                    <div class="space-y-6">
-                        <article class="neon-card trust-card rounded-[2rem] p-8 fade-in">
-                            <h3 class="font-display text-2xl font-bold text-white">Convenient Local Coverage</h3>
-                            <p class="mt-3 leading-7 text-textsoft">We focus on a practical service area first, so response times stay realistic for customers in key Colombo suburbs.</p>
-                        </article>
-                        <article class="neon-card trust-card rounded-[2rem] p-8 fade-in">
-                            <h3 class="font-display text-2xl font-bold text-white">Strong Business IT Background</h3>
-                            <p class="mt-3 leading-7 text-textsoft">Your enterprise support experience translates well into office troubleshooting, email setup, printer sharing, and repeat maintenance work.</p>
-                        </article>
-                    </div>
-                    <div class="grid gap-6">
-                        <article class="neon-card trust-card rounded-[2rem] p-8 fade-in">
-                            <div class="text-lg text-glow">★★★★★</div>
-                            <p class="mt-4 text-lg leading-8 text-white">"My desktop was taking forever to start. DR TECH fixed the startup issue, cleaned it up, and now it runs properly again."</p>
-                            <div class="mt-4 text-sm font-bold uppercase tracking-[0.18em] text-textsoft">Home User, Maharagama</div>
-                        </article>
-                        <article class="neon-card trust-card rounded-[2rem] p-8 fade-in">
-                            <div class="text-lg text-glow">★★★★★</div>
-                            <p class="mt-4 text-lg leading-8 text-white">"We needed printer sharing, Outlook setup, and help with office PCs. Having one person handle all of it saved us a lot of time."</p>
-                            <div class="mt-4 text-sm font-bold uppercase tracking-[0.18em] text-textsoft">Small Business Client, Rajagiriya</div>
-                        </article>
+                <div class="reveal">
+                    <p class="mb-3 text-sm font-extrabold uppercase tracking-[.18em] text-primary">Founder expertise</p>
+                    <h2 class="text-4xl font-extrabold leading-tight text-ink md:text-5xl">Not just a repair shop.</h2>
+                    <p class="mt-5 text-lg leading-8 text-steel">Founded by Deepal Rupasinghe, former IT Infrastructure Lead at Ceylon Cold Stores PLC, John Keells Holdings.</p>
+                    <div class="mt-7 space-y-4">
+                        <div class="flex gap-4">
+                            <span class="icon-tile shrink-0"><i class="fa-solid fa-check"></i></span>
+                            <div>
+                                <h3 class="font-extrabold text-ink">Enterprise experience</h3>
+                                <p class="text-steel">LAN, WLAN, servers, virtualization and security.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <span class="icon-tile shrink-0"><i class="fa-solid fa-check"></i></span>
+                            <div>
+                                <h3 class="font-extrabold text-ink">Certified skill set</h3>
+                                <p class="text-steel">M365, Azure, Odoo ERP, firewall management and data security.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <span class="icon-tile shrink-0"><i class="fa-solid fa-check"></i></span>
+                            <div>
+                                <h3 class="font-extrabold text-ink">Local support</h3>
+                                <p class="text-steel">Corporate-level thinking at practical Sri Lankan SME pricing.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="py-24">
-            <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-                <div class="mb-14 max-w-3xl fade-in">
-                    <div class="text-sm font-bold uppercase tracking-[0.24em] text-glow">Contact</div>
-                    <h2 class="mt-5 font-display text-4xl font-bold text-white sm:text-5xl">Need Support Fast? Let's Talk.</h2>
+        <section id="contact" class="px-4 py-20 sm:px-6 lg:px-8">
+            <div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-[.9fr_1.1fr] md:items-start">
+                <div class="reveal">
+                    <p class="mb-3 text-sm font-extrabold uppercase tracking-[.18em] text-primary">Contact</p>
+                    <h2 class="text-4xl font-extrabold leading-tight text-ink md:text-5xl">Send the issue before you book.</h2>
+                    <p class="mt-4 text-lg leading-8 text-steel">WhatsApp the device type, problem, photos or screenshots, and your location. DR TECH will recommend the most suitable visit, pickup or remote-support option.</p>
+                    <div class="mt-7 flex flex-col gap-3 sm:flex-row md:flex-col">
+                        <a href="https://wa.me/94760846996?text=Hi%20DR%20TECH,%20I%20need%20help%20with%20my%20device" target="_blank" rel="noopener noreferrer" class="button-primary">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            WhatsApp +94 760846996
+                        </a>
+                        <a href="tel:+94760846996" class="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full border border-slate-300 px-5 py-3 font-extrabold text-ink transition hover:border-primary hover:text-primary">
+                            <i class="fa-solid fa-phone"></i>
+                            Call now
+                        </a>
+                    </div>
                 </div>
-                <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-                    <div class="neon-card rounded-[2rem] p-8 fade-in">
-                        <div class="space-y-4 text-base font-semibold text-textsoft">
-                            <div><span class="text-white">Hotline:</span> +94 76 084 6996</div>
-                            <div><span class="text-white">WhatsApp:</span> +94 76 084 6996</div>
-                            <div><span class="text-white">Coverage Areas:</span> Nugegoda, Kohuwala, Maharagama, Pamankada, Dehiwala, Mount Lavinia, Rajagiriya, and Battaramulla.</div>
-                        </div>
-                        <div class="mt-8">
-                            <div class="text-sm font-bold uppercase tracking-[0.18em] text-glowsoft">Follow DR TECH</div>
-                            <div class="mt-4 flex flex-wrap gap-3">
-                                <a href="https://www.facebook.com/drtechai" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full border border-line bg-panelsoft px-4 py-3 text-sm font-bold text-white transition hover:border-glow/30 hover:text-glow">
-                                    <i class="fa-brands fa-facebook-f"></i>
-                                    Facebook
-                                </a>
-                                <a href="https://www.tiktok.com/@drtechservices" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full border border-line bg-panelsoft px-4 py-3 text-sm font-bold text-white transition hover:border-glow/30 hover:text-glow">
-                                    <i class="fa-brands fa-tiktok"></i>
-                                    TikTok
-                                </a>
-                                <a href="https://www.instagram.com/drtechservice/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full border border-line bg-panelsoft px-4 py-3 text-sm font-bold text-white transition hover:border-glow/30 hover:text-glow">
-                                    <i class="fa-brands fa-instagram"></i>
-                                    Instagram
-                                </a>
-                                <a href="https://www.linkedin.com/in/deepal-rupasinghe/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full border border-line bg-panelsoft px-4 py-3 text-sm font-bold text-white transition hover:border-glow/30 hover:text-glow">
-                                    <i class="fa-brands fa-linkedin-in"></i>
-                                    LinkedIn
-                                </a>
-                            </div>
-                        </div>
-                        <div class="mt-8 flex flex-col gap-4 sm:flex-row">
-                            <a href="https://wa.me/94760846996?text=Hi%20DR%20TECH,%20I%20need%20a%20repair" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 rounded-full bg-glow px-6 py-4 text-sm font-extrabold text-[#050816] transition hover:bg-glowsoft">
-                                <i class="fa-brands fa-whatsapp text-xl"></i>
-                                WhatsApp Us
-                            </a>
-                            <a href="tel:+94760846996" class="inline-flex items-center justify-center gap-3 rounded-full border border-glow/30 bg-glow/10 px-6 py-4 text-sm font-extrabold text-white transition hover:bg-glow hover:text-[#050816]">
-                                <i class="fa-solid fa-phone text-xl"></i>
-                                Call Now
-                            </a>
-                        </div>
-                    </div>
-                    <div class="neon-card rounded-[2rem] p-8 fade-in">
-                        <h3 class="font-display text-3xl font-bold text-white">Quick Contact Form</h3>
-                        <form action="https://formsubmit.co/drtechservicelk@gmail.com" method="POST" class="mt-6 space-y-4">
-                            <input type="hidden" name="_subject" value="New DR TECH website enquiry">
-                            <input type="hidden" name="_captcha" value="false">
-                            <input type="hidden" name="_template" value="table">
-                            <div>
-                                <label class="mb-2 block text-sm font-bold text-white" for="name">Name</label>
-                                <input id="name" name="name" type="text" required class="w-full rounded-2xl border border-line bg-panelsoft px-4 py-3 text-white outline-none transition focus:border-glow focus:ring-2 focus:ring-cyan-300/20" placeholder="Your name">
-                            </div>
-                            <div>
-                                <label class="mb-2 block text-sm font-bold text-white" for="phone">Phone</label>
-                                <input id="phone" name="phone" type="tel" required class="w-full rounded-2xl border border-line bg-panelsoft px-4 py-3 text-white outline-none transition focus:border-glow focus:ring-2 focus:ring-cyan-300/20" placeholder="07X XXX XXXX">
-                            </div>
-                            <div>
-                                <label class="mb-2 block text-sm font-bold text-white" for="issue">Your Issue</label>
-                                <textarea id="issue" name="message" rows="4" required class="w-full rounded-2xl border border-line bg-panelsoft px-4 py-3 text-white outline-none transition focus:border-glow focus:ring-2 focus:ring-cyan-300/20" placeholder="Describe the computer, network, printer, or office support issue"></textarea>
-                            </div>
-                            <button type="submit" class="w-full rounded-full bg-glow px-6 py-4 text-sm font-extrabold text-[#050816] transition hover:bg-glowsoft">Send Request</button>
-                        </form>
-                    </div>
+                <form class="card reveal p-6" action="https://formsubmit.co/drtechservicelk@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="New Message from DR TECH Website">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <label class="mb-2 block text-sm font-extrabold text-ink" for="name">Name</label>
+                    <input id="name" name="name" class="mb-4 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 outline-none transition focus:border-primary focus:ring-4 focus:ring-sky-100" placeholder="Your name" required>
+                    <label class="mb-2 block text-sm font-extrabold text-ink" for="email">Email</label>
+                    <input id="email" type="email" name="email" class="mb-4 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 outline-none transition focus:border-primary focus:ring-4 focus:ring-sky-100" placeholder="you@example.com" required>
+                    <label class="mb-2 block text-sm font-extrabold text-ink" for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" class="mb-5 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 outline-none transition focus:border-primary focus:ring-4 focus:ring-sky-100" placeholder="Tell us what happened" required></textarea>
+                    <button type="submit" class="button-primary w-full">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        Send Email
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <section id="faq" class="px-4 pb-20 sm:px-6 lg:px-8">
+            <div class="mx-auto max-w-4xl">
+                <div class="reveal mb-10 text-center">
+                    <p class="mb-3 text-sm font-extrabold uppercase tracking-[.18em] text-primary">FAQ</p>
+                    <h2 class="text-4xl font-extrabold text-ink">Quick answers.</h2>
+                </div>
+                <div class="space-y-3">
+                    <details class="card reveal p-5">
+                        <summary class="cursor-pointer font-extrabold text-ink">How much does a diagnosis cost?</summary>
+                        <p class="mt-3 text-steel">A basic visit and diagnosis is typically LKR 1,500 - 2,500. Travel, repair time and parts may change the final cost, and an estimate is provided before repair.</p>
+                    </details>
+                    <details class="card reveal p-5">
+                        <summary class="cursor-pointer font-extrabold text-ink">Do you offer home visits and pickup or delivery?</summary>
+                        <p class="mt-3 text-steel">Yes. Home visits and pickup or delivery are available around Nugegoda and nearby areas, depending on the device and location.</p>
+                    </details>
+                    <details class="card reveal p-5">
+                        <summary class="cursor-pointer font-extrabold text-ink">What areas do you cover?</summary>
+                        <p class="mt-3 text-steel">Primary coverage is Nugegoda and nearby areas, including Ethul Kotte, Kotte, Maharagama and surrounding Colombo suburbs.</p>
+                    </details>
+                    <details class="card reveal p-5">
+                        <summary class="cursor-pointer font-extrabold text-ink">Do you offer monthly IT support contracts?</summary>
+                        <p class="mt-3 text-steel">Yes. Monthly Business IT Care starts at LKR 7,500, with Growth at LKR 15,000 and Pro plans from LKR 25,000 per month.</p>
+                    </details>
+                    <details class="card reveal p-5">
+                        <summary class="cursor-pointer font-extrabold text-ink">Do you install licensed software?</summary>
+                        <p class="mt-3 text-steel">DR TECH can install and configure legitimate software. Customers must provide or purchase any required licence; cracked software is not supplied.</p>
+                    </details>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="border-t border-white/8 bg-base py-8">
-        <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 text-sm text-textsoft sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
-            <div>© <span id="year"></span> DR TECH. Home and small business IT support for selected Colombo suburbs.</div>
-            <div class="flex flex-wrap items-center gap-4">
-                <a href="#services" class="transition hover:text-white">Services</a>
-                <a href="#growth" class="transition hover:text-white">Business Growth</a>
-                <a href="#pricing" class="transition hover:text-white">Pricing</a>
-                <a href="#contact" class="transition hover:text-white">Contact</a>
-                <a href="https://www.facebook.com/drtechai" target="_blank" rel="noopener noreferrer" class="transition hover:text-glow" aria-label="Facebook">
-                    <i class="fa-brands fa-facebook-f"></i>
-                </a>
-                <a href="https://www.tiktok.com/@drtechservices" target="_blank" rel="noopener noreferrer" class="transition hover:text-glow" aria-label="TikTok">
-                    <i class="fa-brands fa-tiktok"></i>
-                </a>
-                <a href="https://www.instagram.com/drtechservice/" target="_blank" rel="noopener noreferrer" class="transition hover:text-glow" aria-label="Instagram">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/deepal-rupasinghe/" target="_blank" rel="noopener noreferrer" class="transition hover:text-glow" aria-label="LinkedIn">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                </a>
+    <footer class="bg-ink px-4 py-12 text-white sm:px-6 lg:px-8">
+        <div class="mx-auto flex max-w-7xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
+            <div>
+                <div class="flex items-center gap-3">
+                    <span class="grid h-11 w-11 place-items-center rounded-full bg-white text-sm font-extrabold text-ink">DT</span>
+                    <span class="text-2xl font-extrabold">DR TECH</span>
+                </div>
+                <p class="mt-3 max-w-2xl text-slate-400">Home & Small Business IT Support — Nugegoda and nearby areas.</p>
+            </div>
+            <div class="flex gap-4">
+                <a href="https://web.facebook.com/drtechai" target="_blank" rel="noopener noreferrer" class="grid h-11 w-11 place-items-center rounded-full border border-white/15 text-slate-300 transition hover:text-white" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/in/deepal-rupasinghe/" target="_blank" rel="noopener noreferrer" class="grid h-11 w-11 place-items-center rounded-full border border-white/15 text-slate-300 transition hover:text-white" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://www.youtube.com/@drtechlk" target="_blank" rel="noopener noreferrer" class="grid h-11 w-11 place-items-center rounded-full border border-white/15 text-slate-300 transition hover:text-white" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
             </div>
         </div>
+        <p class="mx-auto mt-8 max-w-7xl text-sm text-slate-500">&copy; <span id="currentYear"></span> DR TECH. All rights reserved.</p>
     </footer>
 
-    <div class="fixed bottom-0 left-0 right-0 z-50 border-t border-glow/10 bg-base/95 p-3 backdrop-blur md:hidden">
-        <div class="mx-auto grid max-w-md grid-cols-2 gap-3">
-            <a href="https://wa.me/94760846996?text=Hi%20DR%20TECH,%20I%20need%20a%20repair" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-full bg-green-500 px-4 py-3 text-sm font-extrabold text-white">
-                <i class="fa-brands fa-whatsapp"></i>
-                WhatsApp Us
-            </a>
-            <a href="tel:+94760846996" class="inline-flex items-center justify-center gap-2 rounded-full bg-glow px-4 py-3 text-sm font-extrabold text-[#050816]">
-                <i class="fa-solid fa-phone"></i>
-                Call Now
-            </a>
-        </div>
+    <div class="floating-actions fixed bottom-6 right-5 z-50 flex flex-col gap-3">
+        <a href="tel:+94760846996" class="grid h-14 w-14 place-items-center rounded-full bg-ink text-white shadow-2xl md:hidden" aria-label="Call DR TECH">
+            <i class="fa-solid fa-phone text-xl"></i>
+        </a>
+        <a href="https://wa.me/94760846996?text=Hi%20DR%20TECH,%20I%20need%20help%20with%20my%20device" target="_blank" rel="noopener noreferrer" class="grid h-16 w-16 place-items-center rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 text-white shadow-2xl" aria-label="WhatsApp DR TECH">
+            <i class="fa-brands fa-whatsapp text-3xl"></i>
+        </a>
     </div>
 
     <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
+        const year = document.getElementById('currentYear');
+        if (year) year.textContent = new Date().getFullYear();
+
+        const progress = document.getElementById('scrollProgress');
+        const updateProgress = () => {
+            const max = document.documentElement.scrollHeight - window.innerHeight;
+            const width = max > 0 ? (window.scrollY / max) * 100 : 0;
+            progress.style.width = `${width}%`;
+        };
+        updateProgress();
+        window.addEventListener('scroll', updateProgress, { passive: true });
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add("visible");
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-        document.querySelectorAll(".fade-in").forEach((element) => observer.observe(element));
-
-        const menuToggle = document.getElementById("menu-toggle");
-        const menuClose = document.getElementById("menu-close");
-        const mobileMenu = document.getElementById("mobile-menu");
-        const mobileLinks = document.querySelectorAll(".mobile-link");
-
-        function openMenu() {
-            mobileMenu.classList.remove("hidden");
-            menuToggle.setAttribute("aria-expanded", "true");
-            document.body.style.overflow = "hidden";
-        }
-
-        function closeMenu() {
-            mobileMenu.classList.add("hidden");
-            menuToggle.setAttribute("aria-expanded", "false");
-            document.body.style.overflow = "";
-        }
-
-        menuToggle.addEventListener("click", openMenu);
-        menuClose.addEventListener("click", closeMenu);
-        mobileLinks.forEach((link) => link.addEventListener("click", closeMenu));
-        mobileMenu.addEventListener("click", (event) => {
-            if (event.target === mobileMenu) {
-                closeMenu();
-            }
+        document.querySelectorAll('.reveal').forEach((element, index) => {
+            element.style.transitionDelay = `${Math.min(index % 6, 5) * 70}ms`;
+            observer.observe(element);
         });
-        document.addEventListener("keydown", (event) => {
-            if (event.key === "Escape" && !mobileMenu.classList.contains("hidden")) {
-                closeMenu();
-            }
+
+        const menuButton = document.getElementById('menuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuButton?.addEventListener('click', () => {
+            const open = mobileMenu.classList.toggle('open');
+            menuButton.setAttribute('aria-expanded', String(open));
+            menuButton.innerHTML = open ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+        });
+
+        mobileMenu?.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                menuButton?.setAttribute('aria-expanded', 'false');
+                if (menuButton) menuButton.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            });
+        });
+
+        document.querySelectorAll('.card').forEach((card) => {
+            card.addEventListener('mousemove', (event) => {
+                const rect = card.getBoundingClientRect();
+                const x = event.clientX - rect.left;
+                const y = event.clientY - rect.top;
+                const rotateX = ((y / rect.height) - .5) * -4;
+                const rotateY = ((x / rect.width) - .5) * 4;
+                card.style.transform = `translateY(-8px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+            });
         });
     </script>
 
@@ -656,27 +1022,34 @@
     {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
-        "name": "DR TECH",
-        "description": "Home and small business IT support including computer repair, Windows installation, virus removal, printer setup, Wi-Fi troubleshooting, and office tech support.",
-        "url": "https://deepalweb.github.io/techsite/",
+        "name": "DR TECH SERVICES",
+        "description": "Home and small business IT support around Nugegoda, including laptop and desktop troubleshooting, Windows setup, WiFi, printers, POS support and monthly IT care.",
+        "priceRange": "LKR 1500-25000+",
         "telephone": "+94760846996",
-        "sameAs": [
-            "https://www.facebook.com/drtechai",
-            "https://www.tiktok.com/@drtechservices",
-            "https://www.instagram.com/drtechservice/",
-            "https://www.linkedin.com/in/deepal-rupasinghe/"
-        ],
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "121/B Ethul Kotte",
+            "addressLocality": "Sri Jayawardenepura Kotte",
+            "addressCountry": "LK"
+        },
         "areaServed": [
             "Nugegoda",
-            "Kohuwala",
-            "Pamankada",
-            "Dehiwala",
-            "Mount Lavinia",
-            "Rajagiriya",
+            "Ethul Kotte",
+            "Sri Jayawardenepura Kotte",
             "Maharagama",
-            "Battaramulla"
+            "Colombo suburbs"
         ],
-        "priceRange": "LKR 1500+"
+        "url": "https://deepalweb.github.io/techsite/",
+        "sameAs": [
+            "https://web.facebook.com/drtechai",
+            "https://www.linkedin.com/in/deepal-rupasinghe/",
+            "https://www.youtube.com/@drtechlk"
+        ],
+        "founder": {
+            "@type": "Person",
+            "name": "Deepal Rupasinghe",
+            "jobTitle": "IT Infrastructure Specialist"
+        }
     }
     </script>
 </body>
