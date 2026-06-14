@@ -988,22 +988,91 @@
         </section>
     </main>
 
-    <footer class="bg-ink px-4 py-12 text-white sm:px-6 lg:px-8">
-        <div class="mx-auto flex max-w-7xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
-            <div>
-                <div class="flex items-center gap-3">
-                    <img src="logo.png" alt="DR TECH SERVICES" width="960" height="960" loading="lazy" decoding="async" class="h-20 w-20 object-contain">
-                    <span class="text-2xl font-extrabold">DR TECH SERVICES</span>
+    <footer id="footer" class="relative overflow-hidden bg-ink px-4 pb-8 pt-16 text-white sm:px-6 lg:px-8">
+        <div class="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-primary/10 blur-3xl"></div>
+        <div class="pointer-events-none absolute -bottom-40 left-1/4 h-80 w-80 rounded-full bg-secondary/10 blur-3xl"></div>
+
+        <div class="relative mx-auto max-w-7xl">
+            <div class="mb-14 grid gap-6 rounded-2xl border border-white/10 bg-white/[.07] p-6 shadow-2xl backdrop-blur sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
+                <div>
+                    <p class="text-sm font-extrabold uppercase tracking-[.18em] text-teal-300">Fast local IT support</p>
+                    <h2 class="mt-3 text-3xl font-extrabold leading-tight sm:text-4xl">Need help with a laptop, WiFi, printer or business system?</h2>
+                    <p class="mt-3 max-w-3xl leading-7 text-slate-300">Send the issue and your location on WhatsApp. We will recommend the right visit, pickup or remote-support option.</p>
                 </div>
-                <p class="mt-3 max-w-2xl text-slate-400">Home & Small Business IT Support — Nugegoda and nearby areas.</p>
+                <div class="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
+                    <a href="https://wa.me/94760846996?text=Hi%20DR%20TECH,%20I%20need%20IT%20support" target="_blank" rel="noopener noreferrer" class="button-primary shrink-0">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        WhatsApp Us
+                    </a>
+                    <a href="tel:+94760846996" class="inline-flex min-h-[52px] shrink-0 items-center justify-center gap-2 rounded-full border border-white/20 px-5 py-3 font-extrabold text-white transition hover:border-teal-300 hover:text-teal-200">
+                        <i class="fa-solid fa-phone"></i>
+                        Call +94 76 084 6996
+                    </a>
+                </div>
             </div>
-            <div class="flex gap-4">
-                <a href="https://web.facebook.com/drtechai" target="_blank" rel="noopener noreferrer" class="grid h-11 w-11 place-items-center rounded-full border border-white/15 text-slate-300 transition hover:text-white" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="https://www.linkedin.com/in/deepal-rupasinghe/" target="_blank" rel="noopener noreferrer" class="grid h-11 w-11 place-items-center rounded-full border border-white/15 text-slate-300 transition hover:text-white" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="https://www.youtube.com/@drtechlk" target="_blank" rel="noopener noreferrer" class="grid h-11 w-11 place-items-center rounded-full border border-white/15 text-slate-300 transition hover:text-white" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+
+            <div class="grid gap-10 border-b border-white/10 pb-12 sm:grid-cols-2 lg:grid-cols-[1.35fr_.75fr_.75fr_1fr]">
+                <div>
+                    <a href="#home" class="inline-flex items-center gap-4" aria-label="DR TECH home">
+                        <img src="logo.png" alt="DR TECH SERVICES" width="960" height="960" loading="lazy" decoding="async" class="h-24 w-24 object-contain">
+                        <span class="text-2xl font-extrabold">DR TECH SERVICES</span>
+                    </a>
+                    <p class="mt-4 max-w-sm leading-7 text-slate-400">Home & Small Business IT Support — Nugegoda and nearby areas.</p>
+                    <div class="mt-6 flex gap-3">
+                        <a href="https://web.facebook.com/drtechai" target="_blank" rel="noopener noreferrer" class="grid h-11 w-11 place-items-center rounded-full border border-white/15 text-slate-300 transition hover:border-primary hover:bg-primary hover:text-white" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/in/deepal-rupasinghe/" target="_blank" rel="noopener noreferrer" class="grid h-11 w-11 place-items-center rounded-full border border-white/15 text-slate-300 transition hover:border-primary hover:bg-primary hover:text-white" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com/@drtechlk" target="_blank" rel="noopener noreferrer" class="grid h-11 w-11 place-items-center rounded-full border border-white/15 text-slate-300 transition hover:border-primary hover:bg-primary hover:text-white" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-sm font-extrabold uppercase tracking-[.16em] text-white">Our Services</h3>
+                    <nav class="mt-5 space-y-3 text-sm font-semibold text-slate-400" aria-label="Footer services">
+                        <a href="#repairs" class="block transition hover:translate-x-1 hover:text-teal-300">Home IT Support</a>
+                        <a href="#packages" class="block transition hover:translate-x-1 hover:text-teal-300">Repair Packages</a>
+                        <a href="#services" class="block transition hover:translate-x-1 hover:text-teal-300">Monthly Business Care</a>
+                        <a href="#growth" class="block transition hover:translate-x-1 hover:text-teal-300">Digital Business Setup</a>
+                    </nav>
+                </div>
+
+                <div>
+                    <h3 class="text-sm font-extrabold uppercase tracking-[.16em] text-white">Quick Links</h3>
+                    <nav class="mt-5 space-y-3 text-sm font-semibold text-slate-400" aria-label="Footer links">
+                        <a href="#about" class="block transition hover:translate-x-1 hover:text-teal-300">About DR TECH</a>
+                        <a href="#contact" class="block transition hover:translate-x-1 hover:text-teal-300">Contact Us</a>
+                        <a href="#faq" class="block transition hover:translate-x-1 hover:text-teal-300">Frequently Asked Questions</a>
+                        <a href="#home" class="block transition hover:translate-x-1 hover:text-teal-300">Back to Top</a>
+                    </nav>
+                </div>
+
+                <div>
+                    <h3 class="text-sm font-extrabold uppercase tracking-[.16em] text-white">Contact & Service Area</h3>
+                    <div class="mt-5 space-y-4 text-sm text-slate-400">
+                        <a href="tel:+94760846996" class="flex items-start gap-3 transition hover:text-teal-300">
+                            <i class="fa-solid fa-phone mt-1 w-4 text-teal-300"></i>
+                            <span>+94 76 084 6996</span>
+                        </a>
+                        <a href="mailto:drtechservicelk@gmail.com" class="flex items-start gap-3 break-all transition hover:text-teal-300">
+                            <i class="fa-solid fa-envelope mt-1 w-4 shrink-0 text-teal-300"></i>
+                            <span>drtechservicelk@gmail.com</span>
+                        </a>
+                        <p class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 w-4 shrink-0 text-teal-300"></i>
+                            <span>Nugegoda, Ethul Kotte, Kotte, Maharagama and nearby Colombo suburbs</span>
+                        </p>
+                        <p class="flex items-start gap-3">
+                            <i class="fa-solid fa-truck-fast mt-1 w-4 shrink-0 text-teal-300"></i>
+                            <span>Home visits and pickup & delivery available</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-3 pt-7 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+                <p>&copy; <span id="currentYear"></span> DR TECH SERVICES. All rights reserved.</p>
+                <p>Fast • Reliable • Professional</p>
             </div>
         </div>
-        <p class="mx-auto mt-8 max-w-7xl text-sm text-slate-500">&copy; <span id="currentYear"></span> DR TECH. All rights reserved.</p>
     </footer>
 
     <div class="floating-actions fixed bottom-6 right-5 z-50 flex flex-col gap-3">
