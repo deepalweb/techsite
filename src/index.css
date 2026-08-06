@@ -98,8 +98,8 @@ body {
         color: white;
         overflow: hidden;
         background:
-            linear-gradient(90deg, rgba(5, 14, 27, .84) 0%, rgba(5, 14, 27, .52) 43%, rgba(5, 14, 27, .12) 72%, rgba(5, 14, 27, .05) 100%),
-            url('/assets/hero-it-support.png') center/cover no-repeat;
+            linear-gradient(90deg, rgba(5, 14, 27, .9) 0%, rgba(5, 14, 27, .72) 38%, rgba(5, 14, 27, .24) 66%, rgba(5, 14, 27, .06) 100%),
+            url('/assets/hero-it-support-v3.png') center/cover no-repeat;
     }
 
     .hero-grid {
@@ -243,8 +243,8 @@ html[lang="ta"] .nav-link {
     .hero {
         min-height: auto;
         background:
-            linear-gradient(90deg, rgba(5, 14, 27, .94), rgba(5, 14, 27, .66)),
-            url('/assets/hero-it-support.png') 58% center/cover no-repeat;
+            linear-gradient(90deg, rgba(5, 14, 27, .96), rgba(5, 14, 27, .72)),
+            url('/assets/hero-it-support-v3.png') 64% center/cover no-repeat;
     }
 
     .scan-line {
