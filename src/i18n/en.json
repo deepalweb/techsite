@@ -1,0 +1,231 @@
+{
+  "meta": {
+    "title": "DR TECH | Home & Small Business IT Support Colombo"
+  },
+  "nav": {
+    "whoWeHelp": "Who We Help",
+    "packages": "Packages",
+    "businessCare": "Business Care",
+    "businessGrowth": "Business Growth",
+    "about": "About",
+    "faq": "FAQ",
+    "cta": "Get Support",
+    "ariaHome": "DR TECH home",
+    "ariaChooseLanguage": "Choose language",
+    "ariaOpenMenu": "Open menu",
+    "ariaCloseMenu": "Close menu"
+  },
+  "hero": {
+    "eyebrow": "Colombo home visits and small business support",
+    "titleLine1": "Home & Small Business IT Support.",
+    "subtitle": "Laptop, desktop, WiFi, printer and software issues fixed with clear advice and practical pricing. Home visit, pickup and delivery available around Colombo.",
+    "subtitle2": "Home and small business IT support service — Colombo and surrounding areas.",
+    "ctaWhatsapp": "WhatsApp Your Issue",
+    "ctaPackages": "View Support Packages",
+    "stats": {
+      "diagnosisFrom": "Diagnosis from",
+      "homeVisit": "Home Visit",
+      "localSupport": "Local support",
+      "pickup": "Pickup",
+      "delivery": "& delivery"
+    },
+    "panel": {
+      "eyebrow": "Live Diagnostics",
+      "title": "Support Console",
+      "scanLabel": "Device health scan",
+      "homeRepair": "Home Repair",
+      "onSiteDiagnosis": "On-site diagnosis",
+      "businessSupport": "Business Support",
+      "pcPrinterPosWifi": "PC, printer, POS, WiFi",
+      "statusLine": "Status: technician available"
+    }
+  },
+  "ticker": {
+    "items": ["Windows install", "Slow laptop fix", "WiFi support", "Printer setup", "Virus removal", "SSD & RAM upgrades"]
+  },
+  "stats": {
+    "home": "Home",
+    "visitAvailable": "Visit available",
+    "pickup": "Pickup",
+    "andDelivery": "And delivery",
+    "diagnosisFrom": "Diagnosis from",
+    "monthly": "Monthly",
+    "businessItCare": "Business IT care"
+  },
+  "repairs": {
+    "eyebrow": "Two clear support paths",
+    "title": "Local IT help for your home or your business.",
+    "subtitle": "Send the problem on WhatsApp first. DR TECH will recommend a home visit, business visit, pickup or remote session based on the issue.",
+    "home": {
+      "label": "Home customers",
+      "title": "Fast, simple fixes at home",
+      "subtitle": "For families, students and remote workers needing everyday tech support.",
+      "items": ["Slow laptop or desktop", "Windows installation", "Virus and malware removal", "Software installation", "WiFi and router issues", "Printer and scanner issues", "Overheating and cleaning", "SSD or RAM upgrade", "Data backup guidance", "Email and Office setup"],
+      "note": "Home visit / pickup & delivery available around Colombo."
+    },
+    "business": {
+      "label": "Small businesses",
+      "title": "On-demand support for daily business IT",
+      "subtitle": "For shops, salons, grocery stores, cafes, small offices and tuition classes.",
+      "items": ["PC repair and maintenance", "Printer repair and setup", "Billing printer support", "POS troubleshooting", "WiFi and router support", "CCTV/NVR basic networking", "Email and Outlook setup", "Monthly IT support"],
+      "note": "Book help when computers, printers, POS or networks interrupt your work."
+    }
+  },
+  "packages": {
+    "eyebrow": "Repair and support packages",
+    "title": "Know the likely price before you book.",
+    "subtitle": "Final pricing depends on the issue, travel, time and any replacement parts. You receive an estimate before repair work begins.",
+    "items": {
+      "basicVisit": {
+        "label": "Package 1",
+        "name": "Basic Visit / Diagnosis",
+        "features": ["Device check and issue diagnosis", "Estimate before repair", "Basic advice and next steps"],
+        "cta": "Book diagnosis"
+      },
+      "laptopBoost": {
+        "label": "Package 2",
+        "name": "Laptop Speed Boost",
+        "partsNote": "Parts not included",
+        "features": ["Startup and junk cleanup", "Malware, driver and Windows check", "SSD/RAM upgrade advice"],
+        "note": "Laptop එක slow ද? Format කරන්න කලින් check කරගන්න."
+      },
+      "windowsSetup": {
+        "label": "Package 3",
+        "name": "Windows + Software Setup",
+        "features": ["Windows, drivers and basic software", "Browser and printer driver setup", "Backup guidance"],
+        "disclaimer": "Valid software licences are the customer's responsibility. Cracked software is not supplied."
+      },
+      "wifiPrinter": {
+        "label": "Package 4",
+        "name": "WiFi / Printer Home Support",
+        "features": ["Router and WiFi signal check", "Printer and scanner setup", "Connect household or office devices"]
+      },
+      "smallBizVisit": {
+        "label": "Package 5",
+        "name": "Small Business IT Support Visit",
+        "features": ["PC, printer and network check", "POS or billing device check", "Backup advice and basic troubleshooting"]
+      },
+      "monthlyCare": {
+        "label": "Package 6",
+        "name": "Monthly Business IT Care",
+        "priceFull": "From LKR 7,500/month",
+        "features": ["On-site and remote support options", "PC, printer, POS and WiFi care", "Priority support on selected plans"],
+        "cta": "Compare monthly plans"
+      }
+    }
+  },
+  "businessCare": {
+    "eyebrow": "Monthly Business IT Care",
+    "title": "Stable IT support at a predictable monthly cost.",
+    "subtitle": "Choose support based on your number of devices, visit frequency and response needs. Final scope is confirmed after a simple business IT check.",
+    "perMonth": "/month",
+    "tiers": {
+      "starter": { "name": "Starter", "desc": "Essential maintenance for a very small business with a simple setup." },
+      "growth": { "name": "Growth", "desc": "More regular support for growing shops, offices, cafes and tuition classes." },
+      "pro": { "name": "Pro", "desc": "Priority support and broader coverage for more devices and business-critical systems." }
+    },
+    "features": ["Scheduled on-site visits", "Remote support", "Printer and POS support", "WiFi/router troubleshooting", "PC maintenance", "Basic backup checks"],
+    "ctaBlock": {
+      "title": "Tell us about your business setup.",
+      "subtitle": "Share your device count and current problems to get the right monthly plan.",
+      "cta": "Ask About Monthly Care"
+    }
+  },
+  "growth": {
+    "eyebrow": "Business growth",
+    "title": "2026 online growth opportunities for Sri Lankan businesses.",
+    "lead1": "Customers now search on Google Maps, WhatsApp, Facebook, Instagram and delivery platforms before making a purchase.",
+    "lead2": "If your business is not online, you may be missing valuable customers every day.",
+    "imageCaption": {
+      "title": "Business Digital Starter Package",
+      "desc": "A practical setup for Google, Facebook and WhatsApp visibility.",
+      "cta": "Ask on WhatsApp"
+    },
+    "table": {
+      "eyebrow": "Market outlook",
+      "title": "Market opportunities by business category",
+      "headers": ["Business Category", "Online Growth Potential"],
+      "rows": [
+        { "category": "Food / Restaurants", "potential": "Very High" },
+        { "category": "Grocery Stores", "potential": "High" },
+        { "category": "Salons / Beauty Services", "potential": "Medium to High" },
+        { "category": "Retail Shops", "potential": "High" },
+        { "category": "Cafes / Coffee Shops", "potential": "High" },
+        { "category": "Small Offices / Service Businesses", "potential": "Medium" }
+      ]
+    },
+    "servicesPanel": {
+      "eyebrow": "DR TECH services",
+      "title": "How DR TECH can help your business",
+      "lead": "We help small businesses move from traditional operations to modern digital systems.",
+      "items": ["Google Business Profile Setup", "WhatsApp Business Setup", "Facebook & Instagram Business Setup", "Online Selling Setup", "Uber Eats / PickMe Merchant Registration Support", "POS Billing System Setup", "Digital Billing Solutions", "Billing Printer Setup", "WiFi / Network Setup", "Computer & IT Support"]
+    },
+    "closingCta": {
+      "title": "Take your business to the next level",
+      "body": "Whether you run a shop, restaurant, salon, grocery store, cafe or small office, DR TECH SERVICES can help you modernize operations, attract more customers and increase sales.",
+      "tagline": "Start your digital transformation today.",
+      "ctaWhatsapp": "WhatsApp About Business Setup",
+      "ctaContact": "Request Business Support"
+    }
+  },
+  "about": {
+    "eyebrow": "Founder expertise",
+    "title": "Not just a repair shop.",
+    "bio": "Founded by Deepal Rupasinghe, former IT Infrastructure Lead at Ceylon Cold Stores PLC, John Keells Holdings.",
+    "credentials": [
+      { "title": "Enterprise experience", "desc": "LAN, WLAN, servers, virtualization and security." },
+      { "title": "Certified skill set", "desc": "M365, Azure, Odoo ERP, firewall management and data security." },
+      { "title": "Local support", "desc": "Corporate-level thinking at practical Sri Lankan SME pricing." }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Send the issue before you book.",
+    "subtitle": "WhatsApp the device type, problem, photos or screenshots, and your location. DR TECH will recommend the most suitable visit, pickup or remote-support option.",
+    "ctaCall": "Call now",
+    "form": {
+      "nameLabel": "Name",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Email",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Tell us what happened",
+      "submit": "Send Email"
+    }
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Quick answers.",
+    "items": [
+      { "q": "How much does a diagnosis cost?", "a": "A basic visit and diagnosis is typically LKR 1,500 - 2,500. Travel, repair time and parts may change the final cost, and an estimate is provided before repair." },
+      { "q": "Do you offer home visits and pickup or delivery?", "a": "Yes. Home visits and pickup or delivery are available around Colombo and nearby areas, depending on the device and location." },
+      { "q": "What areas do you cover?", "a": "Primary coverage is Colombo and nearby areas, including Ethul Kotte, Kotte, Maharagama and surrounding suburbs." },
+      { "q": "Do you offer monthly IT support contracts?", "a": "Yes. Monthly Business IT Care starts at LKR 7,500, with Growth at LKR 15,000 and Pro plans from LKR 25,000 per month." },
+      { "q": "Do you install licensed software?", "a": "DR TECH can install and configure legitimate software. Customers must provide or purchase any required licence; cracked software is not supplied." }
+    ]
+  },
+  "footer": {
+    "tagline": "Home & Small Business IT Support — Colombo and nearby areas.",
+    "ctaBand": {
+      "eyebrow": "Fast local IT support",
+      "title": "Need IT help? Message DR TECH now.",
+      "subtitle": "Tell us what is wrong and we will recommend the next step.",
+      "ctaWhatsapp": "WhatsApp Us",
+      "ctaCall": "Call +94 76 084 6996"
+    },
+    "servicesHeading": "Our Services",
+    "servicesLinks": ["Home IT Support", "Repair Packages", "Monthly Business Care", "Digital Business Setup"],
+    "quickLinksHeading": "Quick Links",
+    "quickLinks": ["About DR TECH", "Contact Us", "Frequently Asked Questions", "Back to Top"],
+    "contactHeading": "Contact & Service Area",
+    "coverage": "Colombo, Ethul Kotte, Kotte, Maharagama and nearby suburbs",
+    "deliveryNote": "Home visits and pickup & delivery available",
+    "bottomTagline": "Fast • Reliable • Professional",
+    "copyright": "DR TECH SERVICES. All rights reserved.",
+    "ariaServicesNav": "Footer services",
+    "ariaLinksNav": "Footer links"
+  },
+  "floatingActions": {
+    "ariaCall": "Call DR TECH",
+    "ariaWhatsapp": "WhatsApp DR TECH"
+  }
+}
