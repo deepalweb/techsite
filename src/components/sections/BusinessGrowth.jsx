@@ -11,7 +11,7 @@ export default function BusinessGrowth() {
     const services = t('growth.servicesPanel.items', { returnObjects: true })
 
     return (
-        <section id="growth" className="px-4 py-20 sm:px-6 lg:px-8">
+        <section id="growth" className="bg-white px-4 py-20 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-7xl">
                 <RevealOnScroll className="mx-auto mb-12 max-w-3xl text-center">
                     <p className="text-caption font-extrabold uppercase text-primary">{t('growth.eyebrow')}</p>
@@ -19,7 +19,7 @@ export default function BusinessGrowth() {
                     <p className="mt-5 text-body text-steel">{t('growth.imageCaption.desc')} {t('growth.lead1')}</p>
                 </RevealOnScroll>
 
-                <div className="grid overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl shadow-slate-900/[.07] lg:grid-cols-[.9fr_1.1fr]">
+                <div className="grid overflow-hidden rounded-[2rem] bg-slate-50 shadow-xl shadow-slate-900/[.08] ring-1 ring-slate-200/70 lg:grid-cols-[.9fr_1.1fr]">
                     <RevealOnScroll className="relative min-h-[440px] bg-slate-100">
                         <img src="/assets/business-growth-before-after.png" alt="Google Business Profile before and after digital setup" width="1369" height="1149" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover" />
                         <div className="absolute inset-x-5 bottom-5 rounded-2xl bg-ink/95 p-5 text-white backdrop-blur sm:inset-x-7 sm:bottom-7">

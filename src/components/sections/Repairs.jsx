@@ -25,11 +25,11 @@ export default function Repairs() {
     )
 
     return (
-        <section id="repairs" className="px-4 py-20 sm:px-6 lg:px-8">
+        <section id="repairs" className="bg-white px-4 py-20 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-7xl">
                 <SectionHeading eyebrow={t('repairs.eyebrow')} title={t('repairs.title')} subtitle={t('repairs.subtitle')} />
                 <div className="grid items-stretch gap-6 lg:grid-cols-2">
-                    <RevealOnScroll index={0} className="support-path support-path-home flex h-full flex-col overflow-hidden rounded-2xl border border-sky-200 bg-white shadow-xl shadow-slate-900/[.06]">
+                    <RevealOnScroll index={0} className="support-path support-path-home flex h-full flex-col overflow-hidden rounded-3xl bg-sky-50/70 shadow-lg shadow-sky-950/[.06] ring-1 ring-sky-100">
                         <div className="h-1.5 bg-gradient-to-r from-sky-500 to-cyan-400" />
                         <div className="flex flex-1 flex-col p-6 sm:p-8">
                             <div className="flex items-center gap-4">
@@ -54,7 +54,7 @@ export default function Repairs() {
                         </div>
                     </RevealOnScroll>
 
-                    <RevealOnScroll index={1} className="support-path support-path-business flex h-full flex-col overflow-hidden rounded-2xl border border-teal-200 bg-white shadow-xl shadow-slate-900/[.06]">
+                    <RevealOnScroll index={1} className="support-path support-path-business flex h-full flex-col overflow-hidden rounded-3xl bg-teal-50/60 shadow-lg shadow-teal-950/[.06] ring-1 ring-teal-100">
                         <div className="h-1.5 bg-gradient-to-r from-teal-500 to-emerald-400" />
                         <div className="flex flex-1 flex-col p-6 sm:p-8">
                             <div className="flex items-center gap-4">

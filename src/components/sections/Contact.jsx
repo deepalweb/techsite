@@ -9,7 +9,7 @@ export default function Contact() {
     const { t } = useTranslation()
 
     return (
-        <section id="contact" className="px-4 py-20 sm:px-6 lg:px-8">
+        <section id="contact" className="bg-white px-4 py-20 sm:px-6 lg:px-8">
             <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-[.9fr_1.1fr] md:items-start">
                 <RevealOnScroll index={0}>
                     <p className="mb-3 text-caption font-extrabold uppercase text-primary">{t('contact.eyebrow')}</p>

@@ -7,9 +7,9 @@ export default function About() {
     const credentials = t('about.credentials', { returnObjects: true })
 
     return (
-        <section id="about" className="px-4 py-20 sm:px-6 lg:px-8">
+        <section id="about" className="bg-slate-100/80 px-4 py-20 sm:px-6 lg:px-8">
             <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2 md:items-center">
-                <RevealOnScroll index={0} className="overflow-hidden rounded-lg shadow-2xl">
+                <RevealOnScroll index={0} className="overflow-hidden rounded-3xl shadow-2xl shadow-slate-900/15">
                     <img
                         src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=85"
                         alt="IT consultation and infrastructure planning"

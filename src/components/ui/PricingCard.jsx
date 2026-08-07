@@ -4,7 +4,8 @@ import { Check } from 'lucide-react'
 export default function PricingCard({ icon, label, name, price, priceNote, features, footnote, cta, highlighted = false, index = 0 }) {
     return (
         <RevealOnScroll index={index} className="h-full">
-            <article className={`group flex h-full flex-col rounded-2xl border bg-white p-6 transition duration-300 hover:-translate-y-1 hover:shadow-xl ${highlighted ? 'border-primary shadow-lg shadow-sky-900/10' : 'border-slate-200 shadow-sm'}`}>
+            <article className={`group relative flex h-full flex-col overflow-hidden rounded-3xl bg-white p-6 transition duration-300 hover:-translate-y-1 hover:shadow-xl ${highlighted ? 'shadow-xl shadow-sky-900/10 ring-2 ring-primary lg:-translate-y-2' : 'shadow-sm ring-1 ring-slate-200/80'}`}>
+                {highlighted && <span className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-sky-500 to-teal-400" />}
                 <div className="flex items-start justify-between gap-4">
                     <div className="icon-tile">{icon}</div>
                     <span className={`rounded-full px-3 py-1 text-xs font-extrabold uppercase tracking-wider ${highlighted ? 'bg-sky-100 text-primary' : 'bg-slate-100 text-steel'}`}>{label}</span>

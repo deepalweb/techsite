@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next'
 import { motion, useReducedMotion } from 'framer-motion'
-import { MapPin, Phone } from 'lucide-react'
+import { ArrowDown, MapPin } from 'lucide-react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
-import { phone, waLink, waMessages } from '../../data/content.js'
+import { waLink, waMessages } from '../../data/content.js'
 
 export default function Hero() {
     const { t } = useTranslation()
@@ -46,7 +46,7 @@ export default function Hero() {
                             <FontAwesomeIcon icon={faWhatsapp} className="text-xl" />
                             {t('hero.ctaWhatsapp')}
                         </motion.a>
-                        <a href={`tel:${phone}`} className="button-secondary"><Phone size={18} />{t('contact.ctaCall')}</a>
+                        <a href="#packages" className="button-secondary"><ArrowDown size={18} />{t('hero.ctaPackages')}</a>
                     </motion.div>
                 </div>
             </div>

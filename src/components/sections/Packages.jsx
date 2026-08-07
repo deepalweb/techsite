@@ -15,7 +15,7 @@ export default function Packages() {
     )
 
     return (
-        <section id="packages" className="bg-white px-4 py-20 sm:px-6 lg:px-8">
+        <section id="packages" className="bg-slate-100/80 px-4 py-20 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-7xl">
                 <SectionHeading eyebrow={t('packages.eyebrow')} title={t('packages.title')} subtitle={t('packages.subtitle')} />
                 <div className="grid gap-5 lg:grid-cols-3">
@@ -23,7 +23,7 @@ export default function Packages() {
                     <PricingCard index={1} icon={<Gauge size={22} />} label={items.laptopBoost.label} name={items.laptopBoost.name} price={prices.laptopBoost} priceNote={items.laptopBoost.partsNote} features={items.laptopBoost.features} cta={action(waMessages.hero, t('hero.ctaWhatsapp'))} />
                     <PricingCard index={2} icon={<Wifi size={22} />} label={items.wifiPrinter.label} name={items.wifiPrinter.name} price={prices.wifiPrinter} features={items.wifiPrinter.features} cta={action(waMessages.hero, t('hero.ctaWhatsapp'))} />
                 </div>
-                <RevealOnScroll className="mt-6 grid gap-6 rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8 lg:grid-cols-[auto_1fr_auto] lg:items-center">
+                <RevealOnScroll className="mt-6 grid gap-6 rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200/70 sm:p-8 lg:grid-cols-[auto_1fr_auto] lg:items-center">
                     <span className="icon-tile"><Building2 size={22} /></span>
                     <div>
                         <p className="text-caption font-extrabold uppercase text-primary">{items.smallBizVisit.label}</p>
