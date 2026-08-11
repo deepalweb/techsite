@@ -4,9 +4,19 @@ import RevealOnScroll from '../ui/RevealOnScroll.jsx'
 export default function Faq() {
     const { t } = useTranslation()
     const items = t('faq.items', { returnObjects: true })
+    const faqSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: items.map((item) => ({
+            '@type': 'Question',
+            name: item.q,
+            acceptedAnswer: { '@type': 'Answer', text: item.a },
+        })),
+    }
 
     return (
         <section id="faq" className="px-4 pb-20 sm:px-6 lg:px-8">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
             <div className="mx-auto max-w-4xl">
                 <RevealOnScroll className="mb-10 text-center">
                     <p className="mb-3 text-caption font-extrabold uppercase text-primary">{t('faq.eyebrow')}</p>

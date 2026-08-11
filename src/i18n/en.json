@@ -203,7 +203,8 @@
       { "q": "Do you offer monthly IT support contracts?", "a": "Yes. Monthly Business IT Care starts at LKR 7,500, with Growth at LKR 15,000 and Pro plans from LKR 25,000 per month." },
       { "q": "Do you install licensed software?", "a": "DR TECH can install and configure legitimate software. Customers must provide or purchase any required licence; cracked software is not supplied." },
       { "q": "Do you install Windows 11 in Colombo?", "a": "Yes. DR TECH installs and activates Windows 11, sets up drivers and essential software, and can transfer your files during the same home visit." },
-      { "q": "Do you repair printers in Kotte and Maharagama?", "a": "Yes. Printer repair, waste ink pad reset and setup is available as a home or business visit in Kotte, Maharagama and nearby suburbs." }
+      { "q": "Do you repair printers in Kotte and Maharagama?", "a": "Yes. Printer repair, waste ink pad reset and setup is available as a home or business visit in Kotte, Maharagama and nearby suburbs." },
+      { "q": "Are you available 24/7?", "a": "Yes. DR TECH is available 24/7 for home and small business IT support around Colombo. Message on WhatsApp any time and we will confirm the next available visit or remote session." }
     ]
   },
   "footer": {
