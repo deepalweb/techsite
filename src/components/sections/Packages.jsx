@@ -21,7 +21,7 @@ export default function Packages() {
                 <div className="grid gap-5 lg:grid-cols-3">
                     <PricingCard index={0} highlighted icon={<Stethoscope size={22} />} label={items.basicVisit.label} name={items.basicVisit.name} price={prices.basicVisit} features={items.basicVisit.features} cta={action(waMessages.basicVisit)} />
                     <PricingCard index={1} icon={<Gauge size={22} />} label={items.laptopBoost.label} name={items.laptopBoost.name} price={prices.laptopBoost} priceNote={items.laptopBoost.partsNote} features={items.laptopBoost.features} cta={action(waMessages.hero, t('hero.ctaWhatsapp'))} />
-                    <PricingCard index={2} icon={<Wifi size={22} />} label={items.wifiPrinter.label} name={items.wifiPrinter.name} price={prices.wifiPrinter} features={items.wifiPrinter.features} cta={action(waMessages.hero, t('hero.ctaWhatsapp'))} />
+                    <PricingCard index={2} icon={<Wifi size={22} />} label={items.wifiPrinter.label} name={items.wifiPrinter.name} price={prices.wifiPrinter} features={items.wifiPrinter.features} footnote={items.wifiPrinter.note} cta={action(waMessages.hero, t('hero.ctaWhatsapp'))} />
                 </div>
                 <RevealOnScroll className="mt-6 grid gap-6 rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200/70 sm:p-8 lg:grid-cols-[auto_1fr_auto] lg:items-center">
                     <span className="icon-tile"><Building2 size={22} /></span>
