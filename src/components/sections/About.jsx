@@ -12,7 +12,7 @@ export default function About() {
                 <RevealOnScroll index={0} className="overflow-hidden rounded-3xl shadow-2xl shadow-slate-900/15">
                     <img
                         src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=85"
-                        alt="IT consultation and infrastructure planning"
+                        alt="DR TECH IT consultation and small business infrastructure planning in Colombo"
                         className="h-full min-h-[360px] w-full object-cover transition duration-700 hover:scale-105"
                     />
                 </RevealOnScroll>

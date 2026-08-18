@@ -17,7 +17,7 @@
   },
   "hero": {
     "eyebrow": "Colombo home visits and small business support",
-    "titleLine1": "Home & Small Business IT Support.",
+    "titleLine1": "Home & Small Business IT Support in Colombo & Kotte.",
     "subtitle": "Laptop repair, computer repair home visits, WiFi, printer repair and software issues fixed with clear advice and practical pricing, around Colombo, Kotte and Maharagama.",
     "subtitle2": "Home and small business IT support service — Colombo and surrounding areas.",
     "ctaWhatsapp": "WhatsApp Your Issue",
@@ -73,7 +73,7 @@
   },
   "packages": {
     "eyebrow": "Repair and support packages",
-    "title": "Know the likely price before you book.",
+    "title": "Laptop, printer & WiFi repair packages with upfront pricing.",
     "subtitle": "Final pricing depends on the issue, travel, time and any replacement parts. You receive an estimate before repair work begins.",
     "items": {
       "basicVisit": {
@@ -117,7 +117,7 @@
   },
   "businessCare": {
     "eyebrow": "Monthly Business IT Care",
-    "title": "Stable IT support at a predictable monthly cost.",
+    "title": "Monthly business IT care & AMC contracts in Colombo.",
     "subtitle": "Choose support based on your number of devices, visit frequency and response needs. Final scope is confirmed after a simple business IT check.",
     "perMonth": "/month",
     "tiers": {
