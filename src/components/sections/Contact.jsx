@@ -1,76 +1,275 @@
-import { useTranslation } from 'react-i18next'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
-import { Phone, Send } from 'lucide-react'
-import RevealOnScroll from '../ui/RevealOnScroll.jsx'
-import { phone, email, waLink, waMessages } from '../../data/content.js'
+import { useState, useRef, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import {
+  ArrowRight,
+  ArrowLeft,
+  Check,
+  Phone,
+  MessageCircle,
+  ShieldCheck,
+} from "lucide-react";
+import { phone, waLink } from "../../data/content.js";
 
 export default function Contact() {
-    const { t } = useTranslation()
-
-    return (
-        <section id="contact" className="bg-white px-4 py-20 sm:px-6 lg:px-8">
-            <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-[.9fr_1.1fr] md:items-start">
-                <RevealOnScroll index={0}>
-                    <p className="mb-3 text-caption font-extrabold uppercase text-primary">{t('contact.eyebrow')}</p>
-                    <h2 className="text-h1 text-ink">{t('contact.title')}</h2>
-                    <p className="mt-4 text-body text-steel">{t('contact.subtitle')}</p>
-                    <div className="mt-7 flex flex-col gap-3 sm:flex-row md:flex-col">
-                        <a href={waLink(waMessages.contact)} target="_blank" rel="noopener noreferrer" className="button-primary">
-                            <FontAwesomeIcon icon={faWhatsapp} className="text-xl" />
-                            WhatsApp +94 760846996
-                        </a>
-                        <a
-                            href={`tel:${phone}`}
-                            className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full border border-slate-300 px-5 py-3 font-extrabold text-ink transition hover:border-primary hover:text-primary"
-                        >
-                            <Phone size={18} />
-                            {t('contact.ctaCall')}
-                        </a>
-                    </div>
-                </RevealOnScroll>
-                <RevealOnScroll index={1} className="card p-6" as="form" action={`https://formsubmit.co/${email}`} method="POST">
-                    <input type="hidden" name="_subject" value="New Message from DR TECH Website" />
-                    <input type="hidden" name="_captcha" value="false" />
-                    <input type="hidden" name="_template" value="table" />
-                    <label className="mb-2 block text-sm font-extrabold text-ink" htmlFor="name">
-                        {t('contact.form.nameLabel')}
-                    </label>
-                    <input
-                        id="name"
-                        name="name"
-                        className="mb-4 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 outline-none transition focus:border-primary focus:ring-4 focus:ring-sky-100"
-                        placeholder={t('contact.form.namePlaceholder')}
-                        required
-                    />
-                    <label className="mb-2 block text-sm font-extrabold text-ink" htmlFor="email">
-                        {t('contact.form.emailLabel')}
-                    </label>
-                    <input
-                        id="email"
-                        type="email"
-                        name="email"
-                        className="mb-4 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 outline-none transition focus:border-primary focus:ring-4 focus:ring-sky-100"
-                        placeholder="you@example.com"
-                        required
-                    />
-                    <label className="mb-2 block text-sm font-extrabold text-ink" htmlFor="message">
-                        {t('contact.form.messageLabel')}
-                    </label>
+  const { t } = useTranslation();
+  const reduced = useReducedMotion();
+  const [step, setStep] = useState(0);
+  const [data, setData] = useState({
+    service: "",
+    issue: "",
+    name: "",
+    phone: "",
+    location: "",
+    preference: "visit",
+  });
+  const [opened, setOpened] = useState(false);
+  const [error, setError] = useState(false);
+  const heading = useRef(null);
+  const previous = useRef(0);
+  useEffect(() => {
+    if (previous.current !== step) {
+      heading.current?.focus();
+      previous.current = step;
+    }
+  }, [step]);
+  const labels = t("request.steps", { returnObjects: true });
+  const options = t("request.services", { returnObjects: true });
+  const preferences = t("request.preferences", { returnObjects: true });
+  const update = (e) => {
+    setError(false);
+    setData({ ...data, [e.target.name]: e.target.value });
+  };
+  const service = options.find((x) => x.id === data.service)?.label || "";
+  const preference =
+    preferences.find((x) => x.id === data.preference)?.label || "";
+  const message = `Hi DR TECH, I would like IT support.\n\nService: ${service}\nIssue: ${data.issue.trim()}\nName: ${data.name.trim()}\nPhone: ${data.phone.trim()}\nLocation: ${data.location.trim()}\nPreference: ${preference}\n\nPlease confirm availability and an estimate.`;
+  const field = (name, label, props = {}) => (
+    <label className="request-label">
+      {label}
+      <input
+        name={name}
+        value={data[name]}
+        onChange={update}
+        required
+        maxLength={120}
+        {...props}
+      />
+    </label>
+  );
+  function next(e) {
+    e.preventDefault();
+    const valid =
+      step === 0
+        ? options.some((option) => option.id === data.service)
+        : step === 1
+          ? data.issue.trim().length >= 10
+          : data.name.trim() &&
+            data.location.trim() &&
+            /^[+0-9() -]{7,20}$/.test(data.phone.trim()) &&
+            data.phone.replace(/\D/g, "").length >= 7;
+    if (!valid) {
+      setError(true);
+      return;
+    }
+    setError(false);
+    setStep((s) => Math.min(3, s + 1));
+  }
+  return (
+    <section
+      id="contact"
+      className="request-section px-4 py-20 sm:px-6 lg:px-8"
+    >
+      <div className="mx-auto max-w-7xl request-layout">
+        <div>
+          <p className="eyebrow-label">{t("experience.getHelp")}</p>
+          <h2 className="text-h1 mt-4">{t("request.title")}</h2>
+          <p className="mt-5 text-body text-steel">{t("request.intro")}</p>
+          <div className="request-assurance">
+            <ShieldCheck size={22} />
+            <p>{t("request.assurance")}</p>
+          </div>
+          <a
+            href={`tel:${phone}`}
+            className="inline-flex items-center gap-3 font-bold mt-8"
+          >
+            <Phone size={18} />
+            {t("contact.ctaCall")}
+            <ArrowRight size={16} />
+          </a>
+        </div>
+        <div className="request-panel">
+          <ol className="request-progress" aria-label={t("request.progress")}>
+            {labels.map((label, i) => (
+              <li
+                key={label}
+                className={i <= step ? "is-active" : ""}
+                aria-current={i === step ? "step" : undefined}
+              >
+                <span>{i < step ? <Check size={15} /> : i + 1}</span>
+                <small>{label}</small>
+              </li>
+            ))}
+          </ol>
+          <div className="request-track">
+            <motion.div
+              animate={{ width: `${(step + 1) * 25}%` }}
+              transition={{ duration: reduced ? 0 : 0.25 }}
+            />
+          </div>
+          <h3 ref={heading} tabIndex={-1} className="request-step-title">
+            {t(`request.titles.${step}`)}
+          </h3>
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.form
+              key={step}
+              onSubmit={next}
+              initial={reduced ? false : { opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: reduced ? 0 : 0.18 }}
+            >
+              {step === 0 && (
+                <fieldset>
+                  <legend className="sr-only">{labels[0]}</legend>
+                  <div className="request-options">
+                    {options.map((option) => (
+                      <label
+                        key={option.id}
+                        className={data.service === option.id ? "selected" : ""}
+                      >
+                        <input
+                          type="radio"
+                          name="service"
+                          value={option.id}
+                          checked={data.service === option.id}
+                          onChange={update}
+                          required
+                        />
+                        <span>{option.label}</span>
+                        <ArrowRight size={16} />
+                      </label>
+                    ))}
+                  </div>
+                </fieldset>
+              )}
+              {step === 1 && (
+                <>
+                  <label className="request-label">
+                    {t("request.issue")}
                     <textarea
-                        id="message"
-                        name="message"
-                        rows="4"
-                        className="mb-5 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 outline-none transition focus:border-primary focus:ring-4 focus:ring-sky-100"
-                        placeholder={t('contact.form.messagePlaceholder')}
-                        required
+                      name="issue"
+                      rows={5}
+                      value={data.issue}
+                      onChange={update}
+                      required
+                      minLength={10}
+                      maxLength={1500}
+                      placeholder={t("request.issuePlaceholder")}
                     />
-                    <button type="submit" className="button-primary w-full">
-                        <Send size={18} />
-                        {t('contact.form.submit')}
-                    </button>
-                </RevealOnScroll>
-            </div>
-        </section>
-    )
+                  </label>
+                  <p className="request-hint">{t("request.photoHint")}</p>
+                </>
+              )}
+              {step === 2 && (
+                <div className="grid gap-4 sm:grid-cols-2">
+                  {field("name", t("contact.form.nameLabel"), {
+                    autoComplete: "name",
+                    pattern: ".*\\S.*",
+                  })}
+                  {field("phone", t("request.phone"), {
+                    type: "tel",
+                    autoComplete: "tel",
+                    maxLength: 20,
+                  })}
+                  {field("location", t("request.location"), {
+                    autoComplete: "address-level2",
+                    pattern: ".*\\S.*",
+                  })}
+                  <label className="request-label">
+                    {t("request.preference")}
+                    <select
+                      name="preference"
+                      value={data.preference}
+                      onChange={update}
+                    >
+                      {preferences.map((p) => (
+                        <option key={p.id} value={p.id}>
+                          {p.label}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                </div>
+              )}
+              {step === 3 && (
+                <>
+                  <dl className="request-summary">
+                    {[
+                      [labels[0], service],
+                      [t("request.issue"), data.issue],
+                      [t("contact.form.nameLabel"), data.name],
+                      [t("request.phone"), data.phone],
+                      [t("request.location"), data.location],
+                      [t("request.preference"), preference],
+                    ].map(([label, value]) => (
+                      <div key={label}>
+                        <dt>{label}</dt>
+                        <dd>{value}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                  <p className="request-hint">{t("request.handoff")}</p>
+                  {opened && (
+                    <div role="status" className="request-status">
+                      <Check size={20} />
+                      {t("request.opened")}
+                    </div>
+                  )}
+                </>
+              )}
+              {error && (
+                <p role="alert" className="mt-4 text-sm text-red-700">
+                  {t("request.validation")}
+                </p>
+              )}
+              <div className="request-actions">
+                {step > 0 && (
+                  <button
+                    type="button"
+                    className="request-back"
+                    onClick={() => {
+                      setOpened(false);
+                      setError(false);
+                      setStep((s) => s - 1);
+                    }}
+                  >
+                    <ArrowLeft size={17} />
+                    {t("request.back")}
+                  </button>
+                )}
+                {step < 3 ? (
+                  <button className="button-primary ml-auto" type="submit">
+                    {t("request.next")}
+                    <ArrowRight size={18} />
+                  </button>
+                ) : (
+                  <a
+                    href={waLink(message)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="button-primary ml-auto"
+                    onClick={() => setOpened(true)}
+                  >
+                    <MessageCircle size={18} />
+                    {t("request.send")}
+                  </a>
+                )}
+              </div>
+            </motion.form>
+          </AnimatePresence>
+        </div>
+      </div>
+    </section>
+  );
 }

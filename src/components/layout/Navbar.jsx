@@ -14,7 +14,7 @@ export default function Navbar() {
         { href: '#services', label: t('nav.businessCare') },
         { href: '#growth', label: t('nav.businessGrowth') },
         { href: '#about', label: t('nav.about') },
-        { href: '#faq', label: t('nav.faq') },
+
     ]
 
     return (
@@ -39,7 +39,7 @@ export default function Navbar() {
                             className="ml-2 whitespace-nowrap rounded-full bg-ink px-5 py-3 text-sm font-extrabold text-white transition hover:bg-slate-700"
                             href="#contact"
                         >
-                            {t('nav.cta')}
+                            {t('experience.getHelp')}
                         </a>
                     </div>
                     <LanguageSwitcher className="ml-auto mr-2 xl:ml-2 xl:mr-0" />

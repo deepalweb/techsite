@@ -5,8 +5,8 @@ export default {
     extend: {
       colors: {
         ink: '#08111f',
-        steel: '#64748b',
-        primary: '#0ea5e9',
+        steel: '#526477',
+        primary: '#087f79',
         secondary: '#14b8a6',
         accent: '#f97316',
       },

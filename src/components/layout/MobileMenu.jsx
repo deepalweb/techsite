@@ -26,7 +26,7 @@ export default function MobileMenu({ open, navItems, onNavigate, t }) {
                 className="mt-2 flex items-center justify-center gap-2 rounded-full bg-ink px-5 py-3 font-extrabold text-white"
             >
                 <Headset size={18} />
-                {t('nav.cta')}
+                {t('experience.getHelp')}
             </a>
         </div>
     )

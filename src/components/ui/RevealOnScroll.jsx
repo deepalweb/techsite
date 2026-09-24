@@ -10,8 +10,8 @@ export default function RevealOnScroll({ children, index = 0, className = '', as
             className={className}
             initial={reduceMotion ? false : { opacity: 0, y: 26 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.75, delay, ease: [0.22, 1, 0.36, 1] }}
+            viewport={{ once: true, margin: '-25px' }}
+            transition={{ duration: 0.4, delay, ease: [0.22, 1, 0.36, 1] }}
             {...rest}
         >
             {children}

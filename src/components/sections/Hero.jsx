@@ -1,55 +1,88 @@
-import { useTranslation } from 'react-i18next'
-import { motion, useReducedMotion } from 'framer-motion'
-import { ArrowDown, MapPin } from 'lucide-react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
-import { waLink, waMessages } from '../../data/content.js'
+import { useTranslation } from "react-i18next";
+import { motion, useReducedMotion } from "framer-motion";
+import { ArrowUpRight, ArrowRight, MapPin, Check, Laptop } from "lucide-react";
 
 export default function Hero() {
-    const { t } = useTranslation()
-    const reduceMotion = useReducedMotion()
-    const enter = (delay = 0) => reduceMotion
-        ? { initial: false }
-        : { initial: { opacity: 0, y: 22 }, animate: { opacity: 1, y: 0 }, transition: { duration: .7, delay } }
-
-    return (
-        <header id="home" className="hero">
-            <div className="relative z-10 mx-auto flex min-h-[720px] max-w-7xl items-center px-4 pb-20 pt-32 sm:px-6 sm:pt-36 lg:px-8 lg:pb-24 lg:pt-40">
-                <div className="min-w-0 max-w-3xl">
-                    <motion.div {...enter(.05)}
-                        className="eyebrow mb-6 inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-bold text-cyan-50 backdrop-blur"
-                    >
-                        <MapPin size={16} />
-                        {t('hero.eyebrow')}
-                    </motion.div>
-                    <motion.h1 {...enter(.12)}
-                        className="hero-title max-w-4xl text-display tracking-normal"
-                    >
-                        {t('hero.titleLine1')}
-                    </motion.h1>
-                    <motion.p {...enter(.2)}
-                        className="hero-copy mt-6 max-w-2xl text-body text-slate-200"
-                    >
-                        {t('hero.subtitle')}
-                    </motion.p>
-                    <motion.div {...enter(.3)}
-                        className="hero-actions mt-8 flex flex-col gap-3 sm:flex-row"
-                    >
-                        <motion.a
-                            whileHover={{ y: -3 }}
-                            whileTap={{ scale: 0.97 }}
-                            href={waLink(waMessages.hero)}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="button-primary"
-                        >
-                            <FontAwesomeIcon icon={faWhatsapp} className="text-xl" />
-                            {t('hero.ctaWhatsapp')}
-                        </motion.a>
-                        <a href="#packages" className="button-secondary"><ArrowDown size={18} />{t('hero.ctaPackages')}</a>
-                    </motion.div>
-                </div>
+  const { t } = useTranslation();
+  const reduced = useReducedMotion();
+  return (
+    <header id="home" className="new-hero">
+      <div className="hero-shell">
+        <motion.div
+          initial={reduced ? false : { opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="hero-editorial"
+        >
+          <p className="hero-location">
+            <span />
+            {t("experience.local")}
+          </p>
+          <h1>
+            {t("experience.headline")}{" "}
+            <span>{t("experience.headlineAccent")}</span>
+          </h1>
+          <p className="hero-description">{t("experience.intro")}</p>
+          <div className="flex flex-wrap gap-3 mt-8">
+            <a href="#contact" className="button-primary">
+              {t("experience.getHelp")}
+              <ArrowUpRight size={20} />
+            </a>
+            <a href="#services" className="button-secondary">
+              {t("nav.businessCare")}
+              <ArrowRight size={18} />
+            </a>
+          </div>
+          <div className="hero-promises">
+            <span>
+              <Check size={16} />
+              {t("experience.estimate")}
+            </span>
+            <span>
+              <MapPin size={16} />
+              {t("stats.visitAvailable")}
+            </span>
+          </div>
+        </motion.div>
+        <motion.div
+          className="hero-visual"
+          initial={reduced ? false : { opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.12 }}
+        >
+          <img
+            src="/assets/hero-repair-option.png"
+            alt={t("experience.imageAlt")}
+            width="1024"
+            height="1024"
+            fetchpriority="high"
+          />
+          <div className="photo-label">
+            <span className="photo-number">01 / DR TECH</span>
+            <span>{t("experience.photoLabel")}</span>
+          </div>
+          <div className="hero-note">
+            <div className="note-icon">
+              <Laptop size={24} />
             </div>
-        </header>
-    )
+            <div>
+              <strong>{t("experience.noteTitle")}</strong>
+              <p>{t("experience.noteBody")}</p>
+            </div>
+            <Check className="text-teal-600 shrink-0" size={20} />
+          </div>
+        </motion.div>
+      </div>
+      <div className="hero-bottom">
+        <span>{t("experience.supportFor")}</span>
+        <span>
+          Colombo <i /> Kotte <i /> Maharagama
+        </span>
+        <a href="#repairs">
+          {t("experience.explore")}
+          <ArrowRight size={16} />
+        </a>
+      </div>
+    </header>
+  );
 }

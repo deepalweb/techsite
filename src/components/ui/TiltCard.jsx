@@ -10,7 +10,7 @@ export default function TiltCard({ children, className = '', ...rest }) {
     const rotateY = useTransform(springX, [0, 1], [-4, 4])
 
     function handlePointerMove(event) {
-        if (reduceMotion) return
+        if (reduceMotion || event.pointerType !== 'mouse') return
         const rect = event.currentTarget.getBoundingClientRect()
         x.set((event.clientX - rect.left) / rect.width)
         y.set((event.clientY - rect.top) / rect.height)
@@ -27,7 +27,7 @@ export default function TiltCard({ children, className = '', ...rest }) {
             style={reduceMotion ? undefined : { rotateX, rotateY, transformPerspective: 900 }}
             onPointerMove={handlePointerMove}
             onPointerLeave={handlePointerLeave}
-            whileHover={{ y: -8 }}
+            whileHover={reduceMotion ? undefined : { y: -3 }}
             transition={{ type: 'spring', stiffness: 260, damping: 24 }}
             {...rest}
         >
