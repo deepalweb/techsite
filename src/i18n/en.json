@@ -379,7 +379,7 @@
     "headline": "Tech problems?",
     "headlineAccent": "Let’s get you running again.",
     "intro": "Friendly, expert IT support for your home and business. From a slow laptop to your entire office, we’ll help you find the right fix.",
-    "getHelp": "Get IT Help",
+    "getHelp": "Get IT Support",
     "estimate": "An estimate before any repair",
     "imageAlt": "Computer repair workspace",
     "photoLabel": "Practical care. Personal service.",
@@ -423,8 +423,8 @@
     ]
   },
   "request": {
-    "title": "A better day starts with a little help.",
-    "intro": "Tell us what you need. We’ll help you choose a visit, pickup or remote session that fits your issue.",
+    "title": "Need IT help?",
+    "intro": "Tell us what’s going wrong. We’ll help you figure it out.",
     "assurance": "No account needed. We confirm availability and pricing with you before any work begins.",
     "progress": "Request progress",
     "steps": [
@@ -491,5 +491,105 @@
     "next": "Continue",
     "send": "Continue to WhatsApp",
     "validation": "Please complete this step. Describe the issue in at least 10 characters and use a valid phone number."
+  },
+  "brand": {
+    "coverage": "Colombo, Kotte & surrounding areas",
+    "headline": "IT support that keeps you running.",
+    "intro": "Fast, reliable technology support for homes and growing businesses. Practical solutions. A partner you can call.",
+    "viewPlans": "View Business Plans",
+    "expertise": "Enterprise IT experience. Personal, local support.",
+    "home": "Home IT support",
+    "business": "Business IT",
+    "digital": "Digital solutions",
+    "pathsIntro": "From everyday tech problems to your next stage of business.",
+    "paths": [
+      {
+        "title": "Home IT Support",
+        "body": "Computers, Wi-Fi and printers. Get your everyday technology working the way it should.",
+        "cta": "Explore home services"
+      },
+      {
+        "title": "Business IT",
+        "body": "Networks, security and Microsoft 365. Keep your team connected and your business moving.",
+        "cta": "Explore business plans"
+      },
+      {
+        "title": "Digital Solutions",
+        "body": "Web, Google, WhatsApp and Odoo. Connect your business with the tools to grow.",
+        "cta": "Explore digital solutions"
+      }
+    ],
+    "whyTitle": "Why DR TECH?",
+    "reasons": [
+      {
+        "title": "Direct support",
+        "body": "Talk to someone who understands your issue and helps you choose the next step."
+      },
+      {
+        "title": "Experienced",
+        "body": "Enterprise infrastructure experience, brought to your home or small business."
+      },
+      {
+        "title": "Security minded",
+        "body": "Practical guidance on backups, legitimate software and protecting your data."
+      }
+    ],
+    "catalogTitle": "Your technology. Taken care of.",
+    "catalogIntro": "Everyday essentials and the systems your business depends on.",
+    "repairPricing": "View repair pricing",
+    "catalog": [
+      {
+        "title": "PC & laptop support",
+        "body": "Troubleshooting, upgrades, Windows setup and maintenance."
+      },
+      {
+        "title": "Networks & Wi-Fi",
+        "body": "Reliable connectivity for homes, offices and connected devices."
+      },
+      {
+        "title": "Cloud & Microsoft 365",
+        "body": "Email, Outlook and Microsoft 365 setup and support."
+      },
+      {
+        "title": "Printers & POS",
+        "body": "Printer setup, billing devices and everyday business troubleshooting."
+      },
+      {
+        "title": "Security & backups",
+        "body": "Malware removal, firewall guidance and practical backup checks."
+      },
+      {
+        "title": "Odoo & business systems",
+        "body": "Discuss your Odoo requirements and business software setup."
+      }
+    ],
+    "businessTitle": "Good IT is good for business.",
+    "discussPlan": "Discuss this plan",
+    "scopeTitle": "Build the right support plan",
+    "scopeNote": "Device coverage, visit frequency and response times are agreed after reviewing your setup.",
+    "digitalTitle": "Your next customer could find you online.",
+    "digitalIntro": "Build a useful online presence and connect the tools your business uses every day.",
+    "digitalCta": "Discuss your digital setup",
+    "digitalItems": [
+      {
+        "title": "Be found on Google",
+        "body": "Google Business Profile setup for your local business."
+      },
+      {
+        "title": "Make it easy to connect",
+        "body": "WhatsApp Business and social media business setup."
+      },
+      {
+        "title": "Build your digital presence",
+        "body": "Discuss your website, online selling and business systems."
+      }
+    ],
+    "aboutTitle": "Enterprise experience. A personal approach.",
+    "founder": "Founder · View LinkedIn profile",
+    "navHome": "Home",
+    "navServices": "Services",
+    "navBusiness": "Business",
+    "needHelp": "Need IT help?",
+    "requestIntro": "Tell us what’s going wrong. We’ll help you figure it out."
   }
 }

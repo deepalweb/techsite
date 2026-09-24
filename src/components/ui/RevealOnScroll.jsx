@@ -1,20 +1,14 @@
-import { motion, useReducedMotion } from 'framer-motion'
-
-export default function RevealOnScroll({ children, index = 0, className = '', as = 'div', ...rest }) {
-    const reduceMotion = useReducedMotion()
-    const Component = motion[as] ?? motion.div
-    const delay = Math.min(index % 6, 5) * 0.07
-
-    return (
-        <Component
-            className={className}
-            initial={reduceMotion ? false : { opacity: 0, y: 26 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-25px' }}
-            transition={{ duration: 0.4, delay, ease: [0.22, 1, 0.36, 1] }}
-            {...rest}
-        >
-            {children}
-        </Component>
-    )
+// Keep content visible immediately; reserve entrance motion for the hero.
+export default function RevealOnScroll({
+  children,
+  index,
+  className = "",
+  as: Component = "div",
+  ...rest
+}) {
+  return (
+    <Component className={className} {...rest}>
+      {children}
+    </Component>
+  );
 }

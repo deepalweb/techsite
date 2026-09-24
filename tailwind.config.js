@@ -4,11 +4,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: '#08111f',
+        ink: '#081426',
         steel: '#526477',
-        primary: '#087f79',
-        secondary: '#14b8a6',
-        accent: '#f97316',
+        primary: '#2463eb',
+        secondary: '#2463eb',
+        accent: '#2463eb',
       },
       fontFamily: {
         sans: ['Plus Jakarta Sans', 'sans-serif'],

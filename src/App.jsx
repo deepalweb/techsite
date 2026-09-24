@@ -1,5 +1,8 @@
 import { useEffect } from "react";
 import { MotionConfig } from "framer-motion";
+import ServiceCatalog, {
+  WhyDrTech,
+} from "./components/sections/ServiceCatalog.jsx";
 import ServicePaths from "./components/sections/ServicePaths.jsx";
 import { useTranslation } from "react-i18next";
 import ScrollProgressBar from "./components/layout/ScrollProgressBar.jsx";
@@ -32,10 +35,12 @@ export default function App() {
       <Hero />
       <main id="main">
         <ServicePaths />
-        <Packages />
+        <WhyDrTech />
+        <ServiceCatalog />
         <BusinessCare />
         <BusinessGrowth />
         <About />
+        <Packages />
         <Contact />
         <Faq />
       </main>

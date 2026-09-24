@@ -1,32 +1,31 @@
-# DR TECH interface
-
-The public site uses a calm, local service identity: deep navy, warm white and teal, with readable typography and clear next steps.
+# DR TECH design direction
 
 ## Colour
+- Midnight #081426: hero, business section and footer.
+- Electric blue #2463eb: actions and selected controls.
+- White #ffffff: cards and primary surfaces.
+- Cloud #f4f7fc: alternating sections.
+- Slate #53647b: secondary text.
+- Line #dce4ef: dividers and outlines.
 
-- Navy `#0b202b`: hero and primary text.
-- Teal `#087f79`: actions, selected states and focus accents.
-- Paper `#f5f7f6`: page background.
-- Muted text `#526477`; borders `#dce5e3`.
-
-## Typography
-
-Plus Jakarta Sans with the existing language fallbacks. Large editorial hero headings; smaller, practical form labels. Sinhala and Tamil headings use extra line height and normal tracking.
+## Type
+Plus Jakarta Sans remains the brand typeface. A centered 56–88px desktop hero is the signature element. Section headings are 32–44px; body copy is 15–17px. Sinhala and Tamil receive normal tracking and taller line heights.
 
 ## Layout
+Centered hero; three equal service-path cards; a compact trust section; a six-service grid; business plans; digital setup; founder credentials; support request; FAQ; footer. Cards use consistent padding, 16px corners and outlined icons. Navigation has Home, Services, Business and About, with a prominent support action. Resources can be added later without an empty destination now.
 
-1280px maximum content width. Split hero and request section on desktop; single columns on mobile. Three service paths connect home repair, business care and digital setup. Mobile actions keep support within reach.
+    [logo]   Home Services Business About    [Get Support]
+                IT support that keeps you running.
+                    [Support] [Business plans]
+              [Home IT] [Business IT] [Digital]
+                  Why DR TECH? / three benefits
+               Six services / two rows of three
+                 Monthly business support plans
+                   Digital setup / About
+                  Guided support request / FAQ
 
-## Components and motion
+## Brief review
+The centered headline follows the requested composition. Removed the previous asymmetrical image panel, arbitrary card numbering and uppercase decorative labels. Blue replaces teal throughout. Use restrained entrance motion only in the hero; maintain interactive booking transitions. No invented testimonials, job photos, live availability or response guarantees. The work gallery remains deferred until genuine images and captions are available.
 
-Solid teal actions, 10–18px corner radii, restrained borders and shadows. Short hover feedback, once-only section reveals and animated form progress. OS reduced-motion preferences apply throughout.
-
-## Request flow
-
-Service → issue → contact details → review. Validate before advancing, preserve entries when navigating back, and focus each new step heading. Details remain in component memory until the user opens WhatsApp; no customer data is stored locally. The customer must send the message in WhatsApp. The UI does not claim a request was delivered or a visit booked.
-
-Photos can be attached in WhatsApp. Scheduling, server-side storage, admin tools and customer tracking require a future backend implementation. Existing service prices and business information remain the source of truth.
-
-## Verification
-
-`npm test` checks all three languages, invalid input, back navigation, message encoding and honest handoff status. Animation wrappers are stubbed in these component tests; they do not replace browser layout and animation checks. `npm run build` validates production compilation.
+## Request behavior
+The four-step support flow preserves entries and prepares a WhatsApp message. The user must press Send in WhatsApp; no appointment is confirmed by the site. Photos can be attached there. A backend, tracking portal and admin dashboard are future work.

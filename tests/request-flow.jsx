@@ -6,6 +6,13 @@ import i18n from "../src/i18n/index.js";
 import Contact from "../src/components/sections/Contact.jsx";
 import Hero from "../src/components/sections/Hero.jsx";
 import ServicePaths from "../src/components/sections/ServicePaths.jsx";
+import ServiceCatalog, {
+  WhyDrTech,
+} from "../src/components/sections/ServiceCatalog.jsx";
+import BusinessCare from "../src/components/sections/BusinessCare.jsx";
+import BusinessGrowth from "../src/components/sections/BusinessGrowth.jsx";
+import About from "../src/components/sections/About.jsx";
+import Packages from "../src/components/sections/Packages.jsx";
 
 for (const lang of ["en", "si", "ta"]) {
   await i18n.changeLanguage(lang);
@@ -13,13 +20,32 @@ for (const lang of ["en", "si", "ta"]) {
     <>
       <Hero />
       <ServicePaths />
+      <WhyDrTech />
+      <ServiceCatalog />
+      <BusinessCare />
+      <BusinessGrowth />
+      <About />
+      <Packages />
       <Contact />
     </>,
   );
   assert.ok(
-    !markup.includes("experience.") && !markup.includes("request."),
-    `${lang}: no untranslated keys`,
+    !/(?:experience|request|brand)\.[a-zA-Z]/.test(markup),
+    `${lang}: no untranslated keys: ${markup.match(/.{0,30}(?:experience|request|brand)\..{0,60}/g)}`,
   );
+  const ids = new Set(
+    [...markup.matchAll(/id="([^"]+)"/g)].map((match) => match[1]),
+  );
+  for (const link of markup.matchAll(/href="#([^"]+)"/g)) {
+    assert.ok(ids.has(link[1]), `${lang}: missing anchor ${link[1]}`);
+  }
+  assert.equal(
+    (markup.match(/<h1[ >]/g) || []).length,
+    1,
+    "one primary heading",
+  );
+  for (const price of ["LKR 7,500", "LKR 15,000", "LKR 25,000+"])
+    assert.ok(markup.includes(price));
   let view;
   await act(async () => {
     view = create(<Contact />);
