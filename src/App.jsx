@@ -16,6 +16,7 @@ import BusinessGrowth from "./components/sections/BusinessGrowth.jsx";
 import About from "./components/sections/About.jsx";
 import Contact from "./components/sections/Contact.jsx";
 import Faq from "./components/sections/Faq.jsx";
+import { BusinessInfrastructure, TechnologyStack, InfrastructurePhotography, Resources, FinalSupport } from './components/sections/Infrastructure.jsx';
 
 export default function App() {
   const { i18n, t } = useTranslation();
@@ -35,14 +36,19 @@ export default function App() {
       <Hero />
       <main id="main">
         <ServicePaths />
-        <WhyDrTech />
         <ServiceCatalog />
+        <WhyDrTech />
+        <BusinessInfrastructure />
+        <TechnologyStack />
+        <InfrastructurePhotography />
         <BusinessCare />
         <BusinessGrowth />
         <About />
         <Packages />
+        <Resources />
         <Contact />
         <Faq />
+        <FinalSupport />
       </main>
       <Footer />
       <FloatingActions />

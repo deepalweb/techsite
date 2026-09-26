@@ -1,6 +1,6 @@
 # DR TECH Services
 
-React + Vite website with English, Sinhala and Tamil content.
+React + Vite website with English, Sinhala and Tamil content. The dark infrastructure design includes an interactive services diagram and an optional, lazy-loaded Three.js hero with mobile and reduced-motion fallbacks.
 
 - `npm install` — install dependencies.
 - `npm run dev` — start local preview.

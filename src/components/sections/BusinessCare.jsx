@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Check } from "lucide-react";
+import { Check, Headset, Network, ShieldCheck } from "lucide-react";
 import { waLink, prices } from "../../data/content.js";
 export default function BusinessCare() {
   const { t } = useTranslation();
@@ -17,6 +17,7 @@ export default function BusinessCare() {
               className={`plan-card ${key === "growth" ? "plan-featured" : ""}`}
               key={key}
             >
+              <span className="plan-symbol" aria-hidden="true">{key === 'starter' ? <Headset size={25}/> : key === 'growth' ? <Network size={25}/> : <ShieldCheck size={25}/>}</span>
               <h3>{tiers[key].name}</h3>
               <p className="plan-description">{tiers[key].desc}</p>
               <p className="plan-price">

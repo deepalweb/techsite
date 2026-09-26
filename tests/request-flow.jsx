@@ -13,6 +13,7 @@ import BusinessCare from "../src/components/sections/BusinessCare.jsx";
 import BusinessGrowth from "../src/components/sections/BusinessGrowth.jsx";
 import About from "../src/components/sections/About.jsx";
 import Packages from "../src/components/sections/Packages.jsx";
+import { BusinessInfrastructure, TechnologyStack, InfrastructurePhotography, Resources, FinalSupport } from '../src/components/sections/Infrastructure.jsx';
 
 for (const lang of ["en", "si", "ta"]) {
   await i18n.changeLanguage(lang);
@@ -27,10 +28,15 @@ for (const lang of ["en", "si", "ta"]) {
       <About />
       <Packages />
       <Contact />
+      <BusinessInfrastructure />
+      <TechnologyStack />
+      <InfrastructurePhotography />
+      <Resources />
+      <FinalSupport />
     </>,
   );
   assert.ok(
-    !/(?:experience|request|brand)\.[a-zA-Z]/.test(markup),
+    !/(?:experience|request|brand|motion)\.[a-zA-Z]/.test(markup),
     `${lang}: no untranslated keys: ${markup.match(/.{0,30}(?:experience|request|brand)\..{0,60}/g)}`,
   );
   const ids = new Set(
@@ -47,6 +53,17 @@ for (const lang of ["en", "si", "ta"]) {
   for (const price of ["LKR 7,500", "LKR 15,000", "LKR 25,000+"])
     assert.ok(markup.includes(price));
   let view;
+  await act(async () => { view = create(<ServiceCatalog />); });
+  const services = view.root.findAllByType('button');
+  assert.equal(services.length, 6, 'six accessible service controls');
+  for (let index = 0; index < services.length; index++) {
+    act(() => services[index].props.onClick());
+    assert.equal(services[index].props['aria-pressed'], true);
+    assert.equal(view.root.findAllByProps({'aria-pressed': true}).length, 1);
+    const detail = view.root.findByProps({id: 'service-detail'});
+    assert.equal(detail.findByType('h3').children.join(''), i18n.t(`brand.catalog.${index}.title`));
+  }
+  await act(async () => view.unmount());
   await act(async () => {
     view = create(<Contact />);
   });

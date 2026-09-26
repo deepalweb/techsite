@@ -8,7 +8,7 @@ export default function FloatingActions() {
     const { t } = useTranslation()
 
     return (
-        <div className="fixed inset-x-3 bottom-3 z-50 grid grid-cols-[.8fr_1.2fr] gap-2 rounded-2xl border border-slate-200 bg-white/95 p-2 shadow-2xl backdrop-blur md:inset-x-auto md:bottom-6 md:right-5 md:flex md:flex-col md:border-0 md:bg-transparent md:p-0 md:shadow-none">
+        <div className="floating-actions fixed inset-x-3 bottom-3 z-50 grid grid-cols-[.8fr_1.2fr] gap-2 rounded-2xl border border-slate-200 bg-white/95 p-2 shadow-2xl backdrop-blur md:inset-x-auto md:bottom-6 md:right-5 md:flex md:flex-col md:border-0 md:bg-transparent md:p-0 md:shadow-none">
             <a
                 href="#contact"
                 className="flex h-12 items-center justify-center gap-2 rounded-xl bg-ink px-4 font-bold text-white md:hidden"

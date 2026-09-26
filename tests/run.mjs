@@ -22,7 +22,7 @@ try {
           }));
           b.onLoad({ filter: /.*/, namespace: "test" }, () => ({
             contents:
-              "import React from 'react'; export const useReducedMotion=()=>true; export const AnimatePresence=({children})=>children; const cache={}; export const motion=new Proxy({}, {get(_,tag){return cache[tag] ||= React.forwardRef(({initial,animate,exit,transition,whileHover,whileTap,whileInView,viewport,...props},ref)=>React.createElement(tag,{...props,ref}));}});",
+              "import React from 'react'; export const useReducedMotion=()=>true; export const useMotionValue=v=>v; export const useSpring=v=>v; export const useTransform=()=>undefined; export const AnimatePresence=({children})=>children; const cache={}; export const motion=new Proxy({}, {get(_,tag){return cache[tag] ||= React.forwardRef(({initial,animate,exit,transition,whileHover,whileTap,whileInView,viewport,onViewportEnter,...props},ref)=>React.createElement(tag,{...props,ref}));}});",
             loader: "js",
           }));
         },

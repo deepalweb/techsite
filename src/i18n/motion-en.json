@@ -1,0 +1,52 @@
+{
+  "headline": "Laptop & printer",
+  "headlineAccent": "repairs, made simple.",
+  "repairHero": {
+    "intro": "Slow laptop, computer trouble or a printer that won't print? Get practical diagnosis, repairs and upgrades, with home visits and pickup available around Colombo and Kotte.",
+    "cta": "Request a repair",
+    "pricing": "View repair prices",
+    "assurance": "Clear advice. Practical pricing. Personal support.",
+    "laptop": "Laptop & computer repairs",
+    "printer": "Printer repairs & setup",
+    "core": "Repair & support",
+    "caption": "Your everyday tech, working again"
+  },
+  "core": "Connected by design",
+  "connected": "Your technology, connected",
+  "nodes": ["Diagnostics", "Wi-Fi fixes", "SSD & RAM", "Software fixes", "Data backup", "Printer repairs", "Laptop repairs"],
+  "selectService": "Choose a service to explore",
+  "connectedServices": "One connected ecosystem",
+  "details": [
+    ["PC and laptop troubleshooting", "Windows and software setup", "SSD and RAM upgrades"],
+    ["Wi-Fi deployment and router setup", "Network troubleshooting", "Discuss VLAN and firewall requirements"],
+    ["Microsoft 365 and email setup", "Outlook troubleshooting", "Cloud setup guidance"],
+    ["Printer and scanner configuration", "Billing printer support", "POS connectivity troubleshooting"],
+    ["Malware removal", "Firewall and security guidance", "Backup setup and checks"],
+    ["Review your business workflow", "Discuss Odoo setup requirements", "Plan the right implementation scope"]
+  ],
+  "businessTitle": "Your IT department. Without the overhead.",
+  "businessIntro": "From the desk to the cloud, bring your business technology together with one practical support partner.",
+  "layers": [
+    {"title": "Office", "body": "Set up the computers, printers and everyday tools your team relies on."},
+    {"title": "Network", "body": "Connect your workspace with reliable Wi-Fi, routers and organised infrastructure."},
+    {"title": "Security", "body": "Review access, device protection and firewall requirements."},
+    {"title": "Cloud", "body": "Bring email, Microsoft 365 and shared work into a connected setup."},
+    {"title": "Backup", "body": "Plan practical backups and check how important data can be recovered."},
+    {"title": "Support", "body": "Agree on device coverage, visits and ongoing help that fits your business."}
+  ],
+  "expertiseLabel": "Our technology ecosystem",
+  "expertiseTitle": "The right tools. Working together.",
+  "expertiseIntro": "Microsoft 365, Azure, UniFi and Odoo. Discuss how your existing platforms and your next investment can fit together. Scope is agreed around your needs.",
+  "photoLabel": "Behind every connected business",
+  "photoTitle": "Real infrastructure. Practical thinking.",
+  "photoIntro": "Good technology starts with the essentials: organised networks, secure access and a setup your team can depend on. Let's plan what works for your workspace.",
+  "photoAlt": "Server racks illustrating organised network infrastructure",
+  "photoCaption": "Illustrative stock photography by Brett Sayles / Pexels. Not a DR TECH installation.",
+  "resourcesTitle": "Practical knowledge. Ready for what's next.",
+  "resourcesIntro": "A planned collection of checklists, documentation and setup guides for IT teams. These toolkits are in planning and are not yet available to purchase or download.",
+  "planned": "In planning",
+  "resourceDescriptions": ["Business processes and service documentation.", "Checklists for a more organised network rollout.", "A structured approach to network documentation.", "Planning templates for business workflows."],
+  "resourceCta": "Express interest",
+  "finalTitle": "Technology problems shouldn't slow your business down.",
+  "finalIntro": "Get practical, personal IT support from DR TECH."
+}

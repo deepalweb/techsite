@@ -1,9 +1,8 @@
 import { useTranslation } from 'react-i18next'
 import { Phone, Mail, MapPin, Truck } from 'lucide-react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faWhatsapp, faFacebookF, faLinkedinIn, faYoutube, faTiktok } from '@fortawesome/free-brands-svg-icons'
-import RevealOnScroll from '../ui/RevealOnScroll.jsx'
-import { phone, phoneDisplay, email, socials, waLink, waMessages } from '../../data/content.js'
+import { faFacebookF, faLinkedinIn, faYoutube, faTiktok } from '@fortawesome/free-brands-svg-icons'
+import { phone, phoneDisplay, email, socials } from '../../data/content.js'
 
 const SERVICE_HREFS = ['#repairs', '#packages', '#services', '#growth']
 const QUICK_LINK_HREFS = ['#about', '#contact', '#faq', '#home']
@@ -18,27 +17,6 @@ export default function Footer() {
             <div className="pointer-events-none absolute -bottom-40 left-1/4 h-80 w-80 rounded-full bg-secondary/10 blur-3xl" />
 
             <div className="relative mx-auto max-w-7xl">
-                <RevealOnScroll className="mb-14 grid gap-6 rounded-2xl border border-white/10 bg-white/[.07] p-6 shadow-2xl backdrop-blur sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
-                    <div>
-                        <p className="text-caption font-extrabold uppercase text-teal-300">{t('footer.ctaBand.eyebrow')}</p>
-                        <h2 className="mt-3 text-h2 leading-tight">{t('footer.ctaBand.title')}</h2>
-                        <p className="mt-3 max-w-3xl leading-7 text-slate-300">{t('footer.ctaBand.subtitle')}</p>
-                    </div>
-                    <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-                        <a href={waLink(waMessages.footer)} target="_blank" rel="noopener noreferrer" className="button-primary shrink-0">
-                            <FontAwesomeIcon icon={faWhatsapp} className="text-xl" />
-                            {t('footer.ctaBand.ctaWhatsapp')}
-                        </a>
-                        <a
-                            href={`tel:${phone}`}
-                            className="inline-flex min-h-[52px] shrink-0 items-center justify-center gap-2 rounded-full border border-white/20 px-5 py-3 font-extrabold text-white transition hover:border-teal-300 hover:text-teal-200"
-                        >
-                            <Phone size={18} />
-                            {t('footer.ctaBand.ctaCall')}
-                        </a>
-                    </div>
-                </RevealOnScroll>
-
                 <div className="grid gap-10 border-b border-white/10 pb-12 sm:grid-cols-2 lg:grid-cols-[1.35fr_.75fr_.75fr_1fr]">
                     <div>
                         <a href="#home" className="inline-flex items-center gap-4" aria-label={t('nav.ariaHome')}>
