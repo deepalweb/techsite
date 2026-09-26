@@ -4,6 +4,7 @@ import './i18n'
 import './index.css'
 import './infrastructure.css'
 import './assets-3d.css'
+import './projects.css'
 import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(

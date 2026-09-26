@@ -13,6 +13,7 @@ import BusinessCare from "../src/components/sections/BusinessCare.jsx";
 import BusinessGrowth from "../src/components/sections/BusinessGrowth.jsx";
 import About from "../src/components/sections/About.jsx";
 import Packages from "../src/components/sections/Packages.jsx";
+import Projects from '../src/components/sections/Projects.jsx';
 import { BusinessInfrastructure, TechnologyStack, InfrastructurePhotography, Resources, FinalSupport } from '../src/components/sections/Infrastructure.jsx';
 
 for (const lang of ["en", "si", "ta"]) {
@@ -27,6 +28,7 @@ for (const lang of ["en", "si", "ta"]) {
       <BusinessGrowth />
       <About />
       <Packages />
+      <Projects />
       <Contact />
       <BusinessInfrastructure />
       <TechnologyStack />
@@ -36,7 +38,7 @@ for (const lang of ["en", "si", "ta"]) {
     </>,
   );
   assert.ok(
-    !/(?:experience|request|brand|motion)\.[a-zA-Z]/.test(markup),
+    !/(?:experience|request|brand|motion|projects)\.[a-zA-Z]/.test(markup),
     `${lang}: no untranslated keys: ${markup.match(/.{0,30}(?:experience|request|brand)\..{0,60}/g)}`,
   );
   const ids = new Set(

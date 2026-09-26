@@ -13,6 +13,7 @@ export default function Navbar() {
     { href: "#service-catalog", label: t("brand.navServices") },
     { href: "#business-infrastructure", label: t("brand.navBusiness") },
     { href: "#about", label: t("nav.about") },
+    { href: "#projects", label: t("projects.nav") },
   ];
 
   return (

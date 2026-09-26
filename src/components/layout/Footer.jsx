@@ -54,6 +54,7 @@ export default function Footer() {
                     <div>
                         <h3 className="text-sm font-extrabold uppercase tracking-[.16em] text-white">{t('footer.quickLinksHeading')}</h3>
                         <nav className="mt-5 space-y-3 text-sm font-semibold text-slate-400" aria-label={t('footer.ariaLinksNav')}>
+                            <a href="#projects" className="block transition hover:text-teal-300">{t('projects.nav')}</a>
                             {t('footer.quickLinks', { returnObjects: true }).map((label, index) => (
                                 <a key={label} href={QUICK_LINK_HREFS[index]} className="block transition hover:translate-x-1 hover:text-teal-300">
                                     {label}

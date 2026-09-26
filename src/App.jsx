@@ -16,6 +16,7 @@ import BusinessGrowth from "./components/sections/BusinessGrowth.jsx";
 import About from "./components/sections/About.jsx";
 import Contact from "./components/sections/Contact.jsx";
 import Faq from "./components/sections/Faq.jsx";
+import Projects from './components/sections/Projects.jsx';
 import { BusinessInfrastructure, TechnologyStack, InfrastructurePhotography, Resources, FinalSupport } from './components/sections/Infrastructure.jsx';
 
 export default function App() {
@@ -44,6 +45,7 @@ export default function App() {
         <BusinessCare />
         <BusinessGrowth />
         <About />
+        <Projects />
         <Packages />
         <Resources />
         <Contact />

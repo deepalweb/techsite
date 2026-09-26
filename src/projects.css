@@ -1,0 +1,69 @@
+.projects-section { background: linear-gradient(180deg, #07111e, #050b14); border-top: 1px solid var(--line); }
+.projects-section .section-title h2 { max-width: 700px; }
+.projects-section .section-title { align-items: center; }
+.projects-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.project-card { min-width: 0; overflow: hidden; border: 1px solid #28405a; border-radius: 18px; background: #0c1b2d; display: flex; flex-direction: column; }
+.project-featured { grid-column: 1 / -1; display: grid; grid-template-columns: 180px minmax(0, 1fr); background: linear-gradient(135deg, #11374a, #0c1b2d 70%); }
+.project-visual { height: 150px; position: relative; overflow: hidden; display: grid; place-items: center; background: radial-gradient(ellipse, #168bff1c, transparent 70%); border-bottom: 1px solid #20334b; }
+.project-featured .project-visual { height: 100%; min-height: 0; border-bottom: 0; }
+.project-featured .project-content { padding: 24px 28px; }
+.project-featured .project-category { margin-bottom: 8px; }
+.project-featured .project-description { max-width: 720px; margin-top: 10px; }
+.project-featured .project-capability { margin-top: 14px; }
+.project-featured .project-tags { margin: 10px 0 16px; }
+.project-featured .project-source { margin-top: 0; padding-top: 14px; }
+.project-orbit { position: absolute; width: 180px; height: 100px; border: 1px solid #38789570; border-radius: 50%; transform: rotate(-25deg); }
+.project-orbit::after { content: ''; position: absolute; inset: -18px 15px; border: 1px dashed #3b84a740; border-radius: 50%; transform: rotate(50deg); }
+.project-featured .project-orbit { width: 140px; height: 100px; }
+.project-symbol { position: relative; display: grid; place-items: center; width: 80px; height: 76px; border-radius: 19px; background: linear-gradient(145deg, #215577, #0b2035); color: #9de8ff; border: 1px solid #467f9c; box-shadow: 7px 9px 0 #061625, 8px 10px 0 #28506a; transform: rotate(-8deg); }
+.project-featured .project-symbol { width: 80px; height: 76px; }
+.project-featured .project-symbol > svg { width: 44px; height: 44px; }
+.project-code-mark { position: absolute; bottom: 18px; right: 20px; color: #6388a4; }
+.project-visual-deals .project-symbol { background: linear-gradient(145deg, #4c405e, #161f38); color: #ddc9ff; border-color: #796493; }
+.project-visual-inventory .project-symbol { background: linear-gradient(145deg, #215852, #0b2530); color: #9ceadb; }
+.project-content { padding: 28px; display: flex; flex-direction: column; flex: 1; min-width: 0; }
+.project-category { font-size: 10px; color: #83d4ff; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 13px; }
+.project-content h3 { font-size: 23px; font-weight: 700; letter-spacing: -.03em; }
+.project-description { font-size: 13px; color: var(--muted); line-height: 1.85; margin-top: 14px; }
+.project-capability { margin-top: 22px; color: #cee1ef; font-size: 11px; line-height: 1.8; }
+.project-tags { display: flex; flex-wrap: wrap; gap: 7px; margin: 16px 0 25px; }
+.project-tags li { font-size: 10px; color: #aac7de; padding: 5px 9px; border: 1px solid #294159; border-radius: 5px; }
+.project-source { display: flex; align-items: center; gap: 9px; margin-top: auto; padding-top: 18px; min-height: 44px; border-top: 1px solid var(--line); font-size: 12px; font-weight: 700; color: #82d6ff; }
+.project-source > svg:last-child { margin-left: auto; flex-shrink: 0; }
+.project-source:hover { color: white; }
+.project-related { font-size: 11px; padding-bottom: 0; }
+.project-visual-ai .project-symbol { background: linear-gradient(145deg, #245575, #152448); color: #b1eaff; }
+.additional-projects { border: 1px solid var(--line); border-radius: 14px; margin-top: 24px; padding: 22px 26px; background: #0a1727; }
+.additional-projects summary { display: flex; gap: 13px; align-items: center; cursor: pointer; font-size: 15px; font-weight: 700; list-style: none; }
+.additional-projects summary::-webkit-details-marker { display: none; }
+.additional-projects summary > svg { color: #83d4ff; flex-shrink: 0; }
+.additional-projects summary > svg:last-child { margin-left: auto; transition: transform .2s; }
+.additional-projects[open] summary > svg:last-child { transform: rotate(180deg); }
+.project-count { font-size: 11px; color: #9dc5df; padding: 3px 9px; background: #17344d; border-radius: 30px; }
+.additional-projects > p { color: var(--muted); font-size: 13px; line-height: 1.8; margin-top: 20px; }
+.additional-projects-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin-top: 24px; }
+.additional-projects-grid h3 { font-size: 14px; overflow-wrap: anywhere; font-weight: 600; }
+.additional-projects-grid .text-link { font-size: 11px; }
+.projects-contact { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 28px; }
+.projects-contact p { color: var(--muted); font-size: 14px; }
+html[lang="si"] .project-category, html[lang="ta"] .project-category { letter-spacing: 0; }
+@media (max-width: 1023px) {
+  .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .project-featured { grid-column: span 2; }
+  .additional-projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 767px) {
+  .projects-grid { grid-template-columns: minmax(0, 1fr); }
+  .project-featured { grid-column: auto; display: flex; }
+  .project-featured .project-visual { height: 105px; min-height: 0; }
+  .project-featured .project-symbol { width: 58px; height: 55px; border-radius: 14px; }
+  .project-featured .project-symbol > svg { width: 32px; height: 32px; }
+  .project-featured .project-orbit { width: 120px; height: 65px; }
+  .project-featured .project-content { padding: 18px 24px 24px; }
+  .project-content { padding: 25px; }
+  .additional-projects { padding: 20px; }
+  .additional-projects-grid { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .additional-projects summary { font-size: 13px; }
+  .projects-contact { align-items: start; flex-direction: column; gap: 6px; }
+  .project-source { overflow-wrap: anywhere; }
+}

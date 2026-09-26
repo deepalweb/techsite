@@ -1,4 +1,4 @@
-﻿# DR TECH — Digital Infrastructure in Motion
+# DR TECH — Digital Infrastructure in Motion
 
 ## Brief review and implementation plan
 
@@ -39,6 +39,8 @@ The hero now prioritises laptop, computer and printer repairs. Its actions lead 
 The hero background reuses the repository's `hero-repair-option.png` repair-workbench illustration. Directional navy overlays protect the copy and orbit contrast, with a stronger overlay and adjusted crop on mobile. The image is decorative and is not presented as a photograph of DR TECH staff or completed customer work.
 
 ## Content boundaries
+
+The Projects section leads with ERP_AI_AGENT, confirmed by the owner as the main project. Its scope and status await confirmation, so the featured card offers an enquiry link. TravelBuddy appears once, combining its mobile/backend and web source links; its separate admin entry is omitted. DealFinder, ITInventory and techsite complete the primary collection. AIPromptCrafter, wifilandingpage and mobilegame remain in the expandable collection. Public summaries are based on repository metadata and source structure reviewed on 2026-09-26, not verified launch status. Maintain entries in src/data/projects.js and translated copy in src/i18n/projects.js.
 
 The existing server-rack photograph is stock, credited to Brett Sayles / Pexels in the visible caption and IMAGE-CREDITS.md. It is not presented as a DR TECH installation. A genuine project gallery and customer testimonials still require owner-supplied photographs, captions and approved quotes. No projects, customers, reviews or certification partnerships were invented.
 

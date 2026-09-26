@@ -7,15 +7,16 @@ import ta from './ta.json'
 import motionEn from './motion-en.json'
 import motionSi from './motion-si.json'
 import motionTa from './motion-ta.json'
+import { projectsEn, projectsSi, projectsTa } from './projects.js'
 
 i18n
     .use(LanguageDetector)
     .use(initReactI18next)
     .init({
         resources: {
-            en: { translation: { ...en, motion: motionEn } },
-            si: { translation: { ...si, motion: motionSi } },
-            ta: { translation: { ...ta, motion: motionTa } },
+            en: { translation: { ...en, motion: motionEn, projects: projectsEn } },
+            si: { translation: { ...si, motion: motionSi, projects: projectsSi } },
+            ta: { translation: { ...ta, motion: motionTa, projects: projectsTa } },
         },
         fallbackLng: 'en',
         supportedLngs: ['en', 'si', 'ta'],
