@@ -11,12 +11,25 @@ import {
 } from "lucide-react";
 import { phone, waLink } from "../../data/content.js";
 
-export default function Contact() {
+export default function Contact({ initialService = "" }) {
   const { t } = useTranslation();
+  const options = [
+    ...t("studio.problems", { returnObjects: true }).map(({ id, title }) => ({
+      id,
+      label: title,
+    })),
+    ...t("request.services", { returnObjects: true }).filter(({ id }) =>
+      ["business", "digital", "other"].includes(id),
+    ),
+  ];
+  const preferredService =
+    initialService === "network" ? "wifi" : initialService;
   const reduced = useReducedMotion();
   const [step, setStep] = useState(0);
   const [data, setData] = useState({
-    service: "",
+    service: options.some(({ id }) => id === preferredService)
+      ? preferredService
+      : "",
     issue: "",
     name: "",
     phone: "",
@@ -34,7 +47,6 @@ export default function Contact() {
     }
   }, [step]);
   const labels = t("request.steps", { returnObjects: true });
-  const options = t("request.services", { returnObjects: true });
   const preferences = t("request.preferences", { returnObjects: true });
   const update = (e) => {
     setError(false);

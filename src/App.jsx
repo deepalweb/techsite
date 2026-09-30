@@ -1,59 +1,64 @@
 import { useEffect } from "react";
 import { MotionConfig } from "framer-motion";
-import ServiceCatalog, {
-  WhyDrTech,
-} from "./components/sections/ServiceCatalog.jsx";
-import ServicePaths from "./components/sections/ServicePaths.jsx";
 import { useTranslation } from "react-i18next";
-import ScrollProgressBar from "./components/layout/ScrollProgressBar.jsx";
-import Navbar from "./components/layout/Navbar.jsx";
-import Footer from "./components/layout/Footer.jsx";
-import FloatingActions from "./components/layout/FloatingActions.jsx";
-import Hero from "./components/sections/Hero.jsx";
-import Packages from "./components/sections/Packages.jsx";
-import BusinessCare from "./components/sections/BusinessCare.jsx";
-import BusinessGrowth from "./components/sections/BusinessGrowth.jsx";
-import About from "./components/sections/About.jsx";
-import Contact from "./components/sections/Contact.jsx";
-import Faq from "./components/sections/Faq.jsx";
-import Projects from './components/sections/Projects.jsx';
-import { BusinessInfrastructure, TechnologyStack, InfrastructurePhotography, Resources, FinalSupport } from './components/sections/Infrastructure.jsx';
-
-export default function App() {
+import { Header, Footer, QuickActions } from "./components/studio/Shell.jsx";
+import {
+  HomePage,
+  DetailPage,
+  normalizePage,
+} from "./components/studio/Pages.jsx";
+export const pageTitleKeys = {
+  "/": "meta.title",
+  "/home-it": "studio.homePageTitle",
+  "/business": "studio.businessPageTitle",
+  "/digital": "studio.digitalPageTitle",
+  "/projects": "projects.nav",
+  "/about": "studio.aboutPageTitle",
+  "/support": "studio.supportPageTitle",
+  "/404": "studio.notFoundTitle",
+};
+export default function App({ initialPath, initialSearch }) {
   const { i18n, t } = useTranslation();
-
+  const path =
+    initialPath ??
+    (typeof window === "undefined" ? "/" : window.location.pathname);
+  const page = normalizePage(path);
+  const search =
+    initialSearch ??
+    (typeof window === "undefined" ? "" : window.location.search);
+  const service = new URLSearchParams(search).get("service") || "";
   useEffect(() => {
-    document.documentElement.lang = i18n.resolvedLanguage;
-    document.title = t("meta.title");
-  }, [i18n.resolvedLanguage, t]);
-
+    document.documentElement.lang = i18n.resolvedLanguage || "en";
+    document.title =
+      page === "/" ? t("meta.title") : `${t(pageTitleKeys[page])} | DR TECH`;
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical)
+      canonical.href = `https://www.drtech.lk${page === "/" ? "/" : page}`;
+    if (window.location.hash) {
+      const aliases = {
+        "service-catalog": "repairs",
+        "business-infrastructure": "business",
+        resources: "growth",
+        projects: "growth",
+      };
+      const hash = decodeURIComponent(window.location.hash.slice(1));
+      const node =
+        document.getElementById(hash) || document.getElementById(aliases[hash]);
+      node?.scrollIntoView();
+    }
+  }, [page, t, i18n.resolvedLanguage]);
   return (
     <MotionConfig reducedMotion="user">
-      <a href="#main" className="skip-link">
-        {t("experience.explore")}
-      </a>
-      <ScrollProgressBar />
-      <Navbar />
-      <Hero />
+      <Header page={page} />
       <main id="main">
-        <ServicePaths />
-        <ServiceCatalog />
-        <WhyDrTech />
-        <BusinessInfrastructure />
-        <TechnologyStack />
-        <InfrastructurePhotography />
-        <BusinessCare />
-        <BusinessGrowth />
-        <About />
-        <Projects />
-        <Packages />
-        <Resources />
-        <Contact />
-        <Faq />
-        <FinalSupport />
+        {page === "/" ? (
+          <HomePage />
+        ) : (
+          <DetailPage page={page} service={service} />
+        )}
       </main>
       <Footer />
-      <FloatingActions />
+      <QuickActions />
     </MotionConfig>
   );
 }

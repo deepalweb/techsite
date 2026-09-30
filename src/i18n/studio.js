@@ -1,0 +1,401 @@
+export const studioEn = {
+  home: "Home IT",
+  business: "Business IT",
+  pricing: "Repair prices",
+  about: "About",
+  support: "Get support",
+  skip: "Skip to content",
+  heroTitle: "Back to your day.",
+  heroIntro:
+    "Computer trouble shouldn’t take over your day. Personal IT support for your laptop, Wi-Fi and printer — at home or remotely.",
+  location: "Colombo, Kotte & nearby areas",
+  heroLink: "See repair prices",
+  heroNote: "A clear estimate before we start.",
+  sceneAlt: "Illustrative studio render of a laptop, router and printer",
+  explore: "Explore in 3D",
+  closeScene: "Back to image",
+  sceneLoading: "Loading the 3D view…",
+  sceneFailed:
+    "3D is unavailable on this device. You can still explore our services below.",
+  sceneHint: "Select a device to take a closer look.",
+  deviceNames: ["Laptop", "Wi-Fi", "Printer"],
+  helpTitle: "What’s not working?",
+  helpIntro: "Start with the problem. We’ll help with the next step.",
+  notSure: "Not sure? Tell us what happened",
+  problems: [
+    {
+      id: "computer",
+      title: "Laptop or PC",
+      body: "Slow, not starting, overheating or ready for an upgrade.",
+    },
+    {
+      id: "wifi",
+      title: "Wi-Fi & internet",
+      body: "Weak signal, dropped connections or a new router.",
+    },
+    {
+      id: "printer",
+      title: "Printer",
+      body: "Setup, connection issues or a printer that won’t print.",
+    },
+    {
+      id: "software",
+      title: "Software & backup",
+      body: "Windows, email, malware removal and safer backups.",
+    },
+  ],
+  pricingTitle: "A starting point. No guesswork.",
+  pricingIntro: "Know the likely cost before you arrange a visit.",
+  priceNote:
+    "Indicative service prices. Travel, repair time and replacement parts can change the estimate. We confirm the scope with you before work begins.",
+  priceAction: "Ask about this service",
+  processTitle: "A simple way to get it sorted.",
+  process: [
+    {
+      title: "Tell us the issue",
+      body: "Send the device, problem and your location.",
+    },
+    {
+      title: "Agree on the next step",
+      body: "We confirm a visit, pickup or remote session and an estimate.",
+    },
+    {
+      title: "Get back to your day",
+      body: "Get practical help and clear advice on what comes next.",
+    },
+  ],
+  trustTitle: "Technical experience. A person you can talk to.",
+  trustBody:
+    "DR TECH is founded by Deepal Rupasinghe, a former IT Infrastructure Lead at Ceylon Cold Stores PLC, John Keells Holdings. That experience now supports homes and small businesses around Colombo.",
+  founder: "Founder, DR TECH Services",
+  meet: "Meet Deepal",
+  trustItems: [
+    "An estimate before repairs",
+    "Home visits and remote options",
+    "Practical backup and security advice",
+  ],
+  businessLabel: "For your business",
+  businessTitle: "Your people have work to do. We’ll help the IT keep up.",
+  businessIntro:
+    "From the first workstation to everyday support, bring your network, devices and business tools together with one practical partner.",
+  businessAction: "Discuss business IT",
+  businessLink: "Explore business support",
+  businessItems: [
+    {
+      title: "Keep everyone connected",
+      body: "Office networks, Wi-Fi, printers and Microsoft 365.",
+    },
+    {
+      title: "Protect the essentials",
+      body: "Backup checks, access and practical security guidance.",
+    },
+    {
+      title: "Have someone to call",
+      body: "Planned maintenance and on-demand support.",
+    },
+  ],
+  plansTitle: "Ongoing care for your business.",
+  plansIntro: "A starting point for a support plan built around your setup.",
+  plansNote:
+    "Device coverage, visits and response times are agreed after reviewing your requirements.",
+  planAction: "Discuss this plan",
+  digitalTitle: "Need something built, too?",
+  digitalIntro:
+    "Websites, Odoo and practical business tools. Explore a separate side of DR TECH.",
+  digitalAction: "Digital solutions",
+  projectsAction: "Explore software projects",
+  finalTitle: "Let’s get it working.",
+  finalBody: "Tell us the problem. We’ll help you choose the next step.",
+  call: "Call DR TECH",
+  homeReturn: "Back to home",
+  homePageTitle: "IT support for your home.",
+  homePageIntro:
+    "Practical help for the devices you use every day, with home visits, pickup and remote support around Colombo.",
+  businessPageTitle: "A practical partner for your business IT.",
+  businessPageIntro:
+    "Support for shops, offices and growing teams. Start with your current setup, then agree the services that make sense for your business.",
+  digitalPageTitle: "Useful tools for the way you work.",
+  digitalPageIntro:
+    "Build your online presence, simplify everyday operations or discuss an idea for a business system.",
+  projectsPageTitle: "Built with curiosity. Made to solve problems.",
+  aboutPageTitle: "Hello, I’m Deepal.",
+  aboutPageIntro:
+    "An infrastructure background. A hands-on approach to the technology you depend on.",
+  supportPageTitle: "Tell us what needs a little help.",
+  supportPageIntro:
+    "Use the short request below, or contact us directly on WhatsApp or by phone.",
+  footerLine: "Personal IT support. Practical business solutions.",
+  elsewhere: "Elsewhere",
+  services: "Services",
+  contact: "Contact",
+  rights: "All rights reserved.",
+  notFoundTitle: "That page isn’t here.",
+  notFoundBody: "Head back to the home page or contact DR TECH for help.",
+  faqTitle: "A few useful answers.",
+  viewAll: "More about home support",
+};
+export const studioSi = {
+  home: "නිවාස IT",
+  business: "ව්‍යාපාරික IT",
+  pricing: "අලුත්වැඩියා මිල",
+  about: "අප ගැන",
+  support: "සහාය ලබාගන්න",
+  skip: "අන්තර්ගතයට යන්න",
+  heroTitle: "ඔබේ දවසට නැවතත්.",
+  heroIntro:
+    "පරිගණක ගැටලු නිසා ඔබේ දවස නවත්වන්න එපා. ලැප්ටොප්, Wi-Fi සහ මුද්‍රණ යන්ත්‍ර සඳහා නිවසේදී හෝ දුරස්ථව පුද්ගලික IT සහාය.",
+  location: "කොළඹ, කෝට්ටේ සහ අවට ප්‍රදේශ",
+  heroLink: "අලුත්වැඩියා මිල බලන්න",
+  heroNote: "වැඩ ආරම්භයට පෙර පැහැදිලි ඇස්තමේන්තුවක්.",
+  sceneAlt: "ලැප්ටොප්, රවුටරය සහ මුද්‍රණ යන්ත්‍රයේ නිදර්ශන දසුනක්",
+  explore: "3D දසුන බලන්න",
+  closeScene: "රූපයට ආපසු",
+  sceneLoading: "3D දසුන පූරණය වෙමින්…",
+  sceneFailed: "මෙම උපාංගයේ 3D දසුන නොමැත. පහත සේවා භාවිත කළ හැක.",
+  sceneHint: "උපාංගයක් තෝරා සමීපව බලන්න.",
+  deviceNames: ["ලැප්ටොප්", "Wi-Fi", "මුද්‍රණ යන්ත්‍රය"],
+  helpTitle: "කුමක්ද ගැටලුව?",
+  helpIntro: "ගැටලුව කියන්න. ඊළඟ පියවරට අපි උදව් කරමු.",
+  notSure: "හරියටම නොදනීද? සිදුවූ දේ කියන්න",
+  problems: [
+    {
+      id: "computer",
+      title: "ලැප්ටොප් / පරිගණක",
+      body: "මන්දගාමී වීම, ක්‍රියා නොකිරීම, උණුසුම් වීම හෝ වැඩිදියුණු කිරීම.",
+    },
+    {
+      id: "wifi",
+      title: "Wi-Fi සහ අන්තර්ජාලය",
+      body: "දුර්වල සංඥා, බිඳවැටෙන සම්බන්ධතා හෝ නව රවුටරයක්.",
+    },
+    {
+      id: "printer",
+      title: "මුද්‍රණ යන්ත්‍රය",
+      body: "සැකසීම, සම්බන්ධතා සහ මුද්‍රණ ගැටලු.",
+    },
+    {
+      id: "software",
+      title: "මෘදුකාංග සහ දත්ත පිටපත්",
+      body: "Windows, email, වෛරස් ඉවත් කිරීම සහ දත්ත පිටපත්.",
+    },
+  ],
+  pricingTitle: "මිල ගැන පැහැදිලි ආරම්භයක්.",
+  pricingIntro: "පැමිණීමක් සූදානම් කිරීමට පෙර වැය දැනගන්න.",
+  priceNote:
+    "මේවා මූලික සේවා මිල වේ. ගමන්, වැඩ කාලය සහ අමතර කොටස් අනුව මිල වෙනස් විය හැක. වැඩට පෙර ඔබ සමඟ තහවුරු කරමු.",
+  priceAction: "සේවාව ගැන විමසන්න",
+  processTitle: "විසඳුමට සරල මගක්.",
+  process: [
+    { title: "ගැටලුව කියන්න", body: "උපාංගය, ගැටලුව සහ ස්ථානය එවන්න." },
+    {
+      title: "ඊළඟ පියවර එකඟ කරගන්න",
+      body: "පැමිණීම, රැගෙන යාම හෝ දුරස්ථ සහාය සහ ඇස්තමේන්තුව තහවුරු කරමු.",
+    },
+    {
+      title: "ඔබේ දවස නැවත අරඹන්න",
+      body: "ප්‍රායෝගික සහාය සහ ඊළඟ පියවර ගැන පැහැදිලි උපදෙස් ලබාගන්න.",
+    },
+  ],
+  trustTitle: "තාක්ෂණික අත්දැකීම්. කතා කළ හැකි අයෙක්.",
+  trustBody:
+    "DR TECH නිර්මාතෘ දීපාල් රූපසිංහ, John Keells Holdings හි Ceylon Cold Stores PLC ආයතනයේ හිටපු IT Infrastructure Lead වේ. එම අත්දැකීම් දැන් කොළඹ නිවාස සහ කුඩා ව්‍යාපාර සඳහායි.",
+  founder: "නිර්මාතෘ, DR TECH Services",
+  meet: "දීපාල් ගැන",
+  trustItems: [
+    "අලුත්වැඩියාවට පෙර ඇස්තමේන්තුවක්",
+    "නිවාස පැමිණීම් සහ දුරස්ථ සේවා",
+    "දත්ත පිටපත් සහ ආරක්ෂාව පිළිබඳ උපදෙස්",
+  ],
+  businessLabel: "ඔබේ ව්‍යාපාරයට",
+  businessTitle: "ඔබේ කණ්ඩායමේ වැඩට ගැළපෙන IT සහාය.",
+  businessIntro:
+    "පළමු පරිගණකයේ සිට දෛනික සහාය දක්වා ජාල, උපාංග සහ ව්‍යාපාර මෙවලම් සඳහා එකම සහකරුවෙක්.",
+  businessAction: "ව්‍යාපාරික IT සාකච්ඡා කරන්න",
+  businessLink: "ව්‍යාපාරික සහාය බලන්න",
+  businessItems: [
+    {
+      title: "සියලු දෙනා සම්බන්ධව තබන්න",
+      body: "කාර්යාල ජාල, Wi-Fi, මුද්‍රණ යන්ත්‍ර සහ Microsoft 365.",
+    },
+    {
+      title: "වැදගත් දේ ආරක්ෂා කරන්න",
+      body: "දත්ත පිටපත්, ප්‍රවේශ සහ ආරක්ෂාව පිළිබඳ උපදෙස්.",
+    },
+    {
+      title: "අවශ්‍ය විට අමතන්න",
+      body: "සැලසුම් කළ නඩත්තුව සහ අවශ්‍ය විට සහාය.",
+    },
+  ],
+  plansTitle: "ව්‍යාපාරයට අඛණ්ඩ IT සේවාව.",
+  plansIntro: "ඔබේ පද්ධතියට ගැළපෙන සහාය සැලසුමක ආරම්භයක්.",
+  plansNote:
+    "උපාංග ආවරණය, පැමිණීම් සහ ප්‍රතිචාර වේලාවන් අවශ්‍යතා සමාලෝචනයෙන් පසු එකඟ වේ.",
+  planAction: "සැලසුම සාකච්ඡා කරන්න",
+  digitalTitle: "අලුත් දෙයක් ගොඩනගන්නත් අවශ්‍යද?",
+  digitalIntro: "වෙබ් අඩවි, Odoo සහ ප්‍රායෝගික ව්‍යාපාර මෙවලම්.",
+  digitalAction: "ඩිජිටල් විසඳුම්",
+  projectsAction: "මෘදුකාංග ව්‍යාපෘති බලන්න",
+  finalTitle: "අපි එය විසඳමු.",
+  finalBody: "ගැටලුව කියන්න. ඊළඟ පියවර තෝරා ගැනීමට උදව් කරමු.",
+  call: "DR TECH අමතන්න",
+  homeReturn: "මුල් පිටුවට",
+  homePageTitle: "ඔබේ නිවසට IT සහාය.",
+  homePageIntro:
+    "කොළඹ අවට දෛනික උපාංග සඳහා නිවාස පැමිණීම්, රැගෙන යාම සහ දුරස්ථ සේවා.",
+  businessPageTitle: "ව්‍යාපාරික IT සඳහා ප්‍රායෝගික සහකරුවෙක්.",
+  businessPageIntro:
+    "වෙළඳසැල්, කාර්යාල සහ වර්ධනය වන කණ්ඩායම් සඳහා අවශ්‍ය සේවා එකඟ කරගන්න.",
+  digitalPageTitle: "ඔබේ වැඩට ගැළපෙන මෙවලම්.",
+  digitalPageIntro:
+    "අන්තර්ජාල පැවැත්ම, දෛනික මෙහෙයුම් හෝ ව්‍යාපාර පද්ධති ගැන සාකච්ඡා කරන්න.",
+  projectsPageTitle: "ගැටලු විසඳීමට කළ නිර්මාණ.",
+  aboutPageTitle: "ආයුබෝවන්, මම දීපාල්.",
+  aboutPageIntro: "IT යටිතල පහසුකම් අත්දැකීම් සමඟ ප්‍රායෝගික සහාය.",
+  supportPageTitle: "අවශ්‍ය සහාය අපට කියන්න.",
+  supportPageIntro:
+    "පහත ඉල්ලීම භාවිත කරන්න, නැතිනම් WhatsApp හෝ දුරකථනයෙන් අමතන්න.",
+  footerLine: "පුද්ගලික IT සහාය. ප්‍රායෝගික ව්‍යාපාර විසඳුම්.",
+  elsewhere: "තවත් සබැඳි",
+  services: "සේවා",
+  contact: "සම්බන්ධ වන්න",
+  rights: "සියලු හිමිකම් ඇවිරිණි.",
+  notFoundTitle: "මෙම පිටුව නොමැත.",
+  notFoundBody: "මුල් පිටුවට යන්න හෝ සහාය සඳහා DR TECH අමතන්න.",
+  faqTitle: "ප්‍රයෝජනවත් පිළිතුරු කිහිපයක්.",
+  viewAll: "නිවාස සහාය ගැන තවත්",
+};
+export const studioTa = {
+  home: "வீட்டு IT",
+  business: "வணிக IT",
+  pricing: "பழுதுபார்ப்புக் கட்டணம்",
+  about: "எங்களைப் பற்றி",
+  support: "உதவி பெறுங்கள்",
+  skip: "உள்ளடக்கத்திற்குச் செல்லுங்கள்",
+  heroTitle: "உங்கள் நாளைத் தொடருங்கள்.",
+  heroIntro:
+    "கணினிச் சிக்கல்கள் உங்கள் நாளை நிறுத்த வேண்டாம். மடிக்கணினி, Wi-Fi மற்றும் அச்சுப்பொறிக்கு வீட்டில் அல்லது தொலைநிலையில் தனிப்பட்ட IT ஆதரவு.",
+  location: "கொழும்பு, கோட்டை மற்றும் அருகிலுள்ள பகுதிகள்",
+  heroLink: "கட்டணங்களைப் பார்க்க",
+  heroNote: "வேலை தொடங்கும் முன் தெளிவான மதிப்பீடு.",
+  sceneAlt: "மடிக்கணினி, ரூட்டர் மற்றும் அச்சுப்பொறியின் விளக்கக் காட்சி",
+  explore: "3D காட்சியைப் பார்க்க",
+  closeScene: "படத்திற்குத் திரும்ப",
+  sceneLoading: "3D காட்சி ஏற்றப்படுகிறது…",
+  sceneFailed:
+    "இந்தச் சாதனத்தில் 3D கிடைக்கவில்லை. கீழே சேவைகளைப் பார்க்கலாம்.",
+  sceneHint: "நெருக்கமாகப் பார்க்க ஒரு சாதனத்தைத் தேர்ந்தெடுக்கவும்.",
+  deviceNames: ["மடிக்கணினி", "Wi-Fi", "அச்சுப்பொறி"],
+  helpTitle: "என்ன சிக்கல்?",
+  helpIntro: "சிக்கலைக் கூறுங்கள். அடுத்த படிக்கு உதவுகிறோம்.",
+  notSure: "தெரியவில்லையா? நடந்ததைக் கூறுங்கள்",
+  problems: [
+    {
+      id: "computer",
+      title: "மடிக்கணினி / கணினி",
+      body: "மெதுவாக இயங்குதல், தொடங்காமை, வெப்பம் அல்லது மேம்படுத்தல்.",
+    },
+    {
+      id: "wifi",
+      title: "Wi-Fi & இணையம்",
+      body: "பலவீனமான சிக்னல், துண்டிக்கப்படும் இணைப்பு அல்லது புதிய ரூட்டர்.",
+    },
+    {
+      id: "printer",
+      title: "அச்சுப்பொறி",
+      body: "அமைப்பு, இணைப்பு மற்றும் அச்சிடும் சிக்கல்கள்.",
+    },
+    {
+      id: "software",
+      title: "மென்பொருள் & காப்புப்பிரதி",
+      body: "Windows, email, வைரஸ் நீக்கம் மற்றும் காப்புப்பிரதிகள்.",
+    },
+  ],
+  pricingTitle: "தெளிவான கட்டணத்துடன் தொடங்குங்கள்.",
+  pricingIntro: "வருகையை ஏற்பாடு செய்யும் முன் செலவை அறியுங்கள்.",
+  priceNote:
+    "இவை ஆரம்ப சேவைக் கட்டணங்கள். பயணம், வேலை நேரம் மற்றும் பாகங்களால் மதிப்பீடு மாறலாம். வேலைக்கு முன் உறுதிப்படுத்துவோம்.",
+  priceAction: "சேவையைப் பற்றி கேட்க",
+  processTitle: "தீர்வுக்கான எளிய வழி.",
+  process: [
+    {
+      title: "சிக்கலைக் கூறுங்கள்",
+      body: "சாதனம், சிக்கல் மற்றும் இருப்பிடத்தை அனுப்புங்கள்.",
+    },
+    {
+      title: "அடுத்த படியை முடிவு செய்யுங்கள்",
+      body: "வருகை, எடுத்துச் செல்லுதல் அல்லது தொலைநிலை சேவை மற்றும் மதிப்பீட்டை உறுதிப்படுத்துவோம்.",
+    },
+    {
+      title: "உங்கள் நாளைத் தொடருங்கள்",
+      body: "நடைமுறை உதவியும் அடுத்த படிக்கான தெளிவான ஆலோசனையும் பெறுங்கள்.",
+    },
+  ],
+  trustTitle: "தொழில்நுட்ப அனுபவம். பேசக்கூடிய ஒருவர்.",
+  trustBody:
+    "DR TECH நிறுவனர் தீபால் ரூபசிங்க, John Keells Holdings இன் Ceylon Cold Stores PLC நிறுவனத்தின் முன்னாள் IT Infrastructure Lead. இப்போது அந்த அனுபவம் கொழும்பின் வீடுகள் மற்றும் சிறு வணிகங்களுக்கு உதவுகிறது.",
+  founder: "நிறுவனர், DR TECH Services",
+  meet: "தீபாலைப் பற்றி",
+  trustItems: [
+    "பழுதுபார்ப்புக்கு முன் மதிப்பீடு",
+    "வீட்டு வருகை மற்றும் தொலைநிலை சேவை",
+    "காப்புப்பிரதி மற்றும் பாதுகாப்பு ஆலோசனை",
+  ],
+  businessLabel: "உங்கள் வணிகத்திற்கு",
+  businessTitle: "உங்கள் குழுவின் பணிக்கு இணையான IT ஆதரவு.",
+  businessIntro:
+    "முதல் கணினி முதல் அன்றாட ஆதரவு வரை நெட்வொர்க், சாதனங்கள் மற்றும் வணிகக் கருவிகளுக்கு ஒரு துணை.",
+  businessAction: "வணிக IT பற்றி பேசுங்கள்",
+  businessLink: "வணிக ஆதரவைப் பார்க்க",
+  businessItems: [
+    {
+      title: "அனைவரையும் இணைத்திருங்கள்",
+      body: "அலுவலக நெட்வொர்க், Wi-Fi, அச்சுப்பொறி மற்றும் Microsoft 365.",
+    },
+    {
+      title: "முக்கியமானவற்றைப் பாதுகாக்க",
+      body: "காப்புப்பிரதி, அணுகல் மற்றும் பாதுகாப்பு ஆலோசனை.",
+    },
+    {
+      title: "தேவைக்கு அழைக்க ஒருவர்",
+      body: "திட்டமிட்ட பராமரிப்பும் தேவையான நேரத்தில் ஆதரவும்.",
+    },
+  ],
+  plansTitle: "வணிகத்திற்கு தொடர்ச்சியான பராமரிப்பு.",
+  plansIntro: "உங்கள் அமைப்பிற்கான ஆதரவுத் திட்டத்தின் தொடக்கம்.",
+  plansNote:
+    "சாதனங்கள், வருகைகள் மற்றும் பதில் நேரங்கள் தேவைகளை ஆய்வு செய்த பின் முடிவு செய்யப்படும்.",
+  planAction: "திட்டத்தை விவாதிக்க",
+  digitalTitle: "புதியதாக உருவாக்க வேண்டுமா?",
+  digitalIntro: "இணையதளங்கள், Odoo மற்றும் நடைமுறை வணிகக் கருவிகள்.",
+  digitalAction: "டிஜிட்டல் தீர்வுகள்",
+  projectsAction: "மென்பொருள் திட்டங்கள்",
+  finalTitle: "அதைச் சரிசெய்வோம்.",
+  finalBody: "சிக்கலைக் கூறுங்கள். அடுத்த படியைத் தேர்வுசெய்ய உதவுகிறோம்.",
+  call: "DR TECH ஐ அழைக்க",
+  homeReturn: "முகப்புக்குத் திரும்ப",
+  homePageTitle: "உங்கள் வீட்டிற்கு IT ஆதரவு.",
+  homePageIntro:
+    "கொழும்பைச் சுற்றி சாதனங்களுக்கு வீட்டு வருகை, எடுத்துச் செல்லுதல் மற்றும் தொலைநிலை உதவி.",
+  businessPageTitle: "வணிக IT க்கான நடைமுறைத் துணை.",
+  businessPageIntro:
+    "கடைகள், அலுவலகங்கள் மற்றும் வளரும் குழுக்களுக்கு பொருத்தமான ஆதரவை முடிவு செய்யுங்கள்.",
+  digitalPageTitle: "உங்கள் பணிக்கான பயனுள்ள கருவிகள்.",
+  digitalPageIntro:
+    "இணைய இருப்பு, அன்றாட செயல்பாடுகள் அல்லது வணிக அமைப்புகளை விவாதிக்கவும்.",
+  projectsPageTitle: "சிக்கல்களைத் தீர்க்க உருவாக்கப்பட்டது.",
+  aboutPageTitle: "வணக்கம், நான் தீபால்.",
+  aboutPageIntro: "IT கட்டமைப்பு அனுபவத்துடன் நடைமுறை உதவி.",
+  supportPageTitle: "என்ன உதவி தேவை என்று கூறுங்கள்.",
+  supportPageIntro:
+    "கீழே கோரிக்கையை நிரப்புங்கள் அல்லது WhatsApp, தொலைபேசி மூலம் தொடர்புகொள்ளுங்கள்.",
+  footerLine: "தனிப்பட்ட IT ஆதரவு. நடைமுறை வணிகத் தீர்வுகள்.",
+  elsewhere: "மேலும்",
+  services: "சேவைகள்",
+  contact: "தொடர்பு",
+  rights: "அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.",
+  notFoundTitle: "இந்தப் பக்கம் இல்லை.",
+  notFoundBody:
+    "முகப்புக்குச் செல்லுங்கள் அல்லது உதவிக்கு DR TECH ஐ அணுகுங்கள்.",
+  faqTitle: "சில பயனுள்ள பதில்கள்.",
+  viewAll: "வீட்டு ஆதரவு பற்றி மேலும்",
+};

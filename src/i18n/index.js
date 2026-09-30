@@ -1,3 +1,4 @@
+import {studioEn, studioSi, studioTa} from './studio.js'
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
@@ -14,9 +15,9 @@ i18n
     .use(initReactI18next)
     .init({
         resources: {
-            en: { translation: { ...en, motion: motionEn, projects: projectsEn } },
-            si: { translation: { ...si, motion: motionSi, projects: projectsSi } },
-            ta: { translation: { ...ta, motion: motionTa, projects: projectsTa } },
+            en: { translation: { ...en, studio: studioEn, motion: motionEn, projects: projectsEn } },
+            si: { translation: { ...si, studio: studioSi, motion: motionSi, projects: projectsSi } },
+            ta: { translation: { ...ta, studio: studioTa, motion: motionTa, projects: projectsTa } },
         },
         fallbackLng: 'en',
         supportedLngs: ['en', 'si', 'ta'],

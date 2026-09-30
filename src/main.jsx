@@ -1,14 +1,15 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './i18n'
-import './index.css'
-import './infrastructure.css'
-import './assets-3d.css'
-import './projects.css'
-import App from './App.jsx'
-
-createRoot(document.getElementById('root')).render(
+import { StrictMode } from "react";
+import { createRoot, hydrateRoot } from "react-dom/client";
+import i18n from "./i18n";
+import "./index.css";
+import "./visual-direction.css";
+import App from "./App.jsx";
+const root = document.getElementById("root");
+const tree = (
   <StrictMode>
     <App />
-  </StrictMode>,
-)
+  </StrictMode>
+);
+if (root.hasChildNodes() && i18n.resolvedLanguage === "en" && !new URLSearchParams(window.location.search).has('service'))
+  hydrateRoot(root, tree);
+else createRoot(root).render(tree);

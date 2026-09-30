@@ -1,0 +1,18 @@
+{
+ "routes": [
+  {"route":"/home-it","rewrite":"/home-it/index.html"},
+  {"route":"/business","rewrite":"/business/index.html"},
+  {"route":"/digital","rewrite":"/digital/index.html"},
+  {"route":"/projects","rewrite":"/projects/index.html"},
+  {"route":"/about","rewrite":"/about/index.html"},
+  {"route":"/support","rewrite":"/support/index.html"},
+  {"route":"/home-it/","redirect":"/home-it","statusCode":301},
+  {"route":"/business/","redirect":"/business","statusCode":301},
+  {"route":"/digital/","redirect":"/digital","statusCode":301},
+  {"route":"/projects/","redirect":"/projects","statusCode":301},
+  {"route":"/about/","redirect":"/about","statusCode":301},
+  {"route":"/support/","redirect":"/support","statusCode":301}
+ ],
+ "responseOverrides":{"404":{"rewrite":"/404.html"}},
+ "mimeTypes":{".webp":"image/webp"}
+}
