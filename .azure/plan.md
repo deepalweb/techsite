@@ -1,6 +1,6 @@
 # Azure Deployment Plan
 
-> **Status:** Validated
+> **Status:** Deployed
 
 Generated: 2026-08-06
 
@@ -80,14 +80,14 @@ Supporting Azure resources are unchanged. This deployment does not add Log Analy
 - [x] Exclude local-only `.claude/` settings from the commit
 - [x] Run the production build
 - [x] Review the exact Git changes to be published
-- [ ] Commit the application migration and redesign
-- [ ] Push `main` to `origin`
-- [ ] Monitor the Azure Static Web Apps GitHub Actions run
-- [ ] Verify the deployed website
+- [x] Commit the application migration and redesign (`87ee621`)
+- [x] Push `main` to `origin`
+- [x] Monitor the Azure Static Web Apps GitHub Actions run
+- [x] Verify the deployed website
 
 ### Validation
 - [x] Record local production-build result
-- [ ] Record GitHub Actions deployment result
+- [x] Record GitHub Actions deployment result
 
 ### Validation Proof
 
@@ -99,6 +99,15 @@ Supporting Azure resources are unchanged. This deployment does not add Log Analy
 | GitHub remote | `git ls-remote --exit-code origin refs/heads/main` | ✅ Remote main branch reachable | 2026-08-06 |
 
 **Validated by:** azure-validate workflow
+
+### Deployment Proof
+
+| Check | Result | Date |
+|-------|--------|------|
+| GitHub push | ✅ `main` advanced from `f9d0ba1` to `87ee621` | 2026-08-06 |
+| Azure workflow | ✅ [GitHub Actions run 31088165271](https://github.com/deepalweb/techsite/actions/runs/31088165271) completed successfully | 2026-08-06 |
+| Live endpoint | ✅ `https://mango-desert-04668b71e.6.azurestaticapps.net/` returned HTTP 200 | 2026-08-06 |
+| Live page title | ✅ `DR TECH | Home & Small Business IT Support Colombo` | 2026-08-06 |
 
 ---
 
