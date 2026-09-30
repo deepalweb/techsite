@@ -12,11 +12,13 @@ Hero → problem chooser → repair pricing → process → founder/trust → bu
 
 The direct Business IT navigation path is always available. The Projects and Digital details live on separate pages. Unavailable Resources and unsourced customer testimonials are not promoted on the homepage.
 
-## 3D
+## Hero and 3D
 
-A compact generated workstation illustration is the default. The optional Three.js viewer models the laptop, keys, screen, router and printer. Device buttons reframe the scene. There is no perpetual animation, page-loading gate or essential information inside a canvas. Reduced-motion, inactive-tab and offscreen behavior are handled by the viewer.
+The hero is one composition: "Computer trouble?" (the problem, in mist) over "Let's get you back to your day." (the benefit, in white), with the service area, one orange call to action, prices link and two promises; on the right, a window into a dark desk scene.
 
-The business chapter uses a quiet 2D service relationship graphic; a second expensive scene is deliberately deferred.
+The scene is a desk against a wall, not a display plinth. The laptop holds most of the frame, with the router behind-left and the printer further back-right. A thin signal-blue line runs along the back of the desk and across the laptop screen; the same line marks the active device tab. That line is the DR TECH mark and should be the motif reused elsewhere.
+
+The poster image is rendered from the same WebGL scene. Choosing Wi-Fi or Printer loads the live scene and moves the camera to that device. There is no perpetual animation; reduced-motion, inactive-tab and offscreen behaviour are handled by the viewer.
 
 ## Quality status
 

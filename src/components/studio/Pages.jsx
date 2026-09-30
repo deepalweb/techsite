@@ -43,13 +43,16 @@ export function Hero() {
   const { t } = useTranslation();
   return (
     <section id="home" className="studio-hero">
-      <div className="wrap hero-composition">
-        <div className="hero-message">
-          <p className="location-line">
+      <div className="wrap hero-grid">
+        <div className="hero-copy">
+          <p className="hero-kicker">
             <MapPin size={15} />
-            {t("studio.location")}
+            {t("studio.heroKicker")}
           </p>
-          <h1>{t("studio.heroTitle")}</h1>
+          <h1>
+            <span className="hero-question">{t("studio.heroQuestion")}</span>{" "}
+            <span className="hero-answer">{t("studio.heroTitle")}</span>
+          </h1>
           <p className="hero-lead">{t("studio.heroIntro")}</p>
           <div className="hero-buttons">
             <a className="action" href="/support">
@@ -61,10 +64,14 @@ export function Hero() {
               <ArrowRight size={16} />
             </a>
           </div>
-          <p className="hero-reassurance">
-            <Check size={15} />
-            {t("studio.heroNote")}
-          </p>
+          <ul className="hero-promises">
+            {[t("studio.heroNote"), t("studio.heroRemote")].map((text) => (
+              <li key={text}>
+                <Check size={15} />
+                {text}
+              </li>
+            ))}
+          </ul>
         </div>
         <HardwareScene />
       </div>

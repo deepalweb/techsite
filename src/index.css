@@ -288,66 +288,7 @@ h2 {
   margin-top: 10px;
   width: 100%;
 }
-.studio-hero {
-  background: var(--night);
-  color: #f8faff;
-  overflow: hidden;
-}
-.hero-composition {
-  display: grid;
-  grid-template-columns: 0.88fr 1.12fr;
-  gap: 4px;
-  align-items: center;
-  min-height: 590px;
-  padding-top: 64px;
-  padding-bottom: 44px;
-}
-.hero-message {
-  position: relative;
-  z-index: 1;
-  padding: 0 0 22px;
-}
-.location-line {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  color: #aebdce;
-  font-size: 11px;
-  margin-bottom: 28px;
-}
-.location-line svg {
-  color: #8caef4;
-}
-.hero-message h1 {
-  font-size: clamp(56px, 6.7vw, 90px);
-  font-weight: 500;
-  line-height: 1.03;
-  letter-spacing: -0.065em;
-  max-width: 470px;
-  text-wrap: balance;
-}
-.hero-lead {
-  font-size: 15px;
-  line-height: 1.95;
-  color: #aebdce;
-  max-width: 390px;
-  margin-top: 26px;
-}
-.hero-buttons {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 24px;
-  margin-top: 30px;
-}
-.hero-reassurance {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #879ab0;
-  font-size: 11px;
-  margin-top: 23px;
-}
+
 .hero-service-note {
   display: flex;
   justify-content: space-between;
@@ -364,98 +305,7 @@ h2 {
   gap: 12px;
   color: #d5e1f2;
 }
-.hardware-showcase {
-  min-width: 0;
-  position: relative;
-  align-self: center;
-  margin-right: -35px;
-}
-.hardware-frame {
-  position: relative;
-  aspect-ratio: 1.35;
-  isolation: isolate;
-}
-.hardware-poster {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  mask-image: linear-gradient(
-    90deg,
-    transparent,
-    #000 9%,
-    #000 96%,
-    transparent
-  );
-  transition: opacity 0.2s;
-}
-.hardware-poster.concealed {
-  opacity: 0;
-}
-.hardware-canvas {
-  position: absolute;
-  inset: 0;
-}
-.hardware-canvas canvas {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-.hardware-controls {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  position: relative;
-  margin-top: 3px;
-  flex-wrap: wrap;
-  min-height: 38px;
-}
-.hardware-controls > button {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  color: #b4c6df;
-  border: 1px solid #ffffff23;
-  border-radius: 99px;
-  padding: 9px 14px;
-  background: #ffffff03;
-  font-size: 10px;
-}
-.hardware-controls > button:hover {
-  border-color: #5b7eb2;
-  background: #ffffff07;
-}
-.hardware-controls > span {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 10px;
-  color: #9dafc6;
-}
-.device-controls {
-  display: flex;
-  gap: 3px;
-}
-.device-controls button {
-  padding: 8px 10px;
-  border-radius: 5px;
-  font-size: 10px;
-  color: #a9bad2;
-}
-.device-controls button[aria-pressed="true"] {
-  color: #fff;
-  background: #263951;
-}
-.hardware-error {
-  font-size: 11px;
-  line-height: 1.7;
-  color: #c5d5ec;
-  max-width: 360px;
-  text-align: center;
-  margin: 10px auto;
-}
+
 .loading-icon {
   animation: spin 1s linear infinite;
 }
@@ -1241,14 +1091,7 @@ html[lang="ta"] .request-progress li {
   flex-direction: column;
   align-items: start;
 }
-@media (min-width: 1440px) {
-  .hero-composition {
-    min-height: 650px;
-  }
-  .hardware-showcase {
-    margin-right: -55px;
-  }
-}
+
 @media (max-width: 1100px) {
   .desktop-links { display: none; }
   .menu-toggle {
@@ -1273,22 +1116,11 @@ html[lang="ta"] .request-progress li {
   .desktop-support {
     display: none;
   }
-  .hero-message h1 {
-    font-size: 70px;
-  }
-  .hero-composition {
-    grid-template-columns: 1fr 1.1fr;
-    min-height: 550px;
-  }
-  .hardware-showcase {
-    margin-right: -20px;
-  }
-  .hero-buttons {
-    gap: 17px;
-  }
-  .hero-buttons .quiet-link {
-    font-size: 11px;
-  }
+  
+  
+  
+  
+  
   .pricing-layout {
     gap: 50px;
   }
@@ -1369,61 +1201,19 @@ html[lang="ta"] .request-progress li {
   .studio-section {
     padding: 58px 0;
   }
-  .hero-composition {
-    grid-template-columns: 1fr;
-    gap: 0;
-    padding-top: 42px;
-    padding-bottom: 18px;
-    min-height: 0;
-  }
-  .hero-message {
-    padding-bottom: 0;
-  }
-  .hero-message h1 {
-    font-size: clamp(52px, 13vw, 75px);
-    max-width: 390px;
-    letter-spacing: -0.06em;
-    line-height: 1.08;
-  }
-  .location-line {
-    font-size: 10px;
-    margin-bottom: 20px;
-  }
-  .hero-lead {
-    margin-top: 22px;
-    font-size: 14px;
-    line-height: 1.9;
-    max-width: 460px;
-  }
-  .hero-buttons {
-    margin-top: 25px;
-    gap: 23px;
-  }
-  .hero-buttons .quiet-link {
-    font-size: 12px;
-  }
-  .hero-reassurance {
-    font-size: 10px;
-    margin-top: 18px;
-  }
-  .hardware-showcase {
-    margin: 5px -22px 0;
-  }
-  .hardware-frame {
-    aspect-ratio: 1.6;
-  }
-  .hardware-controls {
-    margin-top: -4px;
-    gap: 8px;
-  }
-  .hardware-controls > button {
-    font-size: 9px;
-    padding: 8px 12px;
-  }
-  .device-controls button {
-    font-size: 9px;
-    padding: 8px;
-  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   .hero-service-note {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -1797,9 +1587,9 @@ html[lang="ta"] .request-progress li {
     padding: 12px;
     gap: 8px;
   }
-  html[lang="si"] .hero-message h1,
-  html[lang="ta"] .hero-message h1 {
-    font-size: 42px;
+  html[lang="si"] .studio-hero h1,
+  html[lang="ta"] .studio-hero h1 {
+    font-size: 32px;
   }
   html[lang="si"] .mobile-dock > a,
   html[lang="ta"] .mobile-dock > a {

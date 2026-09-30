@@ -1,10 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Box, RotateCcw, LoaderCircle } from "lucide-react";
+import { LoaderCircle } from "lucide-react";
+const devices = ["computer", "wifi", "printer"];
+// The poster is a render of the same scene's laptop view, so the live
+// WebGL scene only loads when someone asks to look at another device.
 export default function HardwareScene() {
   const { t } = useTranslation();
   const host = useRef(null);
   const controller = useRef(null);
+  const selected = useRef("computer");
   const [mode, setMode] = useState("image");
   const [device, setDevice] = useState("computer");
   const [ready, setReady] = useState(false);
@@ -24,6 +28,7 @@ export default function HardwareScene() {
           });
           controller.current = renderer;
           cleanup = renderer.dispose;
+          renderer.select(selected.current);
           setReady(true);
         } catch {
           if (!stopped) setMode("error");
@@ -38,9 +43,11 @@ export default function HardwareScene() {
       controller.current = null;
     };
   }, [mode]);
-  function select(value) {
-    setDevice(value);
-    controller.current?.select(value);
+  function choose(id) {
+    selected.current = id;
+    setDevice(id);
+    if (controller.current) controller.current.select(id);
+    else if (mode === "image" && id !== "computer") setMode("live");
   }
   return (
     <div className="hardware-showcase">
@@ -53,65 +60,38 @@ export default function HardwareScene() {
           }
           src="/assets/workstation-studio.webp"
           srcSet="/assets/workstation-studio-mobile.webp 768w, /assets/workstation-studio.webp 1280w"
-          sizes="(max-width: 767px) 100vw, 1200px"
+          sizes="(max-width: 900px) 100vw, 640px"
           alt={t("studio.sceneAlt")}
           width="1280"
-          height="853"
+          height="1067"
           fetchpriority="high"
         />
         {mode === "live" && (
           <div className="hardware-canvas" ref={host} aria-hidden="true" />
         )}
-      </div>
-      <div className="hardware-controls">
-        {mode !== "live" ? (
-          <button
-            type="button"
-            onClick={() => {
-              setMode("live");
-              setReady(false);
-            }}
+        {mode === "live" && !ready && (
+          <span className="hardware-status" role="status">
+            <LoaderCircle className="loading-icon" size={15} />
+            {t("studio.sceneLoading")}
+          </span>
+        )}
+        {mode !== "error" && (
+          <div
+            className="hardware-controls"
+            role="group"
+            aria-label={t("studio.sceneHint")}
           >
-            <Box size={16} />
-            {t("studio.explore")}
-          </button>
-        ) : (
-          <>
-            <button
-              type="button"
-              onClick={() => {
-                setMode("image");
-                setReady(false);
-                setDevice("computer");
-              }}
-            >
-              <RotateCcw size={15} />
-              {t("studio.closeScene")}
-            </button>
-            {ready ? (
-              <div
-                className="device-controls"
-                role="group"
-                aria-label={t("studio.sceneHint")}
+            {devices.map((id, i) => (
+              <button
+                key={id}
+                type="button"
+                aria-pressed={device === id}
+                onClick={() => choose(id)}
               >
-                {["computer", "wifi", "printer"].map((id, i) => (
-                  <button
-                    key={id}
-                    type="button"
-                    aria-pressed={device === id}
-                    onClick={() => select(id)}
-                  >
-                    {t(`studio.deviceNames.${i}`)}
-                  </button>
-                ))}
-              </div>
-            ) : (
-              <span role="status">
-                <LoaderCircle className="loading-icon" size={15} />
-                {t("studio.sceneLoading")}
-              </span>
-            )}
-          </>
+                {t(`studio.deviceNames.${i}`)}
+              </button>
+            ))}
+          </div>
         )}
       </div>
       {mode === "error" && (

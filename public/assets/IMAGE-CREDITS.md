@@ -10,13 +10,7 @@
 
 Decorative stock photography. This image does not depict a DR TECH installation or imply endorsement. The dark navy overlay and responsive cropping are applied in CSS.
 
-## Workstation illustration — September 2026 redesign
+## Workstation render — September 2026 hero redesign
 
-Files: workstation-studio.webp (1280px) and workstation-studio-mobile.webp (768px).
-Created with the built-in image-generation tool for DR TECH. These are illustrative hardware renders, not client installation photographs. The original generated PNG is retained under the session's generated_images directory; web assets are encoded as WebP for delivery.
-
-Prompt: Premium photorealistic 3D product visualization for a local IT support website. Unbranded graphite laptop open to 105 degrees, precise keyboard and trackpad, blue abstract screen. Off-white printer behind right and graphite two-antenna router behind left, grounded on one low charcoal oval plinth. Dark midnight navy background, soft studio keylight, blue rimlight, realistic materials, full objects visible. No text, logos, labels, floating icons, holograms, particles or people.
-
-The optional interactive WebGL viewer is separately modelled in code in src/components/studio/hardwareRenderer.js. It is not a pixel-identical reconstruction of the generated illustration.
-
-Alternative concept: docs/design/hero-closeup-alternative.png (removed; see git history). Created with the built-in image-generation tool using the same material direction: close-up graphite laptop with blue ribbon screen, studio surface, no router, printer, text or logos. The workstation composition was selected because it communicates the wider range of individual customer services.
+Files: workstation-studio.webp (1280×1067) and workstation-studio-mobile.webp (768×640).
+Rendered from the site's own WebGL scene (src/components/studio/hardwareRenderer.js, laptop view) in headless Chrome, then encoded as WebP. The poster and the interactive viewer are the same scene, so switching between them does not change the composition. These are illustrative hardware models, not client installation photographs.

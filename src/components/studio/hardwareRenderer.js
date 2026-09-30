@@ -15,7 +15,7 @@ export function mountHardware(host, onLost) {
   renderer.toneMappingExposure = 1.35;
   host.appendChild(renderer.domElement);
   const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(34, 1, 0.1, 40);
+  const camera = new THREE.PerspectiveCamera(31, 1, 0.1, 40);
   const world = new THREE.Group();
   scene.add(world);
   const metal = new THREE.MeshStandardMaterial({
@@ -53,22 +53,40 @@ export function mountHardware(host, onLost) {
     parent.add(m);
     return m;
   }
-  const platform = new THREE.Mesh(
-    new THREE.CylinderGeometry(3.45, 3.45, 0.22, 80),
+  // A dark desk against a wall, not a display plinth: these are devices in
+  // someone's home or office. The blue line behind the desk is the DR TECH mark.
+  const desk = new THREE.Mesh(
+    new THREE.BoxGeometry(16, 0.3, 6.4),
     new THREE.MeshStandardMaterial({
-      color: 0x1c2635,
-      roughness: 0.54,
-      metalness: 0.3,
+      color: 0x0f141c,
+      roughness: 0.62,
+      metalness: 0.18,
     }),
   );
-  platform.scale.z = 0.64;
-  platform.position.y = -0.18;
-  platform.receiveShadow = true;
-  world.add(platform);
+  desk.position.set(0, -0.17, -0.4);
+  desk.receiveShadow = true;
+  world.add(desk);
+  const wall = new THREE.Mesh(
+    new THREE.PlaneGeometry(22, 10),
+    new THREE.MeshStandardMaterial({ color: 0x0b111b, roughness: 0.9 }),
+  );
+  wall.position.set(0, 4.6, -3.6);
+  wall.receiveShadow = true;
+  world.add(wall);
+  const signal = new THREE.Mesh(
+    new THREE.BoxGeometry(16, 0.022, 0.022),
+    new THREE.MeshBasicMaterial({ color: 0x6fa6ff }),
+  );
+  signal.position.set(0, 0.02, -3.56);
+  world.add(signal);
+  const wash = new THREE.PointLight(0x3f7fff, 16, 6, 1.4);
+  wash.position.set(0, 0.5, -3.3);
+  world.add(wash);
   const laptop = new THREE.Group();
   world.add(laptop);
-  laptop.position.set(-0.35, 0, 0.45);
-  laptop.rotation.y = -0.12;
+  laptop.position.set(0.15, 0, 0.55);
+  laptop.rotation.y = -0.3;
+  laptop.scale.setScalar(1.25);
   box(laptop, 2.8, 0.11, 1.85, 0, 0.015, 0);
   box(laptop, 2.56, 0.025, 0.88, 0, 0.083, -0.24, black);
   const keyGeometry = new RoundedBoxGeometry(0.142, 0.025, 0.125, 1, 0.016);
@@ -106,16 +124,21 @@ export function mountHardware(host, onLost) {
   textureCanvas.width = 1024;
   textureCanvas.height = 640;
   const ctx = textureCanvas.getContext("2d");
-  ctx.fillStyle = "#050e20";
+  // The screen repeats the desk's signal line instead of a generic wallpaper.
+  const glow = ctx.createLinearGradient(0, 0, 0, 640);
+  glow.addColorStop(0, "#050b16");
+  glow.addColorStop(0.62, "#0a1a36");
+  glow.addColorStop(1, "#050b16");
+  ctx.fillStyle = glow;
   ctx.fillRect(0, 0, 1024, 640);
-  for (let i = 0; i < 20; i++) {
-    ctx.strokeStyle = `rgba(${25 + i * 3},${60 + i * 5},255,${0.1 + i * 0.025})`;
-    ctx.lineWidth = 3;
-    ctx.beginPath();
-    ctx.moveTo(-20, 180 + i * 5);
-    ctx.bezierCurveTo(300, -140 + i * 6, 540, 680 - i * 5, 1040, 280 + i * 5);
-    ctx.stroke();
-  }
+  ctx.shadowColor = "#4d8dff";
+  ctx.shadowBlur = 28;
+  ctx.fillStyle = "#8bb6ff";
+  ctx.fillRect(0, 396, 1024, 4);
+  ctx.shadowBlur = 0;
+  ctx.fillStyle = "#ffffff38";
+  ctx.font = "700 44px 'Plus Jakarta Sans', Arial, sans-serif";
+  ctx.fillText("DR TECH", 72, 330);
   const texture = new THREE.CanvasTexture(textureCanvas);
   texture.colorSpace = THREE.SRGBColorSpace;
   const display = new THREE.Mesh(
@@ -127,8 +150,9 @@ export function mountHardware(host, onLost) {
   box(hinge, 0.035, 0.035, 0.012, 0, 1.656, 0.06, black, 0.01);
   const router = new THREE.Group();
   world.add(router);
-  router.position.set(-2.25, 0, -0.6);
-  router.rotation.y = 0.18;
+  router.position.set(-2.75, 0, -1.5);
+  router.rotation.y = 0.4;
+  router.scale.setScalar(1.2);
   box(router, 1.03, 0.24, 0.75, 0, 0.1, 0, black, 0.07);
   for (const x of [-0.37, 0.37])
     box(router, 0.042, 0.85, 0.042, x, 0.62, -0.26, black, 0.018);
@@ -148,8 +172,9 @@ export function mountHardware(host, onLost) {
     );
   const printer = new THREE.Group();
   world.add(printer);
-  printer.position.set(1.9, 0.02, -0.52);
-  printer.rotation.y = -0.12;
+  printer.position.set(2.45, 0.02, -2.45);
+  printer.rotation.y = -0.4;
+  printer.scale.setScalar(1);
   box(printer, 1.62, 0.72, 1.17, 0, 0.31, 0, ivory, 0.1);
   box(printer, 1.53, 0.04, 1.08, 0, 0.695, 0, ivory, 0.025);
   box(printer, 1.15, 0.22, 0.032, 0, 0.18, 0.59, black, 0.02);
@@ -160,17 +185,18 @@ export function mountHardware(host, onLost) {
   feeder.rotation.x = -0.16;
   box(printer, 0.18, 0.055, 0.11, 0.54, 0.74, 0.22, black, 0.018);
   box(printer, 0.031, 0.01, 0.03, 0.55, 0.771, 0.22, blue, 0.004);
-  const ambient = new THREE.HemisphereLight(0xc5d7ff, 0x111a2d, 2.3);
+  const ambient = new THREE.HemisphereLight(0xc5d7ff, 0x0a0f18, 1.25);
   scene.add(ambient);
   const key = new THREE.DirectionalLight(0xf5f5ff, 4);
   key.position.set(-3, 7, 5);
   key.castShadow = true;
-  key.shadow.mapSize.set(1024, 1024);
-  key.shadow.camera.left = -5;
-  key.shadow.camera.right = 5;
-  key.shadow.camera.top = 5;
-  key.shadow.camera.bottom = -5;
+  key.shadow.mapSize.set(2048, 2048);
+  key.shadow.camera.left = -7;
+  key.shadow.camera.right = 7;
+  key.shadow.camera.top = 7;
+  key.shadow.camera.bottom = -7;
   key.shadow.bias = -0.001;
+  key.shadow.normalBias = 0.05;
   scene.add(key);
   const rim = new THREE.DirectionalLight(0x4c84ff, 2.6);
   rim.position.set(4, 2, -3);
@@ -180,8 +206,23 @@ export function mountHardware(host, onLost) {
     frame = 0,
     steps = 0;
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
-  const target = new THREE.Vector3(0, 0.5, 0);
-  const targetCamera = new THREE.Vector3(4, 3.5, 8.5);
+  // Laptop holds most of the frame; the other views lean toward one device.
+  const views = {
+    computer: [
+      [1.5, 2.6, 9.4],
+      [-0.1, 0.62, -0.8],
+    ],
+    wifi: [
+      [-3.9, 1.7, 1.2],
+      [-2.75, 0.55, -1.5],
+    ],
+    printer: [
+      [4.9, 1.8, 0.2],
+      [2.45, 0.55, -2.45],
+    ],
+  };
+  const target = new THREE.Vector3(...views.computer[1]);
+  const targetCamera = new THREE.Vector3(...views.computer[0]);
   const currentLook = target.clone();
   camera.position.copy(targetCamera);
   camera.lookAt(target);
@@ -232,20 +273,6 @@ export function mountHardware(host, onLost) {
   resize();
   return {
     select(device) {
-      const views = {
-        computer: [
-          [3.2, 2.8, 6.2],
-          [-0.35, 0.7, 0.4],
-        ],
-        wifi: [
-          [-3.5, 2.3, 3.5],
-          [-2.25, 0.4, -0.6],
-        ],
-        printer: [
-          [4.4, 2.2, 4],
-          [1.9, 0.5, -0.5],
-        ],
-      };
       const [position, look] = views[device] || views.computer;
       targetCamera.set(...position);
       target.set(...look);
