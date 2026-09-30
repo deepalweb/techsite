@@ -81,6 +81,12 @@ export function Hero() {
     </section>
   );
 }
+const problemPrices = {
+  computer: prices.basicVisit,
+  wifi: prices.wifiPrinter,
+  printer: prices.wifiPrinter,
+  software: prices.windowsSetup,
+};
 export function Problems() {
   const { t } = useTranslation();
   return (
@@ -101,6 +107,9 @@ export function Problems() {
                 <ServiceVisual type={item.id} />
                 <h3>{item.title}</h3>
                 <p>{item.body}</p>
+                {problemPrices[item.id] && (
+                  <p className="problem-price">{problemPrices[item.id]}</p>
+                )}
                 <ArrowUpRight className="problem-arrow" size={18} />
               </a>
             );

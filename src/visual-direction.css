@@ -29,7 +29,7 @@
 .pricing-section { background:#e9eff7; }
 .price-list { background:#fff; border-radius:16px; padding:6px 28px 24px; box-shadow:0 25px 70px #304a7110; }
 .process-section { padding-top:60px; padding-bottom:65px; }
-.steps-grid > li > span { background:#e6eefb; border-radius:50%; width:48px; height:48px; display:grid; place-items:center; color:#2867ed; flex-shrink:0; }
+.steps-grid > li > span { background:#e6eefb; border-radius:50%; width:48px; height:48px; display:grid; place-items:center; color:var(--blue); flex-shrink:0; }
 .business-chapter { position:relative; overflow:hidden; background:#0d1c2b; }
 .business-opening { grid-template-columns:.9fr 1.2fr; gap:60px; align-items:center; }
 .business-photo { position:relative; min-width:0; height:440px; border-radius:18px 80px 18px 18px; overflow:hidden; }

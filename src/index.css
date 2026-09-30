@@ -6,6 +6,8 @@
   --night: #0a1422;
   --ink: #152437;
   --blue: #2867ed;
+  --accent: #c2410c;
+  --accent-hover: #9a3412;
   --muted: #536378;
   --line: #d9e0e8;
   --paper: #f3f5f8;
@@ -219,6 +221,15 @@ h2 {
 .button-primary:hover {
   background: #1a53c9;
   box-shadow: 0 5px 18px #17449a16;
+}
+/* Accent is reserved for the main support call to action. */
+.action {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.action:hover {
+  background: var(--accent-hover);
+  box-shadow: 0 5px 18px #9a341220;
 }
 .action-small {
   min-height: 42px;
@@ -487,6 +498,10 @@ h2 {
   color: var(--muted);
   max-width: 230px;
   margin-top: 11px;
+}
+.problem-link .problem-price {
+  color: var(--ink);
+  font-weight: 700;
 }
 .problem-arrow {
   position: absolute;
@@ -1689,9 +1704,9 @@ html[lang="ta"] .request-progress li {
     flex: 1;
   }
   .mobile-dock > a:first-child {
-    background: var(--blue);
+    background: var(--accent);
     color: white;
-    border-color: var(--blue);
+    border-color: var(--accent);
   }
   .mobile-dock > a:last-child {
     flex: 0 0 44px;

@@ -4,7 +4,7 @@ Direction: personal, device-focused support first; a clear second chapter for bu
 
 ## Visual system
 
-Midnight #0a1422, ink #152437, cobalt #2867ed, cool paper #f3f5f8, white and slate. Plus Jakarta Sans with Noto Sans Sinhala/Tamil. Left-aligned editorial headings, grounded hardware illustration, restrained borders and useful spacing. Pricing uses rows; business plans use a concise comparison. The founder's initials identify a profile without fabricating a portrait.
+Midnight #0a1422, ink #152437, cobalt #2867ed (the one blue), burnt-orange accent #c2410c reserved for the main support call to action, cool paper #f3f5f8, white and slate. Plus Jakarta Sans with Noto Sans Sinhala/Tamil. Left-aligned editorial headings, grounded hardware illustration, restrained borders and useful spacing. Pricing uses rows; business plans use a concise comparison. The founder's initials identify a profile without fabricating a portrait.
 
 ## Homepage sequence
 

@@ -17,7 +17,7 @@
 }
 .request-assurance svg {
   flex-shrink: 0;
-  color: #2463eb;
+  color: var(--blue);
   margin-top: 3px;
 }
 .request-panel {
@@ -53,13 +53,13 @@
   font-size: 11px;
 }
 .request-progress .is-active {
-  color: #2463eb;
+  color: var(--blue);
   font-weight: 700;
 }
 .request-progress .is-active > span {
-  background: #2463eb;
+  background: var(--blue);
   color: white;
-  border-color: #2463eb;
+  border-color: var(--blue);
 }
 .request-track {
   height: 3px;
@@ -70,7 +70,7 @@
 }
 .request-track > div {
   height: 100%;
-  background: #2463eb;
+  background: var(--blue);
 }
 .request-step-title {
   font-weight: 700;
@@ -100,15 +100,15 @@
     border-color 0.2s;
 }
 .request-options label.selected {
-  border-color: #2463eb;
+  border-color: var(--blue);
   background: #eef4ff;
 }
 .request-options svg {
   margin-left: auto;
-  color: #2463eb;
+  color: var(--blue);
 }
 .request-options input {
-  accent-color: #2463eb;
+  accent-color: var(--blue);
   width: 17px;
   height: 17px;
 }
@@ -138,7 +138,7 @@
   resize: vertical;
 }
 .request-label :focus {
-  outline: 2px solid #2463eb;
+  outline: 2px solid var(--blue);
   outline-offset: 2px;
 }
 .request-hint {
