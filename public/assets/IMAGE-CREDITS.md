@@ -19,4 +19,4 @@ Prompt: Premium photorealistic 3D product visualization for a local IT support w
 
 The optional interactive WebGL viewer is separately modelled in code in src/components/studio/hardwareRenderer.js. It is not a pixel-identical reconstruction of the generated illustration.
 
-Alternative concept: docs/design/hero-closeup-alternative.png. Created with the built-in image-generation tool using the same material direction: close-up graphite laptop with blue ribbon screen, studio surface, no router, printer, text or logos. The workstation composition was selected because it communicates the wider range of individual customer services.
+Alternative concept: docs/design/hero-closeup-alternative.png (removed; see git history). Created with the built-in image-generation tool using the same material direction: close-up graphite laptop with blue ribbon screen, studio surface, no router, printer, text or logos. The workstation composition was selected because it communicates the wider range of individual customer services.
