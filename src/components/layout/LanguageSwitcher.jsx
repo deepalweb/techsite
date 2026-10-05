@@ -1,3 +1,4 @@
+import { startTransition } from 'react'
 import { useTranslation } from 'react-i18next'
 
 const LANGUAGES = [
@@ -17,7 +18,7 @@ export default function LanguageSwitcher({ className = '' }) {
                     type="button"
                     className={`language-button ${i18n.resolvedLanguage === code ? 'active' : ''}`}
                     aria-pressed={i18n.resolvedLanguage === code}
-                    onClick={() => i18n.changeLanguage(code)}
+                    onClick={() => startTransition(() => i18n.changeLanguage(code))}
                 >
                     {label}
                 </button>

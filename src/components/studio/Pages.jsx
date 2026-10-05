@@ -1,11 +1,8 @@
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
   ArrowUpRight,
   ArrowRight,
-  Laptop,
-  Wifi,
-  Printer,
-  HardDrive,
   Check,
   MapPin,
   MessageCircle,
@@ -15,9 +12,7 @@ import {
   Headphones,
   Code2,
   Github,
-  Building2,
 } from "lucide-react";
-import HardwareScene from "./HardwareScene.jsx";
 import ServiceVisual from "./ServiceVisual.jsx";
 import Contact from "../sections/Contact.jsx";
 import { prices, phone, waLink, socials } from "../../data/content.js";
@@ -42,7 +37,23 @@ export function normalizePage(path) {
 export function Hero() {
   const { t } = useTranslation();
   return (
-    <section id="home" className="studio-hero">
+    <section
+      id="home"
+      className="studio-hero workstation-hero"
+    >
+      <picture className="hero-backdrop">
+        <source
+          media="(max-width: 900px)"
+          srcSet="/assets/hero-workstation-v2-mobile.webp"
+        />
+        <img
+          src="/assets/hero-workstation-v2.webp"
+          alt={t("studio.workstationAlt")}
+          width="1680"
+          height="945"
+          fetchpriority="high"
+        />
+      </picture>
       <div className="wrap hero-grid">
         <div className="hero-copy">
           <p className="hero-kicker">
@@ -50,9 +61,10 @@ export function Hero() {
             {t("studio.heroKicker")}
           </p>
           <h1>
-            <span className="hero-question">{t("studio.heroQuestion")}</span>{" "}
-            <span className="hero-answer">{t("studio.heroTitle")}</span>
+            <span className="hero-question">{t("studio.identity")}</span>{" "}
+            <span className="hero-answer">{t("studio.identityAccent")}</span>
           </h1>
+          <p className="hero-benefit">{t("studio.heroTitle")}</p>
           <p className="hero-lead">{t("studio.heroIntro")}</p>
           <div className="hero-buttons">
             <a className="action" href="/support">
@@ -73,7 +85,7 @@ export function Hero() {
             ))}
           </ul>
         </div>
-        <HardwareScene />
+        <div className="hero-art-space" aria-hidden="true" />
       </div>
       <div className="wrap hero-service-note">
         <span>
@@ -96,6 +108,7 @@ const problemPrices = {
 };
 export function Problems() {
   const { t } = useTranslation();
+  const [active, setActive] = useState("computer");
   return (
     <section id="repairs" className="studio-section problem-section">
       <div className="wrap">
@@ -103,29 +116,52 @@ export function Problems() {
           <h2>{t("studio.helpTitle")}</h2>
           <p>{t("studio.helpIntro")}</p>
         </div>
-        <div className="problem-grid">
-          {t("studio.problems", { returnObjects: true }).map((item) => {
-            return (
-              <a
-                key={item.id}
-                href={`/support?service=${item.id}`}
-                className="problem-link"
-              >
-                <ServiceVisual type={item.id} />
-                <h3>{item.title}</h3>
-                <p>{item.body}</p>
-                {problemPrices[item.id] && (
-                  <p className="problem-price">{problemPrices[item.id]}</p>
-                )}
-                <ArrowUpRight className="problem-arrow" size={18} />
-              </a>
-            );
-          })}
+        <div className="service-editorial">
+          <div className="service-stage" aria-hidden="true">
+            <span className="section-caption">
+              DR TECH / 0
+              {["computer", "wifi", "printer", "software"].indexOf(active) + 1}
+            </span>
+            <ServiceVisual type={active} />
+            <div className="service-signal">
+              <i />
+              <i />
+              <i />
+            </div>
+          </div>
+          <div className="problem-grid">
+            {t("studio.problems", { returnObjects: true }).map((item, i) => {
+              return (
+                <a
+                  key={item.id}
+                  href={`/support?service=${item.id}`}
+                  className="problem-link"
+                  data-active={active === item.id}
+                  onMouseEnter={() => setActive(item.id)}
+                  onFocus={() => setActive(item.id)}
+                >
+                  <span className="service-number">0{i + 1}</span>
+                  <div className="service-row-copy">
+                    <h3>{item.title}</h3>
+                    <p>{item.body}</p>
+                    {problemPrices[item.id] && (
+                      <p className="problem-price">{problemPrices[item.id]}</p>
+                    )}
+                  </div>
+                  <ArrowUpRight className="problem-arrow" size={18} />
+                </a>
+              );
+            })}
+            <a
+              className="problem-link unsure-row"
+              href="/support?service=other"
+            >
+              <span className="service-number">05</span>
+              <h3>{t("studio.notSure")}</h3>
+              <ArrowUpRight size={22} />
+            </a>
+          </div>
         </div>
-        <a className="understated-link" href="/support?service=other">
-          {t("studio.notSure")}
-          <ArrowRight size={16} />
-        </a>
       </div>
     </section>
   );
@@ -151,6 +187,7 @@ export function RepairPrices({ full = false }) {
           <h2>{t("studio.pricingTitle")}</h2>
           <p className="section-copy">{t("studio.pricingIntro")}</p>
           <p className="price-disclaimer">{t("studio.priceNote")}</p>
+          <Process compact />
         </div>
         <div className="price-list">
           {rows.map(([key, service]) => (
@@ -181,11 +218,11 @@ export function RepairPrices({ full = false }) {
     </section>
   );
 }
-export function Process() {
+export function Process({ compact = false }) {
   const { t } = useTranslation();
   return (
-    <section className="process-section">
-      <div className="wrap">
+    <section className={`process-section ${compact ? "process-compact" : ""}`}>
+      <div className={compact ? "" : "wrap"}>
         <h2>{t("studio.processTitle")}</h2>
         <ol className="steps-grid">
           {t("studio.process", { returnObjects: true }).map((item, i) => (
@@ -200,6 +237,56 @@ export function Process() {
         </ol>
       </div>
     </section>
+  );
+}
+export function WorkGallery() {
+  const { t } = useTranslation();
+  return (
+    <section className="studio-section real-work">
+      <div className="wrap">
+        <div className="section-heading">
+          <h2>{t("studio.workTitle")}</h2>
+          <p>{t("studio.workNote")}</p>
+        </div>
+        <div className="work-gallery">
+          {["computer", "wifi"].map((id, i) => (
+            <div key={id}>
+              <div className="work-placeholder">
+                <span>0{i + 1}</span>
+                <p>{t("studio.workPlaceholder")}</p>
+              </div>
+              <p className="work-caption">{t(`studio.problems.${i}.title`)}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+export function BusinessTransition() {
+  const { t } = useTranslation();
+  return (
+    <div className="business-transition">
+      <div className="wrap">
+        <span>{t("studio.chapterHome")}</span>
+        <svg viewBox="0 0 640 110" fill="none" aria-hidden="true">
+          <path
+            d="M0 55H250L310 15H640M250 55H640M250 55L310 95H640"
+            stroke="currentColor"
+            strokeWidth="1"
+          />
+          {[
+            [10, 55],
+            [400, 15],
+            [470, 55],
+            [540, 95],
+          ].map(([cx, cy]) => (
+            <circle key={cy} cx={cx} cy={cy} r="4" fill="currentColor" />
+          ))}
+        </svg>
+        <strong>{t("studio.chapterBusiness")}</strong>
+      </div>
+    </div>
   );
 }
 export function Trust({ full = false }) {
@@ -272,26 +359,19 @@ export function BusinessIntro({ full = false }) {
               <ArrowUpRight size={18} />
             </a>
           </div>
-          <div className="business-photo">
-            <img src="/assets/hero-network.webp" alt="" loading="lazy" width="1920" height="1280" />
-          <div className="business-diagram" aria-hidden="true">
-            <div className="diagram-office">
-              <Building2 size={52} strokeWidth={1} />
-              <span>DR TECH / IT care</span>
-            </div>
-            <div className="diagram-line" />
-            <div className="diagram-nodes">
-              <span>
-                <Network size={24} />
-              </span>
-              <span>
-                <ShieldCheck size={24} />
-              </span>
-              <span>
-                <Headphones size={24} />
-              </span>
-            </div>
-          </div>
+          <div className="infrastructure-map">
+            <span className="section-caption">DR TECH / BUSINESS IT</span>
+            <ol>
+              {t("studio.networkLayers", { returnObjects: true }).map(
+                (layer, i) => (
+                  <li key={layer}>
+                    <span>0{i + 1}</span>
+                    <strong>{layer}</strong>
+                    <i aria-hidden="true" />
+                  </li>
+                ),
+              )}
+            </ol>
           </div>
         </div>
         <div className="business-benefits">
@@ -355,19 +435,80 @@ export function Plans() {
 export function DigitalPreview() {
   const { t } = useTranslation();
   return (
-    <section id="growth" className="digital-preview">
+    <section id="growth" className="digital-preview studio-section">
       <div className="wrap">
-        <Code2 size={26} strokeWidth={1.5} />
-        <div>
-          <h2>{t("studio.digitalTitle")}</h2>
+        <div className="digital-heading">
+          <p className="section-caption">{t("studio.digitalAction")}</p>
+          <h2>{t("studio.digitalHeadline")}</h2>
           <p>{t("studio.digitalIntro")}</p>
+          <a className="understated-link" href="/digital">
+            {t("studio.digitalAction")}
+            <ArrowUpRight size={16} />
+          </a>
         </div>
-        <a className="understated-link" href="/digital">
-          {t("studio.digitalAction")}
-          <ArrowUpRight size={16} />
-        </a>
+        <div className="digital-project-grid">
+          {[
+            projects.find((p) => p.featured),
+            projects.find((p) => p.id === "techsite"),
+            projects.find((p) => p.id === "inventory"),
+          ].map((project) => (
+            <ProjectPreview key={project.id} project={project} />
+          ))}
+        </div>
+        <p className="preview-disclaimer">{t("studio.previewNote")}</p>
       </div>
     </section>
+  );
+}
+function ProjectPreview({ project }) {
+  const { t } = useTranslation();
+  return (
+    <article className={`project-preview project-${project.id}${project.featured ? " project-featured" : ""}`}>
+      <a
+        className="project-screen"
+        href={`/projects#project-${project.id}`}
+        aria-label={`${t("studio.caseStudy")}: ${project.name}`}
+      >
+        <div className="browser-chrome" aria-hidden="true">
+          <i />
+          <i />
+          <i />
+          <span>{project.name}</span>
+        </div>
+        {project.id === "techsite" ? (
+          <img
+            src="/assets/drtech-interface.webp"
+            alt={t("projects.techsite.body")}
+            width="1440"
+            height="900"
+            loading="lazy"
+          />
+        ) : (
+          <div className="screenshot-pending">
+            <Code2 size={32} strokeWidth={1} />
+            <span>{t("studio.previewPending")}</span>
+          </div>
+        )}
+      </a>
+      <p className="section-caption">{t(`projects.${project.id}.category`)}</p>
+      <h3>{project.name}</h3>
+      <p>{t(`projects.${project.id}.body`)}</p>
+      <p className="project-meta">
+        {t("studio.projectRole")} / {project.tags.join(" · ")}
+      </p>
+      <p className="project-status">
+        {project.id === "techsite"
+          ? t("projects.techsite.category")
+          : t("studio.projectStatus")}
+      </p>
+      <div className="project-actions">
+      <a className="understated-link" href={`/projects#project-${project.id}`}>
+        {t("studio.caseStudy")}
+        <ArrowUpRight size={16} />
+      </a>
+      {project.featured && project.repo && <a className="understated-link project-source" href={`${githubProfile}/${project.repo}`} target="_blank" rel="noopener noreferrer"><Github size={16} />{t("projects.source")}<ArrowUpRight size={16} /></a>}
+      </div>
+    </article>
   );
 }
 export function FinalSupport() {
@@ -430,7 +571,9 @@ export function HomePage() {
       <Hero />
       <Problems />
       <RepairPrices />
-      <Process />
+      <WorkGallery />
+      <Trust />
+      <BusinessTransition />
       <BusinessIntro />
       <Plans />
       <DigitalPreview />
@@ -460,13 +603,37 @@ export function ProjectList() {
       <div className="wrap">
         <div className="portfolio-list">
           {projects.map((project) => (
-            <article key={project.id}>
+            <article key={project.id} id={`project-${project.id}`}>
               <div>
                 <p className="section-caption">
                   {t(`projects.${project.id}.category`)}
                 </p>
                 <h2>{project.name}</h2>
                 <p>{t(`projects.${project.id}.body`)}</p>
+                <div className="portfolio-proof">
+                  {project.id === "techsite" ? (
+                    <img
+                      src="/assets/drtech-interface.webp"
+                      alt={t("projects.techsite.body")}
+                      width="1440"
+                      height="900"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <p className="screenshot-pending">
+                      {t("studio.previewPending")}
+                    </p>
+                  )}
+                </div>
+                <p className="project-meta">
+                  {t("studio.projectRole")} /{" "}
+                  {t(`projects.${project.id}.capability`)}
+                </p>
+                <p className="project-status">
+                  {project.id === "techsite"
+                    ? t("projects.techsite.category")
+                    : t("studio.projectStatus")}
+                </p>
                 <ul>
                   {project.tags.map((tag) => (
                     <li key={tag}>{tag}</li>
@@ -529,7 +696,7 @@ export function DetailPage({ page, service }) {
           />
           <Problems />
           <RepairPrices full />
-          <Process />
+          <WorkGallery />
           <Questions />
           <FinalSupport />
         </>
@@ -588,6 +755,7 @@ export function DetailPage({ page, service }) {
               </a>
             </div>
           </section>
+          <DigitalPreview />
           <FinalSupport />
         </>
       );

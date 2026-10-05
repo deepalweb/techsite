@@ -1,25 +1,29 @@
-# DR TECH — September 2026 redesign
+# DR TECH — Technology, restored.
 
-Direction: personal, device-focused support first; a clear second chapter for business IT.
+October 2026 visual direction: a premium midnight-blue IT support studio, with cyan as the service signal and a clear support action. The supplied advertisement informed atmosphere and hardware recognition; its people, artwork and layout are not reused.
 
 ## Visual system
 
-Midnight #0a1422, ink #152437, cobalt #2867ed (the one blue), burnt-orange accent #c2410c reserved for the main support call to action, cool paper #f3f5f8, white and slate. Plus Jakarta Sans with Noto Sans Sinhala/Tamil. Left-aligned editorial headings, grounded hardware illustration, restrained borders and useful spacing. Pricing uses rows; business plans use a concise comparison. The founder's initials identify a profile without fabricating a portrait.
+Midnight #030B18, secondary navy #06162B, elevated navy #09213D, electric blue #168BFF, cyan #19D9F5, white #F7FAFF and mist #A9BDD3. The calm pricing chapter uses cool paper #EAF0F7 with dark ink. Plus Jakarta Sans is retained alongside Noto Sans Sinhala and Tamil. Large editorial headings, numbered rows, fine rules and restrained corners establish the hierarchy. Long translated words wrap and get extra vertical space.
+
+The thin signal line restores beneath the hero heading in one brief arrival and branches into business infrastructure. The already-visible workstation image settles once; support/pricing arrows provide brief hover and keyboard-focus feedback. Reduced motion keeps the completed connection and image still. No loops, scroll hijacking, loading intro or live 3D controls.
 
 ## Homepage sequence
 
-Hero → problem chooser → repair pricing → process → founder/trust → business introduction → monthly plans → small digital preview → contact → footer.
+Hero → editorial service selector → pricing and process → explicitly pending customer photography → verified founder → Home-to-Business signal transition → Business IT → monthly plans → digital project showcase → support and contact.
 
-The direct Business IT navigation path is always available. The Projects and Digital details live on separate pages. Unavailable Resources and unsourced customer testimonials are not promoted on the homepage.
+## Hero and progressive hardware
 
-## Hero and 3D
+The unframed photographic workstation shares the hero stage with Computer & IT / Support typography. Its laptop, desktop, router and printer communicate the service directly. The hero prioritizes Get Support and See Repair Prices; services and prices are presented in the sections below.
 
-The hero is one composition: "Computer trouble?" (the problem, in mist) over "Let's get you back to your day." (the benefit, in white), with the service area, one orange call to action, prices link and two promises; on the right, a window into a dark desk scene.
+The responsive photographic workstation illustration is based on the owner's approved reference. The owner subsequently requested removal of the 3D control, device tabs and price overlay. The existing renderer source is retained but is no longer mounted or bundled. See `docs/HERO-WORKSTATION-UPDATE.md` for generation and review details.
 
-The scene is a desk against a wall, not a display plinth. The laptop holds most of the frame, with the router behind-left and the printer further back-right. A thin signal-blue line runs along the back of the desk and across the laptop screen; the same line marks the active device tab. That line is the DR TECH mark and should be the motif reused elsewhere.
+## Honest evidence
 
-The poster image is rendered from the same WebGL scene. Choosing Wi-Fi or Printer loads the live scene and moves the camera to that device. There is no perpetual animation; reduced-motion, inactive-tab and offscreen behaviour are handled by the viewer.
+ERP_AI_AGENT is the primary featured project and links to its verified public GitHub repository. Its interface screenshot remains explicitly pending approval. DR TECH Website and IT Inventory are secondary previews; the website uses an actual screenshot and IT Inventory retains its screenshot placeholder. Other projects remain on the Projects page. Project details preserve repository/enquiry links and do not invent deployment status. Customer photography is clearly pending. The founder retains the existing initials treatment and verified experience.
 
-## Quality status
+## Shared architecture
 
-Production compilation, route rendering and multilingual customer-flow checks are automated. Visual browser review is a separate outstanding gate; a successful build is not a design sign-off. The working site remains local until explicitly published.
+Routes, multilingual resources, SEO/prerendering, verified prices, service preselection and the guided WhatsApp flow are retained. `index.css` supplies shared layout and existing form styles; `visual-direction.css` defines the new studio treatment and responsive compositions. Design-specific copy is supplied in all three languages in `src/i18n/redesign.js`.
+
+See `docs/REDESIGN-VALIDATION-2026-10-05.md` for local checks, screenshots, asset sizes and remaining limitations. This redesign is local and has not been published.

@@ -1,10 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { LoaderCircle } from "lucide-react";
-const devices = ["computer", "wifi", "printer"];
-// The poster is a render of the same scene's laptop view, so the live
-// WebGL scene only loads when someone asks to look at another device.
-export default function HardwareScene() {
+import { LoaderCircle, Box, X } from "lucide-react";
+import { prices } from "../../data/content.js";
+const devices = ["computer", "wifi", "printer", "software"];
+const devicePrices = {
+  computer: prices.basicVisit,
+  wifi: prices.wifiPrinter,
+  printer: prices.wifiPrinter,
+  software: prices.windowsSetup,
+};
+// The photographic hero stays immediate; WebGL is an explicit optional view.
+export default function HardwareScene({ onSelect }) {
   const { t } = useTranslation();
   const host = useRef(null);
   const controller = useRef(null);
@@ -46,11 +52,11 @@ export default function HardwareScene() {
   function choose(id) {
     selected.current = id;
     setDevice(id);
+    onSelect?.(id);
     if (controller.current) controller.current.select(id);
-    else if (mode === "image" && id !== "computer") setMode("live");
   }
   return (
-    <div className="hardware-showcase">
+    <div className="hardware-showcase" data-device={device} data-mode={mode}>
       <div className="hardware-frame">
         <img
           className={
@@ -64,8 +70,26 @@ export default function HardwareScene() {
           alt={t("studio.sceneAlt")}
           width="1280"
           height="1067"
-          fetchpriority="high"
+          loading="lazy"
         />
+        <button
+          className="scene-toggle"
+          type="button"
+          aria-expanded={mode === "live"}
+          onClick={() => {
+            setReady(false);
+            setMode(mode === "live" ? "image" : "live");
+          }}
+        >
+          {mode === "live" ? <X size={15} /> : <Box size={15} />}
+          {t(
+            mode === "live"
+              ? "studio.sceneClose"
+              : mode === "error"
+                ? "studio.sceneRetry"
+                : "studio.sceneActivate",
+          )}
+        </button>
         {mode === "live" && (
           <div className="hardware-canvas" ref={host} aria-hidden="true" />
         )}
@@ -75,24 +99,33 @@ export default function HardwareScene() {
             {t("studio.sceneLoading")}
           </span>
         )}
-        {mode !== "error" && (
-          <div
-            className="hardware-controls"
-            role="group"
-            aria-label={t("studio.sceneHint")}
-          >
-            {devices.map((id, i) => (
-              <button
-                key={id}
-                type="button"
-                aria-pressed={device === id}
-                onClick={() => choose(id)}
-              >
-                {t(`studio.deviceNames.${i}`)}
-              </button>
-            ))}
-          </div>
-        )}
+        <div
+          className="hardware-controls"
+          role="group"
+          aria-label={t("studio.sceneHint")}
+        >
+          {devices.map((id, i) => (
+            <button
+              key={id}
+              type="button"
+              aria-pressed={device === id}
+              onClick={() => choose(id)}
+            >
+              {id === "software"
+                ? t("studio.softwareDevice")
+                : t(`studio.deviceNames.${i}`)}
+            </button>
+          ))}
+        </div>
+      </div>
+      <div className="device-detail" aria-live="polite" aria-atomic="true">
+        <div>
+          <span>{t("studio.startingPrice")}</span>
+          <strong>{devicePrices[device]}</strong>
+        </div>
+        <a href={`/support?service=${device}`}>
+          {t("studio.support")} <span aria-hidden="true">↗</span>
+        </a>
       </div>
       {mode === "error" && (
         <p className="hardware-error" role="status">

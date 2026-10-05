@@ -10,7 +10,7 @@ export const projectsEn = {
   travelbuddy: {category: 'Travel & mobile', body: 'A travel-planning platform with a Dart mobile app and a Node.js backend. The code explores trip planning, place discovery and travel community features.', capability: 'Mobile experiences · Backend integration'},
   dealfinder: {category: 'Shopping & discovery', body: 'A mobile project for discovering and comparing deals, with search, favourites and merchant promotion screens.', capability: 'Product discovery · Merchant workflows'},
   inventory: {category: 'Business tools', body: 'An IT management project with inventory, repair, reporting and financial interfaces, plus an AI assistant component.', capability: 'Operations dashboards · AI integration'},
-  techsite: {category: 'The site you’re exploring', body: 'A multilingual repair and IT services website with an interactive 3D hero, service discovery and a guided WhatsApp enquiry flow.', capability: 'Interactive design · Multilingual experiences'},
+  techsite: {category: 'The site you’re exploring', body: 'A multilingual repair and IT services website with an illustrative workstation hero, service discovery and a guided WhatsApp enquiry flow.', capability: 'Interactive design · Multilingual experiences'},
 };
 
 export const projectsSi = {
@@ -25,7 +25,7 @@ export const projectsSi = {
   travelbuddy: {category: 'සංචාර හා ජංගම යෙදුම්', body: 'Dart ජංගම යෙදුමක් සහ Node.js පසුපස පද්ධතියක් සහිත සංචාර සැලසුම් ව්‍යාපෘතියකි. ගමන් සැලසුම්, ස්ථාන සෙවීම සහ සංචාරක ප්‍රජා පහසුකම් සඳහා කේත ඇතුළත්ය.', capability: 'ජංගම අත්දැකීම් · පද්ධති සම්බන්ධ කිරීම'},
   dealfinder: {category: 'සාප්පු සවාරි හා සෙවීම', body: 'දීමනා සොයා සැසඳීම සඳහා ජංගම ව්‍යාපෘතියකි. සෙවීම්, ප්‍රියතම දීමනා සහ වෙළඳ ප්‍රවර්ධන තිර ඇතුළත්ය.', capability: 'නිෂ්පාදන සෙවීම · වෙළඳ ක්‍රියාවලි'},
   inventory: {category: 'ව්‍යාපාර මෙවලම්', body: 'බඩු ලේඛන, අලුත්වැඩියා, වාර්තා සහ මූල්‍ය අතුරුමුහුණත් සහිත IT කළමනාකරණ ව්‍යාපෘතියකි. AI සහායක අංගයක්ද ඇතුළත්ය.', capability: 'මෙහෙයුම් පුවරු · AI සම්බන්ධ කිරීම'},
-  techsite: {category: 'ඔබ නරඹන වෙබ් අඩවිය', body: 'අන්තර්ක්‍රියාකාරී 3D දසුනක්, සේවා තේරීම සහ WhatsApp විමසීම් මාර්ගයක් සහිත බහුභාෂා අලුත්වැඩියා හා IT සේවා වෙබ් අඩවියකි.', capability: 'අන්තර්ක්‍රියාකාරී නිර්මාණ · බහුභාෂා අත්දැකීම්'},
+  techsite: {category: 'ඔබ නරඹන වෙබ් අඩවිය', body: 'නිදර්ශන උපාංග දසුනක්, සේවා තේරීම සහ WhatsApp විමසීම් මාර්ගයක් සහිත බහුභාෂා අලුත්වැඩියා හා IT සේවා වෙබ් අඩවියකි.', capability: 'අන්තර්ක්‍රියාකාරී නිර්මාණ · බහුභාෂා අත්දැකීම්'},
 };
 
 export const projectsTa = {
@@ -40,5 +40,5 @@ export const projectsTa = {
   travelbuddy: {category: 'பயணம் மற்றும் மொபைல்', body: 'Dart மொபைல் செயலியும் Node.js பின்தளமும் கொண்ட பயணத் திட்டமிடல் திட்டம். பயணத் திட்டங்கள், இடங்களைக் கண்டறிதல் மற்றும் பயணச் சமூக அம்சங்களுக்கான குறியீடு உள்ளது.', capability: 'மொபைல் அனுபவங்கள் · பின்தள இணைப்பு'},
   dealfinder: {category: 'வாங்குதல் மற்றும் கண்டறிதல்', body: 'சலுகைகளைக் கண்டறிந்து ஒப்பிடுவதற்கான மொபைல் திட்டம். தேடல், விருப்பங்கள் மற்றும் வணிகர் விளம்பரத் திரைகள் உள்ளன.', capability: 'தயாரிப்புகளைக் கண்டறிதல் · வணிகச் செயல்முறைகள்'},
   inventory: {category: 'வணிகக் கருவிகள்', body: 'சரக்கு, பழுதுபார்ப்பு, அறிக்கைகள் மற்றும் நிதி இடைமுகங்களைக் கொண்ட IT மேலாண்மைத் திட்டம். AI உதவியாளர் கூறும் உள்ளது.', capability: 'செயல்பாட்டுப் பலகைகள் · AI இணைப்பு'},
-  techsite: {category: 'நீங்கள் பார்க்கும் இணையதளம்', body: 'ஊடாடும் 3D முகப்பு, சேவைத் தேர்வு மற்றும் வழிகாட்டப்பட்ட WhatsApp விசாரணையுடன் கூடிய பன்மொழிப் பழுதுபார்ப்பு மற்றும் IT சேவை இணையதளம்.', capability: 'ஊடாடும் வடிவமைப்பு · பன்மொழி அனுபவங்கள்'},
+  techsite: {category: 'நீங்கள் பார்க்கும் இணையதளம்', body: 'விளக்க உபகரண முகப்பு, சேவைத் தேர்வு மற்றும் வழிகாட்டப்பட்ட WhatsApp விசாரணையுடன் கூடிய பன்மொழிப் பழுதுபார்ப்பு மற்றும் IT சேவை இணையதளம்.', capability: 'ஊடாடும் வடிவமைப்பு · பன்மொழி அனுபவங்கள்'},
 };

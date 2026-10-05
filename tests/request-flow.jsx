@@ -26,7 +26,8 @@ for(const lang of ['en','si','ta']){
  }
  const home=rendered.get('/')
  assert.ok(home.indexOf('id="packages"')<home.indexOf('id="business"'),'home prices before business')
- assert.ok(!home.includes('ERP_AI_AGENT'),'portfolio stays off homepage')
+ assert.ok(home.includes('ERP_AI_AGENT'),'primary project appears in the digital showcase')
+ assert.ok(home.includes('https://github.com/deepalweb/ERP_AI_AGENT'),'primary project links to its public repository')
  assert.ok(!home.includes('<canvas'),'HTML first, no required canvas')
  assert.ok(home.includes('LKR 1,500 - 2,500'))
  for(const service of [...supportedServices,'network','invalid']){

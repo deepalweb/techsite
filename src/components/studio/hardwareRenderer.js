@@ -34,8 +34,8 @@ export function mountHardware(host, onLost) {
     metalness: 0.12,
   });
   const blue = new THREE.MeshStandardMaterial({
-    color: 0x3986ff,
-    emissive: 0x2463eb,
+    color: 0x19d9f5,
+    emissive: 0x168bff,
     emissiveIntensity: 1,
   });
   const paper = new THREE.MeshStandardMaterial({
@@ -58,7 +58,7 @@ export function mountHardware(host, onLost) {
   const desk = new THREE.Mesh(
     new THREE.BoxGeometry(16, 0.3, 6.4),
     new THREE.MeshStandardMaterial({
-      color: 0x0f141c,
+      color: 0x030b18,
       roughness: 0.62,
       metalness: 0.18,
     }),
@@ -68,18 +68,18 @@ export function mountHardware(host, onLost) {
   world.add(desk);
   const wall = new THREE.Mesh(
     new THREE.PlaneGeometry(22, 10),
-    new THREE.MeshStandardMaterial({ color: 0x0b111b, roughness: 0.9 }),
+    new THREE.MeshStandardMaterial({ color: 0x030b18, roughness: 0.9 }),
   );
   wall.position.set(0, 4.6, -3.6);
   wall.receiveShadow = true;
   world.add(wall);
   const signal = new THREE.Mesh(
     new THREE.BoxGeometry(16, 0.022, 0.022),
-    new THREE.MeshBasicMaterial({ color: 0x6fa6ff }),
+    new THREE.MeshBasicMaterial({ color: 0x19d9f5 }),
   );
   signal.position.set(0, 0.02, -3.56);
   world.add(signal);
-  const wash = new THREE.PointLight(0x3f7fff, 16, 6, 1.4);
+  const wash = new THREE.PointLight(0x168bff, 22, 6, 1.4);
   wash.position.set(0, 0.5, -3.3);
   world.add(wash);
   const laptop = new THREE.Group();
@@ -131,14 +131,17 @@ export function mountHardware(host, onLost) {
   glow.addColorStop(1, "#050b16");
   ctx.fillStyle = glow;
   ctx.fillRect(0, 0, 1024, 640);
-  ctx.shadowColor = "#4d8dff";
+  ctx.shadowColor = "#19d9f5";
   ctx.shadowBlur = 28;
-  ctx.fillStyle = "#8bb6ff";
+  ctx.fillStyle = "#19d9f5";
   ctx.fillRect(0, 396, 1024, 4);
   ctx.shadowBlur = 0;
-  ctx.fillStyle = "#ffffff38";
-  ctx.font = "700 44px 'Plus Jakarta Sans', Arial, sans-serif";
-  ctx.fillText("DR TECH", 72, 330);
+  ctx.fillStyle = "#f7faff";
+  ctx.font = "800 76px 'Plus Jakarta Sans', Arial, sans-serif";
+  ctx.fillText("DR TECH", 72, 315);
+  ctx.fillStyle = "#a9bdd3";
+  ctx.font = "24px Arial, sans-serif";
+  ctx.fillText("Technology, restored.", 76, 355);
   const texture = new THREE.CanvasTexture(textureCanvas);
   texture.colorSpace = THREE.SRGBColorSpace;
   const display = new THREE.Mesh(
@@ -150,7 +153,7 @@ export function mountHardware(host, onLost) {
   box(hinge, 0.035, 0.035, 0.012, 0, 1.656, 0.06, black, 0.01);
   const router = new THREE.Group();
   world.add(router);
-  router.position.set(-2.75, 0, -1.5);
+  router.position.set(-2.75, 0, -0.7);
   router.rotation.y = 0.4;
   router.scale.setScalar(1.2);
   box(router, 1.03, 0.24, 0.75, 0, 0.1, 0, black, 0.07);
@@ -172,7 +175,7 @@ export function mountHardware(host, onLost) {
     );
   const printer = new THREE.Group();
   world.add(printer);
-  printer.position.set(2.45, 0.02, -2.45);
+  printer.position.set(2.65, 0.02, -1.85);
   printer.rotation.y = -0.4;
   printer.scale.setScalar(1);
   box(printer, 1.62, 0.72, 1.17, 0, 0.31, 0, ivory, 0.1);
@@ -214,11 +217,15 @@ export function mountHardware(host, onLost) {
     ],
     wifi: [
       [-3.9, 1.7, 1.2],
-      [-2.75, 0.55, -1.5],
+      [-2.75, 0.55, -0.7],
     ],
     printer: [
       [4.9, 1.8, 0.2],
-      [2.45, 0.55, -2.45],
+      [2.65, 0.55, -1.85],
+    ],
+    software: [
+      [0.6, 1.8, 5.5],
+      [0.15, 1.35, -0.5],
     ],
   };
   const target = new THREE.Vector3(...views.computer[1]);

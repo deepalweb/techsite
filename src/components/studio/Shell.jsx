@@ -34,6 +34,7 @@ export function Header({ page }) {
   const links = [
     ["/home-it", "home"],
     ["/business", "business"],
+    ["/digital", "digitalAction"],
     ["/home-it#packages", "pricing"],
     ["/about", "about"],
   ];
@@ -44,9 +45,9 @@ export function Header({ page }) {
       </a>
       <div className="studio-nav wrap">
         <a className="wordmark" href="/" aria-label="DR TECH home">
-          <img src="/logo.png" alt="" width="44" height="44" />
+          <img src="/assets/brand-mark.webp" alt="" width="44" height="44" />
           <span>
-            DR TECH<small>Services</small>
+            DR TECH<small>{t("studio.restored")}</small>
           </span>
         </a>
         <nav className="desktop-links" aria-label={t("studio.services")}>

@@ -10,7 +10,7 @@ try{
  for(const path of ['/','/home-it','/business','/digital','/projects','/about','/support','/404']){
   const {html,title,description}=await renderPage(path)
   const canonical=`https://www.drtech.lk${path}`
-  let document=template.replace('<div id="root"></div>',`<div id="root">${html}</div>`).replace(/<title>.*?<\/title>/,`<title>${escape(title)}</title>`).replace(/(<meta name="description" content=")[^"]*(")/,`$1${escape(description)}$2`).replace(/(<link rel="canonical" href=")[^"]*(")/,`$1${canonical}$2`).replace(/(<meta property="og:url" content=")[^"]*(")/,`$1${canonical}$2`).replace(/(<meta (?:property|name)="(?:og|twitter):title" content=")[^"]*(")/g,`$1${escape(title)}$2`).replace(/(<meta (?:property|name)="(?:og|twitter):description" content=")[^"]*(")/g,`$1${escape(description)}$2`)
+  let document=template.replace('<div id="root"></div>',`<div id="root" data-page="${path}">${html}</div>`).replace(/<title>.*?<\/title>/,`<title>${escape(title)}</title>`).replace(/(<meta name="description" content=")[^"]*(")/,`$1${escape(description)}$2`).replace(/(<link rel="canonical" href=")[^"]*(")/,`$1${canonical}$2`).replace(/(<meta property="og:url" content=")[^"]*(")/,`$1${canonical}$2`).replace(/(<meta (?:property|name)="(?:og|twitter):title" content=")[^"]*(")/g,`$1${escape(title)}$2`).replace(/(<meta (?:property|name)="(?:og|twitter):description" content=")[^"]*(")/g,`$1${escape(description)}$2`)
   if(path!=='/') document=document.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/,'')
   if(path==='/404')document=document.replace('<meta name="robots" content="index, follow">','<meta name="robots" content="noindex, follow">')
   const directory=path==='/'||path==='/404'?'dist':`dist${path}`
