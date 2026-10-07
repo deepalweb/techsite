@@ -21,7 +21,7 @@ for (const path of ['home-it','business','digital','projects','about','support']
   if (!html.includes('href="/' + path + '"')) throw new Error('Missing service page link: ' + path);
 }
 const config = JSON.parse(await readFile('dist/staticwebapp.config.json', 'utf8'));
-for (const path of ['/redesign']) {
+for (const path of ['/redesign','/redesign/index.html']) {
   if (!config.routes.some(route => route.route === path && route.redirect === '/' && route.statusCode === 301)) throw new Error('Missing duplicate-page redirect');
 }
 console.log('SEO checks passed: structured data, canonical, service links and permanent redirects.');
