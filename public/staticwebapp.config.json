@@ -6,21 +6,6 @@
       "statusCode": 301
     },
     {
-      "route": "/redesign/",
-      "redirect": "/",
-      "statusCode": 301
-    },
-    {
-      "route": "/redesign/index.html",
-      "redirect": "/",
-      "statusCode": 301
-    },
-    {
-      "route": "/index.html",
-      "redirect": "/",
-      "statusCode": 301
-    },
-    {
       "route": "/home-it",
       "rewrite": "/home-it/index.html"
     },
