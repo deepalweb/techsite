@@ -13,3 +13,15 @@ for (const path of ['home-it','business','digital','projects','about','support']
 if (!html.includes('id="webgl"') || !html.includes('Computer repairs.')) throw new Error('Missing redesigned homepage');
 await writeFile('dist/index.html', html);
 console.log('Published the animated 3D redesign at /; existing translated service pages retained.');
+
+const structured = JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+if (!structured['@graph'].some(node => node['@type'] === 'Organization')) throw new Error('Missing business schema');
+if ((html.match(/rel="canonical"/g) || []).length !== 1) throw new Error('Homepage must have exactly one canonical');
+for (const path of ['home-it','business','digital','projects','about','support']) {
+  if (!html.includes('href="/' + path + '"')) throw new Error('Missing service page link: ' + path);
+}
+const config = JSON.parse(await readFile('dist/staticwebapp.config.json', 'utf8'));
+for (const path of ['/redesign','/redesign/','/redesign/index.html']) {
+  if (!config.routes.some(route => route.route === path && route.redirect === '/' && route.statusCode === 301)) throw new Error('Missing duplicate-page redirect');
+}
+console.log('SEO checks passed: structured data, canonical, service links and permanent redirects.');
