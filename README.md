@@ -10,6 +10,8 @@ React + Vite website with English, Sinhala and Tamil content.
 - `npm run build` — production build and static HTML generation for all pages.
 - `npm run preview` — inspect the production build locally.
 
+The development homepage serves the current 3D design from `public/redesign`, matching the production homepage. Dedicated service URLs continue to use the React app in `src`. Changes to `src/App.jsx` affect those React routes; homepage changes belong in `public/redesign`.
+
 ## Customer journeys
 
 The homepage introduces individual support and repair pricing before business services. Home IT, Business, Digital, Projects, About and Support have dedicated URLs. Existing portfolio metadata is retained in `src/data/projects.js`.
