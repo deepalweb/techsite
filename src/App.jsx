@@ -33,7 +33,7 @@ export default function App({ initialPath, initialSearch }) {
       page === "/" ? t("meta.title") : `${t(pageTitleKeys[page])} | DR TECH`;
     const canonical = document.querySelector('link[rel="canonical"]');
     if (canonical)
-      canonical.href = `https://www.drtech.lk${page === "/" ? "/" : page}`;
+      canonical.href = `https://www.drtech.lk${page === "/" || page === "/404" ? page : `${page}/`}`;
     if (window.location.hash) {
       const aliases = {
         "service-catalog": "repairs",
