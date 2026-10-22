@@ -26,7 +26,17 @@ Support links can preselect a service, for example `/support?service=printer`. T
 
 ## Hosting and verification
 
-The build exports HTML for seven public pages plus a not-found page. `public/staticwebapp.config.json` maps the routes for the existing Azure Static Web Apps deployment. Page titles, canonical URLs, sitemap and static descriptions are generated per route. The default HTML is English; language controls render Sinhala/Tamil on the client.
+The build exports HTML for seven public pages plus a not-found page. `public/staticwebapp.config.json` retains Azure compatibility; `public/_headers` and `public/_redirects` configure the Cloudflare Pages version. Page titles, canonical URLs, sitemap and static descriptions are generated per route. The default HTML is English; language controls render Sinhala/Tamil on the client.
+
+## Cloudflare Pages
+
+Deploy the built static site to the `drtech-services` Pages project with:
+
+```powershell
+npm run deploy:cloudflare
+```
+
+This uses Cloudflare Pages Direct Upload. It keeps the browser-only 3D experience and does not add a server-side Worker because the site has no dynamic endpoint. Pages Functions can be added later if the support flow needs an API, database, or server-side integration.
 
 Automated component tests stub animation wrappers and do not validate browser geometry or WebGL. Desktop/mobile screenshots, actual graphics interaction, hydration and real-device performance must be reviewed before production sign-off. No browser connection was available during this implementation.
 

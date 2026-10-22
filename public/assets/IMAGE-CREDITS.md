@@ -1,5 +1,9 @@
 # Hero background
 
+## Original service models — 10 October 2026
+
+`service-3d-computer.png`, `service-3d-wifi.png`, `service-3d-printer.png`, and `service-3d-software.png` are original procedural Three.js illustrations rendered from `src/components/studio/hardwareRenderer.js`. Exported at 720 × 540 with `scripts/render-service-assets.mjs`. These contain no stock photography, customer work or product-interface screenshots. The software stack is a decorative metaphor; it does not depict ERP_AI_AGENT. Total PNG transfer size is approximately 162 KB across all four assets.
+
 - Photo: Server Racks on Data Center
 - Photographer: Brett Sayles
 - Source: https://www.pexels.com/photo/server-racks-on-data-center-4508751/

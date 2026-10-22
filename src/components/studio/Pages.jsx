@@ -13,7 +13,9 @@ import {
   Code2,
   Github,
 } from "lucide-react";
-import ServiceVisual from "./ServiceVisual.jsx";
+import ServiceHardware from "./ServiceHardware.jsx";
+import ImmersiveHardware from "./ImmersiveHardware.jsx";
+import NetworkConstellation from "./NetworkConstellation.jsx";
 import Contact from "../sections/Contact.jsx";
 import { prices, phone, waLink, socials } from "../../data/content.js";
 import {
@@ -85,7 +87,7 @@ export function Hero() {
             ))}
           </ul>
         </div>
-        <div className="hero-art-space" aria-hidden="true" />
+        <div className="hero-art-space" aria-hidden="true"><ImmersiveHardware /></div>
       </div>
       <div className="wrap hero-service-note">
         <span>
@@ -122,7 +124,7 @@ export function Problems() {
               DR TECH / 0
               {["computer", "wifi", "printer", "software"].indexOf(active) + 1}
             </span>
-            <ServiceVisual type={active} />
+            <ServiceHardware device={active} />
             <div className="service-signal">
               <i />
               <i />
@@ -141,6 +143,7 @@ export function Problems() {
                   onFocus={() => setActive(item.id)}
                 >
                   <span className="service-number">0{i + 1}</span>
+                  <img className="service-mobile-asset" src={`/assets/service-3d-${item.id}.png`} width="720" height="540" alt="" loading="lazy" />
                   <div className="service-row-copy">
                     <h3>{item.title}</h3>
                     <p>{item.body}</p>
@@ -361,6 +364,7 @@ export function BusinessIntro({ full = false }) {
           </div>
           <div className="infrastructure-map">
             <span className="section-caption">DR TECH / BUSINESS IT</span>
+            <NetworkConstellation />
             <ol>
               {t("studio.networkLayers", { returnObjects: true }).map(
                 (layer, i) => (

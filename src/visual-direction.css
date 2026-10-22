@@ -467,6 +467,13 @@ h2 {
   height: auto;
   margin: 20px 0;
 }
+.service-hardware { position:relative; width:100%; aspect-ratio:4/3; margin:20px 0; isolation:isolate; }
+.service-hardware > img { width:100%; height:100%; object-fit:contain; display:block; transition:opacity .2s ease; }
+.service-hardware-canvas { position:absolute; inset:0; opacity:0; transition:opacity .2s ease; }
+.service-hardware-canvas canvas { width:100%; height:100%; display:block; }
+.service-hardware.is-live > img { opacity:0; }
+.service-hardware.is-live .service-hardware-canvas { opacity:1; }
+.service-mobile-asset { display:none; }
 .service-signal {
   display: flex;
   justify-content: space-between;
@@ -1044,6 +1051,9 @@ html[lang="ta"] .wordmark small {
   .service-stage {
     display: none;
   }
+  .service-mobile-asset { display:block; width:88px; height:78px; flex:0 0 88px; object-fit:cover; align-self:center; }
+  .problem-link .service-number { display:none; }
+  .problem-link .service-row-copy { min-width:0; }
   .problem-link,
   .problem-link + .problem-link {
     padding: 24px 0;
@@ -1527,3 +1537,27 @@ html[lang="ta"] .workstation-hero h1 {
 .workstation-hero .hero-art-space { min-height:610px; }
 @media(max-width:900px) { .workstation-hero .hero-art-space { min-height:390px; } .workstation-hero .hero-backdrop { bottom:60px; } }
 @media(max-width:767px) { .workstation-hero .hero-art-space { min-height:300px; } .workstation-hero .hero-backdrop { bottom:60px; } }
+/* Progressive 3D: one scene, then bounded pointer-driven camera movement. */
+.hero-art-space { position:relative; }
+.immersive-hardware { position:absolute; inset:15px -55px 15px -45px; opacity:0; transition:opacity .6s ease; pointer-events:none; }
+.immersive-hardware::before { content:''; position:absolute; inset:0; background:#030b18; }
+.immersive-hardware.is-live { opacity:1; }
+.immersive-hardware canvas { position:relative; display:block; width:100%; height:100%; }
+.immersive-hardware { mask-image:linear-gradient(90deg,transparent,#000 10%,#000 92%,transparent),linear-gradient(0deg,transparent,#000 12%,#000 88%,transparent); mask-composite:intersect; }
+.workstation-hero:has(.immersive-hardware.is-live) .hero-backdrop img { mask-image:linear-gradient(90deg,#000 0%,#000 32%,transparent 50%); }
+.network-constellation { perspective:900px; margin:18px -18px 25px; }
+.network-constellation svg { width:100%; display:block; transform:rotateX(12deg) rotateY(-10deg); transform-origin:50% 60%; transition:transform .45s cubic-bezier(.16,1,.3,1); }
+.infrastructure-map:hover .network-constellation svg { transform:rotateX(5deg) rotateY(-3deg); }
+.network-constellation.is-connected .network-connection { animation:connect-systems .85s cubic-bezier(.16,1,.3,1) both; }
+@keyframes connect-systems { from { stroke-dasharray:800; stroke-dashoffset:800; } to { stroke-dasharray:800; stroke-dashoffset:0; } }
+.project-preview { perspective:1200px; }
+.project-screen { transform:rotateY(-2deg) rotateX(1deg); transform-origin:left center; box-shadow:10px 20px 40px -18px #0009; transition:transform .25s cubic-bezier(.16,1,.3,1),border-color .2s; }
+.project-screen:is(:hover,:focus-visible) { transform:rotateY(0) rotateX(0) translateZ(5px); border-color:#19d9f577; }
+@media(max-width:900px) { .immersive-hardware { inset:0 -15px 0; } .workstation-hero:has(.immersive-hardware.is-live) .hero-backdrop img { opacity:0; mask-image:none; } }
+@media(max-width:767px) { .network-constellation { margin:10px -5px 20px; } .immersive-hardware { inset:-20px -16px; } .project-screen { transform:none; } }
+@media(prefers-reduced-motion:reduce) { .immersive-hardware { display:none; } .network-constellation svg,.project-screen:is(:hover,:focus-visible),.project-screen { transform:none; transition:none; } .network-constellation.is-connected .network-connection { animation:none; } }
+/* Let the rendered stage stand alone once ready; avoid duplicated devices. */
+.workstation-hero:has(.immersive-hardware.is-live) .hero-backdrop img { opacity:0; mask-image:none; }
+.immersive-hardware { mask-image:linear-gradient(90deg,transparent,#000 12%,#000 90%,transparent),linear-gradient(0deg,transparent,#000 28%,#000 88%,transparent); }
+.workstation-hero .hero-backdrop img { transition:opacity .6s ease; }
+@media(prefers-reduced-motion:reduce) { .workstation-hero .hero-backdrop img { transition:none; } }

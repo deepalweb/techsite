@@ -2,13 +2,13 @@ import * as THREE from "three";
 import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
 
 // A real, on-demand WebGL scene. No continuous spin or background animation loop.
-export function mountHardware(host, onLost) {
+export function mountHardware(host, onLost, { immersive = false, serviceStudio = false, initialDevice = "computer", onReady } = {}) {
   const renderer = new THREE.WebGLRenderer({
     antialias: true,
     alpha: true,
     powerPreference: "low-power",
   });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, immersive ? 1.25 : 1.5));
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
@@ -156,7 +156,7 @@ export function mountHardware(host, onLost) {
   router.position.set(-2.75, 0, -0.7);
   router.rotation.y = 0.4;
   router.scale.setScalar(1.2);
-  box(router, 1.03, 0.24, 0.75, 0, 0.1, 0, black, 0.07);
+  box(router, 1.03, 0.24, 0.75, 0, 0.1, 0, serviceStudio ? metal : black, 0.07);
   for (const x of [-0.37, 0.37])
     box(router, 0.042, 0.85, 0.042, x, 0.62, -0.26, black, 0.018);
   for (let i = 0; i < 4; i++)
@@ -182,18 +182,79 @@ export function mountHardware(host, onLost) {
   box(printer, 1.53, 0.04, 1.08, 0, 0.695, 0, ivory, 0.025);
   box(printer, 1.15, 0.22, 0.032, 0, 0.18, 0.59, black, 0.02);
   box(printer, 1.15, 0.025, 0.44, 0, 0.045, 0.7, ivory, 0.015);
-  const sheet = box(printer, 0.97, 0.012, 0.67, 0, 0.035, 0.68, paper, 0.002);
+  box(printer, 0.97, 0.012, 0.67, 0, 0.035, 0.68, paper, 0.002);
   box(printer, 1.14, 0.035, 0.24, 0, 0.729, -0.32, black, 0.01);
   const feeder = box(printer, 0.91, 0.65, 0.012, 0, 0.94, -0.36, paper, 0.004);
   feeder.rotation.x = -0.16;
   box(printer, 0.18, 0.055, 0.11, 0.54, 0.74, 0.22, black, 0.018);
   box(printer, 0.031, 0.01, 0.03, 0.55, 0.771, 0.22, blue, 0.004);
+  // Dedicated service assets share the hero's material system, with isolated
+  // product framing. Software is a spatial window stack, not a claimed app UI.
+  const software = new THREE.Group();
+  if (serviceStudio) {
+    world.add(software);
+    for (let i = 2; i >= 0; i--) {
+      const panel = new THREE.Group();
+      panel.position.set(i * .24, .3 + i * .15, -i * .3);
+      software.add(panel);
+      box(panel, 2.5, 1.7, .07, 0, .85, 0, i ? metal : ivory, .07);
+      box(panel, 2.38, .19, .022, 0, 1.56, .052, black, .025);
+      for (let j = 0; j < 3; j++) box(panel, .045, .045, .025, -.99 + j * .1, 1.56, .068, blue, .02);
+      if (i === 0) {
+        for (let j = 0; j < 4; j++) box(panel, .47 - j * .065, .038, .025, -.73, 1.25 - j * .2, .06, metal, .01);
+        const ring = new THREE.Mesh(new THREE.TorusGeometry(.34, .055, 12, 40), blue);
+        ring.position.set(.45, .88, .085);
+        panel.add(ring);
+        const tick = new THREE.Line(new THREE.BufferGeometry().setFromPoints([
+          new THREE.Vector3(.28,.88,.16),new THREE.Vector3(.40,.75,.16),new THREE.Vector3(.64,1.03,.16)
+        ]), new THREE.LineBasicMaterial({color:0x168bff}));
+        panel.add(tick);
+      }
+    }
+    laptop.position.set(0, 0, 0);
+    router.position.set(0, 0, 0);
+    printer.position.set(0, 0, 0);
+    software.rotation.y = -.26;
+    desk.visible = false;
+    const floor = new THREE.Mesh(new THREE.PlaneGeometry(20,20), new THREE.ShadowMaterial({opacity:.2}));
+    floor.rotation.x = -Math.PI / 2;
+    floor.position.y = -.15;
+    floor.receiveShadow = true;
+    world.add(floor);
+    for (const radius of [.26,.47,.68]) {
+      const points = Array.from({length:33}, (_,i) => {
+        const angle = Math.PI * i / 32;
+        return new THREE.Vector3(Math.cos(angle)*radius,1.3+Math.sin(angle)*radius,-.12);
+      });
+      const arc = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(points),32,.013,6,false),blue);
+      router.add(arc);
+    }
+    wall.visible = false;
+    signal.visible = false;
+    wash.visible = false;
+  }
+  if (immersive) {
+    // A desktop tower grounds the scene as an everyday IT workstation.
+    const tower = new THREE.Group();
+    tower.position.set(-1.85, 0, -2.1);
+    tower.rotation.y = -.2;
+    world.add(tower);
+    box(tower,.72,2.05,1.3,0,1.02,0,black,.055);
+    box(tower,.59,1.91,.022,0,1.02,.66,metal,.022);
+    for (let i=0;i<12;i++) box(tower,.43,.023,.025,0,.24+i*.075,.68,black,.004);
+    box(tower,.012,1.43,.015,.23,1.13,.69,blue,.004);
+    box(tower,.16,.025,.02,-.1,1.85,.69,blue,.004);
+    const connection = new THREE.Line(new THREE.BufferGeometry().setFromPoints([
+      new THREE.Vector3(-2.75,.025,-.7),new THREE.Vector3(-2,.025,.7),new THREE.Vector3(.2,.025,.7),new THREE.Vector3(2.65,.025,-1.85)
+    ]),new THREE.LineBasicMaterial({color:0x19d9f5,transparent:true,opacity:.45}));
+    world.add(connection);
+  }
   const ambient = new THREE.HemisphereLight(0xc5d7ff, 0x0a0f18, 1.25);
   scene.add(ambient);
   const key = new THREE.DirectionalLight(0xf5f5ff, 4);
   key.position.set(-3, 7, 5);
   key.castShadow = true;
-  key.shadow.mapSize.set(2048, 2048);
+  key.shadow.mapSize.set(immersive ? 1024 : 2048, immersive ? 1024 : 2048);
   key.shadow.camera.left = -7;
   key.shadow.camera.right = 7;
   key.shadow.camera.top = 7;
@@ -204,6 +265,8 @@ export function mountHardware(host, onLost) {
   const rim = new THREE.DirectionalLight(0x4c84ff, 2.6);
   rim.position.set(4, 2, -3);
   scene.add(rim);
+  let painted = false;
+  let settleUntil = 0;
   let disposed = false,
     visible = true,
     frame = 0,
@@ -228,18 +291,38 @@ export function mountHardware(host, onLost) {
       [0.15, 1.35, -0.5],
     ],
   };
-  const target = new THREE.Vector3(...views.computer[1]);
-  const targetCamera = new THREE.Vector3(...views.computer[0]);
+  if (serviceStudio) Object.assign(views, {
+    computer: [[3.3, 3.5, 7.8], [0, .8, 0]],
+    wifi: [[2.3, 2.3, 5.5], [0, 1.1, 0]],
+    printer: [[2.7, 2.4, 5.3], [0, .65, 0]],
+    software: [[3.1, 2.7, 7], [.2, 1.05, -.2]],
+  });
+  const serviceObjects = {computer:laptop, wifi:router, printer, software};
+  const firstDevice = serviceObjects[initialDevice] ? initialDevice : "computer";
+  function isolate(device) {
+    if (serviceStudio) Object.entries(serviceObjects).forEach(([id,object]) => {object.visible = id === device;});
+  }
+  isolate(firstDevice);
+  const target = new THREE.Vector3(...views[firstDevice][1]);
+  const targetCamera = new THREE.Vector3(...views[firstDevice][0]);
   const currentLook = target.clone();
   camera.position.copy(targetCamera);
+  if (immersive) { camera.position.y += .45; camera.position.z += .3; steps = 40; settleUntil = performance.now()+750; }
   camera.lookAt(target);
-  function draw() {
+  function draw(now = performance.now()) {
     frame = 0;
     if (disposed || !visible || document.hidden) return;
-    camera.position.lerp(targetCamera, 0.16);
-    currentLook.lerp(target, 0.16);
+    if (settleUntil && now >= settleUntil) {
+      camera.position.copy(targetCamera);
+      currentLook.copy(target);
+      steps = 0;
+    } else {
+      camera.position.lerp(targetCamera, 0.16);
+      currentLook.lerp(target, 0.16);
+    }
     camera.lookAt(currentLook);
     renderer.render(scene, camera);
+    if (!painted) { painted = true; onReady?.(); }
     if (steps-- > 0) frame = requestAnimationFrame(draw);
   }
   function request() {
@@ -272,6 +355,19 @@ export function mountHardware(host, onLost) {
     } else request();
   }
   document.addEventListener("visibilitychange", visibility);
+  const hero = host.closest(".studio-hero");
+  function pointer(event) {
+    if (!immersive || reduced.matches || event.pointerType !== "mouse" || !visible) return;
+    const rect = hero.getBoundingClientRect();
+    const x = Math.max(-1,Math.min(1,(event.clientX-rect.left)/rect.width*2-1));
+    const y = Math.max(-1,Math.min(1,(event.clientY-rect.top)/rect.height*2-1));
+    targetCamera.set(1.5+x*.5,2.6-y*.2,9.4);
+    steps=20;
+    settleUntil=performance.now()+280;
+    request();
+  }
+  function resetPointer() { if (!immersive) return; targetCamera.set(1.5,2.6,9.4); steps=20; settleUntil=performance.now()+280; request(); }
+  if (immersive) { hero?.addEventListener("pointermove",pointer,{passive:true}); hero?.addEventListener("pointerleave",resetPointer); }
   function lost(e) {
     e.preventDefault();
     onLost();
@@ -280,10 +376,12 @@ export function mountHardware(host, onLost) {
   resize();
   return {
     select(device) {
+      isolate(serviceObjects[device] ? device : "computer");
       const [position, look] = views[device] || views.computer;
       targetCamera.set(...position);
       target.set(...look);
       steps = reduced.matches ? 0 : 35;
+      settleUntil = reduced.matches ? 0 : performance.now()+750;
       if (reduced.matches) {
         camera.position.copy(targetCamera);
         currentLook.copy(target);
@@ -291,11 +389,14 @@ export function mountHardware(host, onLost) {
       request();
     },
     dispose() {
+      if (disposed) return;
       disposed = true;
       cancelAnimationFrame(frame);
       resizeObserver.disconnect();
       intersection.disconnect();
       document.removeEventListener("visibilitychange", visibility);
+      hero?.removeEventListener("pointermove",pointer);
+      hero?.removeEventListener("pointerleave",resetPointer);
       renderer.domElement.removeEventListener("webglcontextlost", lost);
       const geometries = new Set(),
         materials = new Set();
