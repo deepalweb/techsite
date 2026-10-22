@@ -1,43 +1,18 @@
-# DR TECH Services
-
-React + Vite website with English, Sinhala and Tamil content.
-
-## Local development
-
-- `npm install`
-- `npm run dev` — local preview.
-- `npm test` — routes, links, translations, service preselection and enquiry flow.
-- `npm run build` — production build and static HTML generation for all pages.
-- `npm run preview` — inspect the production build locally.
-
-The development homepage serves the current 3D design from `public/redesign`, matching the production homepage. Dedicated service URLs continue to use the React app in `src`. Changes to `src/App.jsx` affect those React routes; homepage changes belong in `public/redesign`.
-
-## Customer journeys
-
-The homepage introduces individual support and repair pricing before business services. Home IT, Business, Digital, Projects, About and Support have dedicated URLs. Existing portfolio metadata is retained in `src/data/projects.js`.
-
-Support links can preselect a service, for example `/support?service=printer`. The enquiry is sent only when the customer presses Send in WhatsApp. The site does not claim to confirm appointments and does not persist customer details in local storage.
-
-## Visuals
-
-`src/components/studio/` contains the new site and an optional Three.js hardware viewer. The generated workstation illustration appears immediately. The real 3D module loads after selecting “Explore in 3D”; its camera renders in response to controls, stops when hidden and respects reduced motion. The interactive model and the illustration are separate assets with matching subject matter, not identical geometry.
-
-`public/assets/IMAGE-CREDITS.md` records sources and the generation prompt. The website does not use these illustrative renders as customer-project evidence.
-
-## Hosting and verification
-
-The build exports HTML for seven public pages plus a not-found page. `public/staticwebapp.config.json` retains Azure compatibility; `public/_headers` and `public/_redirects` configure the Cloudflare Pages version. Page titles, canonical URLs, sitemap and static descriptions are generated per route. The default HTML is English; language controls render Sinhala/Tamil on the client.
-
-## Cloudflare Pages
-
-Deploy the built static site to the `drtech-services` Pages project with:
-
-```powershell
-npm run deploy:cloudflare
-```
-
-This uses Cloudflare Pages Direct Upload. It keeps the browser-only 3D experience and does not add a server-side Worker because the site has no dynamic endpoint. Pages Functions can be added later if the support flow needs an API, database, or server-side integration.
-
-Automated component tests stub animation wrappers and do not validate browser geometry or WebGL. Desktop/mobile screenshots, actual graphics interaction, hydration and real-device performance must be reviewed before production sign-off. No browser connection was available during this implementation.
-
-See `docs/REDESIGN-PLAN-2026-09-30.md` and `docs/REDESIGN-IMPLEMENTATION.md`.
+Laptop එක Slow ද? Overheat වෙනවද? Screen එක කැඩිලද? 💻🔧
+Colombo traffic එකේ රස්තියාදු නොවී, නිවසටම ගෙන්වාගන්න!
+Most people delay fixing their laptops because carrying a heavy device to a shop in Colombo takes half a day.
+At DR TECH, we bring practical IT support and hardware repairs directly to your doorstep across Colombo and suburbs.
+🛠️ Our Doorstep Services:
+• Hardware Repairs: Screen replacement, battery swaps, keyboard & hinge fixes.
+• Speed & Performance: NVMe SSD upgrades, RAM expansion, Windows setup & virus removal.
+• Thermal Maintenance: Deep internal cleaning & high-grade thermal paste application (fixes overheating & fan noise).
+• Office & Home IT: Wi-Fi router & mesh network setup, printer networking, and SMB IT support.
+📦 How Our Doorstep Service Works (පියවර 3 කින්):
+1️⃣ Message Us on WhatsApp: Tell us your laptop model and the issue.
+2️⃣ Safe Pickup / Home Visit: We pick up your device safely or visit your location.
+3️⃣ Transparent Diagnosis & Repair: We test the device, provide an exact quote before doing any work, and deliver it back tested and working.
+📍 Service Coverage: Colombo 01–15, Kotte, Rajagiriya, Nugegoda, Dehiwala, Battaramulla, Maharagama, and surrounding suburbs.
+💬 Get a Quick Estimate Today:
+📲 WhatsApp / Call: 076 084 6996
+💬 Direct WhatsApp Chat: https://wa.me/94760846996
+🌐 Website: https://www.drtech.lk
