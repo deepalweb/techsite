@@ -165,9 +165,10 @@ export function Footer() {
 }
 export function QuickActions() {
   const { t } = useTranslation();
+  const locale = useLocale();
   return (
     <div className="mobile-dock">
-      <a href="/support">
+      <a href={lp(locale, "/support")}>
         <ArrowUpRight size={18} />
         {t("studio.support")}
       </a>
