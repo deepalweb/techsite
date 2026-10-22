@@ -23,6 +23,12 @@ import {
   additionalProjects,
   githubProfile,
 } from "../../data/projects.js";
+import { localizedPath, localeFromPath } from "../../i18n/localePaths.js";
+
+function useLocale() {
+  const { i18n } = useTranslation();
+  return i18n.resolvedLanguage || "en";
+}
 export const pagePaths = [
   "/",
   "/home-it",
@@ -31,6 +37,26 @@ export const pagePaths = [
   "/projects",
   "/about",
   "/support",
+  "/home-it/",
+  "/business/",
+  "/digital/",
+  "/projects/",
+  "/about/",
+  "/support/",
+  "/si/",
+  "/si/home-it/",
+  "/si/business/",
+  "/si/digital/",
+  "/si/projects/",
+  "/si/about/",
+  "/si/support/",
+  "/ta/",
+  "/ta/home-it/",
+  "/ta/business/",
+  "/ta/digital/",
+  "/ta/projects/",
+  "/ta/about/",
+  "/ta/support/",
 ];
 export function normalizePage(path) {
   const trimmed = path.replace(/\/+$/, "") || "/";
@@ -38,6 +64,7 @@ export function normalizePage(path) {
 }
 export function Hero() {
   const { t } = useTranslation();
+  const locale = useLocale();
   return (
     <section
       id="home"
@@ -69,7 +96,7 @@ export function Hero() {
           <p className="hero-benefit">{t("studio.heroTitle")}</p>
           <p className="hero-lead">{t("studio.heroIntro")}</p>
           <div className="hero-buttons">
-            <a className="action" href="/support">
+            <a className="action" href={localizedPath(locale, "/support")}>
               {t("studio.support")}
               <ArrowUpRight size={18} />
             </a>
@@ -94,7 +121,7 @@ export function Hero() {
           {t("stats.home")} / {t("stats.pickup")} /{" "}
           {t("request.preferences.2.label")}
         </span>
-        <a href="#business">
+        <a href={`${localizedPath(locale, "/")}#business`}>
           {t("studio.businessLabel")}
           <ArrowRight size={15} />
         </a>
@@ -110,6 +137,7 @@ const problemPrices = {
 };
 export function Problems() {
   const { t } = useTranslation();
+  const locale = useLocale();
   const [active, setActive] = useState("computer");
   return (
     <section id="repairs" className="studio-section problem-section">
@@ -136,7 +164,7 @@ export function Problems() {
               return (
                 <a
                   key={item.id}
-                  href={`/support?service=${item.id}`}
+                  href={`${localizedPath(locale, "/support")}?service=${item.id}`}
                   className="problem-link"
                   data-active={active === item.id}
                   onMouseEnter={() => setActive(item.id)}
@@ -157,7 +185,7 @@ export function Problems() {
             })}
             <a
               className="problem-link unsure-row"
-              href="/support?service=other"
+              href={`${localizedPath(locale, "/support")}?service=other`}
             >
               <span className="service-number">05</span>
               <h3>{t("studio.notSure")}</h3>
@@ -171,6 +199,7 @@ export function Problems() {
 }
 export function RepairPrices({ full = false }) {
   const { t } = useTranslation();
+  const locale = useLocale();
   const rows = [
     ["basicVisit", "computer"],
     ["laptopBoost", "computer"],
@@ -197,7 +226,7 @@ export function RepairPrices({ full = false }) {
             <a
               className="price-row"
               key={key}
-              href={`/support?service=${service}`}
+              href={`${localizedPath(locale, "/support")}?service=${service}`}
               aria-label={`${t("studio.priceAction")}: ${t(`packages.items.${key}.name`)}`}
             >
               <div>
@@ -211,7 +240,7 @@ export function RepairPrices({ full = false }) {
             </a>
           ))}
           {!full && (
-            <a className="understated-link" href="/home-it#packages">
+            <a className="understated-link" href={`${localizedPath(locale, "/home-it")}#packages`}>
               {t("studio.viewAll")}
               <ArrowRight size={16} />
             </a>
@@ -294,6 +323,7 @@ export function BusinessTransition() {
 }
 export function Trust({ full = false }) {
   const { t } = useTranslation();
+  const locale = useLocale();
   return (
     <section id="about" className="studio-section trust-section">
       <div className="wrap trust-layout">
@@ -326,7 +356,7 @@ export function Trust({ full = false }) {
             ))}
           </ul>
           {!full && (
-            <a className="understated-link" href="/about">
+            <a className="understated-link" href={localizedPath(locale, "/about")}>
               {t("studio.meet")}
               <ArrowRight size={16} />
             </a>
@@ -348,6 +378,7 @@ export function Trust({ full = false }) {
 }
 export function BusinessIntro({ full = false }) {
   const { t } = useTranslation();
+  const locale = useLocale();
   return (
     <section id="business" className="studio-section business-chapter">
       <span id="business-infrastructure" />
@@ -357,7 +388,7 @@ export function BusinessIntro({ full = false }) {
             <p className="section-caption">{t("studio.businessLabel")}</p>
             <h2>{t("studio.businessTitle")}</h2>
             <p className="section-copy">{t("studio.businessIntro")}</p>
-            <a className="action" href="/support?service=business">
+            <a className="action" href={`${localizedPath(locale, "/support")}?service=business`}>
               {t("studio.businessAction")}
               <ArrowUpRight size={18} />
             </a>
@@ -391,7 +422,7 @@ export function BusinessIntro({ full = false }) {
           })}
         </div>
         {!full && (
-          <a className="quiet-link" href="/business">
+          <a className="quiet-link" href={localizedPath(locale, "/business")}>
             {t("studio.businessLink")}
             <ArrowRight size={17} />
           </a>
@@ -438,6 +469,7 @@ export function Plans() {
 }
 export function DigitalPreview() {
   const { t } = useTranslation();
+  const locale = useLocale();
   return (
     <section id="growth" className="digital-preview studio-section">
       <div className="wrap">
@@ -445,7 +477,7 @@ export function DigitalPreview() {
           <p className="section-caption">{t("studio.digitalAction")}</p>
           <h2>{t("studio.digitalHeadline")}</h2>
           <p>{t("studio.digitalIntro")}</p>
-          <a className="understated-link" href="/digital">
+          <a className="understated-link" href={localizedPath(locale, "/digital")}>
             {t("studio.digitalAction")}
             <ArrowUpRight size={16} />
           </a>
@@ -517,6 +549,7 @@ function ProjectPreview({ project }) {
 }
 export function FinalSupport() {
   const { t } = useTranslation();
+  const locale = useLocale();
   return (
     <section id="contact" className="studio-final">
       <div className="wrap">
@@ -525,7 +558,7 @@ export function FinalSupport() {
           <p>{t("studio.finalBody")}</p>
         </div>
         <div className="final-actions">
-          <a className="action" href="/support">
+          <a className="action" href={localizedPath(locale, "/support")}>
             {t("studio.support")}
             <ArrowUpRight size={18} />
           </a>
@@ -587,10 +620,11 @@ export function HomePage() {
 }
 export function PageIntro({ title, intro }) {
   const { t } = useTranslation();
+  const locale = useLocale();
   return (
     <div className="page-intro">
       <div className="wrap">
-        <a href="/">
+        <a href={localizedPath(locale, "/")}>
           {t("studio.homeReturn")}
           <ArrowRight size={15} />
         </a>
@@ -690,6 +724,7 @@ export function ProjectList() {
 }
 export function DetailPage({ page, service }) {
   const { t } = useTranslation();
+  const locale = useLocale();
   switch (page) {
     case "/home-it":
       return (
@@ -745,14 +780,14 @@ export function DetailPage({ page, service }) {
                   <p>{item.body}</p>
                   <a
                     className="understated-link"
-                    href="/support?service=digital"
+                    href={`${localizedPath(locale, "/support")}?service=digital`}
                   >
                     {t("studio.support")}
                     <ArrowUpRight size={16} />
                   </a>
                 </article>
               ))}
-              <a className="portfolio-callout" href="/projects">
+              <a className="portfolio-callout" href={localizedPath(locale, "/projects")}>
                 <Code2 size={28} />
                 <span>{t("studio.projectsAction")}</span>
                 <ArrowRight size={20} />

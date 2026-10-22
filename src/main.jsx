@@ -5,14 +5,17 @@ import "./index.css";
 import "./visual-direction.css";
 import App from "./App.jsx";
 import { normalizePage } from "./components/studio/Pages.jsx";
+import { localeFromPath, pagePathFromPathname } from "./i18n/localePaths.js";
+
 const root = document.getElementById("root");
+const locale = localeFromPath(window.location.pathname);
+const page = normalizePage(pagePathFromPathname(window.location.pathname));
+i18n.changeLanguage(locale);
 const tree = (
   <StrictMode>
-    <App />
+    <App initialPath={page} initialLocale={locale} />
   </StrictMode>
 );
-// A static host may serve the home HTML as a fallback for another URL.
-// Hydrate only when that prerendered page matches the requested route.
-if (root.hasChildNodes() && root.dataset.page === normalizePage(window.location.pathname) && i18n.resolvedLanguage === "en" && !new URLSearchParams(window.location.search).has('service'))
+if (root.hasChildNodes() && root.dataset.page === page && root.dataset.locale === locale && !new URLSearchParams(window.location.search).has("service"))
   hydrateRoot(root, tree);
 else createRoot(root).render(tree);

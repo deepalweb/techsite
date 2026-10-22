@@ -17,8 +17,20 @@ import {
   waLink,
   waMessages,
 } from "../../data/content.js";
+import { localizedPath, localeFromPath } from "../../i18n/localePaths.js";
+
+function useLocale() {
+  const { i18n } = useTranslation();
+  return i18n.resolvedLanguage || "en";
+}
+
+function lp(locale, path) {
+  return localizedPath(locale, path);
+}
+
 export function Header({ page }) {
   const { t } = useTranslation();
+  const locale = useLocale();
   const [open, setOpen] = useState(false);
   const toggle = useRef(null);
   useEffect(() => {
@@ -44,7 +56,7 @@ export function Header({ page }) {
         {t("studio.skip")}
       </a>
       <div className="studio-nav wrap">
-        <a className="wordmark" href="/" aria-label="DR TECH home">
+        <a className="wordmark" href={lp(locale, "/")} aria-label="DR TECH home">
           <img src="/assets/brand-mark.webp" alt="" width="44" height="44" />
           <span>
             DR TECH<small>{t("studio.restored")}</small>
@@ -54,7 +66,7 @@ export function Header({ page }) {
           {links.map(([href, key]) => (
             <a
               key={key}
-              href={href}
+              href={lp(locale, href)}
               aria-current={href === page ? "page" : undefined}
             >
               {t(`studio.${key}`)}
@@ -63,7 +75,7 @@ export function Header({ page }) {
         </nav>
         <div className="nav-tools">
           <LanguageSwitcher />
-          <a className="action action-small desktop-support" href="/support">
+          <a className="action action-small desktop-support" href={lp(locale, "/support")}>
             {t("studio.support")}
             <ArrowUpRight size={15} />
           </a>
@@ -87,12 +99,12 @@ export function Header({ page }) {
           aria-label={t("studio.services")}
         >
           {links.map(([href, key]) => (
-            <a key={key} href={href}>
+            <a key={key} href={lp(locale, href)}>
               {t(`studio.${key}`)}
               <ArrowRight size={16} />
             </a>
           ))}
-          <a className="action" href="/support">
+          <a className="action" href={lp(locale, "/support")}>
             {t("studio.support")}
           </a>
         </nav>
@@ -102,11 +114,12 @@ export function Header({ page }) {
 }
 export function Footer() {
   const { t } = useTranslation();
+  const locale = useLocale();
   return (
     <footer className="studio-footer">
       <div className="wrap footer-grid">
         <div>
-          <a className="footer-brand" href="/">
+          <a className="footer-brand" href={lp(locale, "/")}>
             DR TECH<span>Services</span>
           </a>
           <p>{t("studio.footerLine")}</p>
@@ -114,16 +127,16 @@ export function Footer() {
         </div>
         <div>
           <h2>{t("studio.services")}</h2>
-          <a href="/home-it">{t("studio.home")}</a>
-          <a href="/business">{t("studio.business")}</a>
-          <a href="/digital">{t("studio.digitalAction")}</a>
-          <a href="/projects">{t("projects.nav")}</a>
+          <a href={lp(locale, "/home-it")}>{t("studio.home")}</a>
+          <a href={lp(locale, "/business")}>{t("studio.business")}</a>
+          <a href={lp(locale, "/digital")}>{t("studio.digitalAction")}</a>
+          <a href={lp(locale, "/projects")}>{t("projects.nav")}</a>
         </div>
         <div>
           <h2>{t("studio.contact")}</h2>
           <a href={`tel:${phone}`}>{phoneDisplay}</a>
           <a href={`mailto:${email}`}>{email}</a>
-          <a href="/support">{t("studio.support")}</a>
+          <a href={lp(locale, "/support")}>{t("studio.support")}</a>
         </div>
         <div>
           <h2>{t("studio.elsewhere")}</h2>
@@ -145,7 +158,7 @@ export function Footer() {
         <span>
           © {new Date().getFullYear()} DR TECH Services. {t("studio.rights")}
         </span>
-        <a href="/about">{t("studio.about")}</a>
+        <a href={lp(locale, "/about")}>{t("studio.about")}</a>
       </div>
     </footer>
   );
